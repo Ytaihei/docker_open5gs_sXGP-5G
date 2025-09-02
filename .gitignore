@@ -1,4 +1,5 @@
 log/
+sources/
 **/*.log
 **/*.ctxt
 **/*.pcap
