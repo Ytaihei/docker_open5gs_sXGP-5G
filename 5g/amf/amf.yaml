@@ -25,6 +25,7 @@ amf:
     ngap:
       server:
         - address: AMF_IP
+          port: 38412
     guami:
       - plmn_id:
           mcc: MCC
