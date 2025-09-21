@@ -28,6 +28,12 @@
 
 export LD_LIBRARY_PATH=/open5gs/install/lib/$(uname -m)-linux-gnu
 
+# タイマーベースの起動遅延
+if [[ -n "$STARTUP_DELAY" ]]; then
+	echo "Waiting for ${STARTUP_DELAY} seconds before starting $COMPONENT_NAME..."
+	sleep "$STARTUP_DELAY"
+fi
+
 if [[ -z "$COMPONENT_NAME" ]]; then
 	echo "Error: COMPONENT_NAME environment variable not set"; exit 1;
 elif [[ "$COMPONENT_NAME" =~ ^(amf[[:digit:]]*$) ]]; then

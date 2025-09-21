@@ -4,7 +4,7 @@ services:
     container_name: mongo
     command: --bind_ip 0.0.0.0
     env_file:
-      - .env
+      - .env_5g
     volumes:
       - mongodbdata:/data/db
       - mongodbdata:/data/configdb
@@ -25,7 +25,7 @@ services:
     depends_on:
       - mongo
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=webui
     volumes:
@@ -46,7 +46,7 @@ services:
       dockerfile: open5gs/base/Dockerfile
     container_name: nrf
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=nrf
     volumes:
@@ -68,7 +68,7 @@ services:
       - nrf
     container_name: scp
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=scp
     volumes:
@@ -91,7 +91,7 @@ services:
       - scp
     container_name: ausf
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=ausf
     volumes:
@@ -115,7 +115,7 @@ services:
       - mongo
     container_name: udr
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=udr
     volumes:
@@ -138,7 +138,7 @@ services:
       - scp
     container_name: udm
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=udm
     volumes:
@@ -162,7 +162,7 @@ services:
       - mongo
     container_name: pcf
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=pcf
     volumes:
@@ -187,7 +187,7 @@ services:
       - mongo
     container_name: bsf
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=bsf
     volumes:
@@ -211,7 +211,7 @@ services:
       - amf
     container_name: smf
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=smf
       - DEPLOY_MODE=5G
@@ -243,7 +243,7 @@ services:
       - smf
     container_name: upf
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=upf
     volumes:
@@ -278,7 +278,7 @@ services:
       - bsf
     container_name: amf
     env_file:
-      - .env
+      - .env_5g
     environment:
       - COMPONENT_NAME=amf
     volumes:
@@ -294,12 +294,66 @@ services:
       default:
         ipv4_address: ${AMF_IP}
 
+# ---- RAN ----
+  srsgnb_zmq:
+    build:
+      context: ..
+      dockerfile: ran/srsran/Dockerfile
+    depends_on:
+      - amf
+    container_name: srsgnb_zmq
+    stdin_open: true
+    tty: true
+    privileged: true
+    volumes:
+      - ../ran/srsran:/mnt/srsran
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - .env_5g
+    environment:
+      - COMPONENT_NAME=gnb_zmq
+      - STARTUP_DELAY=60  # AMF（5GC）起動を待つ
+    expose:
+      - "38412/sctp"
+      - "2152/udp"
+      - "2000/tcp"
+      - "2001/tcp"
+    networks:
+      default:
+        ipv4_address: ${SRS_GNB_IP}
+
+  srsue_5g_zmq:
+    build:
+      context: ..
+      dockerfile: ran/srslte/Dockerfile
+    container_name: srsue_5g_zmq
+    stdin_open: true
+    tty: true
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+    volumes:
+      - ../ran/srslte:/mnt/srslte
+      - ../ran/srsue:/mnt/srsue
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - .env_5g
+    environment:
+      - COMPONENT_NAME=ue_5g_zmq
+      - STARTUP_DELAY=75  # gNB起動を待つ
+    expose:
+      - "2000/tcp"
+      - "2001/tcp"
+    networks:
+      default:
+        ipv4_address: ${SRS_UE_IP}
+
 networks:
   default:
-    name: docker_open5gs_default
-    ipam:
-      config:
-        - subnet: ${TEST_NETWORK}
+    external: true
+    name: br-open5gs_5g
 
 volumes:
   mongodbdata:

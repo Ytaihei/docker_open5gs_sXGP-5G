@@ -1,4 +1,5 @@
 logger:
+    level: debug
     file:
       path: /open5gs/install/var/log/open5gs/mme.log
 
@@ -34,7 +35,7 @@ mme:
                 mcc: MCC
                 mnc: MNC
               lac: 1
-    gummei: 
+    gummei:
       - plmn_id:
           mcc: MCC
           mnc: MNC

@@ -1,0 +1,93 @@
+version: '3.8'
+
+networks:
+  s1n2_test_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.0.0/24
+
+services:
+  # Minimal 5GC for testing (just AMF and UPF)
+  mongo:
+    image: mongo:6.0
+    container_name: mongo_test
+    command: --bind_ip 0.0.0.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    networks:
+      s1n2_test_net:
+        ipv4_address: 172.25.0.2
+    restart: unless-stopped
+
+  # Simple Network Container for GTP-U Testing
+  gtp_tester:
+    image: ubuntu:22.04
+    container_name: gtp_tester
+    command: sleep infinity
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    volumes:
+      - /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G:/opt/sxgp
+    networks:
+      s1n2_test_net:
+        ipv4_address: 172.25.0.10
+    restart: unless-stopped
+    working_dir: /opt/sxgp
+
+  # UPF Simulator
+  upf_sim:
+    image: ubuntu:22.04
+    container_name: upf_sim
+    command: >
+      bash -c "
+      apt-get update &&
+      apt-get install -y iproute2 netcat-openbsd tcpdump iputils-ping &&
+      echo 'UPF Simulator Ready' &&
+      sleep infinity"
+    networks:
+      s1n2_test_net:
+        ipv4_address: 172.25.0.21
+    restart: unless-stopped
+
+  # eNB Simulator
+  enb_sim:
+    image: ubuntu:22.04
+    container_name: enb_sim
+    command: >
+      bash -c "
+      apt-get update &&
+      apt-get install -y iproute2 netcat-openbsd tcpdump iputils-ping &&
+      echo 'eNB Simulator Ready' &&
+      sleep infinity"
+    networks:
+      s1n2_test_net:
+        ipv4_address: 172.25.0.40
+    restart: unless-stopped
+
+  # sXGP-5G Protocol Converter Test Environment
+  s1n2_converter:
+    image: ubuntu:22.04
+    container_name: s1n2_converter
+    command: >
+      bash -c "
+      apt-get update &&
+      apt-get install -y gcc build-essential iproute2 netcat-openbsd tcpdump iputils-ping &&
+      echo 'sXGP-5G Protocol Converter Test Environment Ready' &&
+      cd /opt/sxgp &&
+      echo 'Testing GTP-U functionality...' &&
+      if [ -f simple_gtp_test ]; then ./simple_gtp_test; fi &&
+      echo 'Starting test network simulation...' &&
+      sleep infinity"
+    volumes:
+      - /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G:/opt/sxgp
+    networks:
+      s1n2_test_net:
+        ipv4_address: 172.25.0.30
+    restart: unless-stopped
+    depends_on:
+      - upf_sim
+      - enb_sim
+    working_dir: /opt/sxgp

@@ -36,37 +36,11 @@ RUN apt-get update && \
     libboost-program-options-dev libconfig++-dev net-tools iputils-ping libusb-1.0-0-dev libpython3-dev python3-numpy swig \
     python3-distutils iproute2 wget
 
-# Copy SoapySDR source code, compile and install
-COPY sources/SoapySDR /SoapySDR
-RUN cd /SoapySDR && \
-    mkdir build && cd build && \
-    cmake ../ && make && make install && \
-    ldconfig
+# SDR libraries removed for ZMQ-only simulation (OTA not needed)
+# Commented out: SoapySDR, LimeSuite, bladeRF, SoapyBladeRF
+# This reduces build time and image size significantly
 
-# Copy Limesuite source code, compile and install
-COPY sources/LimeSuite /LimeSuite
-RUN cd /LimeSuite && \
-    mkdir builddir && cd builddir && \
-    cmake ../ && make && make install && \
-    ldconfig
-
-# Copy BladeRF source code, compile and install
-COPY sources/bladeRF /bladeRF
-RUN cd /bladeRF/host/ && git checkout tags/2024.05 && \
-    mkdir build && cd build && \
-    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DINSTALL_UDEV_RULES=ON -DBLADERF_GROUP=plugdev ../ && make && make install && \
-    ldconfig && \
-    mkdir -p /etc/Nuand/bladeRF/ && \
-    wget https://www.nuand.com/fpga/hostedxA4-latest.rbf --output-document /etc/Nuand/bladeRF/hostedxA4-latest.rbf
-
-# Copy SoapyBladeRF source code, compile and install
-COPY sources/SoapyBladeRF /SoapyBladeRF
-RUN cd /SoapyBladeRF && \
-    mkdir build && cd build && \
-    cmake ../ && make && make install && \
-    ldconfig
-
-# UHD drivers for USRP
+# UHD drivers for USRP (kept for compatibility, can be removed if not needed)
 RUN add-apt-repository ppa:ettusresearch/uhd && \
     apt update && apt -y install libuhd-dev uhd-host && \
     uhd_images_downloader

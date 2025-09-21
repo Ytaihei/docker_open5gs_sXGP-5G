@@ -1,6 +1,7 @@
 db_uri: mongodb://MONGO_IP/open5gs
 
 logger:
+    level: debug
     file:
       path: /open5gs/install/var/log/open5gs/hss.log
 

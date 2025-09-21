@@ -28,6 +28,12 @@
 
 export IP_ADDR=$(awk 'END{print $1}' /etc/hosts)
 
+# タイマーベースの起動遅延
+if [[ -n "$STARTUP_DELAY" ]]; then
+	echo "Waiting for ${STARTUP_DELAY} seconds before starting $COMPONENT_NAME..."
+	sleep "$STARTUP_DELAY"
+fi
+
 mkdir -p /etc/srsran
 
 cp /mnt/srslte/rb_${COMPONENT_NAME}.conf /etc/srsran/rb.conf
@@ -56,11 +62,17 @@ elif [[ "$COMPONENT_NAME" =~ ^(gnb_zmq[[:digit:]]*$) ]]; then
 	cp /mnt/srslte/${COMPONENT_NAME}.conf /etc/srsran/enb.conf
 	sed -i 's|MME_IP|'$AMF_IP'|g' /etc/srsran/enb.conf
 elif [[ "$COMPONENT_NAME" =~ ^(ue_zmq[[:digit:]]*$) ]]; then
-	echo "Configuring component: '$COMPONENT_NAME'"
-	cp /mnt/srslte/${COMPONENT_NAME}.conf /etc/srsran/ue.conf
+	echo "Configuring component: '$COMPONENT_NAME' from dedicated UE config directory"
+	# 4G UE用の設定ファイル - 専用ディレクトリから読み込み
+	cp /mnt/srsue/4g/rb_ue_zmq.conf /etc/srsran/rb.conf
+	cp /mnt/srsue/4g/sib_ue_zmq.conf /etc/srsran/sib.conf
+	cp /mnt/srsue/4g/ue_zmq.conf /etc/srsran/ue.conf
 elif [[ "$COMPONENT_NAME" =~ ^(ue_5g_zmq[[:digit:]]*$) ]]; then
-	echo "Configuring component: '$COMPONENT_NAME'"
-	cp /mnt/srslte/${COMPONENT_NAME}.conf /etc/srsran/ue.conf
+	echo "Configuring component: '$COMPONENT_NAME' from dedicated UE config directory"
+	# 5G UE用の設定ファイル - 専用ディレクトリから読み込み（固定ファイル名を使用）
+	cp /mnt/srsue/5g/rb_ue_5g_zmq.conf /etc/srsran/rb.conf
+	cp /mnt/srsue/5g/sib_ue_5g_zmq.conf /etc/srsran/sib.conf
+	cp /mnt/srsue/5g/ue_5g_zmq.conf /etc/srsran/ue.conf
 else
 	echo "Error: Invalid component name: '$COMPONENT_NAME'"
 fi
