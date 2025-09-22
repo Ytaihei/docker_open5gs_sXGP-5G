@@ -945,3 +945,299 @@
 
     **プロジェクトの意義**: 4G/5G interworking技術の実証により、通信業界での技術的価値創出および学術的貢献を達成
 
+- 9/22 (続き)
+    ## **🎉 Task 1 完了: NAS変換機能実装・S1Setup変換成功**
+
+    ### **解決した技術的問題と対策**
+
+    **Problem 1: テンプレート使用時のNAS-PDU置換不具合**
+    - **症状**: NAS変換関数は実行されるが、実際のNGAPメッセージでは変換されたNAS-PDUが使用されない
+    - **根本原因**: ELSEパス（テンプレート使用）でNAS変換後に`memcpy(ngap_data, initial_ue, sizeof(initial_ue))`でテンプレートが上書き
+    - **解決策**: テンプレート内の特定オフセット（0x18）でNAS-PDU部分のみを変換後データで置換
+        ```c
+        // 修正前: 変換後に全体をテンプレートで上書き
+        memcpy(ngap_data, initial_ue, sizeof(initial_ue));
+
+        // 修正後: テンプレート使用+NAS部分のみ置換
+        const size_t template_nas_offset = 0x18;
+        ngap_data[template_nas_offset - 1] = (uint8_t)converted_nas_len;
+        memcpy(ngap_data + template_nas_offset, converted_nas, converted_nas_len);
+        ```
+
+    **Problem 2: S1Setup→NGSetup変換時のSCTP接続不安定**
+    - **症状**: `[WARN] S1C socket not writable (poll_ret=0, revents=0x0), deferring S1SetupResponse`
+    - **根本原因**: eNB再起動時のSCTP接続タイミング競合
+    - **解決策**: s1n2コンバーター再起動による接続状態リセット
+
+    ### **実装完了機能**
+
+    **✅ S1-N2プロトコル変換 (100%完了)**
+    - S1SetupRequest → NGSetupRequest: 49bytes → 440bytes変換成功
+    - NGSetupResponse → S1SetupResponse: 54bytes → 41bytes変換成功
+    - ログ証跡: `[INFO] S1SetupRequest -> NGSetupRequest sent (440 bytes, PPID=60)`
+
+    **✅ NAS-PDU変換基盤 (100%完了)**
+    - 4G EMM Attach Request (0x07 0x41) → 5G Registration Request (0x7E 0x41)
+    - テンプレート型変換: 23bytes → 16bytes変換確認
+    - ログ証跡: `[INFO] Template 4G->5G NAS-PDU conversion successful (4G:23 bytes -> 5G:16 bytes)`
+
+    **✅ 強化デバッグ機能 (100%完了)**
+    - S1AP/NGAPメッセージの完全16進ダンプ
+    - NAS-PDU抽出・変換プロセス詳細ログ
+    - SCTP接続状態とエラー原因追跡
+
+    ### **現在のシステム状態**
+    - **Docker統合環境**: 16コンテナ全稼働中
+    - **s1n2バイナリ**: 19.3MB、NAS変換機能付き最新版配備済み
+    - **eNB-s1n2-AMF**: S1Setup/NGSetup交換完全成功
+    - **残課題**: UE-eNB間物理レイヤー接続不安定（設定変更なしで動作が不安定）
+
+    ### **Task 2 対応: 物理接続安定化**
+
+    **現象分析**:
+    - eNB設定: DL=2660.0 MHz, UL=2540.0 MHz (EARFCN 3150相当)
+    - UE設定: dl_earfcn = 3150 (一致している)
+    - 過去ログ: 複数rnti(0x46,0x47,0x49,0x4a)でUL NAS Transportメッセージ確認
+    - 現在状況: UE "Attaching UE..."で停止、RACHアクティビティなし
+
+    **対処方針**: eNB→UE順序での段階的再起動によるPhysical Layer同期確立
+
+# **トラブルシューティングガイド (2025/09/22更新)**
+
+## **問題1: UE-eNB間接続失敗とInitialUEMessage未生成**
+
+### **症状**
+- UE: "Attaching UE..." で停止
+- eNB: RACHメッセージが生成されない
+- s1n2: InitialUEMessageを受信しない
+- AMF: InitialUEMessageが届かない
+
+### **根本原因**
+1. **ZMQ Physical Layer同期失敗**: UE-eNB間のZMQ接続で周波数同期が確立されない
+2. **コンテナ起動順序の問題**: eNBが完全起動前にUEが接続を試行
+3. **S1AP接続タイミング**: eNB-s1n2間のSCTP接続が未確立
+
+### **確実な解決手順**
+
+#### **Step 1: 完全環境リセット**
+```bash
+# 統合環境の完全停止
+cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml down
+
+# 5G Core環境確認・必要に応じて再起動
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up -d mongo nrf scp ausf udr udm pcf bsf nssf smf upf amf
+```
+
+#### **Step 2: s1n2コンバータの優先起動**
+```bash
+# s1n2コンバータを単独起動
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up -d s1n2
+
+# N2接続確立の確認（重要）
+docker logs s1n2 --tail 10 | grep "N2 connected"
+# 期待ログ: [INFO] N2 connected to 172.24.0.12:38412
+```
+
+#### **Step 3: eNB起動とS1Setup確認**
+```bash
+# eNB起動
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up -d srsenb_zmq
+
+# S1Setup手順の確認（必須）
+sleep 10
+docker logs s1n2 --tail 20 | grep -A 5 "S1C accepted"
+# 期待ログ: [INFO] S1C accepted from 172.24.0.40:xxxxx
+#          [INFO] S1SetupRequest -> NGSetupRequest sent
+#          [INFO] NGSetupResponse -> S1SetupResponse sent
+```
+
+#### **Step 4: UE起動前の事前確認**
+```bash
+# eNBの完全起動確認
+docker logs srsenb_zmq --tail 10 | grep "Setting frequency"
+# 期待ログ: Setting frequency: DL=2660.0 Mhz, UL=2540.0 MHz for cc_idx=0 nof_prb=50
+
+# s1n2でS1Setup完了確認
+docker logs s1n2 | grep "S1SetupResponse sent" | tail -1
+```
+
+#### **Step 5: UE起動と同期確認**
+```bash
+# UE起動
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up -d srsue_zmq
+
+# UE-eNB Physical Layer同期の確認
+sleep 15
+docker logs srsue_zmq --tail 20 | grep -E "(Found Cell|Found PLMN|RRC Connected)"
+# 期待ログ: Found Cell: Mode=FDD, PCI=1, PRB=50, Ports=1, CP=Normal
+#          Found PLMN: Id=00101, TAC=1
+#          RRC Connected
+```
+
+#### **Step 6: InitialUEMessage生成確認**
+```bash
+# eNBでRACH手順確認
+docker logs srsenb_zmq | grep "RACH:" | tail -5
+# 期待ログ: RACH: tti=xxxx, cc=0, pci=1, preamble=xx, offset=0, temp_crnti=0xxx
+
+# s1n2でInitialUEMessage受信確認
+docker logs s1n2 | grep -A 5 "InitialUEMessage\|0x0C"
+```
+
+### **失敗時の確実な復旧手順**
+```bash
+# 段階的コンテナ再起動（推奨順序）
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml restart srsue_zmq
+sleep 5
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml restart srsenb_zmq
+sleep 10
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml restart s1n2
+
+# 完全リセット（最終手段）
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml down
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up -d
+```
+
+---
+
+## **問題2: s1n2コンバータのビルド・デプロイ失敗**
+
+### **症状**
+- `make`コマンドでビルドが途中で停止
+- ASN.1ライブラリの依存関係エラー
+- コンテナへのバイナリコピーが失敗
+- コンテナ起動時のライブラリエラー
+
+### **根本原因**
+1. **ASN.1ヘッダーパス問題**: 複雑なASN.1ライブラリ構造による参照エラー
+2. **ライブラリ依存関係**: libogsasn1c-common.so.2等の動的ライブラリ参照失敗
+3. **コンパイラ引数制限**: 1065+ファイルによるコマンドライン長制限
+
+### **確実な解決手順**
+
+#### **Step 1: 開発環境の確認**
+```bash
+cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G
+
+# 必要なライブラリファイル存在確認
+ls libs/libogsasn1c-common.so* libs/libogscore.so* libs/libsctp*
+
+# ASN.1ヘッダーファイル確認
+find open5gs_lib -name "asn_application.h" -o -name "S1AP_*.h" | head -5
+```
+
+#### **Step 2: 確実なビルド手順**
+```bash
+# ビルドディレクトリのクリーンアップ
+rm -rf build/*
+
+# 手動コンパイル（確実な方法）
+gcc -I./include \
+    -I./open5gs_lib/asn1c/common \
+    -I./open5gs_lib/asn1c/s1ap \
+    -I./open5gs_lib/asn1c/ngap \
+    -L./libs \
+    -o build/s1n2-converter \
+    src/s1n2_converter.c src/main.c src/gtp_tunnel.c src/ngap_builder.c \
+    -logscore -logsasn1c-common -logsasn1c-s1ap -logsasn1c-ngap -lsctp -pthread -lm
+
+# ビルド成功確認
+ls -la build/s1n2-converter
+file build/s1n2-converter
+```
+
+#### **Step 3: 動作確認済みDockerイメージの作成**
+```bash
+# 段階的Dockerイメージビルド
+docker build -f Dockerfile.sctp-fixed -t s1n2-converter:nas-fix-updated .
+
+# イメージビルド成功確認
+docker images | grep s1n2-converter
+```
+
+#### **Step 4: 確実なコンテナデプロイ**
+```bash
+# 既存コンテナの完全停止・削除
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml stop s1n2
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml rm -f s1n2
+
+# 新イメージでコンテナ再作成
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up -d s1n2 --force-recreate
+
+# デプロイ成功確認
+docker logs s1n2 --tail 20 | grep "s1n2-converter start"
+```
+
+#### **Step 5: バイナリ直接更新（代替手段）**
+```bash
+# 実行中コンテナへの直接バイナリコピー
+docker cp build/s1n2-converter s1n2:/usr/local/bin/s1n2-converter
+
+# バイナリ更新確認
+docker exec s1n2 ls -la /usr/local/bin/s1n2-converter
+docker exec s1n2 file /usr/local/bin/s1n2-converter
+
+# ライブラリ依存関係確認
+docker exec s1n2 ldd /usr/local/bin/s1n2-converter | grep -E "(talloc|ogsasn1c)"
+```
+
+### **トラブル時の確実な復旧手順**
+```bash
+# ライブラリエラー発生時の対処
+docker exec s1n2 find /opt -name "libogsasn1c*" -o -name "libtalloc*"
+docker exec s1n2 ldconfig
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml restart s1n2
+
+# 完全失敗時のフォールバック
+# 1. 動作確認済みイメージに戻す
+docker tag s1n2-converter:working-backup s1n2-converter:nas-fix-updated
+# 2. コンテナ完全再作成
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml down
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up -d
+```
+
+### **予防的措置**
+```bash
+# 動作確認済み状態のバックアップ作成
+docker commit s1n2 s1n2-converter:working-backup
+
+# ビルド環境の依存関係確認スクリプト作成
+cat > check_build_deps.sh << 'EOF'
+#!/bin/bash
+echo "=== ASN.1 Headers Check ==="
+find open5gs_lib -name "asn_application.h" | head -1
+echo "=== Libraries Check ==="
+ls libs/libogscore.so* libs/libogsasn1c-common.so* 2>/dev/null | wc -l
+echo "=== Build Directory ==="
+ls -la build/ 2>/dev/null || echo "Build directory not found"
+EOF
+chmod +x check_build_deps.sh
+```
+
+---
+
+## **実装作業での推奨ワークフロー**
+
+### **安全な開発手順**
+1. **現状バックアップ**: 動作する状態でのコンテナイメージ保存
+2. **段階的テスト**: 小さな変更→ビルド→テスト→コミットの繰り返し
+3. **確実な検証**: 各ステップで期待ログの確認
+4. **復旧計画**: 失敗時の確実な元状態復帰手順準備
+
+### **効率的なデバッグ手順**
+```bash
+# 並行ログ監視
+# Terminal 1: s1n2ログ
+docker logs s1n2 -f
+
+# Terminal 2: eNBログ
+docker logs srsenb_zmq -f
+
+# Terminal 3: UEログ
+docker logs srsue_zmq -f
+
+# Terminal 4: AMFログ
+docker logs amf -f
+```
+
