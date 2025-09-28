@@ -42,7 +42,7 @@ RUN add-apt-repository ppa:ettusresearch/uhd && \
 # Copy srsRAN_Project source code, compile and install
 COPY sources/srsRAN_Project /srsRAN_Project
 WORKDIR /srsRAN_Project
-RUN mkdir build
+RUN rm -rf build && mkdir build
 
 WORKDIR /srsRAN_Project/build
 RUN cmake ../ -DENABLE_EXPORT=ON -DENABLE_ZEROMQ=ON -DENABLE_UHD=ON -DCMAKE_CXX_FLAGS="-Wno-error=switch"

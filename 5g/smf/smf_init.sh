@@ -69,6 +69,9 @@ sed -i 's|OSMOEPDG_IP|'$OSMOEPDG_IP'|g' install/etc/freeDiameter/smf.conf
 # Generate TLS certificates
 ./install/etc/freeDiameter/make_certs.sh install/etc/freeDiameter
 
+# Update library cache for Open5GS libraries
+ldconfig
+
 cd install/bin
 exec ./open5gs-smfd -c /open5gs/install/etc/open5gs/smf.yaml $@
 

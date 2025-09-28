@@ -37,34 +37,34 @@ RUN apt-get update && \
 # Install updates and dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        python3-pip \
-        python3-setuptools \
-        python3-wheel \
-        ninja-build \
-        build-essential \
-        flex \
-        bison \
-        git \
-        cmake \
-        libsctp-dev \
-        libgnutls28-dev \
-        libgcrypt-dev \
-        libssl-dev \
-        libidn11-dev \
-        libmongoc-dev \
-        libbson-dev \
-        libyaml-dev \
-        meson \
-        mongodb-org \
-        curl \
-        gnupg \
-        ca-certificates \
-        libmicrohttpd-dev \
-        libcurl4-gnutls-dev \
-        libnghttp2-dev \
-        libtins-dev \
-        libidn11-dev \
-        libtalloc-dev
+    python3-pip \
+    python3-setuptools \
+    python3-wheel \
+    ninja-build \
+    build-essential \
+    flex \
+    bison \
+    git \
+    cmake \
+    libsctp-dev \
+    libgnutls28-dev \
+    libgcrypt-dev \
+    libssl-dev \
+    libidn11-dev \
+    libmongoc-dev \
+    libbson-dev \
+    libyaml-dev \
+    meson \
+    mongodb-org \
+    curl \
+    gnupg \
+    ca-certificates \
+    libmicrohttpd-dev \
+    libcurl4-gnutls-dev \
+    libnghttp2-dev \
+    libtins-dev \
+    libidn11-dev \
+    libtalloc-dev
 
 RUN mkdir -p /etc/apt/keyrings
 RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
@@ -75,6 +75,7 @@ RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg -
 # Copy open5gs source code and install
 COPY ../sources/open5gs /open5gs_src
 RUN cd /open5gs_src && \
+    rm -rf build && \
     meson build --prefix=`pwd`/install && \
     ninja -C build && cd build && ninja install && \
     mkdir -p /open5gs_src/install/include
@@ -96,31 +97,31 @@ RUN apt-get update && \
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        curl \
-        ca-certificates \
-        libssl-dev \
-        libyaml-dev \
-        libmicrohttpd-dev \
-        libmongoc-dev \
-        libsctp-dev \
-        libcurl4-gnutls-dev \
-        libtins-dev \
-        libidn11-dev \
-        libtalloc-dev \
-        netbase \
-        ifupdown \
-        net-tools \
-        iputils-ping \
-        python3-setuptools \
-        python3-wheel \
-        python3-pip \
-        iptables \
-        iperf \
-        iperf3 \
-        traceroute \
-        tcpdump \
-        mongodb-org \
-        gnupg && \
+    curl \
+    ca-certificates \
+    libssl-dev \
+    libyaml-dev \
+    libmicrohttpd-dev \
+    libmongoc-dev \
+    libsctp-dev \
+    libcurl4-gnutls-dev \
+    libtins-dev \
+    libidn11-dev \
+    libtalloc-dev \
+    netbase \
+    ifupdown \
+    net-tools \
+    iputils-ping \
+    python3-setuptools \
+    python3-wheel \
+    python3-pip \
+    iptables \
+    iperf \
+    iperf3 \
+    traceroute \
+    tcpdump \
+    mongodb-org \
+    gnupg && \
     apt-get autoremove -y && apt-get autoclean
 
 RUN pip3 install click

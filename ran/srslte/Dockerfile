@@ -56,7 +56,7 @@ RUN cd /srsGUI/ && \
 # Copy srsRAN_4G source code, compile and install
 COPY sources/srsRAN_4G /srsRAN_4G
 RUN cd /srsRAN_4G && \
-    mkdir build && cd build && \
+    rm -rf build && mkdir build && cd build && \
     cmake ../ && make -j`nproc` && make install && \
     ldconfig
 
