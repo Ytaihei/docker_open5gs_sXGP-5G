@@ -1,0 +1,197 @@
+S1 Application Protocol
+    S1AP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-initialUEMessage (12)
+            criticality: ignore (1)
+            value
+                InitialUEMessage
+                    protocolIEs: 5 items
+                        Item 0: id-eNB-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-eNB-UE-S1AP-ID (8)
+                                criticality: reject (0)
+                                value
+                                    ENB-UE-S1AP-ID: 1
+                        Item 1: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (26)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 07417108091010214365875902f07000050201d011d1
+                                    Non-Access-Stratum (NAS)PDU
+                                        0000 .... = Security header type: Plain NAS message, not security protected (0)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        NAS EPS Mobility Management Message Type: Attach request (0x41)
+                                        0... .... = Type of security context flag (TSC): Native security context (for KSIasme or KSIamf)
+                                        .111 .... = NAS key set identifier: No key is available (7)
+                                        .... 0... = Spare bit(s): 0x00
+                                        .... .001 = EPS attach type: EPS attach (1)
+                                        EPS mobile identity
+                                            Length: 8
+                                            .... 1... = Odd/even indication: Odd number of identity digits
+                                            .... .001 = Type of identity: IMSI (1)
+                                            IMSI: 001011234567895
+                                            [Association IMSI: 001011234567895]
+                                                Mobile Country Code (MCC): Unknown (001)
+                                                Mobile Network Code (MNC): Unknown (011)
+                                        UE network capability
+                                            Length: 2
+                                            1... .... = EEA0: Supported
+                                            .1.. .... = 128-EEA1: Supported
+                                            ..1. .... = 128-EEA2: Supported
+                                            ...1 .... = 128-EEA3: Supported
+                                            .... 0... = EEA4: Not supported
+                                            .... .0.. = EEA5: Not supported
+                                            .... ..0. = EEA6: Not supported
+                                            .... ...0 = EEA7: Not supported
+                                            0... .... = EIA0: Not supported
+                                            .1.. .... = 128-EIA1: Supported
+                                            ..1. .... = 128-EIA2: Supported
+                                            ...1 .... = 128-EIA3: Supported
+                                            .... 0... = EIA4: Not supported
+                                            .... .0.. = EIA5: Not supported
+                                            .... ..0. = EIA6: Not supported
+                                            .... ...0 = EPS-UPIP: Not supported
+                                        ESM message container
+                                            Length: 5
+                                            ESM message container contents: 0201d011d1
+                                                0000 .... = EPS bearer identity: No EPS bearer identity assigned (0)
+                                                .... 0010 = Protocol discriminator: EPS session management messages (0x2)
+                                                Procedure transaction identity: 1
+                                                NAS EPS session management messages: PDN connectivity request (0xd0)
+                                                0001 .... = PDN type: IPv4 (1)
+                                                .... 0001 = Request type: Initial request (1)
+                                                ESM information transfer flag
+                                                    1101 .... = Element ID: 0xd-
+                                                    .... 000. = Spare bit(s): 0x00
+                                                    .... ...1 = EIT (ESM information transfer): Security protected ESM information transfer required
+                        Item 2: id-TAI
+                            ProtocolIE-Field
+                                id: id-TAI (67)
+                                criticality: reject (0)
+                                value
+                                    TAI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Unknown (001)
+                                        Mobile Network Code (MNC): Unknown (01)
+                                        tAC: 1 (0x0001)
+                        Item 3: id-EUTRAN-CGI
+                            ProtocolIE-Field
+                                id: id-EUTRAN-CGI (100)
+                                criticality: ignore (1)
+                                value
+                                    EUTRAN-CGI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Unknown (001)
+                                        Mobile Network Code (MNC): Unknown (01)
+                                        0000 0000 0001 1001 1011 0000 0001 .... = cell-ID: 0x0019b01
+                        Item 4: id-RRC-Establishment-Cause
+                            ProtocolIE-Field
+                                id: id-RRC-Establishment-Cause (134)
+                                criticality: ignore (1)
+                                value
+                                    RRC-Establishment-Cause: mo-Data (4)
+
+
+NG Application Protocol (InitialUEMessage)
+    NGAP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-InitialUEMessage (15)
+            criticality: ignore (1)
+            value
+                InitialUEMessage
+                    protocolIEs: 4 items
+                        Item 0: id-RAN-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-RAN-UE-NGAP-ID (85)
+                                criticality: reject (0)
+                                value
+                                    RAN-UE-NGAP-ID: 1
+                        Item 1: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (38)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 7e004101000d0109f110ffff000021436587592e04f070f070
+                                        Non-Access-Stratum 5GS (NAS)PDU
+                                            Plain NAS 5GS Message
+                                                Extended protocol discriminator: 5G mobility management messages (126)
+                                                0000 .... = Spare Half Octet: 0
+                                                .... 0000 = Security header type: Plain NAS message, not security protected (0)
+                                                Message type: Registration request (0x41)
+                                                5GS registration type
+                                                    .... 0... = Follow-On Request bit (FOR): No follow-on request pending
+                                                    .... .001 = 5GS registration type: initial registration (1)
+                                                NAS key set identifier
+                                                    0... .... = Type of security context flag (TSC): Native security context (for KSIAMF)
+                                                    .000 .... = NAS key set identifier: 0
+                                                5GS mobile identity
+                                                    Length: 13
+                                                    0... .... = Spare: 0
+                                                    .000 .... = SUPI format: IMSI (0)
+                                                    .... 0... = Spare: 0
+                                                    .... .001 = Type of identity: SUCI (1)
+                                                    Mobile Country Code (MCC): International Mobile, shared code (901)
+                                                    Mobile Network Code (MNC): Webbing (01)
+                                                    Routing indicator:
+                                                    .... 0000 = Protection scheme Id: NULL scheme (0)
+                                                    Home network public key identifier: 0
+                                                    MSIN: 1234567895
+                                                UE security capability
+                                                    Element ID: 0x2e
+                                                    Length: 4
+                                                    1... .... = 5G-EA0: Supported
+                                                    .1.. .... = 128-5G-EA1: Supported
+                                                    ..1. .... = 128-5G-EA2: Supported
+                                                    ...1 .... = 128-5G-EA3: Supported
+                                                    .... 0... = 5G-EA4: Not supported
+                                                    .... .0.. = 5G-EA5: Not supported
+                                                    .... ..0. = 5G-EA6: Not supported
+                                                    .... ...0 = 5G-EA7: Not supported
+                                                    0... .... = 5G-IA0: Not supported
+                                                    .1.. .... = 128-5G-IA1: Supported
+                                                    ..1. .... = 128-5G-IA2: Supported
+                                                    ...1 .... = 128-5G-IA3: Supported
+                                                    .... 0... = 5G-IA4: Not supported
+                                                    .... .0.. = 5G-IA5: Not supported
+                                                    .... ..0. = 5G-IA6: Not supported
+                                                    .... ...0 = 5G-IA7: Not supported
+                                                    1... .... = EEA0: Supported
+                                                    .1.. .... = 128-EEA1: Supported
+                                                    ..1. .... = 128-EEA2: Supported
+                                                    ...1 .... = 128-EEA3: Supported
+                                                    .... 0... = EEA4: Not supported
+                                                    .... .0.. = EEA5: Not supported
+                                                    .... ..0. = EEA6: Not supported
+                                                    .... ...0 = EEA7: Not supported
+                                                    0... .... = EIA0: Not supported
+                                                    .1.. .... = 128-EIA1: Supported
+                                                    ..1. .... = 128-EIA2: Supported
+                                                    ...1 .... = 128-EIA3: Supported
+                                                    .... 0... = EIA4: Not supported
+                                                    .... .0.. = EIA5: Not supported
+                                                    .... ..0. = EIA6: Not supported
+                                                    .... ...0 = EIA7: Not supported
+                        Item 2: id-UserLocationInformation
+                            ProtocolIE-Field
+                                id: id-UserLocationInformation (121)
+                                criticality: reject (0)
+                                value
+                                    UserLocationInformation: userLocationInformationNR (1)
+                                        userLocationInformationNR
+                                            nR-CGI
+                                                pLMNIdentity: 00f110
+                                                    Mobile Country Code (MCC): Unknown (001)
+                                                    Mobile Network Code (MNC): Unknown (01)
+                                                0000 0000 0000 0000 0000 0000 0000 0000 0000 .... = nRCellIdentity: 0x000000000
+                                            tAI
+                                                pLMNIdentity: 00f110
+                                                    Mobile Country Code (MCC): Unknown (001)
+                                                    Mobile Network Code (MNC): Unknown (01)
+                                                tAC: 1 (0x000001)
+                        Item 3: id-RRCEstablishmentCause
+                            ProtocolIE-Field
+                                id: id-RRCEstablishmentCause (90)
+                                criticality: ignore (1)
+                                value
+                                    RRCEstablishmentCause: mo-Data (4)

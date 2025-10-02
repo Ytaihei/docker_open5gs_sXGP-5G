@@ -1,3 +1,61 @@
+- 10/1
+    - 起動のコマンド：環境変数を読みこむように修正したので`docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up`
+    - パケットをキャプチャするコマンド
+        - `sudo tcpdump -i br-sXGP-5G -w /home/taihei/docker_open5gs_sXGP-5G/log/20251001_7.pcap '(sctp port 36412 or sctp port 38412 or udp port 2152 or udp port 8805)'`
+    - Registration Reject (cause 95) の根本原因を特定：`suci_utils.c` の `decode_imsi_digits_from_eps_mobile_identity()` が第1オクテットの下位4bitを最初のIMSI桁として扱っており、SUCIのPLMNが `901/01` に誤変換→AMF/UDMがホームPLMN不一致で「Semantically incorrect message」と判定。
+        - 4G Attach RequestのIMSI: `001011234567895` / 5G Registration RequestのSUCI: `09 f1 10 ...` でMCCが `001→901` に化けていることをキャプチャで確認。
+        - 正しい処理: 第1オクテットの上位4bitから最初の桁を抽出し、odd/evenフラグを尊重して残桁を復元する必要あり。
+        - TODO:
+            1. `decode_imsi_digits_from_eps_mobile_identity()` を修正し、BCDデコード順を 3GPP TS 24.301 準拠に合わせる。
+            2. 修正後に `suci_build_from_*` ユニットテストを追加/更新し、`001/01` の PLMN が保持されることを確認。
+            3. 新バイナリをビルドして `docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up` で再デプロイ、Registration 手順の再キャプチャでRejectが解消されることを検証。
+    - Authentication Request がMalformed扱いとなる根本原因を再特定：4G NASでは `Authentication parameter RAND/AUTN` は固定長Mandatory IEのためIEIおよびLengthを持たず、`convert_5g_nas_to_4g()` が0x21/0x20を吐き出すとWiresharkが RAND 値の先頭として解釈してしまう。
+        - 最新キャプチャでは `RAND value: 2110...` とIEIが値に混入し、AUTN長も15扱いになっていた。
+        - 恒久対応: 4G NAS 生成時は 3バイトのヘッダ(0x07/0x52/ngKSI)に続けて RAND(16B) と AUTN(16B) をそのまま連結するよう修正。必要バッファ長は `3 + 16 + 16` に更新。
+        - `make` 済み。再ビルド/再デプロイ後のキャプチャで RAND/AUTN が16バイトで正しく解釈されることを確認予定。
+    - 追加デバッグログ: `convert_5g_nas_to_4g()` 内で5G RAND/AUTNのオフセットと内容、および生成した4G Authentication Request全体を `TRACE` レベルで出力するログを追加。Dockerログで以下が見える想定。
+        - `[TRACE] Parsed 5G RAND ...` / `[TRACE] Parsed 5G AUTN ...`
+        - `[TRACE] Built 4G Authentication Request ...`
+        - 変換後ダンプは最大64バイト表示に拡張。
+        - ビルド手順: `docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml build s1n2 && docker compose ... up -d`。ログは `docker compose ... logs s1n2 -f` で確認。
+- 9/30
+    - **AMF TAI / RAN TAC 整合タスク方針**
+        1. `5g/amf/amf.yaml` 内の `served_guami_list` と `tai` 設定を確認し、現行の TAC/PLMN を洗い出す。
+        2. `deployments/srsgnb_zmq.yaml` や `srsenb_zmq`/`srsue_zmq` の構成から、gNB/eNB が放送している TAC と PLMN を確認する。
+        3. 差異があれば、AMF 側の `tai` もしくは RAN 側の TAC を揃える修正を入れる（必要なら `.env_s1n2` も更新）。
+        4. 修正後に `docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up -d` でスタックを再起動し、UE 登録が成功することを AMF ログで確認する。
+        5. テスト完了後は `docker compose ... down` でクリーン停止し、結果を日誌に記録する。
+    - **InitialUEMessage の TAC 解析修正**
+        - S1AP `TAI.tAC` 読み出しが 1 バイト固定になっており、`0x00 0x01` のような16bit TACが `0` に誤変換され AMF で `Served TAI` 不一致が発生することを特定。
+        - `s1n2_converter.c` の `InitialUEMessage` 解析処理を更新し、最大3バイトのビッグエンディアン連結で TAC を復元するよう修正（NGAP 側 24bit 拡張も考慮）。
+        - `make` を `sXGP-5G/` 直下で実行しビルド成功を確認（既存の `next_pdu_session_id` 警告のみ継続、差分なし）。
+        - 次回は修正版バイナリで InitialUEMessage を送出し、AMF ログの `Cannot find Served TAI` が解消されるか検証する。
+    - **docker-compose 更新 & イメージ再ビルド**
+        - `s1n2` サービスに `S1N2_MCC/MNC/TAC` を明示的に渡すよう `docker-compose.s1n2.yml` を更新し、環境依存で値が欠落した際のフォールバックを防止。
+        - `docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml build s1n2` を実行し、新しいバイナリを含むイメージ `sxgp-5g-s1n2` の再ビルドが成功することを確認（全ステップキャッシュ、makeは差分なしで完了）。
+- 9/29
+    - `s1n2_converter`: InitialUEMessageをASN.1デコードして`ENB_UE_S1AP_ID`とNASを直接抽出し、S1/N2間のUEマッピングテーブルを動的生成するよう対応。
+    - NGAP→S1AP DownlinkNASTransport変換でマッピング済みのENB/MME IDを適用し、66バイトのAuthentication RequestをS1側へ正しいIDで転送できるようにした。
+    - 新規ログ: `[INFO] Tracking UE mapping ENB=...`, `[DEBUG] UE mapping applied for DownlinkNASTransport ...` を追加し、障害分析時にID整合性を追跡可能にした。
+    - docker composeでS1N2統合スタックを再ビルド・起動。`s1n2-converter`起動時に新規ログ群（UEマッピング、NAS変換パス突入、`[UNIQUE] MODIFIED CODE ACTIVE`等）を確認し、3UE分の`Tracking UE mapping ENB=... -> RAN=...`が連続で出力されることを実機で検証。
+    - AMF側ではRegistration Requestを受信するものの、Mobile Identity長のエンディアン解釈で`ogs_nas_5gs_decode_5gs_mobile_identity()`が失敗するエラーを再現。5G側NAS生成時の長さバイト編成が原因と推定され、次回修正対象として記録。
+    - 検証中に得た主要ログパス: `docker compose -f docker-compose.s1n2.yml logs s1n2 --tail=200`（NAS変換詳細トレース）、`... logs amf --tail=200`（5GS NASデコードエラー）。
+    - すべてのコンテナが正常起動後、`docker compose ... down`でクリーン停止済み。次回はRegistration Requestの5GS Mobile Identity長フィールド補正と、AMFでのデコード成功確認を目標にする。
+    - IMSI→SUCI変換設計メモ（AMFコード追跡結果）
+        - 参照元: `src/amf/gmm-handler.c`の`gmm_handle_registration_request()`でSUCIのみを受理し、`lib/nas/5gs/ies.c`の`ogs_nas_5gs_decode_5gs_mobile_identity()`が16bitビッグエンディアン長を期待。構造体定義は`lib/nas/5gs/types.h`で確認。
+        - 変換インプット: IMSI（MCC+MNC+MSIN桁列）、MNC桁数、Routing Indicator（0〜4桁/省略可）、適用する保護方式（Null/Profile-A/B）、Home Network PKI value。
+        - 生成手順（Null保護の場合）
+            1. IMSIをMCC/MNC/MSINに分解。MNC桁数は加入者設定またはHPLMN情報から取得。MSIN桁数の偶奇で`odd_even`ビット（偶数=0, 奇数=1）を設定。
+            2. Octet1: `supi_format=0`(IMSI), `type=SUCI`, `odd_even`に(1)
+            3. Octet2-4: `nas_plmn_id`としてMCC/MNCを3GPP準拠のBCD（下位4bitに先行桁、上位4bitに後続桁）で格納。2桁MNCの際はMNC3 nibbleを`0xF`埋め。
+            4. Octet5-6: Routing Indicator（未設定時はすべて`0xF`埋め）。
+            5. Octet7: 上位4bitは0、下位4bitに`protection_scheme_id`（Null=0, ProfileA=1, ProfileB=2）。
+            6. Octet8: `home_network_pki_value`（Nullの場合0）。
+            7. 以降: Scheme Output。Null保護ではMSINを半オクテット順でBCD化（最下位4bit=先頭桁、上位4bit=次桁。桁数が奇数なら最上位4bitを`0xF`パディング）。
+            8. `mobile_identity->length`に「Octet1以降のバイト長」を設定し、送信時は`htobe16(length)`で格納。
+        - 高度化プラン: Profile A/BではOctet8で選択したHNP KIを元にECIES暗号を実行し、生成した暗号文（scheme output）を同様に連結する。Null実装と暗号実装を同一ビルダー内で切り替えられる構造を想定。
+        - 技術的留意点: MNC桁数判定が誤るとPLMN符号化が崩れるため、加入者DBや設定ファイルに依存しない決定ロジックの整理が必要。Routing Indicator未使用時でも0xF埋めを忘れるとAMFが`0x00`を正規値と解釈する恐れあり。長さフィールドは`scheme_output_len + 8`で、AMFログの1793エラーはここがリトルエンディアンになっていたことが原因。Profile A/Bを導入する際は暗号パラメータ（r, s, t値）と椭円暗号ライブラリとのインタフェース設計が別途必要。
+
 - 9/15
     - ログレベルの設定は各々コンテナのyamlファイルにある
     - ueとenbだけコンフィグファイルの方にある

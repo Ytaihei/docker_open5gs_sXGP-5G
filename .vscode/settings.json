@@ -1,0 +1,276 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "-pdflatex=uplatex -shell-escape -kanji=utf8",
+                "%DOC%"
+            ],
+            "env": {
+                "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin"
+            }
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz"
+    ],
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "workbench.colorTheme": "Visual Studio Dark - C++",
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 1,
+    "security.workspace.trust.banner": "always",
+    "security.workspace.trust.enabled": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "workbench.editorAssociations": {
+        "*.pyxapp": "default"
+    },
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "php": "php",
+        "python": "python3 -u",
+        "perl": "perl",
+        "perl6": "perl6",
+        "ruby": "ruby",
+        "go": "go run",
+        "lua": "lua",
+        "groovy": "groovy",
+        "powershell": "powershell -ExecutionPolicy ByPass -File",
+        "bat": "cmd /c",
+        "shellscript": "bash",
+        "fsharp": "fsi",
+        "csharp": "scriptcs",
+        "vbscript": "cscript //Nologo",
+        "typescript": "ts-node",
+        "coffeescript": "coffee",
+        "scala": "scala",
+        "swift": "swift",
+        "julia": "julia",
+        "crystal": "crystal",
+        "ocaml": "ocaml",
+        "r": "Rscript",
+        "applescript": "osascript",
+        "clojure": "lein exec",
+        "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+        "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+        "racket": "racket",
+        "scheme": "csi -script",
+        "ahk": "autohotkey",
+        "autoit": "autoit3",
+        "dart": "dart",
+        "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+        "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+        "haskell": "runhaskell",
+        "nim": "nim compile --verbosity:0 --hints:off --run",
+        "lisp": "sbcl --script",
+        "kit": "kitc --run",
+        "v": "v run",
+        "sass": "sass --style expanded",
+        "scss": "scss --style expanded",
+        "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+        "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "sml": "cd $dir && sml $fileName"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnType": true
+    },
+    "editor.largeFileOptimizations": false,
+    "files.associations": {
+        "*.tex": "latex",
+        "array": "cpp",
+        "chrono": "cpp",
+        "compare": "cpp",
+        "functional": "cpp",
+        "ratio": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "variant": "cpp"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "tabnine.experimentalAutoImports": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "haskell.manageHLS": "GHCup",
+    // GitHub Copilot を全領域で最大限活用するための有効化設定
+    "github.copilot.enable": {
+        "*": true, // 既定で全言語有効
+        "plaintext": true, // メモ/スニペット下書きも支援
+        "markdown": true, // ドキュメント/README 生成支援
+        "scminput": true // コミットメッセージ補完
+    },
+    // インライン提案を常時有効化
+    "editor.inlineSuggest.enabled": true,
+    // Copilot のインラインサジェスト (古い設定キー互換; あれば尊重される)
+    "github.copilot.inlineSuggest.enable": true,
+    // コメント/文字列内でも候補を積極表示 (Copilot ヒントを誘発しやすくする)
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    // 自動的にサジェストウィジェットを開くタイミング調整 (短めで反応性向上)
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggest.showSnippets": true,
+    // 受け入れ容易化: Tab でインライン / Enter で通常補完 (既定動作補強)
+    "editor.tabCompletion": "on",
+    // 生成 AI が差分強調しやすいよう ghost text の不透明度標準化
+    "editor.inlineSuggest.showToolbar": "always",
+    // 受け入れ確認を簡略化 (必要に応じて調整可能)
+    "editor.acceptSuggestionOnEnter": "on",
+    // Copilot Chat からのコードインサートを許容 (信頼バナー無効化済みだが明示)
+    "github.copilot.chat.insertAtCursor": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[csharp]": {
+        "editor.defaultFormatter": "csharpier.csharpier-vscode"
+    },
+    "[haskell]": {
+        "editor.defaultFormatter": "sergey-kintsel.haskell-formatter-vscode-extension"
+    },
+    "settingsSync.ignoredExtensions": [],
+    "settingsSync.ignoredSettings": [],
+    "terminal.integrated.inheritEnv": false,
+    "code-runner.runInTerminal": true,
+    "redhat.telemetry.enabled": true,
+    "security.promptForLocalFileProtocolHandling": false,
+    "git.openRepositoryInParentFolders": "never",
+    "git.autofetch": true,
+    "makefile.configureOnOpen": true,
+    "json.schemas": [],
+    "vsc-webshark.sharkdFullPath": "/usr/local/bin/sharkd",
+    "github.copilot.advanced": {},
+    "github.copilot.chat.agent.thinkingTool": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.chat.codesearch.enabled": true,
+    // 追加: 連続編集提案を積極表示
+    "github.copilot.chat.editing.enable": true,
+    // 追加: コードベース検索精度向上 (有効な拡張でのみ作用)
+    "github.copilot.chat.enhancedContext": true,
+    "chat.agent.maxRequests": 5000,
+    "remote.extensionKind": {
+        "GitHub.copilot": [
+            "ui"
+        ],
+    },
+    "docker.extension.enableComposeLanguageServer": false,
+    "chat.tools.terminal.autoApprove": {
+        "/.*/": true,
+        "*": true,
+        "python3": true,
+        "cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G && docker compose -f docker-compose.s1n2.yml up -d": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "docker compose": true,
+        "docker ps --format \"table {{.Names}}\\t{{.Image}}\\t{{.Status}}\"": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "docker inspect s1n2 --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
+    "chat.tools.autoApprove": true,
+    // ===== Chat 活用効率向上の実用追加設定 =====
+    "workbench.commandPalette.preserveInput": true, // 連続で似たコマンドを呼ぶ際に入力保持
+    "editor.quickSuggestionsDelay": 50, // デフォルトより早く候補を表示
+    "editor.suggestSelection": "recentlyUsedByPrefix", // 過去採用候補を優先
+    "editor.suggest.shareSuggestSelections": true, // 言語間で候補履歴共有
+    "editor.formatOnPaste": true, // Chat からの貼り付け即整形
+    "editor.codeActionsOnSave": [ // インポート自動整理 (配列形式互換)
+        "source.organizeImports"
+    ],
+    "files.trimTrailingWhitespace": true, // 余分な空白削除で差分ノイズ低減
+    "files.insertFinalNewline": true, // POSIX 互換の最終改行を保証
+    "diffEditor.ignoreTrimWhitespace": true,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "remote.SSH.useExecServer": false,
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.remotePlatform": {
+        "taihei-nuc-ubuntu": "linux"
+    } // 空白差分を無視し本質比較
+}

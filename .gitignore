@@ -7,3 +7,4 @@ db/
 **/*.db
 **/*.db-shm
 **/*.db-wal
+docker-backup/*.tar

@@ -1,0 +1,56 @@
+NG Application Protocol (DownlinkNASTransport)
+    NGAP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-DownlinkNASTransport (4)
+            criticality: ignore (1)
+            value
+                DownlinkNASTransport
+                    protocolIEs: 3 items
+                        Item 0: id-AMF-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-AMF-UE-NGAP-ID (10)
+                                criticality: reject (0)
+                                value
+                                    AMF-UE-NGAP-ID: 1
+                        Item 1: id-RAN-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-RAN-UE-NGAP-ID (85)
+                                criticality: reject (0)
+                                value
+                                    RAN-UE-NGAP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (38)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 7e00560102000021cb92b59cf9cdd3c349b7720f0e86cf8e201032d70236ab59800064f56c96cd6f0218
+                                        Non-Access-Stratum 5GS (NAS)PDU
+                                            Plain NAS 5GS Message
+                                                Extended protocol discriminator: 5G mobility management messages (126)
+                                                0000 .... = Spare Half Octet: 0
+                                                .... 0000 = Security header type: Plain NAS message, not security protected (0)
+                                                Message type: Authentication request (0x56)
+                                                0000 .... = Spare Half Octet: 0
+                                                NAS key set identifier - ngKSI
+                                                    .... 0... = Type of security context flag (TSC): Native security context (for KSIAMF)
+                                                    .... .001 = NAS key set identifier: 1
+                                                ABBA
+                                                    Length: 2
+                                                    ABBA Contents: 0000
+                                                Authentication Parameter RAND - 5G authentication challenge
+                                                    Element ID: 0x21
+                                                    RAND value: cb92b59cf9cdd3c349b7720f0e86cf8e
+                                                Authentication Parameter AUTN (UMTS and EPS authentication challenge) - 5G authentication challenge
+                                                    Element ID: 0x20
+                                                    Length: 16
+                                                    AUTN value: 32d70236ab59800064f56c96cd6f0218
+                                                        SQN xor AK: 32d70236ab59
+                                                        AMF: 8000
+                                                        MAC: 64f56c96cd6f0218
+
+
+0000   00 04 40 3e 00 00 03 00 0a 00 02 00 01 00 55 00
+0010   02 00 01 00 26 00 2b 2a 7e 00 56 01 02 00 00 21
+0020   cb 92 b5 9c f9 cd d3 c3 49 b7 72 0f 0e 86 cf 8e
+0030   20 10 32 d7 02 36 ab 59 80 00 64 f5 6c 96 cd 6f
+0040   02 18

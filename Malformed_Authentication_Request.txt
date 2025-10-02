@@ -1,0 +1,163 @@
+### AMFから送信されるAuthentication Request
+NG Application Protocol (DownlinkNASTransport)
+    NGAP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-DownlinkNASTransport (4)
+            criticality: ignore (1)
+            value
+                DownlinkNASTransport
+                    protocolIEs: 3 items
+                        Item 0: id-AMF-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-AMF-UE-NGAP-ID (10)
+                                criticality: reject (0)
+                                value
+                                    AMF-UE-NGAP-ID: 1
+                        Item 1: id-RAN-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-RAN-UE-NGAP-ID (85)
+                                criticality: reject (0)
+                                value
+                                    RAN-UE-NGAP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (38)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 7e005601020000216d4907b669f96cfb1e2938e09067a00f201061fc3d396ee680006ecde2dc45c24a51
+                                        Non-Access-Stratum 5GS (NAS)PDU
+                                            Plain NAS 5GS Message
+                                                Extended protocol discriminator: 5G mobility management messages (126)
+                                                0000 .... = Spare Half Octet: 0
+                                                .... 0000 = Security header type: Plain NAS message, not security protected (0)
+                                                Message type: Authentication request (0x56)
+                                                0000 .... = Spare Half Octet: 0
+                                                NAS key set identifier - ngKSI
+                                                    .... 0... = Type of security context flag (TSC): Native security context (for KSIAMF)
+                                                    .... .001 = NAS key set identifier: 1
+                                                ABBA
+                                                    Length: 2
+                                                    ABBA Contents: 0000
+                                                Authentication Parameter RAND - 5G authentication challenge
+                                                    Element ID: 0x21
+                                                    RAND value: 6d4907b669f96cfb1e2938e09067a00f
+                                                Authentication Parameter AUTN (UMTS and EPS authentication challenge) - 5G authentication challenge
+                                                    Element ID: 0x20
+                                                    Length: 16
+                                                    AUTN value: 61fc3d396ee680006ecde2dc45c24a51
+                                                        SQN xor AK: 61fc3d396ee6
+                                                        AMF: 8000
+                                                        MAC: 6ecde2dc45c24a51
+
+
+
+### s1n2コンバータから送信されるAuthentication Request[SACK (Ack=1, Arwnd=106496) , DownlinkNASTransport, Authentication request[Malformed Packet]]
+S1 Application Protocol
+    S1AP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-downlinkNASTransport (11)
+            criticality: ignore (1)
+            value
+                DownlinkNASTransport
+                    protocolIEs: 3 items
+                        Item 0: id-MME-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-MME-UE-S1AP-ID (0)
+                                criticality: reject (0)
+                                value
+                                    MME-UE-S1AP-ID: 1
+                        Item 1: id-eNB-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-eNB-UE-S1AP-ID (8)
+                                criticality: reject (0)
+                                value
+                                    ENB-UE-S1AP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (26)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 07520121106d4907b669f96cfb1e2938e09067a00f201061fc3d396ee680006ecde2dc45c24a51
+                                    Non-Access-Stratum (NAS)PDU
+                                        0000 .... = Security header type: Plain NAS message, not security protected (0)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        NAS EPS Mobility Management Message Type: Authentication request (0x52)
+                                        0000 .... = Spare half octet: 0
+                                        .... 0... = Type of security context flag (TSC): Native security context (for KSIasme or KSIamf)
+                                        .... .001 = NAS key set identifier:  (1) ASME
+                                        Authentication Parameter RAND - EPS challenge
+                                            RAND value: 21106d4907b669f96cfb1e2938e09067
+                                        Authentication Parameter AUTN (UMTS and EPS authentication challenge) - EPS challenge
+                                            Length: 160
+[Malformed Packet: NAS-EPS]
+    [Expert Info (Error/Malformed): Malformed Packet (Exception occurred)]
+        [Malformed Packet (Exception occurred)]
+        [Severity level: Error]
+        [Group: Malformed]
+
+##### s1n2コンバータから送信されたパケット全ての16進ダンプ
+0000   26 0f 3d 12 fa 65 0e 02 cf 28 c3 7d 08 00 45 02
+0010   00 80 cb a7 40 00 40 84 15 da ac 18 00 1e ac 18
+0020   00 28 8e 3c cc 92 b5 fb d3 aa 00 00 00 00 03 00
+0030   00 10 2e d4 ad a0 00 01 a0 00 00 00 00 00 00 03
+0040   00 4f e8 74 f3 d8 00 00 00 01 00 00 00 12 00 0b
+0050   40 3b 00 00 03 00 00 00 02 00 01 00 08 00 02 00
+0060   01 00 1a 00 28 27 07 52 01 21 10 6d 49 07 b6 69
+0070   f9 6c fb 1e 29 38 e0 90 67 a0 0f 20 10 61 fc 3d
+0080   39 6e e6 80 00 6e cd e2 dc 45 c2 4a 51 00
+
+
+
+### srsenbから送信されるAuthentication Failure
+S1 Application Protocol
+    S1AP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-uplinkNASTransport (13)
+            criticality: ignore (1)
+            value
+                UplinkNASTransport
+                    protocolIEs: 5 items
+                        Item 0: id-MME-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-MME-UE-S1AP-ID (0)
+                                criticality: reject (0)
+                                value
+                                    MME-UE-S1AP-ID: 1
+                        Item 1: id-eNB-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-eNB-UE-S1AP-ID (8)
+                                criticality: reject (0)
+                                value
+                                    ENB-UE-S1AP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (26)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 075c14
+                                    Non-Access-Stratum (NAS)PDU
+                                        0000 .... = Security header type: Plain NAS message, not security protected (0)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        NAS EPS Mobility Management Message Type: Authentication failure (0x5c)
+                                        EMM cause
+                                            Cause: MAC failure (20)
+                        Item 3: id-EUTRAN-CGI
+                            ProtocolIE-Field
+                                id: id-EUTRAN-CGI (100)
+                                criticality: ignore (1)
+                                value
+                                    EUTRAN-CGI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Unknown (001)
+                                        Mobile Network Code (MNC): Unknown (01)
+                                        0000 0000 0001 1001 1011 0000 0001 .... = cell-ID: 0x0019b01
+                        Item 4: id-TAI
+                            ProtocolIE-Field
+                                id: id-TAI (67)
+                                criticality: ignore (1)
+                                value
+                                    TAI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Unknown (001)
+                                        Mobile Network Code (MNC): Unknown (01)
+                                        tAC: 1 (0x0001)
