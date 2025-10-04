@@ -1,0 +1,178 @@
+# UEから送信されるAuthentication Response
+S1 Application Protocol
+    S1AP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-uplinkNASTransport (13)
+            criticality: ignore (1)
+            value
+                UplinkNASTransport
+                    protocolIEs: 5 items
+                        Item 0: id-MME-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-MME-UE-S1AP-ID (0)
+                                criticality: reject (0)
+                                value
+                                    MME-UE-S1AP-ID: 1
+                        Item 1: id-eNB-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-eNB-UE-S1AP-ID (8)
+                                criticality: reject (0)
+                                value
+                                    ENB-UE-S1AP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (26)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 07530829bf5147cbfc4527
+                                    Non-Access-Stratum (NAS)PDU
+                                        0000 .... = Security header type: Plain NAS message, not security protected (0)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        NAS EPS Mobility Management Message Type: Authentication response (0x53)
+                                        Authentication response parameter
+                                            Length: 8
+                                            RES: 29bf5147cbfc4527
+                        Item 3: id-EUTRAN-CGI
+                            ProtocolIE-Field
+                                id: id-EUTRAN-CGI (100)
+                                criticality: ignore (1)
+                                value
+                                    EUTRAN-CGI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Unknown (001)
+                                        Mobile Network Code (MNC): Unknown (01)
+                                        0000 0000 0001 1001 1011 0000 0001 .... = cell-ID: 0x0019b01
+                        Item 4: id-TAI
+                            ProtocolIE-Field
+                                id: id-TAI (67)
+                                criticality: ignore (1)
+                                value
+                                    TAI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Unknown (001)
+                                        Mobile Network Code (MNC): Unknown (01)
+                                        tAC: 1 (0x0001)
+
+## 16進ダンプ
+0000   3a 61 09 f8 7b 27 4e bb 47 00 f3 d4 08 00 45 02
+0010   00 7c 00 07 40 00 40 84 e1 7e ac 18 00 28 ac 18
+0020   00 1e d2 43 8e 3c 60 c7 70 e2 00 00 00 00 03 00
+0030   00 10 f1 f4 05 25 00 01 a0 00 00 00 00 00 00 03
+0040   00 49 26 ca 9f 4b 00 01 00 01 00 00 00 12 00 0d
+0050   40 35 00 00 05 00 00 00 02 00 01 00 08 00 02 00
+0060   01 00 1a 00 0c 0b 07 53 08 29 bf 51 47 cb fc 45
+0070   27 00 64 40 08 00 00 f1 10 00 19 b0 10 00 43 40
+0080   06 00 00 f1 10 00 01 00 00 00
+
+
+
+# s1n2コンバータから送信されるAuthentication Response
+NG Application Protocol (UplinkNASTransport)
+    NGAP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-UplinkNASTransport (46)
+            criticality: ignore (1)
+            value
+                UplinkNASTransport
+                    protocolIEs: 4 items
+                        Item 0: id-RAN-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-RAN-UE-NGAP-ID (85)
+                                criticality: reject (0)
+                                value
+                                    RAN-UE-NGAP-ID: 1
+                        Item 1: id-AMF-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-AMF-UE-NGAP-ID (10)
+                                criticality: reject (0)
+                                value
+                                    AMF-UE-NGAP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (38)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 7e00572d105b72166211d6e3c3264f2633d32ae622
+                                        Non-Access-Stratum 5GS (NAS)PDU
+                                            Plain NAS 5GS Message
+                                                Extended protocol discriminator: 5G mobility management messages (126)
+                                                0000 .... = Spare Half Octet: 0
+                                                .... 0000 = Security header type: Plain NAS message, not security protected (0)
+                                                Message type: Authentication response (0x57)
+                                                Authentication response parameter
+                                                    Element ID: 0x2d
+                                                    Length: 16
+                                                    RES: 5b72166211d6e3c3264f2633d32ae622
+                        Item 3: id-UserLocationInformation
+                            ProtocolIE-Field
+                                id: id-UserLocationInformation (121)
+                                criticality: reject (0)
+                                value
+                                    UserLocationInformation: userLocationInformationNR (1)
+                                        userLocationInformationNR
+                                            nR-CGI
+                                                pLMNIdentity: 00f110
+                                                    Mobile Country Code (MCC): Unknown (001)
+                                                    Mobile Network Code (MNC): Unknown (01)
+                                                0000 0000 0000 0000 0001 1001 1011 0000 0001 .... = nRCellIdentity: 0x000019b01
+                                            tAI
+                                                pLMNIdentity: 00f110
+                                                    Mobile Country Code (MCC): Unknown (001)
+                                                    Mobile Network Code (MNC): Unknown (01)
+                                                tAC: 1 (0x000001)
+
+## 16進ダンプ
+0000   86 2b 0a c2 b4 76 3a 61 09 f8 7b 27 08 00 45 02
+0010   00 80 00 10 40 00 40 84 e1 8d ac 18 00 1e ac 18
+0020   00 0c dc 88 96 0c 3e e1 f1 9d 00 00 00 00 03 00
+0030   00 10 dd 8f 18 9a 00 01 a0 00 00 00 00 00 00 03
+0040   00 50 fb d1 15 68 00 00 00 03 00 00 00 3c 00 2e
+0050   40 3c 00 00 04 00 55 00 02 00 01 00 0a 00 02 00
+0060   01 00 26 00 16 15 7e 00 57 2d 10 5b 72 16 62 11
+0070   d6 e3 c3 26 4f 26 33 d3 2a e6 22 00 79 00 0f 40
+0080   00 f1 10 00 00 19 b0 10 00 f1 10 00 00 01
+
+
+
+# AMFから返されるAuthentication Reject
+NG Application Protocol (DownlinkNASTransport)
+    NGAP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-DownlinkNASTransport (4)
+            criticality: ignore (1)
+            value
+                DownlinkNASTransport
+                    protocolIEs: 3 items
+                        Item 0: id-AMF-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-AMF-UE-NGAP-ID (10)
+                                criticality: reject (0)
+                                value
+                                    AMF-UE-NGAP-ID: 1
+                        Item 1: id-RAN-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-RAN-UE-NGAP-ID (85)
+                                criticality: reject (0)
+                                value
+                                    RAN-UE-NGAP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (38)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 7e0058
+                                        Non-Access-Stratum 5GS (NAS)PDU
+                                            Plain NAS 5GS Message
+                                                Extended protocol discriminator: 5G mobility management messages (126)
+                                                0000 .... = Spare Half Octet: 0
+                                                .... 0000 = Security header type: Plain NAS message, not security protected (0)
+                                                Message type: Authentication reject (0x58)
+
+# 16進ダンプ
+0000   3a 61 09 f8 7b 27 86 2b 0a c2 b4 76 08 00 45 02
+0010   00 5c 01 67 40 00 40 84 e0 5a ac 18 00 0c ac 18
+0020   00 1e 96 0c dc 88 11 fb fb 4b 00 00 00 00 03 00
+0030   00 10 fb d1 15 68 00 01 a0 00 00 00 00 00 00 03
+0040   00 2b dd 8f 18 9b 00 01 00 01 00 00 00 3c 00 04
+0050   40 17 00 00 03 00 0a 00 02 00 01 00 55 00 02 00
+0060   01 00 26 00 04 03 7e 00 58 00

@@ -1,3 +1,95 @@
+- 10/3
+    - **Authentication Response (4G→5G) 変換機能実装完了**
+        - `convert_4g_nas_to_5g()` 関数に 4G Authentication Response (0x53) を 5G Authentication Response (0x57) に変換する処理を追加
+        - **変換フォーマット**:
+            - 4G入力: Protocol Discriminator (0x07) + Message Type (0x53) + [IEI 0x2D] + RES Length + RES Value
+            - 5G出力: Extended PD (0x7E) + Security Header (0x00) + Message Type (0x57) + IEI (0x2D) + RES Length + RES Value
+        - **実装の特徴**:
+            - Type 3 (length + value) と Type 4 (IEI + length + value) の両方の4G RESフォーマットに対応
+            - RES長のバリデーションを実施し、不正な長さでエラー検出
+            - デバッグログで変換前後のRES値と長さを出力
+        - **重大なバグ修正**: UplinkNASTransport変換処理でNAS変換が呼び出されていなかった
+            - 問題: `s1n2_convert_uplink_nas_transport()` 関数が4G NAS-PDUをそのまま5G NGAP UplinkNASTransportに入れていた
+            - 原因: NAS変換処理 (`convert_4g_nas_to_5g()`) が呼び出されていなかった
+            - 解決策: UplinkNASTransport変換時に `convert_4g_nas_to_5g()` を呼び出すように修正
+            - 実装内容:
+                - 4G NAS-PDUを5G NAS-PDUに変換してからNGAP UplinkNASTransportを構築
+                - 変換失敗時は元の4G NASをフォールバックとして使用（警告ログ出力）
+                - デバッグログで変換の成功/失敗と変換前後のサイズを出力
+        - **ビルド結果**:
+            - `sXGP-5G/` ディレクトリで `make` 実行成功（警告は既存のnext_pdu_session_idのみ）
+            - Docker イメージ `sxgp-5g-s1n2` を再ビルド成功（SHA: 632af57e21e1）
+        - **動作確認コマンド**:
+            - 起動: `cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G && docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up`
+            - ログ確認: `docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml logs s1n2 -f`
+        - **期待されるログ出力**:
+            - `[DEBUG] S1AP UplinkNASTransport: attempting NAS conversion (4G->5G)`
+            - `[INFO] Converting 4G Authentication Response (0x53) -> 5G Authentication Response (0x57)`
+            - `[DEBUG] 4G RES: len=X, value=...`
+            - `[INFO] 5G Authentication Response created (len=X, RES_len=X)`
+            - `[INFO] UplinkNASTransport: 4G NAS converted to 5G NAS (4G len=X, 5G len=X)`
+            - `[INFO] Converted S1AP UplinkNASTransport to NGAP (AMF-UE=X, RAN-UE=X, NAS=X bytes)`
+        - **動作確認結果（根本原因特定！）**:
+            - tcpdumpおよびWireshark解析により、**UplinkNASTransportは正常にeNBから送信されていた**ことを確認
+            - **重大な発見**: DownlinkNASTransportとUplinkNASTransportが**同じプロシージャコード `00 0D`** を使用していた
+        - **Wireshark解析結果** (#file:Authentication_Response.txt):
+            - ✅ **UplinkNASTransport存在確認**: procedureCode: id-uplinkNASTransport (13) = `0x0D`
+            - ✅ **NAS-PDU内容**: `07 53 08 e6 f5 4b 40 8f 33 4d 37`
+                - `07`: Protocol Discriminator (EPS MM)
+                - `53`: Authentication Response message type
+                - `08`: RES length = 8 bytes
+                - `e6 f5 4b 40 8f 33 4d 37`: RES value (正しいフォーマット)
+            - ✅ パケットはeNB → s1n2コンバータに正常に到達
+        - **根本原因**: s1n2コンバータのメッセージ判定ロジックの問題
+            ```c
+            // 問題のコード
+            if (data[0] == 0x00 && data[1] == 0x0D) {
+                // DownlinkNASTransportとして処理
+                return 0;  // ← ここでreturnしてしまう
+            }
+            // UplinkNASTransportの判定に到達できない
+            ```
+            - DownlinkとUplinkが同じプロシージャコード`0x0D`を使用
+            - s1n2は最初にDownlinkとして処理してreturnするため、UplinkNASTransportの判定に到達できなかった
+        - **修正内容**: NAS-PDUの内容でDownlink/Uplinkを区別
+            - NAS message typeを確認: `0x53` (Authentication Response) → UplinkNASTransport
+            - NAS message typeを確認: `0x52`/`0x56` (Authentication Request) → DownlinkNASTransport
+            - デバッグログで判定結果を詳細に出力
+        - **ビルド結果**:
+            - ローカルビルド成功
+            - Docker イメージ再ビルド成功（SHA: 19ad281e191d）
+        - **再テスト結果（NAS-PDU抽出の問題発見）**:
+            - 修正版で再テストしたが、まだAuthentication Responseが送信されない
+            - **ログ分析**: `NAS PD=0x0B, Type=0x07` と誤った値を読み取っていた
+            - **根本原因**: NAS-PDU抽出ロジックの問題
+                - S1AP APERエンコーディングでは、NAS-PDU IEの後にpaddingバイト（0x0B等）が入る
+                - 現在のコードは長さフィールドの直後をNAS-PDUとして読んでいた
+                - 実際の構造: `00 1A [criticality] [length] [padding] 07 53 ...`
+                                                                    ^^^^^ ここがNAS-PDU開始
+        - **16進ダンプ分析** (#file:Authentication_Response.txt):
+            ```
+            00 1a 00 0c 0b 07 53 08 d2 4d f8 a7 53 2a 54 df
+            ^^  ^^  ^^  ^^  ^^  ^^
+            |   |   |   |   |   NAS-PDU: 07 (Protocol Discriminator)
+            |   |   |   |   Padding: 0x0B
+            |   |   |   Length: 0x0C (12 bytes)
+            |   |   Criticality
+            |   IE ID: 0x1A (NAS-PDU)
+            Padding
+            ```
+        - **修正内容**: NAS-PDU抽出ロジックの改善
+            - 長さフィールド読み取り後、0x07（EPS MM Protocol Discriminator）を探索
+            - 最大4バイトの範囲でpaddingをスキップ
+            - 正しいオフセットでNAS message typeを確認
+            - デバッグログでオフセットとpadding情報を出力
+        - **ビルド結果**:
+            - ローカルビルド成功
+            - Docker イメージ再ビルド成功（SHA: 6aa8dab35ddf）
+        - **次のステップ**:
+            - 修正版で再テストし、正しく`NAS PD=0x07, Type=0x53`を検出することを確認
+            - ログで`[INFO] Detected UplinkNASTransport (Auth Response, type=0x53)`を確認
+            - `[DEBUG] Found NAS-PDU at offset X (after Y padding bytes)`でpadding検出を確認
+            - s1n2からAMFへAuthentication Responseが送信されることをtcpdumpで確認
 - 10/1
     - 起動のコマンド：環境変数を読みこむように修正したので`docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up`
     - パケットをキャプチャするコマンド
@@ -2523,3 +2615,525 @@ docker system prune -f --volumes
 - sXGP-5G統合環境: Production Ready
 - 保護システム: Full Implementation
 - 残課題: Mobile Identity詳細調整（継続中）
+
+---
+
+## 2025年10月3日（続き）
+
+### Authentication Response変換 - RES値不一致問題の調査
+
+#### 問題4: RES値が変換時に変わる - AMF ErrorIndication
+
+**発見した問題**:
+- ✅ s1n2からAuthentication Responseが送信されることを確認（成功！）
+- ❌ AMFから`ErrorIndication (protocol semantic-error)`が返ってきた
+- 🔍 tcpdump分析の結果、**RES値が変換時に変わっていることを発見**:
+  - **4G側（eNB→s1n2）**: `d24df8a7532a54df`
+  - **5G側（s1n2→AMF）**: `c8227f10fea4b6e8` ← **間違っている！**
+
+**4G NAS-PDU構造の分析**（tcpdumpより: `075308d24df8a7532a54df`）:
+```
+offset 0: 07 = Protocol Discriminator (EPS MM)
+offset 1: 53 = Message Type (Authentication Response)
+offset 2: 08 = RES length (8 bytes)
+offset 3-10: d24df8a7532a54df = RES value (8 bytes)
+```
+
+**原因の可能性**:
+1. ASN.1デコーダー（s1n2_convert_uplink_nas_transport）がNAS-PDU bufferを正しく返していない可能性
+2. convert_4g_nas_to_5g()でRES値の読み取り位置（offset）が間違っている
+3. メモリ破損やバッファオーバーフロー
+
+**調査アプローチ**:
+s1n2_convert_uplink_nas_transport()に以下のデバッグログを追加:
+```c
+printf("[DEBUG] Input 4G NAS-PDU from ASN.1 decoder: ");
+for (size_t i = 0; i < nas_len && i < 16; i++) {
+    printf("%02X ", nas_buf[i]);
+}
+if (nas_len > 16) printf("...");
+printf(" (len=%zu)\n", nas_len);
+fflush(stdout);
+```
+
+**確認すべき内容**:
+1. ASN.1デコーダーが返す4G NAS-PDUの実際のバイト列
+2. それが`075308d24df8a7532a54df`と一致するか
+3. 一致しない場合、どのような値になっているか（先頭のバイトが異なる可能性）
+
+**ビルド**:
+```bash
+make
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml build s1n2
+# Image: sha256:6f93e8d54183f4b9e336ef2c01859f92ea048e11932033e05fdd92cad1d36123
+```
+
+**次のテストで確認する情報**:
+- `[DEBUG] Input 4G NAS-PDU from ASN.1 decoder:` のログ出力
+- この値がtcpdumpの`075308...`と一致するか
+
+---
+
+## 2025年10月3日（続き2）
+
+### Authentication Response変換 - UserLocationInformation追加実装
+
+#### 問題5: AMFがUserLocationInformationを要求 - ErrorIndication根本原因
+
+**AMFエラーログから問題特定**:
+```
+[amf] ERROR: No UserLocationInformation (../src/amf/ngap-handler.c:713)
+```
+
+**根本原因**:
+- NGAPの`UplinkNASTransport`には**UserLocationInformationが必須**
+- s1n2コンバータは以下の3つのIEのみ送信していた:
+  1. RAN-UE-NGAP-ID ✅
+  2. AMF-UE-NGAP-ID ✅
+  3. NAS-PDU ✅
+  4. UserLocationInformation ❌ ← **欠けていた！**
+
+**S1AP vs NGAP の IE比較**:
+```
+S1AP UplinkNASTransport (eNB→s1n2):
+- MME-UE-S1AP-ID
+- eNB-UE-S1AP-ID
+- NAS-PDU
+- EUTRAN-CGI (E-UTRAN Cell Global Identifier) ← 4G位置情報
+- TAI (Tracking Area Identity) ← 4G位置情報
+
+NGAP UplinkNASTransport (s1n2→AMF):
+- AMF-UE-NGAP-ID
+- RAN-UE-NGAP-ID
+- NAS-PDU
+- UserLocationInformation (必須) ← 5G位置情報（NR-CGI + TAI）
+```
+
+**実装内容**:
+
+1. **s1n2_convert_uplink_nas_transport() - 位置情報の抽出**:
+```c
+// S1AP UplinkNASTransportからEUTRAN-CGIとTAIを抽出
+const uint8_t *plmn_id = NULL;
+size_t plmn_id_len = 0;
+uint32_t cell_id = 0;
+uint16_t tac = 0;
+
+case S1AP_ProtocolIE_ID_id_EUTRAN_CGI:
+    // PLMN Identity + Cell ID (28 bits) を抽出
+case S1AP_ProtocolIE_ID_id_TAI:
+    // Tracking Area Code (16 bits) を抽出
+```
+
+2. **build_ngap_uplink_nas() - UserLocationInformationの構築**:
+```c
+// 関数シグネチャに位置情報パラメータを追加
+static int build_ngap_uplink_nas(uint8_t *buffer, size_t *buffer_len,
+                                 long amf_ue_ngap_id, long ran_ue_ngap_id,
+                                 const uint8_t *nas_pdu, size_t nas_pdu_len,
+                                 const uint8_t *plmn_id, size_t plmn_id_len,
+                                 uint32_t cell_id, uint16_t tac);
+
+// UserLocationInformation IE の構築
+NGAP_UserLocationInformation_t *loc;
+loc->present = NGAP_UserLocationInformation_PR_userLocationInformationNR;
+
+NGAP_UserLocationInformationNR_t *nr_loc;
+- NR-CGI (NR Cell Global Identifier):
+  - PLMN Identity: 4G PLMN をそのまま使用
+  - NR Cell Identity: 4G Cell ID (28 bits) → 5G (36 bits) に変換（ゼロパディング）
+- TAI (Tracking Area Identity):
+  - PLMN Identity: 4G PLMN をそのまま使用
+  - TAC: 4G TAC (16 bits) → 5G (24 bits) に変換（ゼロパディング）
+```
+
+3. **4G→5G 位置情報のマッピング**:
+```
+4G EUTRAN-CGI → 5G NR-CGI:
+- PLMN Identity: そのまま転送 (3 bytes)
+- Cell ID: 28 bits → 36 bits (左詰め、残り8 bitsはゼロ)
+
+4G TAI → 5G TAI:
+- PLMN Identity: そのまま転送 (3 bytes)
+- TAC: 16 bits (2 bytes) → 24 bits (3 bytes) (前に1バイトのゼロを追加)
+```
+
+**追加したNGAPヘッダー**:
+```c
+#include <NGAP_UserLocationInformation.h>
+#include <NGAP_UserLocationInformationNR.h>
+#include <NGAP_NR-CGI.h>
+#include <NGAP_TAI.h>
+```
+
+**ビルド**:
+```bash
+make
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml build s1n2
+# Image: sha256:c20ef8271dd8846a034556fb9f53ab9ffc9c89cf414f43874874a84b3b56adbe
+```
+
+**期待される結果**:
+- AMFが`UplinkNASTransport`を受け入れる
+- `No UserLocationInformation`エラーが解消
+- Authentication Responseが正しく処理される
+- Security Mode Commandへ進む
+
+**次のテスト**:
+- システム再起動
+- AMFログで`UplinkNASTransport`が正常処理されることを確認
+- ErrorIndicationが発生しないことを確認
+
+---
+
+## 2025年10月3日（続き3）
+
+### Authentication Response - RES vs RES* 問題
+
+#### 問題6: AMFがRES長エラー - 5GはRES*(16 bytes)必須
+
+**進歩**:
+- ✅ ErrorIndicationが解消
+- ✅ UserLocationInformationが正しく追加
+- ✅ AMFがメッセージを正常処理
+- ❌ **Authentication Reject**が返される
+
+**AMFエラーログ**:
+```
+[gmm] ERROR: [suci-0-001-01-0-0-0-1234567895] Invalid length [8] (../src/amf/gmm-handler.c:934)
+[amf] WARNING: [suci-0-001-01-0-0-0-1234567895] Authentication reject
+```
+
+**根本原因**:
+- **4G (EPS)**: REは4-16 bytes（通常8 bytes）
+- **5G (5GS)**: RES*は**常に16 bytes (128 bits)**
+- AMFのコード: `if (authentication_response_parameter->length != OGS_MAX_RES_LEN)`
+  - `OGS_MAX_RES_LEN = 16` (定義: `/sources/open5gs/lib/crypt/ogs-crypt.h`)
+
+**4G→5G RES変換の問題**:
+```
+4G RES (8 bytes):  cdd7f2da6ef31b3b
+5G RES* (16 bytes): [正しい計算が必要]
+
+正しい5G RES*の計算式 (3GPP TS 33.501):
+RES* = HMAC-SHA-256(Kausf, S)の最初の128ビット
+ここで S = FC || RES || RES length
+```
+
+**s1n2コンバータの制約**:
+- 暗号鍵（Kausf、CK、IK等）にアクセスできない
+- 完全なRES*計算は不可能
+- UE/eNBとAMF/AUSF間の暗号処理には関与できない
+
+**実装した暫定対策**:
+```c
+// 4G RES (8 bytes)をゼロパディングして5G RES* (16 bytes)に変換
+const uint8_t res_star_len = 16;
+memcpy(nas_5g + offset, res_value, res_len);  // 4G RES をコピー
+memset(nas_5g + offset + res_len, 0, res_star_len - res_len);  // ゼロパディング
+
+結果: cdd7f2da6ef31b3b00000000000000 (16 bytes)
+```
+
+**ビルド**:
+```bash
+make
+docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml build s1n2
+# Image: sha256:fbd19aaf2a20a1fd9f57945d892403c4a18e16cc246a5a457e58edd3777e0a27
+```
+
+**制限事項**:
+この実装では、AMFがゼロパディングされたRES*を期待するXRES*と比較するため、認証は失敗する可能性が高い。
+
+**次に必要な対策**:
+
+1. **Option A: WebUI加入者設定の変更** (推奨):
+   - UDMの加入者情報で4G/5G互換モードを設定
+   - Authentication VectorをEPS AVではなく5G HE AVとして生成
+   - ただし、4G eNBからの接続では4G形式が必要...
+
+2. **Option B: AMF側の修正**:
+   - AMFのRES長チェックを緩和（8 bytes also accept）
+   - XRES*計算時にゼロパディングを適用
+   - `/sources/open5gs/src/amf/gmm-handler.c` の修正が必要
+
+3. **Option C: 完全な暗号処理実装** (複雑):
+   - s1n2にKausf等の鍵を渡す仕組みが必要
+   - AMF/AUSF内部の鍵管理に深く関与
+   - 現実的でない
+
+**推奨アプローチ**:
+Option Bが最も実用的。AMFの`gmm-handler.c`を修正して、4G互換モードを追加:
+```c
+// 修正案
+if (authentication_response_parameter->length == 8) {
+    // 4G compatibility mode: pad RES to 16 bytes
+    uint8_t res_padded[16];
+    memcpy(res_padded, authentication_response_parameter->res, 8);
+    memset(res_padded + 8, 0, 8);
+    ogs_kdf_hxres_star(amf_ue->rand, res_padded, hxres_star);
+} else if (authentication_response_parameter->length == 16) {
+    // Normal 5G mode
+    ogs_kdf_hxres_star(amf_ue->rand, authentication_response_parameter->res, hxres_star);
+} else {
+    ogs_error("[%s] Invalid length [%d]", amf_ue->suci,
+              authentication_response_parameter->length);
+    return OGS_ERROR;
+}
+```
+
+**次のステップ**:
+1. AMFのソースコードを修正
+2. Open5GSを再ビルド
+3. AMF Dockerイメージを更新
+4. 認証フロー再テスト
+
+---
+
+- 10/4
+    - **認証キー管理ライブラリの実装完了** (Phase 2: Configuration File Approach)
+        - **背景**: 4G RES (8 bytes) と 5G RES* (16 bytes) の暗号学的な違いにより、s1n2コンバーターで単純なゼロパディングではAMFの認証に失敗する問題が発生
+        - **根本原因**: RES* = HMAC-SHA-256(Kausf, FC || RAND || RES) の計算には Kausf (= KDF(CK||IK)) が必要だが、s1n2は中間装置としてこれらの鍵にアクセスできない
+        - **アーキテクチャ決定**: End-to-End Securityの原則を犠牲にし、テスト環境用の実用的なソリューションとして設定ファイルベースの鍵管理を実装
+
+    - **実装内容**:
+        1. **認証ライブラリ新規作成**:
+            - `sXGP-5G/include/s1n2_auth.h`: 認証コンテキストと暗号処理関数のインターフェース定義
+            - `sXGP-5G/src/s1n2_auth.c`: 実装コード
+                - YAMLパーサーによる加入者鍵読み込み (`s1n2_auth_load_keys()`)
+                - Milenage f2-f5関数 (簡易実装: HMAC-SHA256ベース)
+                - 5G KDF関数: `s1n2_kdf_kausf()`, `s1n2_kdf_res_star()`
+                - 認証ベクターキャッシュ管理 (最大64エントリ、TTL 300秒)
+            - 依存ライブラリ: OpenSSL (HMAC, SHA256), libyaml
+
+        2. **設定ファイル作成**:
+            - `sXGP-5G/config/auth_keys.yaml`: 加入者認証鍵の設定テンプレート
+            - 構造:
+                ```yaml
+                subscribers:
+                  - imsi: "001010000000001"
+                    ki: "465B5CE8B199B49FAA5F0A2EE238A6BC"   # 128-bit permanent key
+                    opc: "E8ED289DEBA952E4283B54E88E6183CA"  # 128-bit operator key
+                ```
+            - セキュリティ: Docker Secretsとしてマウント予定
+
+        3. **s1n2_converter統合**:
+            - `convert_4g_nas_to_5g()` 関数に `s1n2_context_t *ctx` パラメータを追加
+            - Authentication Response変換処理で認証コンテキストの有無を確認
+            - 現在の実装: RAND情報がキャッシュされていないため、まだゼロパディングにフォールバック
+                - 今後の実装予定: DownlinkNASTransport (Authentication Request) 受信時にRANDをキャッシュ
+
+        4. **main.c初期化処理**:
+            - 起動時に `AUTH_CONFIG_FILE` 環境変数から設定ファイルパスを取得 (デフォルト: `/config/auth_keys.yaml`)
+            - 認証コンテキストの初期化と加入者鍵のロード
+            - エラー時は警告を出力し、ゼロパディングモードで継続
+            - 終了時に認証コンテキストをクリーンアップ (鍵の安全な消去)
+
+        5. **Makefile更新**:
+            - `src/s1n2_auth.c` をビルドターゲットに追加
+            - リンカフラグに `-lssl -lcrypto -lyaml` を追加
+
+    - **ビルド結果**:
+        - 警告あり (OpenSSL 3.0 deprecation warnings) だが、ビルド成功
+        - バイナリサイズ: 19MB (`build/s1n2-converter`)
+        - 警告内容: HMAC_CTX_new/free等がOpenSSL 3.0で非推奨 (将来的にEVP_MAC APIに移行予定)
+
+    - **残課題** (次のステップ):
+        1. **RANDキャッシュ機能の実装**:
+            - DownlinkNASTransport (Authentication Request 0x52→0x56) 処理時にRANDを抽出
+            - UEごとにRANDとIMSIを関連付けてキャッシュ
+            - Authentication Response受信時にキャッシュからRANDを取得しRES*計算
+
+        2. **実際のRES*計算の有効化**:
+            - `convert_4g_nas_to_5g()` 内で `s1n2_auth_compute_res_star()` を呼び出し
+            - 計算されたRES* (16 bytes) を5G Authentication Responseに格納
+
+        3. **Docker統合**:
+            - `auth_keys.yaml` をDocker Secretsとしてマウント
+            - 環境変数 `AUTH_CONFIG_FILE` を設定
+            - セキュリティ強化 (read-only mount, 適切なパーミッション)
+
+        4. **本番向けMilenage実装**:
+            - 現在の簡易実装 (HMAC-SHA256ベース) を3GPP TS 35.206準拠のMilenageに置き換え
+            - または外部ライブラリ (例: libmilenage) の利用
+
+    - **暗号処理フロー概要**:
+        ```
+        1. AMF → s1n2: Authentication Request (5G 0x56)
+           → s1n2がRAND (16 bytes) を抽出してキャッシュ
+
+        2. s1n2 → eNB: Authentication Request (4G 0x52)
+           → UEがKiを使ってRES (8 bytes) を計算
+
+        3. eNB → s1n2: Authentication Response (4G 0x53, RES含む)
+           → s1n2が処理:
+              a. auth_keys.yamlからKi/OPcを取得
+              b. Milenageでck, ikを計算
+              c. KDFでKausf = KDF(ck||ik) を計算
+              d. RES* = HMAC-SHA-256(Kausf, FC || RAND || RES)
+
+        4. s1n2 → AMF: Authentication Response (5G 0x57, RES*含む)
+           → AMFがXRES*と比較して認証成功
+        ```
+
+    - **セキュリティに関する注意事項**:
+        - **重要**: この実装はEnd-to-End Securityの原則を破ります
+        - s1n2が加入者の永久鍵 (Ki) にアクセスできるため、すべてのセキュリティが失われる
+        - **使用制限**: テスト環境および開発環境専用
+        - **本番環境では使用不可**: 実際のキャリアネットワークでは使用しないこと
+        - 代替案: 将来的にはUDMとの連携 (Phase 1) を検討すべきだが、Open5GS側の変更が必要
+
+
+    - **RANDキャッシュとRES*計算機能の実装完了**
+        - **実装内容**:
+            1. **UEマッピング構造体の拡張** (`include/s1n2_converter.h`):
+                - IMSI格納フィールド追加 (`char imsi[16]`)
+                - RAND格納フィールド追加 (`uint8_t rand[16]`)
+                - RANDキャッシュ状態フラグ (`bool rand_cached`)
+                - RANDタイムスタンプ (`time_t rand_timestamp`)
+
+            2. **RAND抽出関数の追加** (`src/s1n2_converter.c`):
+                - `extract_rand_from_5g_auth_request()`: 5G Authentication Request (0x56)からRANDを抽出
+                - NAS-PDU構造をパース (Extended PD, Security Header, Message Type, ngKSI, ABBA, RAND IEI 0x21)
+                - 16バイトのRANDを抽出してログ出力
+
+            3. **DownlinkNASTransport処理でのRANDキャッシュ**:
+                - NGAPからS1APへの変換時、5G NAS-PDU (Authentication Request 0x56)を検出
+                - RANDを抽出してUEマッピングにキャッシュ
+                - RAN-UE-NGAP-IDまたはAMF-UE-NGAP-IDでUEを識別
+                - デフォルトIMSI "001010000000001" を一時的に設定 (TODO: Registration Requestから抽出)
+
+            4. **RES*計算関数の追加** (`src/s1n2_auth.c`, `include/s1n2_auth.h`):
+                - `s1n2_auth_compute_res_star_with_imsi()`: IMSIとRANDから直接RES*を計算
+                - 処理フロー:
+                    a. IMSIで加入者鍵 (Ki, OPc) を検索
+                    b. Milenage f2-f5でCK, IKを計算
+                    c. KDFでKausf = KDF(CK||IK)を計算
+                    d. RES* = HMAC-SHA-256(Kausf, FC || RAND || RES)を計算
+
+            5. **Authentication Response変換での実RES*使用**:
+                - `convert_4g_nas_to_5g()` 内でキャッシュされたRANDとIMSIを検索
+                - `s1n2_auth_compute_res_star_with_imsi()`を呼び出し
+                - 成功時: 計算されたRES* (16バイト)を使用
+                - 失敗時: ゼロパディングにフォールバック (従来動作)
+                - 計算後、RANDキャッシュをクリア (単回使用)
+
+        - **動作フロー**:
+            ```
+            [AMF] → [s1n2] NGAP DownlinkNASTransport (5G Auth Request 0x56)
+                      ↓ extract_rand_from_5g_auth_request()
+                      ↓ Cache: RAND + IMSI
+                      ↓
+            [s1n2] → [eNB] S1AP DownlinkNASTransport (4G Auth Request 0x52)
+                      ↓
+            [UE] calculates RES (8 bytes) using Ki
+                      ↓
+            [eNB] → [s1n2] S1AP UplinkNASTransport (4G Auth Response 0x53)
+                      ↓ convert_4g_nas_to_5g()
+                      ↓ Retrieve cached RAND + IMSI
+                      ↓ s1n2_auth_compute_res_star_with_imsi()
+                      ↓   - Load Ki, OPc from auth_keys.yaml
+                      ↓   - Milenage: CK, IK = f3, f4(Ki, RAND)
+                      ↓   - KDF: Kausf = KDF(CK||IK)
+                      ↓   - HMAC: RES* = HMAC-SHA-256(Kausf, FC || RAND || RES)
+                      ↓
+            [s1n2] → [AMF] NGAP UplinkNASTransport (5G Auth Response 0x57, RES*)
+            ```
+
+        - **ビルド結果**:
+            - ✅ コンパイル成功 (警告のみ、エラーなし)
+            - バイナリサイズ: 19MB
+            - テスト準備完了
+
+        - **期待される動作**:
+            - Authentication Request受信時に "[SUCCESS] Cached RAND for UE" ログ
+            - Authentication Response変換時に "[SUCCESS] RES* computed successfully" ログ
+            - 計算されたRES*がログに16進数で表示
+            - AMFが認証成功する (ゼロパディングではなく正しいRES*を受信)
+
+        - **既知の制限事項**:
+            - IMSI抽出未実装: 現在はデフォルトIMSI "001010000000001" を使用
+            - Registration Request (0x41) からIMSIを抽出する処理が必要
+            - または、InitialUEMessage時にIMSIを取得
+            - auth_keys.yamlに該当IMSIの鍵が必要
+
+        - **次のテスト手順**:
+            1. auth_keys.yamlに正しいIMSI、Ki、OPcを設定
+            2. Dockerイメージを再ビルド: `docker compose -f docker-compose.s1n2.yml build s1n2`
+            3. システム起動: `docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml up`
+            4. eNB/UEから認証フローを実行
+            5. s1n2ログで以下を確認:
+               - "[INFO] 5G Authentication Request detected, extracting RAND..."
+               - "[SUCCESS] Cached RAND for UE"
+               - "[DEBUG] RAND: [16バイトの16進数]"
+               - "[INFO] Found cached RAND and IMSI for UE, attempting RES* computation"
+               - "[DEBUG] 4G RES (input): [8バイトの16進数]"
+               - "[SUCCESS] RES* computed successfully"
+               - "[DEBUG] 5G RES* (computed): [16バイトの16進数]"
+            6. AMFログで認証成功を確認
+
+
+## 2025年10月4日 - Authentication RES*計算の実装
+
+### 問題
+- Authentication ResponseでAMFから"Authentication Reject (MAC failure)"が返される
+- AMFログ: `[gmm] ERROR: MAC failure`
+- 期待されるRES*: `4a68a248 83d75de5 69419c7e 90f23233`
+- s1n2が送信したRES*: `c66be658 a40206ea 00000000 00000000` (ゼロパディング)
+
+### 原因
+- s1n2コンバータは4G RES (8バイト)を単純に16バイトにゼロパディングしていた
+- 正しいRES*計算には:
+  1. Authentication Request (5G→4G) でRANDをキャッシュ
+  2. UEの認証キー(Ki, OPc)からCK/IKを計算
+  3. CK, IK, RAND, RES, SNname を使ってRES*を計算
+
+### 実装内容
+
+#### 1. DownlinkNASTransport時のUEマッピング作成
+- `s1n2_create_ue_mapping()` 関数を実装
+- UEマッピングがない場合は新規作成してRANDをキャッシュ
+- IMSIもキャッシュ(現在はデフォルト値"001010000000001"を使用)
+
+#### 2. UplinkNASTransport関数の拡張
+- `s1n2_convert_uplink_nas_transport()`にコンテキストパラメータを追加
+- ヘッダーファイル(`s1n2_converter.h`)の関数宣言も更新
+- NAS変換処理でコンテキストを渡すように変更
+
+#### 3. Docker環境の修正
+- Dockerfileに`RUN mkdir -p /config`を追加
+- ボリュームマウント: `./config/auth_keys.yaml:/config/auth_keys.yaml:ro`
+- 認証キーが正常にロード: 2加入者 (IMSI: 001010000000001, 001010123456789)
+
+### RES*計算のフロー
+```
+5G Authentication Request (AMF → s1n2)
+  ↓ RANDを抽出
+  ↓ UEマッピングにRANDをキャッシュ
+4G Authentication Request (s1n2 → eNB)
+  ↓
+4G Authentication Response (eNB → s1n2)
+  ↓ RESを抽出
+  ↓ キャッシュされたRAND + RES + Ki + OPc を使用
+  ↓ Milenageアルゴリズム: RAND + Ki + OPc → CK, IK
+  ↓ 5G KDF: CK||IK + RAND + RES + SNname → RES*
+5G Authentication Response (s1n2 → AMF)
+```
+
+### 次のステップ
+- UE/eNBを接続して実際のAuthentication Requestをトリガー
+- s1n2ログでRANDキャッシュを確認
+- Authentication ResponseでRES*計算が成功するか確認
+- AMFでAuthentication Acceptが返されるか確認
+
+## 2025年10月4日（続き4）
+
+### Security Mode Command 確認ログ
+- RES*/HXRES*整合性修正後、AMFが`Security mode command`を継続送信していることを確認。
+- `docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml logs amf | grep -i "Security mode"` の抜粋:
+    - `10/04 17:04:57.546: [amf] DEBUG: [imsi-001011234567895] Security mode command`
+    - `10/04 17:05:03.553: [amf] DEBUG: [imsi-001011234567895] Security mode command`
+    - `10/04 17:05:09.559: [amf] DEBUG: [imsi-001011234567895] Security mode command`
+- 約5秒周期で当該ログが出力されており、NASセキュリティ確立処理が進行している兆候。
+- 次の確認事項: Security Mode CompleteがUE→AMFで到達するか、およびs1n2ログでの反映状況。
+

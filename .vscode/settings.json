@@ -226,7 +226,34 @@
     "chat.tools.terminal.autoApprove": {
         "/.*/": true,
         "*": true,
-        "python3": true,
+        "bash": {
+            "approve": true,
+            "matchCommandLine": false
+        },
+        "sh": {
+            "approve": true,
+            "matchCommandLine": false
+        },
+        "python": {
+            "approve": true,
+            "matchCommandLine": false
+        },
+        "python3": {
+            "approve": true,
+            "matchCommandLine": false
+        },
+        "pip": {
+            "approve": true,
+            "matchCommandLine": false
+        },
+        "pip3": {
+            "approve": true,
+            "matchCommandLine": false
+        },
+        "sudo": {
+            "approve": true,
+            "matchCommandLine": false
+        },
         "cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G && docker compose -f docker-compose.s1n2.yml up -d": {
             "approve": true,
             "matchCommandLine": true
