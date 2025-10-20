@@ -1,0 +1,20 @@
+9	3.638691	172.24.0.30	172.24.0.12	NGAP	502	NGSetupRequest
+11	3.651366	172.24.0.12	172.24.0.30	NGAP	118	NGSetupResponse
+25	19.001263	172.24.0.40	172.24.0.30	S1AP	114	S1SetupRequest
+27	19.001606	172.24.0.30	172.24.0.12	NGAP	502	NGSetupRequest
+28	19.002958	172.24.0.12	172.24.0.30	NGAP	134	SACK (Ack=1, Arwnd=106496) , NGSetupResponse
+29	19.003098	172.24.0.30	172.24.0.40	S1AP	106	S1SetupResponse
+66	59.284684	172.24.0.40	172.24.0.30	S1AP/NAS-EPS	130	InitialUEMessage, Attach request, PDN connectivity request
+67	59.286127	172.24.0.30	172.24.0.12	NGAP/NAS-5GS	574	InitialUEMessage, Registration request [RRCEstablishmentCause=mo-Data]
+68	59.317384	172.24.0.12	172.24.0.30	NGAP/NAS-5GS	146	SACK (Ack=2, Arwnd=106496) , DownlinkNASTransport, Authentication request
+69	59.317866	172.24.0.30	172.24.0.40	S1AP/NAS-EPS	138	SACK (Ack=1, Arwnd=106496) , DownlinkNASTransport, Authentication request
+70	59.344914	172.24.0.40	172.24.0.30	S1AP/NAS-EPS	138	SACK (Ack=1, Arwnd=106496) , UplinkNASTransport, Authentication response
+71	59.350401	172.24.0.30	172.24.0.12	NGAP/NAS-5GS	142	SACK (Ack=2, Arwnd=106496) , UplinkNASTransport, Authentication response
+72	59.374103	172.24.0.12	172.24.0.30	NGAP/NAS-5GS	126	SACK (Ack=3, Arwnd=106496) , DownlinkNASTransport, Security mode command
+73	59.377091	172.24.0.30	172.24.0.40	S1AP/NAS-EPS	118	SACK (Ack=2, Arwnd=106496) , DownlinkNASTransport, Security mode command
+74	59.408042	172.24.0.40	172.24.0.30	S1AP/NAS-EPS	146	SACK (Ack=2, Arwnd=106496) , UplinkNASTransport, Ciphered message, Security mode complete
+75	59.408195	172.24.0.30	172.24.0.12	NGAP/NAS-5GS	138	SACK (Ack=3, Arwnd=106496) , UplinkNASTransport, Security mode complete
+80	65.380340	172.24.0.12	172.24.0.30	NGAP/NAS-5GS	110	DownlinkNASTransport, Security mode command
+81	65.380531	172.24.0.30	172.24.0.40	S1AP/NAS-EPS	102	DownlinkNASTransport, Security mode command
+82	65.401225	172.24.0.40	172.24.0.30	S1AP/NAS-EPS	146	SACK (Ack=3, Arwnd=106496) , UplinkNASTransport, Ciphered message, Security mode complete
+83	65.401360	172.24.0.30	172.24.0.12	NGAP/NAS-5GS	138	SACK (Ack=4, Arwnd=106496) , UplinkNASTransport, Security mode complete

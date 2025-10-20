@@ -4,7 +4,7 @@ services:
     container_name: mongo
     command: --bind_ip 0.0.0.0
     env_file:
-      - .env_4g
+      - .env
     volumes:
       - mongodbdata:/data/db
       - mongodbdata:/data/configdb
@@ -19,17 +19,17 @@ services:
 
   webui:
     build:
-      context: ..
+      context: ../..
       dockerfile: open5gs/base/Dockerfile
     container_name: webui
+    env_file:
+      - .env
     depends_on:
       - mongo
-    env_file:
-      - .env_4g
     environment:
       - COMPONENT_NAME=webui
     volumes:
-      - ../open5gs/webui:/mnt/webui
+      - ../../open5gs/webui:/mnt/webui
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     expose:
@@ -42,16 +42,16 @@ services:
 
   hss:
     build:
-      context: ..
+      context: ../..
       dockerfile: open5gs/base/Dockerfile
     container_name: hss
     env_file:
-      - .env_4g
+      - .env
     environment:
       - COMPONENT_NAME=hss
     volumes:
-      - ../4g/hss:/mnt/hss
-      - ../log:/open5gs/install/var/log/open5gs
+      - ../../4g/hss:/mnt/hss
+      - ../../log:/open5gs/install/var/log/open5gs
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     depends_on:
@@ -68,19 +68,19 @@ services:
 
   sgwc:
     build:
-      context: ..
+      context: ../..
       dockerfile: open5gs/base/Dockerfile
     depends_on:
       - smf
       - upf
     container_name: sgwc
     env_file:
-      - .env_4g
+      - .env
     environment:
       - COMPONENT_NAME=sgwc
     volumes:
-      - ../4g/sgwc:/mnt/sgwc
-      - ../log:/open5gs/install/var/log/open5gs
+      - ../../4g/sgwc:/mnt/sgwc
+      - ../../log:/open5gs/install/var/log/open5gs
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     expose:
@@ -92,19 +92,19 @@ services:
 
   sgwu:
     build:
-      context: ..
+      context: ../..
       dockerfile: open5gs/base/Dockerfile
     depends_on:
       - smf
       - upf
     container_name: sgwu
     env_file:
-      - .env_4g
+      - .env
     environment:
       - COMPONENT_NAME=sgwu
     volumes:
-      - ../4g/sgwu:/mnt/sgwu
-      - ../log:/open5gs/install/var/log/open5gs
+      - ../../4g/sgwu:/mnt/sgwu
+      - ../../log:/open5gs/install/var/log/open5gs
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     expose:
@@ -116,17 +116,17 @@ services:
 
   smf:
     build:
-      context: ..
+      context: ../..
       dockerfile: open5gs/base/Dockerfile
     container_name: smf
     env_file:
-      - .env_4g
+      - .env
     environment:
       - COMPONENT_NAME=smf
       - DEPLOY_MODE=4G
     volumes:
-      - ../5g/smf:/mnt/smf
-      - ../log:/open5gs/install/var/log/open5gs
+      - ../../5g/smf:/mnt/smf
+      - ../../log:/open5gs/install/var/log/open5gs
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     expose:
@@ -144,18 +144,18 @@ services:
 
   upf:
     build:
-      context: ..
+      context: ../..
       dockerfile: open5gs/base/Dockerfile
     depends_on:
       - smf
     container_name: upf
     env_file:
-      - .env_4g
+      - .env
     environment:
       - COMPONENT_NAME=upf
     volumes:
-      - ../5g/upf:/mnt/upf
-      - ../log:/open5gs/install/var/log/open5gs
+      - ../../5g/upf:/mnt/upf
+      - ../../log:/open5gs/install/var/log/open5gs
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     expose:
@@ -173,7 +173,7 @@ services:
 
   mme:
     build:
-      context: ..
+      context: ../..
       dockerfile: open5gs/base/Dockerfile
     depends_on:
       - hss
@@ -183,13 +183,13 @@ services:
       - upf
     container_name: mme
     env_file:
-      - .env_4g
+      - .env
     environment:
       - COMPONENT_NAME=mme
-      - STARTUP_DELAY=45  # EPC層の起動を待つ
+      # - STARTUP_DELAY=45  # EPC層の起動を待つ
     volumes:
-      - ../4g/mme:/mnt/mme
-      - ../log:/open5gs/install/var/log/open5gs
+      - ../../4g/mme:/mnt/mme
+      - ../../log:/open5gs/install/var/log/open5gs
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
@@ -207,18 +207,18 @@ services:
 
   pcrf:
     build:
-      context: ..
+      context: ../..
       dockerfile: open5gs/base/Dockerfile
     container_name: pcrf
     env_file:
-      - .env_4g
+      - .env
     environment:
       - COMPONENT_NAME=pcrf
     depends_on:
       - mongo
     volumes:
-      - ../4g/pcrf:/mnt/pcrf
-      - ../log:/open5gs/install/var/log/open5gs
+      - ../../4g/pcrf:/mnt/pcrf
+      - ../../log:/open5gs/install/var/log/open5gs
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     expose:
@@ -231,64 +231,60 @@ services:
         ipv4_address: ${PCRF_IP}
 
 # ---- RAN -----
-  srsenb_zmq:
-    build:
-      context: ..
-      dockerfile: ran/srslte/Dockerfile
-    depends_on:
-      - mme
-    container_name: srsenb_zmq
-    stdin_open: true
-    tty: true
-    privileged: true
-    volumes:
-      - ../ran/srslte:/mnt/srslte
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    env_file:
-      - .env_4g
-    environment:
-      - COMPONENT_NAME=enb_zmq
-      - STARTUP_DELAY=60  # MME（EPC）起動を待つ
-    restart: unless-stopped
-    expose:
-      - "36412/sctp"
-      - "2152/udp"
-      - "2000/tcp"
-      - "2001/tcp"
-    networks:
-      default:
-        ipv4_address: ${SRS_ENB_IP}
+  # srsenb_zmq:
+  #   build:
+  #     context: ../..
+  #     dockerfile: ran/srslte/Dockerfile
+  #   depends_on:
+  #     - mme
+  #   container_name: srsenb_zmq
+  #   stdin_open: true
+  #   tty: true
+  #   privileged: true
+  #   volumes:
+  #     - ../../ran/srslte:/mnt/srslte
+  #     - /etc/timezone:/etc/timezone:ro
+  #     - /etc/localtime:/etc/localtime:ro
+  #   environment:
+  #     - COMPONENT_NAME=enb_zmq
+  #     - STARTUP_DELAY=60  # MME（EPC）起動を待つ
+  #   restart: unless-stopped
+  #   expose:
+  #     - "36412/sctp"
+  #     - "2152/udp"
+  #     - "2000/tcp"
+  #     - "2001/tcp"
+  #   networks:
+  #     default:
+  #       ipv4_address: ${SRS_ENB_IP}
 
-  srsue_zmq:
-    build:
-      context: ..
-      dockerfile: ran/srslte/Dockerfile
-    depends_on:
-      - srsenb_zmq
-    container_name: srsue_zmq
-    stdin_open: true
-    tty: true
-    cap_add:
-      - NET_ADMIN
-    privileged: true
-    volumes:
-      - ../ran/srslte:/mnt/srslte
-      - ../ran/srsue:/mnt/srsue
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    env_file:
-      - .env_4g
-    environment:
-      - COMPONENT_NAME=ue_zmq
-      - STARTUP_DELAY=75  # eNB起動を待つ
-    restart: unless-stopped
-    expose:
-      - "2000/tcp"
-      - "2001/tcp"
-    networks:
-      default:
-        ipv4_address: ${SRS_UE_IP}
+  # srsue_zmq:
+  #   build:
+  #     context: ../..
+  #     dockerfile: ran/srslte/Dockerfile
+  #   depends_on:
+  #     - srsenb_zmq
+  #   container_name: srsue_zmq
+  #   stdin_open: true
+  #   tty: true
+  #   cap_add:
+  #     - NET_ADMIN
+  #   privileged: true
+  #   volumes:
+  #     - ../../ran/srslte:/mnt/srslte
+  #     - ../../ran/srsue:/mnt/srsue
+  #     - /etc/timezone:/etc/timezone:ro
+  #     - /etc/localtime:/etc/localtime:ro
+  #   environment:
+  #     - COMPONENT_NAME=ue_zmq
+  #     - STARTUP_DELAY=75  # eNB起動を待つ
+  #   restart: unless-stopped
+  #   expose:
+  #     - "2000/tcp"
+  #     - "2001/tcp"
+  #   networks:
+  #     default:
+  #       ipv4_address: ${SRS_UE_IP}
 
 networks:
   default:

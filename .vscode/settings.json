@@ -224,46 +224,43 @@
     },
     "docker.extension.enableComposeLanguageServer": false,
     "chat.tools.terminal.autoApprove": {
-        "/.*/": true,
-        "*": true,
-        "bash": {
-            "approve": true,
-            "matchCommandLine": false
-        },
-        "sh": {
-            "approve": true,
-            "matchCommandLine": false
-        },
-        "python": {
-            "approve": true,
-            "matchCommandLine": false
-        },
-        "python3": {
-            "approve": true,
-            "matchCommandLine": false
-        },
-        "pip": {
-            "approve": true,
-            "matchCommandLine": false
-        },
-        "pip3": {
-            "approve": true,
-            "matchCommandLine": false
-        },
-        "sudo": {
-            "approve": true,
-            "matchCommandLine": false
-        },
-        "cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G && docker compose -f docker-compose.s1n2.yml up -d": {
+        "ps": {
             "approve": true,
             "matchCommandLine": true
         },
-        "docker compose": true,
-        "docker ps --format \"table {{.Names}}\\t{{.Image}}\\t{{.Status}}\"": {
+        "ps aux": {
             "approve": true,
             "matchCommandLine": true
         },
-        "docker inspect s1n2 --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'": {
+        "/^ps.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/.*ps.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/.*top.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/.*netstat.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/.*lsof.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/.*systemctl.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/.*journalctl.*/": {
             "approve": true,
             "matchCommandLine": true
         }

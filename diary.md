@@ -1,3 +1,1145 @@
+- 10/13
+    - **4G-5G プロシージャ差異分析と s1n2 コンバータ設計指針**
+
+        - **背景と問題の再認識**
+            - Security Mode Complete 送信後、AMF が2回目の Security Mode Command を送信（異常動作）
+            - 標準的な5G手順では Security Mode Complete 後すぐに InitialContextSetupRequest (Registration Accept) が送られるべき
+            - 原因: 5G では Security Mode Complete と Registration Request を**同時に送信**するプロトコルパターン
+
+        - **最新の進捗と新たな問題発見（2025-10-13 17:50）**
+
+            **✅ 完了したこと：**
+            1. NAS message container IE の TLV format 修正
+                - 問題: IEI を 2-byte (TLV-E形式) で送信していた → Length=0 と表示される
+                - 修正: 3GPP TS 24.501 § 9.11.3.24 に従い 1-byte IEI (TLV形式) に変更
+                - 結果: Wireshark で `NAS message container: Length: 25` と正しく表示されるようになった
+            2. Registration Request のピギーバック成功
+                - Security Mode Complete 内に NAS message container IE (0x71) で Registration Request (25 bytes) を埋め込み
+                - tshark 出力: `Security mode complete, Registration request` と2つのNASメッセージが表示される
+
+            **❌ 新たな問題: Integrity Protection 欠如**
+            - **AMF ログのエラー**: `[gmm] ERROR: [imsi-001011234567895] Security-mode : No Integrity Protected`
+            - **原因分析**:
+                - 4G UE は Security Mode Complete を Integrity Protected + Ciphered (security header = 0x4) で送信
+                - s1n2 コンバータは 4G NAS を解析して平文部分を抽出
+                - 5G NAS に変換する際、Integrity Protection header を**再構成していない**
+                - 結果: AMF は平文の Security Mode Complete を受信し、"No Integrity Protected" エラーで拒否
+            - **パケット解析**:
+                - Frame 8: `7e005e77...710019...` (先頭 `7e00` = 平文 Security Mode Complete)
+                - AMF の期待: `7e02...` (Integrity Protected) または `7e04...` (Integrity + Ciphered)
+            - **AMF の動作**: Security Mode Complete を拒否 → 6秒ごとに Security Mode Command を再送
+
+            **🔍 技術的詳細: 4G→5G NAS 変換における Integrity Protection の問題**
+
+            **4G NAS Security Header 構造** (3GPP TS 24.301):
+            ```
+            Byte 0: Security header type (bits 4-7) | Protocol discriminator (bits 0-3)
+                    0x4 = Integrity protected and ciphered
+            Byte 1: Message authentication code (MAC-I) [4 bytes]
+            Byte 5: Sequence number
+            Byte 6: Plain NAS message starts here
+            ```
+
+            **5G NAS Security Header 構造** (3GPP TS 24.501):
+            ```
+            Byte 0: Extended protocol discriminator (0x7E)
+            Byte 1: Security header type
+                    0x02 = Integrity protected with new 5G NAS security context
+                    0x04 = Integrity protected and ciphered with new 5G NAS security context
+            Byte 2-5: Message authentication code (MAC-I) [4 bytes]
+            Byte 6: Sequence number
+            Byte 7: Plain NAS message starts here
+            ```
+
+            **Current s1n2 Implementation の問題点**:
+            1. 4G security header (0x4) を検出して plain NAS message を抽出 ✅
+            2. Plain NAS を 5G 形式に変換 ✅
+            3. **5G security header を再構成していない** ❌
+            4. 結果: 平文 NAS (`7e00...`) を AMF に送信してしまう
+
+            **必要な実装**:
+            1. 4G MAC-I の検証（オプション：現時点では skip 可能）
+            2. 4G NAS の復号化（必要であれば）
+            3. Plain NAS を 5G 形式に変換
+            4. **5G K_NASint を使用して新しい MAC-I を計算**
+            5. **5G Integrity Protected header を追加** (`7e02` + MAC-I + SN + plain NAS)
+
+        - **4G vs 5G プロシージャフロー比較**
+
+            **4G Standard Flow** (#file:4G_Attach.txt):
+            ```
+            1. S1SetupRequest/Response
+            2. InitialUEMessage: Attach request + PDN connectivity request
+            3. Identity request/response (optional)
+            4. Authentication request/response
+            5. Security mode command/complete
+            6. ✅ ESM information request/response  ← 4G特有
+            7. ✅ InitialContextSetupRequest: Attach accept + Activate default EPS bearer context request
+            8. InitialContextSetupResponse
+            9. Attach complete + Activate default EPS bearer context accept
+            10. EMM information
+            ```
+
+            **5G Standard Flow** (#file:5G_Registration_and_PDU_session_establishment.txt):
+            ```
+            1. InitialUEMessage: Registration request
+            2. Authentication request/response
+            3. Security mode command
+            4. ✅ UplinkNASTransport: Security mode complete + Registration request (piggybacked)
+            5. ✅ InitialContextSetupRequest: Registration accept  ← ESM info request/response 無し
+            6. InitialContextSetupResponse
+            7. Registration complete + UL NAS transport + PDU session establishment request
+            8. PDUSessionResourceSetupRequest: PDU session establishment accept
+            ```
+
+            **Current s1n2 Flow** (#file:s1n2_procedure.txt):
+            ```
+            1. S1SetupRequest → NGSetupRequest → NGSetupResponse → S1SetupResponse ✅
+            2. InitialUEMessage: Attach request → Registration request ✅
+            3. Authentication request/response ✅
+            4. Security mode command/complete ✅
+            5. ❌ 2回目の Security mode command/complete ← 問題箇所
+            ```
+
+        - **重大な発見: 5G特有の「ピギーバック」パターン**
+
+            **5G NAS メッセージの同時送信パターン**:
+            - 5G UE は Security Mode Complete 送信時に**完全な Registration Request を再送**する
+            - これは3GPP TS 24.501 で定義されている標準動作
+            - AMF は Security Mode Complete **単体では不十分**と判断し、Registration Request を待つ
+            - Current s1n2 implementation: Security Mode Complete のみ送信 → AMF がタイムアウトして再試行
+
+            **Wireshark での確認** (5G_Registration_and_PDU_session_establishment.txt line 245):
+            ```
+            245  11.299622  10.100.200.10  10.100.200.16  NGAP/NAS-5GS/NAS-5GS  194
+                 UplinkNASTransport, Security mode complete, Registration request
+                                    ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^
+                                    1つ目のNAS            2つ目のNAS（ピギーバック）
+            ```
+
+        - **s1n2 コンバータ設計指針**
+
+            **設計原則1: 初期 Registration Request のキャッシング**
+            - InitialUEMessage 受信時に変換した 5G Registration Request を UE context に保存
+            - IMSI, SUCI, UE capabilities, 5GMM capability などの情報を保持
+            - 実装箇所: `ue_id_mapping_t` 構造体に `cached_registration_request[]` フィールド追加
+
+            **設計原則2: Security Mode Complete 時の Registration Request 再送**
+            - 4G UE から Security Mode Complete 受信時:
+                1. 5G Security Mode Complete を生成（現行実装）
+                2. キャッシュした Registration Request を取得
+                3. **2つの NAS メッセージを含む UplinkNASTransport を生成**
+            - NGAP UplinkNASTransport 構造:
+                ```
+                UplinkNASTransport {
+                    NAS-PDU: [Security mode complete]  ← 1つ目
+                }
+                ```
+                ではなく、標準5G UEは Security Mode Complete **送信後に別の** UplinkNASTransport で Registration Request を送る
+            - **実際の実装**: 2つの連続した UplinkNASTransport を送信
+                1. UplinkNASTransport: Security mode complete
+                2. UplinkNASTransport: Registration request (cached)
+
+            **設計原則3: ESM Information Request/Response の省略**
+            - 4G: Security Mode Complete 後に ESM information request/response がある
+            - 5G: この手順は存在せず、すぐに InitialContextSetupRequest が送られる
+            - s1n2 対応:
+                - DownlinkNASTransport(ESM information request) を受信した場合 → そのまま4G側へ転送
+                - UplinkNASTransport(ESM information response) を受信した場合 → **5G側には送信せず、内部で処理**
+                - ESM info response 受信後、自動的に cached Registration Request を送信
+
+            **設計原則4: InitialContextSetupRequest の変換差異**
+            - 4G: `Attach accept` + `Activate default EPS bearer context request` (2つのNASメッセージ)
+            - 5G: `Registration accept` (1つのNASメッセージ)
+            - 変換ロジック:
+                - 5G Registration accept → 4G Attach accept を生成
+                - PDU Session 情報 → EPS bearer 情報に変換
+                - QoS parameters, APN/DNN 情報のマッピング
+
+        - **実装タスク一覧**
+
+            **Task 1: Registration Request キャッシング** (優先度: 最高)
+            - [ ] `ue_id_mapping_t` に `cached_registration_request[]` と `cached_reg_req_len` を追加
+            - [ ] `s1n2_convert_initial_ue_message()` で変換後の 5G Registration Request をキャッシュ
+            - [ ] デバッグログ: "Cached Registration Request (len=X) for UE ENB_UE_S1AP_ID=Y"
+
+            **Task 2: Security Mode Complete + Registration Request 同時送信** (優先度: 最高)
+            - [ ] `convert_4g_nas_to_5g()` で Security Mode Complete 検出時に `needs_registration_request = true` フラグを設定
+            - [ ] `s1n2_convert_uplink_nas_transport()` で:
+                1. 通常の Security Mode Complete を含む UplinkNASTransport を AMF に送信
+                2. `needs_registration_request == true` の場合、cached Registration Request を含む**2つ目の UplinkNASTransport** を連続送信
+            - [ ] デバッグログ: "Sending piggybacked Registration Request after Security Mode Complete"
+
+            **Task 3: ESM Information Request/Response ハンドリング** (優先度: 高)
+            - [ ] `convert_5g_nas_to_4g()` に ESM information request 検出を追加（現在未実装）
+            - [ ] `convert_4g_nas_to_5g()` に ESM information response 検出を追加
+            - [ ] ESM info response 受信時:
+                - 5G側には**送信しない**（ログに記録のみ）
+                - cached Registration Request を自動送信
+
+            **Task 4: InitialContextSetupRequest 変換強化** (優先度: 中)
+            - [ ] 5G Registration accept → 4G Attach accept + Activate default EPS bearer context request
+            - [ ] PDU Session ID → EPS Bearer ID マッピング
+            - [ ] 5QI → QCI 変換テーブル実装
+
+        - **次に送信すべきメッセージ**
+
+            **現在の状態**: AMF が Security Mode Complete を受信済み、2回目の Security Mode Command を送信中
+
+            **即座に実装すべき対応**:
+            1. ✅ **Registration Request の再送**
+                - 前回 InitialUEMessage で送った Registration Request と同じ内容を UplinkNASTransport で送信
+                - これにより AMF は Registration 手順を続行できる
+                - 期待される AMF の応答: InitialContextSetupRequest with Registration Accept
+
+            2. ⚠️ **2回目の Security Mode Command への対応**
+                - 現在受信している2回目の Security Mode Command は無視するか、再度 Security Mode Complete を返す
+                - ログに警告を記録: "Received duplicate Security Mode Command, likely due to missing Registration Request"
+
+            **実装の優先順位**:
+            - **Phase 1** (即時対応): Registration Request キャッシング + Security Mode Complete 後の再送
+            - **Phase 2** (次回対応): ESM information request/response ハンドリング
+            - **Phase 3** (最終対応): InitialContextSetupRequest 完全変換
+
+        - **🎯 Integrity Protection 実装タスク（優先度：最高）**
+
+            **Task 1: Security Context のキャッシング**
+            - **目的**: 4G→5G 変換時に必要な K_NASint を保持
+            - **実装箇所**:
+                - `ue_id_mapping_t` に以下を追加:
+                    ```c
+                    uint8_t k_nas_int[32];      // 5G K_NASint (256-bit)
+                    uint8_t k_nas_enc[32];      // 5G K_NASenc (256-bit)
+                    bool has_5g_security_ctx;   // Security context availability flag
+                    uint8_t nas_uplink_count;   // NAS uplink count for MAC calculation
+                    uint8_t selected_nia;       // Selected NIA algorithm (1=128-NIA1, 2=128-NIA2, 3=128-NIA3)
+                    uint8_t selected_nea;       // Selected NEA algorithm
+                    ```
+            - **キャッシング タイミング**:
+                - `convert_5g_nas_to_4g()` で Security Mode Command を処理する際:
+                    1. Selected algorithms (NIA/NEA) を抽出
+                    2. これらを UE context に保存
+                - **問題**: K_NASint は AMF で生成されるため、s1n2 では直接取得できない
+                - **解決策**: 下記 Task 2 の簡易実装を採用
+
+            **Task 2: Integrity Protection の簡易実装（回避策）**
+            - **現実的な問題**: s1n2 は K_NASint を持っていないため、正しい MAC-I を計算できない
+            - **Open5GS AMF のソースコード調査が必要**:
+                - AMF が "No Integrity Protected" エラーを出す条件を確認
+                - 可能であれば、AMF に以下のオプションを追加:
+                    ```yaml
+                    # amf.yaml
+                    security:
+                      allow_null_integrity: true  # For testing with s1n2 converter
+                    ```
+            - **代替案 1: AMF カスタムパッチ**
+                - `open5gs/src/amf/gmm-sm.c:1953` の Integrity check を条件付きで bypass
+                - 環境変数 `S1N2_CONVERTER_MODE=1` の場合のみ bypass 許可
+                - **リスク**: セキュリティ低下（テスト環境のみで使用）
+
+            **Task 3: AMF ログ強化（デバッグ用）**
+            - **目的**: Integrity Protection エラーの詳細を確認
+            - **実装箇所**: `open5gs/src/amf/gmm-sm.c`
+                ```c
+                // Around line 1953
+                if (/* integrity check failed */) {
+                    ogs_error("[%s] Security-mode : No Integrity Protected", amf_ue->supi);
+                    // 追加のデバッグログ:
+                    ogs_debug("[%s] NAS Security Header: 0x%02x", amf_ue->supi, security_header);
+                    ogs_debug("[%s] Expected MAC: %02x%02x%02x%02x", amf_ue->supi,
+                              expected_mac[0], expected_mac[1], expected_mac[2], expected_mac[3]);
+                    ogs_debug("[%s] Received MAC: %02x%02x%02x%02x", amf_ue->supi,
+                              received_mac[0], received_mac[1], received_mac[2], received_mac[3]);
+                }
+                ```
+
+            **Task 4: 5G MAC-I 計算の実装（将来対応）**
+            - **前提条件**: K_NASint を何らかの方法で取得できる場合
+            - **実装参考**: Open5GS の `lib/nas/5gs/security.c` を参照
+            - **計算手順**:
+                1. Bearer = 0x01 (for NAS)
+                2. Direction = 0 (uplink)
+                3. Count = UE context の `nas_uplink_count`
+                4. Message = Plain 5G NAS message
+                5. Algorithm = Selected NIA (1/2/3)
+                6. MAC-I = NIA(K_NASint, Count, Bearer, Direction, Message)
+            - **5G Security header 構築**:
+                ```c
+                uint8_t secured_nas[512];
+                secured_nas[0] = 0x7E;  // Extended protocol discriminator
+                secured_nas[1] = 0x02;  // Integrity protected with new 5GS security context
+                memcpy(secured_nas + 2, mac_i, 4);  // MAC-I (4 bytes)
+                secured_nas[6] = nas_uplink_count;  // Sequence number
+                memcpy(secured_nas + 7, plain_nas, plain_nas_len);  // Plain NAS message
+                ```
+
+            **Task 5: srsRAN/srsUE カスタムログ（デバッグ用）**
+            - **目的**: 4G UE 側の Security Mode Complete の MAC-I を確認
+            - **実装箇所**: `srsRAN/srsue/src/stack/upper/nas.cc`
+                ```cpp
+                // send_security_mode_complete() 関数内
+                log->debug("NAS Security Mode Complete MAC-I: %02x%02x%02x%02x",
+                           mac[0], mac[1], mac[2], mac[3]);
+                log->debug("NAS Uplink Count: %d", ctxt.tx_count);
+                ```
+            - **確認方法**: srsUE ログから MAC-I と Count を抽出し、s1n2 の変換結果と比較
+
+            **実装の優先順位（最新）**:
+            1. **Task 3**: AMF ログ強化（すぐ実装可能、エラー詳細確認のため）
+            2. **Task 2**: AMF カスタムパッチで Integrity check bypass（テスト目的）
+            3. **Task 5**: srsRAN カスタムログ（4G 側の MAC-I 確認）
+            4. **Task 1**: Security Context キャッシング（将来の完全実装のため）
+            5. **Task 4**: 5G MAC-I 計算（最終目標、最も複雑）
+
+        - **💡 実装方針の決定（2025-10-13 18:00）**
+
+            **現状分析**:
+            - NAS message container の TLV 形式は修正完了 ✅
+            - Registration Request のピギーバックは成功 ✅
+            - **残る問題**: AMF が "No Integrity Protected" エラーで拒否
+
+            **技術的制約**:
+            - s1n2 コンバータは K_NASint を持っていない（AMF が生成）
+            - 5G MAC-I の正しい計算は困難
+
+            **選択する実装方針**:
+            1. **AMF にデバッグログ追加** (`sources/open5gs/src/amf/gmm-sm.c:1953`)
+                - Security header type の詳細
+                - 受信 NAS の最初の16バイトをhex dump
+                - Integrity check の詳細（期待MAC vs 受信MAC）
+
+            2. **AMF に環境変数ベースの Integrity bypass 機能追加**
+                - 環境変数: `S1N2_ALLOW_NO_INTEGRITY=true`
+                - 該当コード: `gmm-sm.c:1952-1956`
+                - 条件: `if (h.integrity_protected == 0 && !getenv("S1N2_ALLOW_NO_INTEGRITY"))`
+                - **重要**: 本番環境では使用禁止、テスト専用
+
+            3. **docker-compose.s1n2.yml に環境変数追加**
+                ```yaml
+                amf-s1n2:
+                  environment:
+                    - S1N2_ALLOW_NO_INTEGRITY=true  # For testing with s1n2 converter
+                ```
+
+            4. **Open5GS イメージの再ビルドとテスト**
+
+            **期待される結果**:
+            - AMF が Security Mode Complete（Integrity なし）を受理
+            - InitialContextSetupRequest (Registration Accept) を送信
+            - 登録完了
+
+            **実装ファイル**:
+            - `/home/taihei/docker_open5gs_sXGP-5G/sources/open5gs/src/amf/gmm-sm.c` (修正)
+            - `/home/taihei/docker_open5gs_sXGP-5G/docker-compose.s1n2.yml` (環境変数追加)
+            - `/home/taihei/docker_open5gs_sXGP-5G/open5gs/base/Dockerfile` (再ビルド用)
+
+        - **技術的詳細: UplinkNASTransport 連続送信の実装**
+
+            ```c
+            // src/core/s1n2_converter.c: s1n2_convert_uplink_nas_transport()
+
+            // 1つ目: Security Mode Complete
+            if (s1n2_send_to_amf(ngap_buffer, ngap_len) < 0) {
+                printf("[ERROR] Failed to send Security Mode Complete\n");
+                return -1;
+            }
+            printf("[INFO] Sent Security Mode Complete to AMF\n");
+
+            // 2つ目: Cached Registration Request (if available)
+            ue_id_mapping_t *ue_ctx = s1n2_find_ue_by_enb_id(enb_ue_s1ap_id);
+            if (ue_ctx && ue_ctx->cached_reg_req_len > 0) {
+                // Build UplinkNASTransport with cached Registration Request
+                uint8_t reg_req_ngap[1024];
+                int reg_req_ngap_len = s1n2_build_uplink_nas_transport(
+                    ue_ctx->ran_ue_ngap_id,
+                    ue_ctx->amf_ue_ngap_id,
+                    ue_ctx->cached_registration_request,
+                    ue_ctx->cached_reg_req_len,
+                    reg_req_ngap,
+                    sizeof(reg_req_ngap)
+                );
+
+                if (s1n2_send_to_amf(reg_req_ngap, reg_req_ngap_len) < 0) {
+                    printf("[ERROR] Failed to send piggybacked Registration Request\n");
+                    return -1;
+                }
+                printf("[INFO] Sent piggybacked Registration Request to AMF (len=%d)\n",
+                       ue_ctx->cached_reg_req_len);
+
+                // Clear cached request after sending
+                ue_ctx->cached_reg_req_len = 0;
+            }
+            ```
+
+        - **🧪 検証方法とテスト手順**
+
+            **自動分析スクリプト**: `/home/taihei/docker_open5gs_sXGP-5G/analyze_5g_flow.sh`
+            - tshark を使用した 5G 登録フロー自動検証
+            - チェック項目:
+                1. InitialUEMessage (Registration Request) の存在
+                2. Authentication Request/Response の完了
+                3. Security Mode Command/Complete の完了
+                4. NAS message container (Registration Request piggybacking) の検出
+                5. InitialContextSetupRequest (Registration Accept) の受信
+                6. ErrorIndication の有無
+
+            **テスト手順**:
+            ```bash
+            # 1. コード修正後のビルド
+            cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G
+            make clean && make
+
+            # 2. Docker イメージ再ビルド
+            cd /home/taihei/docker_open5gs_sXGP-5G
+            docker compose -f docker-compose.s1n2.yml build s1n2
+
+            # 3. コンテナ再起動
+            docker compose -f docker-compose.s1n2.yml down
+            docker compose -f docker-compose.s1n2.yml up -d
+
+            # 4. パケットキャプチャ（60秒間）
+
+- 10/20
+    - 5G NAS 整合性の完全実装（S1N2）と AMF 側ログ強化、検証結果の記録
+
+        - 実装概要（S1N2 側の機能追加）
+            1. 5G KDF チェーンの実装（3GPP TS 33.501 準拠）
+                - CK||IK → Kausf (A.2) → Kseaf (A.6) → Kamf (A.7) → K_NASint/K_NASenc (A.8)
+                - HMAC-SHA-256 ベースのKDFを実装し、A.8での16バイト抽出（bytes 16–31）を使用
+                - UEごとの `ue_id_mapping_t` に 5G NAS鍵をキャッシュ（`k_nas_int_5g` 等）
+            2. 128-NIA2 (AES-CMAC) の統合と5G Uplink NAS MAC 計算
+                - EIA2の入力ヘッダ: COUNT(32bit, BE), 5th byte=(bearer<<3)|(dir<<2), 続く26bitゼロ
+                - ULのメッセージ本体は [SEQ(=COUNT LSB 1byte) || plain 5G NAS]
+                - DIRECTION=0（UL）, BEARER=1（3GPP access の NAS signalling）を採用
+                - `s1n2_compute_5g_uplink_mac()` に統合し、Security Protected NAS(SecHdr=0x03)を組み立て
+                - 4G→5G SMC Complete 変換でMACを計算・封入（MAC4byte＋SEQ1byte）
+            3. プロシージャ変換の要点
+                - 初回 Registration Request のキャッシュと、SMC Complete 後の送出ロジックを維持
+                - 4G SMC（DL）は EIA2 で再計算（dir=1, bearer=0）して4G側へ送出
+
+        - AMF 側の変更（機能非変更・ログ強化のみ）
+            - `lib/nas/common/security.c`
+                - EIA2 計算時に [AMF-MAC-INPUT]/[AMF-MAC-OUTPUT] を出力
+                - COUNT/BEARER/DIRECTION、8バイトヘッダ、CMAC入力先頭、計算MAC を可視化
+            - `src/amf/nas-security.c`
+                - UL COUNT 更新前後、UL MAC 計算・検証結果（Received/Calculated）を出力
+                - mismatch時に Kamf/K_NASint の head8 などデバッグ補助を出力
+            - `src/amf/gmm-build.c`
+                - 選択NIA/NEAと K_NASint/K_NASenc の head8 をINFO出力
+            - 備考: いずれもデバッグログ追加のみで、機能的挙動は変更していない
+
+        - 設定面（docker 構成）
+            - AMF の「整合性バイパス」を撤廃し、NAS整合性の検証を必須化
+            - これにより MAC 不一致時は先に進まないため、両端の入力パラメータの完全一致が前提に
+
+        - 検証結果（ログ／pcap 抜粋の要点）
+            - UL SMC Complete の NAS MAC 一致を確認（AMF）
+                - COUNT=0x00000000, BEARER=1, DIR=0, Header=00 00 00 00 08 00 00 00
+                - Computed MAC と Received MAC が一致（例: 0x9960F423 など実測）
+            - S1N2 側でも同一パラメータでMAC計算（EIA2）し、Security Protected NAS を生成
+            - AMF は Registration Accept をエンコード・送出（DL NAS Encode: COUNT=1, Sec=0x02 を確認）
+            - SMF/UPF は PFCP Association が確立（Association Setup OK）。現時点のpcapでは PFCP セッション設定やGTP-Uトラフィックは未観測
+
+        - 現在の到達点と残課題
+            - 達成: 5G NAS 整合性のエンドツーエンド整合（KDF〜EIA2〜MAC入力パラメータの一致）
+            - 到達: Registration Accept 送出まで進行（再送痕跡あり）
+            - 未確認: UE からの Registration Complete 受信、PDU Session Establishment 手順（PFCP Session Establishment, PDR/FAR生成）の完了
+
+        - 追加の改善提案（軽微）
+            - デバッグログ冗長度を環境変数で制御（検証時のみ詳細、通常は抑制）
+            - 非3GPPアクセス時の BEARER 値切替に備え、アクセス種別をUEコンテキストに保持
+            - COUNT/SEQ ロールオーバーの境界テスト、EIA2ヘッダ生成単体テストの追加
+
+            sleep 30  # 初回登録試行完了を待機
+            sudo timeout 60 tcpdump -i br-sXGP-5G -w log/test_$(date +%s).pcap 'sctp port 38412'
+
+            # 5. 自動分析
+            ./analyze_5g_flow.sh log/test_*.pcap
+
+            # 6. 詳細確認（必要に応じて）
+            tshark -r log/test_*.pcap -Y "nas-5gs.mm.message_type == 0x5e" -V | grep -A10 "NAS message container"
+            ```
+
+            **成功条件**:
+            - ✅ NAS message container Length が 25 以上（0 ではない）
+            - ✅ Security Mode Complete 後に InitialContextSetupRequest を受信
+            - ✅ AMF ログに "No Integrity Protected" エラーが**出ない**
+            - ✅ AMF が Security Mode Command を再送**しない**
+
+            **失敗時のデバッグ手順**:
+            ```bash
+            # s1n2 ログ確認
+            docker logs s1n2 | grep -i "security mode\|registration request\|MAC"
+
+            # AMF ログ確認
+            docker logs amf-s1n2 | grep -i "security\|integrity\|error"
+
+            # srsUE ログ確認（4G 側の動作）
+            docker logs srsue_zmq-s1n2 | grep -i "security mode\|mac"
+
+            # 特定フレームの詳細確認
+            tshark -r log/test_*.pcap -Y "frame.number == X" -V
+            ```
+
+            **AMF カスタムログ追加後の確認**:
+            ```bash
+            # AMF を debug レベルで起動
+            docker compose -f docker-compose.s1n2.yml down
+            # docker-compose.s1n2.yml の amf environment に追加:
+            # - LOG_LEVEL=debug
+
+            # AMF ログから詳細確認
+            docker logs -f amf-s1n2 2>&1 | grep -A5 "Security-mode : No Integrity Protected"
+            # 期待される出力:
+            # [gmm] ERROR: [imsi-001011234567895] Security-mode : No Integrity Protected
+            # [gmm] DEBUG: [imsi-001011234567895] NAS Security Header: 0x00
+            # [gmm] DEBUG: [imsi-001011234567895] Expected MAC: xx xx xx xx
+            # [gmm] DEBUG: [imsi-001011234567895] Received MAC: 00 00 00 00
+            ```
+
+        - **期待される動作フロー（修正後）**
+
+            ```
+            [eNB] → [s1n2] → [AMF]
+
+            1. InitialUEMessage: Attach request
+               → (s1n2 converts + caches Registration Request)
+               → InitialUEMessage: Registration request
+
+            2. ← Authentication request ←
+               → Authentication response →
+
+            3. ← Security mode command ←
+               → Security mode complete →
+               → Registration request (cached) →  ← これが追加される
+
+            4. ← InitialContextSetupRequest: Registration accept ←  ← これが期待される応答
+               → InitialContextSetupResponse →
+
+            5. → Attach complete →
+            ```
+
+        - **参考: 3GPP 仕様での根拠**
+            - **TS 24.501 § 5.5.1.2.4**: "The UE shall send a REGISTRATION REQUEST message containing the requested registration type after the successful completion of the NAS security mode control procedure."
+            - **TS 24.501 § 5.4.2.3**: "Upon successful completion of the NAS security mode command procedure, the UE shall send the REGISTRATION REQUEST message."
+            - これらの仕様により、5G UE は Security Mode Complete 送信後に必ず Registration Request を再送することが義務付けられている
+
+    - **Registration Request の詳細分析: 1回目 vs 2回目の差異**
+
+        - **背景**
+            - 標準5Gキャプチャ (#file:5G_Registration_and_PDU_session_establishment.txt) を詳細分析
+            - InitialUEMessage時 (#file:Registration_first.txt) とSecurity Mode Complete後 (#file:Registration_second.txt) でRegistration Requestの内容が異なることを発見
+            - 3GPP仕様に基づく正しい実装方針を決定する必要性
+
+        - **Registration Request 1回目 (InitialUEMessage時) の内容**
+
+            **Mandatory IEs**:
+            - Extended protocol discriminator: 0x7E (5GMM)
+            - Security header type: 0x00 (Plain)
+            - Message type: 0x41 (Registration request)
+            - 5GS registration type: 0x09 (initial registration, FOR=1)
+            - NAS key set identifier: 0x70 (TSC=0, KSIAMF=7)
+            - 5GS mobile identity: 0x0D (length=13) + SUCI (IMSI format, MCC=208, MNC=93, MSIN=0000000001)
+
+            **Optional IEs (1回目に含まれるもの)**:
+            - UE security capability (0x2e): 4 bytes
+                - 5G-EA: 0xF0 (EA0/1/2/3 supported)
+                - 5G-IA: 0xF0 (IA0/1/2/3 supported)
+                - EEA: 0xF0 (EEA0/1/2/3 supported)
+                - EIA: 0xF0 (EIA0/1/2/3 supported)
+
+            **欠落しているOptional IEs**:
+            - ❌ 5GMM capability (0x10): 無し
+            - ❌ NSSAI - Requested NSSAI (0x2f): 無し
+            - ❌ 5GS update type (0x53): 無し
+
+            **メッセージサイズ**: 約30バイト（最小構成）
+
+        - **Registration Request 2回目 (Security Mode Complete後) の内容**
+
+            **Mandatory IEs** (1回目と同じ):
+            - Extended protocol discriminator: 0x7E
+            - Security header type: 0x00 (Plain)
+            - Message type: 0x41
+            - 5GS registration type: 0x09
+            - NAS key set identifier: 0x70
+            - 5GS mobile identity: SUCI (同じ)
+
+            **Optional IEs (1回目と同じもの)**:
+            - UE security capability (0x2e): 4 bytes (同じ内容)
+
+            **追加されたOptional IEs**:
+            - ✅ **5GMM capability (0x10)**: 1 byte = 0x00
+                - すべてのcapability bit = 0 (not supported)
+                - SGC, 5G-IPHC-CP CIoT, N3 data, 5G-CP CIoT, RestrictEC, LPP, HO attach, S1 mode: すべて非サポート
+
+            - ✅ **NSSAI - Requested NSSAI (0x2f)**: 10 bytes
+                - S-NSSAI 1: Length=4, SST=1 (eMBB), SD=66051 (0x010203)
+                - S-NSSAI 2: Length=4, SST=1 (eMBB), SD=1122867 (0x112233)
+
+            - ✅ **5GS update type (0x53)**: 1 byte = 0x00
+                - EPS-PNB-CIoT: 00 (no additional information)
+                - 5GS PNB-CIoT: 00 (no additional information)
+                - NG-RAN-RCU: 0 (Not Needed)
+                - SMS requested: 0 (Not supported)
+
+            **メッセージサイズ**: 約47バイト（完全構成）
+
+        - **3GPP TS 24.501 仕様による解釈**
+
+            **§ 5.5.1.2.2 "Initial registration initiation"**:
+            - "The UE shall include the 5GMM capability IE indicating support for specific features"
+            - "The UE should include the Requested NSSAI"
+            - ただし、これらは **SHOULD** (推奨) であり **MUST** (必須) ではない
+            - セキュリティ確立前は最小限の情報で良い
+
+            **§ 5.5.1.2.4 "Registration procedure for initial registration completion"**:
+            - "After successful completion of the security mode control procedure, the UE shall send the REGISTRATION REQUEST message"
+            - **重要**: "The UE shall include all the parameters as in the initial REGISTRATION REQUEST plus any additional parameters"
+            - つまり、2回目は **1回目 + 追加パラメータ** を含むべき
+
+            **§ 9.11.3.1A "5GMM capability"**:
+            - このIEは初回で省略可能だが、2回目では含めることが推奨される
+            - UEの5GMM機能をAMFに通知するため
+
+            **§ 9.11.3.37 "Requested NSSAI"**:
+            - Network Slicing情報は**機密情報**
+            - セキュリティ確立前は省略し、確立後に送信することが推奨される
+            - AMFがPLMN/TAIに基づいてスライス選択を行うため重要
+
+        - **なぜ2回目は完全版なのか: セキュリティ上の理由**
+
+            **1回目 (セキュリティ確立前)**:
+            - 目的: AMFに対してUE存在を通知し、認証・セキュリティ手順を開始
+            - 最小限の情報のみ:
+                - SUCI (暗号化されたIMSI)
+                - UE security capability (認証に必要)
+            - 省略される情報:
+                - NSSAI (盗聴されるとサービス利用パターンが漏洩)
+                - 5GMM capability (UE機能の詳細が漏洩)
+
+            **2回目 (セキュリティ確立後)**:
+            - 目的: AMFに完全な登録情報を提供し、Registration Accept受信を可能にする
+            - すべての情報を含む:
+                - 1回目と同じMandatory + Optional IEs
+                - 追加のOptional IEs (5GMM capability, NSSAI, 5GS update type)
+            - NAS暗号化により情報保護されている
+
+        - **4G Attach Request との比較**
+
+            **4G Attach Request (1回のみ)**:
+            - すべての情報を最初から送信:
+                - IMSI (暗号化なし)
+                - UE network capability
+                - ESM message container (PDN connectivity request)
+            - Security Mode Complete後の再送は**しない**
+            - 代わりに **ESM Information Request/Response** で追加情報を取得
+
+            **5G Registration Request (2回)**:
+            - 1回目: 最小限 (SUCI + UE security capability)
+            - 2回目: 完全版 (1回目 + 5GMM capability + NSSAI + 5GS update type)
+            - セキュリティ確立を境界として情報量を増やす設計
+
+        - **s1n2 コンバータの実装戦略**
+
+            **Option A: ミニマル実装 (Phase 1)**
+            - 1回目と同じRegistration Requestをキャッシュして再送
+            - メリット:
+                - 実装が簡単（キャッシュ+再送のみ）
+                - 4G Attach Requestの情報量とほぼ同等
+            - デメリット:
+                - 5GMM capability, NSSAI, 5GS update type が欠落
+                - AMFが「不完全なRegistration Request」と判断する可能性
+                - ただし、3GPP仕様上は**これらはOptional**なので受理される可能性もある
+
+            **Option B: 完全版実装 (Phase 2 - 推奨)**
+            - 2回目のRegistration Requestに追加IEを含める
+            - 追加するIE:
+                1. **5GMM capability (0x10)**: 1 byte = 0x00 (すべて非サポート)
+                   - デフォルト値で良い（4G UEは5GMM独自機能を持たない）
+                2. **NSSAI - Requested NSSAI (0x2f)**: 4G APNから推測または設定ファイルから取得
+                   - APNをNSSAIにマッピング:
+                     - `internet` → SST=1 (eMBB), SD=default
+                     - `ims` → SST=5 (eMBB), SD=IMS specific
+                   - 設定ファイル `.env_s1n2` に `S1N2_DEFAULT_NSSAI` を追加
+                3. **5GS update type (0x53)**: 1 byte = 0x00 (デフォルト値)
+                   - すべてのフラグ=0で良い
+
+            **Option C: ESM Info Response連動 (Phase 3)**
+            - 4G ESM Information Responseから追加情報を抽出
+            - そのタイミングで完全版Registration Requestを生成
+            - デメリット: 5Gでは通常Security Mode Complete直後に送るため、タイミングが遅い
+
+            **推奨アプローチ: Option A → Option B の段階的実装**
+
+            **Phase 1 (即時実装)**:
+            ```c
+            // InitialUEMessage時にキャッシュ
+            memcpy(ue_ctx->cached_registration_request, nas_5g, nas_5g_len);
+            ue_ctx->cached_reg_req_len = nas_5g_len;
+
+            // Security Mode Complete後に再送
+            s1n2_send_uplink_nas_transport(ue_ctx->ran_ue_ngap_id,
+                                          ue_ctx->amf_ue_ngap_id,
+                                          ue_ctx->cached_registration_request,
+                                          ue_ctx->cached_reg_req_len);
+            ```
+            - AMFが受理するか確認
+            - 受理される場合: Phase 2は保留
+            - 受理されない場合: Phase 2へ進む
+
+            **Phase 2 (改善実装)**:
+            ```c
+            // 完全版Registration Requestを構築
+            int build_full_registration_request(ue_id_mapping_t *ue_ctx,
+                                                uint8_t *output, int max_len)
+            {
+                uint8_t *p = output;
+
+                // 1回目のRegistration Requestをベースにコピー
+                memcpy(p, ue_ctx->cached_registration_request, ue_ctx->cached_reg_req_len);
+                p += ue_ctx->cached_reg_req_len;
+
+                // 5GMM capability (0x10) を追加
+                *p++ = 0x10;  // IEI
+                *p++ = 0x01;  // Length
+                *p++ = 0x00;  // Value (all capabilities = 0)
+
+                // NSSAI - Requested NSSAI (0x2f) を追加
+                *p++ = 0x2f;  // IEI
+                *p++ = 0x08;  // Length (8 bytes for 1 S-NSSAI)
+                *p++ = 0x04;  // S-NSSAI length
+                *p++ = 0x01;  // SST = eMBB
+                *p++ = 0x00;  // SD (3 bytes)
+                *p++ = 0x00;
+                *p++ = 0x01;
+
+                // 5GS update type (0x53) を追加
+                *p++ = 0x53;  // IEI
+                *p++ = 0x01;  // Length
+                *p++ = 0x00;  // Value (all flags = 0)
+
+                return p - output;
+            }
+            ```
+
+        - **NSSAI マッピング戦略**
+
+            **4G APN → 5G NSSAI マッピングテーブル**:
+            | 4G APN | 5G SST | 5G SD | 用途 |
+            |--------|--------|-------|------|
+            | internet | 1 (eMBB) | 0x000001 | デフォルトインターネット接続 |
+            | ims | 5 (eMBB) | 0x000005 | IMS/VoLTE |
+            | mms | 1 (eMBB) | 0x000002 | MMS |
+            | * (その他) | 1 (eMBB) | 0x000001 | デフォルト |
+
+            **実装方法**:
+            1. 環境変数 `.env_s1n2` に追加:
+                ```
+                S1N2_DEFAULT_SST=1
+                S1N2_DEFAULT_SD=000001
+                S1N2_IMS_SST=5
+                S1N2_IMS_SD=000005
+                ```
+
+            2. 4G Attach RequestのPDN Connectivity Request内からAPNを抽出
+
+            3. マッピングテーブルに基づいてNSSAIを生成
+
+        - **実装優先順位の最終決定**
+
+            **最優先 (今すぐ実装)**:
+            1. Registration Request キャッシング機能
+            2. Security Mode Complete後のキャッシュ再送
+            3. 動作確認: AMFがInitialContextSetupRequestを返すか
+
+            **高優先度 (AMFが拒否した場合)**:
+            4. 5GMM capability追加 (0x10, 1 byte, value=0x00)
+            5. 5GS update type追加 (0x53, 1 byte, value=0x00)
+            6. 基本的なNSSAI追加 (0x2f, 8 bytes, SST=1, SD=0x000001)
+
+            **中優先度 (完成度向上)**:
+            7. 4G APN → 5G NSSAI マッピングテーブル実装
+            8. 環境変数からNSSAI設定を読み込み
+
+            **低優先度 (将来の拡張)**:
+            9. ESM Information ResponseとNSSAIの連動
+            10. 複数S-NSSAIのサポート
+
+        - **期待される動作 (Phase 1実装後)**
+
+            ```
+            [s1n2] InitialUEMessage受信
+            → 5G Registration Request (minimal) 生成
+            → キャッシュ: ue_ctx->cached_registration_request[]
+            → AMFへ送信
+
+            [AMF] Authentication Request送信
+            [s1n2] Authentication Response中継
+
+            [AMF] Security Mode Command送信
+            [s1n2] Security Mode Command中継
+
+            [eNB] Security Mode Complete送信
+            [s1n2] Security Mode Complete (5G) 送信
+            → 直後にキャッシュしたRegistration Request再送 ← 新機能
+
+            [AMF] Registration Requestを受信
+            → 内容確認:
+              - Minimal版 (5GMM cap無し, NSSAI無し): 受理 or 拒否?
+              - Full版 (5GMM cap有り, NSSAI有り): 受理 (確実)
+
+            [AMF] InitialContextSetupRequest (Registration Accept) 送信 ← 期待される応答
+            ```
+
+        - **技術的注意点**
+
+            **NSSAIのエンコーディング**:
+            ```
+            IEI: 0x2F
+            Length: N (総バイト数)
+            S-NSSAI 1:
+                Length: 4 (SST + SD = 1 + 3 bytes)
+                SST: 0x01 (eMBB)
+                SD: 0x00 0x00 0x01 (24-bit Slice Differentiator)
+            S-NSSAI 2: (optional)
+                ...
+            ```
+
+            **5GMM capabilityのエンコーディング**:
+            ```
+            IEI: 0x10
+            Length: 0x01
+            Value: 0x00 (全ビット=0 = すべての機能非サポート)
+                Bit 8: SGC = 0
+                Bit 7: 5G-IPHC-CP CIoT = 0
+                Bit 6: N3 data = 0
+                Bit 5: 5G-CP CIoT = 0
+                Bit 4: RestrictEC = 0
+                Bit 3: LPP = 0
+                Bit 2: HO attach = 0
+                Bit 1: S1 mode = 0
+            ```
+
+            **メッセージ長の更新**:
+            - Minimal版: ~30 bytes
+            - Full版: ~47 bytes (Minimal + 5GMM cap 3 bytes + NSSAI 10 bytes + Update type 3 bytes)
+            - バッファサイズは余裕を持って512 bytes確保
+
+        - **次のステップ**
+
+            1. **ue_id_mapping_t構造体を拡張** (`include/s1n2_converter.h`)
+            2. **InitialUEMessage変換時にキャッシュ** (`src/core/s1n2_converter.c`)
+            3. **Security Mode Complete後に再送** (`src/core/s1n2_converter.c`)
+            4. **テスト実行**: AMFがInitialContextSetupRequestを返すことを確認
+            5. **Phase 2判断**: AMFが拒否した場合のみFull版実装へ進む
+
+- 10/11
+    - **Security Mode Command 変換の成功と重要な知見**
+        - **最終成果**
+            - UE が Security Mode Complete を返送することを確認
+            - 4G NAS integrity protection が正常に動作
+            - MAC validation が成功し、セキュリティモード確立手順が完了
+
+        - **根本原因: srsRAN UE 実装と 3GPP 仕様の差異**
+            - 問題の経緯:
+                1. s1n2 で 3GPP TS 33.401 に完全準拠した実装を完成
+                2. Python test vector で s1n2 の実装正当性を検証（全テスト成功）
+                3. しかし実機 UE では依然として MAC mismatch が発生
+                4. 詳細なデバッグログを追加して srsRAN UE の実装を調査
+                5. **3つの重大な相違点を発見**
+
+        - **発見された3つの相違点と対策**
+
+            **相違点1: MAC 計算時のシーケンス番号の扱い**
+            - **3GPP 仕様**: MAC は plain NAS メッセージのみに対して計算
+            - **srsRAN 実装**: MAC 計算時に COUNT 値（シーケンス番号）を1バイト前置
+            - **実装の詳細**:
+                ```c
+                // srsRAN: nas_base.cc の integrity_check()
+                // MAC 計算対象: [SEQ 1byte] + [plain NAS message]
+                uint8_t mac_input[513];
+                mac_input[0] = (uint8_t)(count_value & 0xFF);  // SEQ番号を先頭に配置
+                memcpy(mac_input + 1, plain_nas, plain_len);
+                ```
+            - **s1n2 での対策**: `s1n2_nas.c` で MAC 入力にシーケンス番号を前置
+                - 修正箇所: lines 232-248
+                - Before: `07 5D 02 01 02 F0 70 C1` (8 bytes)
+                - After: `00 07 5D 02 01 02 F0 70 C1` (9 bytes, SEQ=0x00 前置)
+
+            **相違点2: Algorithm Type Distinguisher の逆転**
+            - **3GPP TS 33.401 仕様**:
+                - `0x01` = K_NASint (Integrity key)
+                - `0x02` = K_NASenc (Encryption key)
+            - **srsRAN 実装** (`srsue/src/stack/upper/security.cc`):
+                ```c
+                #define ALGO_EPS_DISTINGUISHER_NAS_ENC_ALG 0x01  // Encryption
+                #define ALGO_EPS_DISTINGUISHER_NAS_INT_ALG 0x02  // Integrity
+                ```
+                - **仕様と完全に逆転している**
+            - **s1n2 での対策**: `s1n2_auth.c` で algorithm type distinguisher を反転
+                - 修正箇所: lines 1273-1303
+                - K_NASint 導出時: `0x02` を使用（本来は 0x01）
+                - K_NASenc 導出時: `0x01` を使用（本来は 0x02）
+                - コメントで srsRAN 互換性のための変更である旨を明記
+
+            **相違点3: KDF 出力の使用オフセット**
+            - **標準的な実装**: KDF が生成する 32 バイトの先頭 16 バイトを使用
+            - **srsRAN 実装**: KDF 出力の **後半 16 バイト（offset [16]）** を使用
+                - 実装詳細: `ctxt_base.k_nas_int[32]` 配列の後半を使用
+                - MAC 計算時: `&ctxt_base.k_nas_int[16]` をキーとして渡す
+            - **s1n2 での対策**: `s1n2_auth.c` の KDF 関数を修正
+                - 修正箇所: line 1203
+                - Before: `memcpy(key_out, output, 16);`
+                - After: `memcpy(key_out, output + 16, 16);`
+                - 32 バイト出力の後半を使用するように変更
+
+        - **検証結果**
+            - **修正前の MAC 値**:
+                - s1n2 計算: `eb b1 a2 9e`
+                - UE 計算: `aa 19 7b 87`
+                - → **完全な不一致** → Security Mode Reject
+            - **修正後の挙動**:
+                - UE ログ: `Received Security Mode Command ksi: 1, eea: EEA0, eia: 128-EIA2`
+                - UE ログ: `Sending Security Mode Complete ctxt_base.tx_count=0, RB=SRB1`
+                - → **MAC validation 成功** → Security Mode Complete 送信
+
+        - **実装上の重要ポイント**
+            1. **3GPP 準拠だけでは不十分**: 実装間の互換性が最優先
+            2. **Test vector の限界**: 標準的な test vector は srsRAN の特殊実装を検証できない
+            3. **詳細なデバッグログの重要性**: UE 側のキー/MAC 値を可視化することで問題を特定
+            4. **互換性のためのドキュメント**: コード内に仕様との差異を明記し、将来の保守性を確保
+
+        - **修正ファイル一覧**
+            - `sXGP-5G/src/auth/s1n2_auth.c`: KDF algorithm type distinguisher 反転 + offset [16] 使用
+            - `sXGP-5G/src/nas/s1n2_nas.c`: MAC 計算時のシーケンス番号前置
+            - Docker image: `sxgp-5g-s1n2:latest` (sha256:b8834cd27d0f) に全修正を反映
+
+        - **今後の展開**
+            - Security Mode 手順完了後の Attach 処理の継続調査
+            - PDN connectivity や bearer setup の動作確認
+            - 他の NAS メッセージ（TAU, Service Request など）でも同様の互換性確認が必要
+
+- 10/9
+    - **4G NAS Integrity Protection 実装設計（Option 2）**
+        - **背景・課題**
+            - srsRAN UE が平文の Security Mode Command (SEC_HDR_TYPE=00) を拒否
+            - エラーログ: `Not handling NAS message MSG_TYPE=5D with SEC_HDR_TYPE=00 without integrity protection!`
+            - 5G NAS MAC をそのまま 4G に流用すると、UE 側で integrity check が失敗（異なるキーで計算されているため）
+            - **実機 UE は必ず integrity protected な SMC を要求**するため、平文送信は実用不可
+
+        - **解決策: 4G NAS キーによる MAC 再計算**
+            - AMF/AUSF から 4G NAS セキュリティコンテキスト（K_NASint, K_NASenc）を取得
+            - s1n2 コンバータで 4G NAS integrity アルゴリズム（128-EIA2 優先）を実装
+            - Security Mode Command に正しい 4G MAC を付与して送信（security header type 3）
+
+        - **アーキテクチャ設計**
+            ```
+            [AMF] --5G NAS (MAC付き)--> [s1n2] --4G NAS (4G MAC付き)--> [eNB] --> [UE]
+                      |                        |
+                      v                        v
+                  5G Keys                  4G Keys
+                  (K_NASint_5G)           (K_NASint_4G) ← 新規取得が必要
+            ```
+
+            - **Phase 1: キー取得機構**
+                - AMF が Initial Context Setup Request で 4G keys を通知する仕組み
+                - または s1n2 から AMF への専用クエリ API（N2 拡張 or HTTP API）
+                - UE 毎のセキュリティコンテキストをキャッシュ（`ue_id_mapping_t` 拡張）
+
+            - **Phase 2: 暗号ライブラリ統合**
+                - NAS integrity アルゴリズム実装:
+                    - **128-EIA2 (AES-CMAC)**: 最優先実装（Open5GS/srsRAN が使用）
+                    - 128-EIA1 (SNOW 3G): オプション
+                    - 128-EIA3 (ZUC): オプション
+                - OpenSSL の AES-CMAC 機能を活用
+                - 既存の Open5GS コードを参考に実装
+
+            - **Phase 3: MAC 計算・付与**
+                - `s1n2_convert_smc_5g_to_4g()` の更新:
+                    1. 5G MAC を破棄（既存処理）
+                    2. 4G NAS キーを取得
+                    3. 4G NAS PDU に対して MAC 計算
+                    4. Security header type 3 を構築
+                    5. MAC + Sequence Number + Plain NAS の形式で出力
+                - 計算対象: `07 5D 02 01 02 F0 70 C1` (plain NAS part)
+                - 出力形式: `37 [MAC 4 bytes] [SEQ 1 byte] 07 5D 02 01 02 F0 70 C1`
+
+        - **データ構造拡張**
+            ```c
+            // ue_id_mapping_t に追加
+            typedef struct {
+                // 既存フィールド...
+
+                // 4G NAS セキュリティコンテキスト (新規)
+                bool has_4g_nas_keys;
+                uint8_t k_nas_int_4g[16];      // 4G NAS integrity key
+                uint8_t k_nas_enc_4g[16];      // 4G NAS encryption key
+                uint8_t nas_count_dl;          // Downlink NAS COUNT
+                uint8_t nas_count_ul;          // Uplink NAS COUNT
+            } ue_id_mapping_t;
+            ```
+
+        - **実装ロードマップ**
+            - **Week 1: 基盤実装**
+                - Day 1-2: AES-CMAC ライブラリ統合とテスト
+                - Day 3-4: NAS MAC 計算関数の実装 (`s1n2_nas_compute_mac()`)
+                - Day 5: ユニットテスト作成（既知の入力/出力ペアで検証）
+
+            - **Week 2: キー取得とキャッシュ**
+                - Day 1-2: AMF との連携方式調査（Open5GS コード解析）
+                - Day 3-4: キー取得 API 実装（N2 メッセージ拡張 or 新規 API）
+                - Day 5: UE コンテキストへのキーキャッシュ実装
+
+            - **Week 3: 統合とテスト**
+                - Day 1-2: `s1n2_convert_smc_5g_to_4g()` の MAC 付与ロジック統合
+                - Day 3: ZMQ UE でのエンドツーエンドテスト
+                - Day 4-5: 実機 UE でのテスト準備と実行
+
+        - **参考実装**
+            - Open5GS: `lib/nas/common/security.c` (NAS MAC 計算)
+            - srsRAN: `lib/src/asn1/nas_5g_ies.cc` (integrity protection)
+            - 3GPP TS 33.401: EPS security architecture
+            - 3GPP TS 24.301: NAS security procedures
+
+        - **代替案の検討と却下理由**
+            - **Option 1 (srsRAN 修正)**: ZMQ UE でのみ有効。実機対応不可。
+            - **Option 3 (EIA0 使用)**: セキュリティポリシーで拒否される可能性大。実機で動作保証なし。
+            - **結論**: Option 2 が唯一の実用的かつ標準準拠の解決策。
+
+        - **マイルストーン**
+            - [x] 問題の根本原因特定（UE が平文 SMC を拒否）
+            - [ ] AES-CMAC ライブラリ統合
+            - [ ] NAS MAC 計算関数実装
+            - [ ] AMF からの 4G キー取得実装
+            - [ ] Security Mode Command への MAC 付与
+            - [ ] ZMQ UE での動作確認
+            - [ ] 実機 UE での動作確認
+
+- 10/8
+    - **ディレクトリ構造整理メモ**
+        - **残タスク候補**
+        - [x] `convert_5g_nas_to_4g` / `s1n2_convert_smc_5g_to_4g` を `src/nas/` へ移設し、変換ロジックを完全分離する。 ⇐ `s1n2_converter.c` 側の重複実装を削除し、テストからは `s1n2_nas_internal.h` を参照するよう整理。
+        - [x] ビルド警告（未使用変数・未使用関数など）を解消し、共有APIの責務を明確化する。
+        - [x] `tests/unit/` を整備し、NAS変換・コンテキスト管理のユニットテストを追加する。
+        - [x] `docs/` にモジュール責務と環境変数一覧をまとめ、将来の保守作業に備える。
+        - [x] `Makefile` / ビルドスクリプトを新ディレクトリ構成に合わせて段階的に更新する。
+            - [x] `src/` 配下の `.c` を再帰探索するロジックへ切り替え、サブディレクトリ追加時のメンテナンス工数を削減する。
+            - [x] `tests/` 配下のビルドターゲットも階層構造に追従できるようルールを整理する。
+            - [x] `make` / `make tests` 実行でリグレッションが無いことを確認する。
+        - **現行構成の整理**
+            - `src/context/` : UEマッピングとセッション状態を扱う共有ヘルパー。
+            - `src/nas/` : NAS変換・SUCI生成などの共通処理。
+            - `src/s1n2_converter.c` : 変換オーケストレーションとI/Oが混在しているため、責務分離を継続中。
+        - **目標ディレクトリ構造（案）**
+            ```
+            src/
+              app/        # エントリーポイント(mainなど)
+              core/       # S1<->N2フロー制御（現s1n2_converter.cを薄く）
+              context/    # UE/トンネル状態管理
+              nas/        # NAS変換・SUCIユーティリティ
+              ngap/       # ASN.1ビルダ・NGAP/S1AP処理
+              transport/  # SCTP/GTP等のI/O
+              auth/       # AKA/鍵派生
+              common/     # 共有ユーティリティ（必要に応じて）
+            include/
+              internal/   # 上記モジュールの内部API
+            tests/
+              unit/
+              integration/
+            docs/
+            ```
+        - **モジュール責務メモ**
+            - `core`: 各モジュールを束ねる薄い調停層。ロジックは `nas` / `context` / `transport` へ委譲する。
+            - `nas`: 4G/5G NAS変換、SUCI生成、Security Mode関連ヘルパーを集中させる。
+            - `context`: UEマッピング、TEID、認証キャッシュなど状態管理全般。
+            - `transport`: SCTP/GTP ソケットとトンネル抽象化、リトライ制御。
+            - `ngap`: ASN.1デコード/エンコードとIEビルダを集約し、`core` から呼び出す想定。
+    - **ビルド警告対応メモ**
+    - `sXGP-5G/` 直下で `make clean && make` を実行し、S1AP 自動生成コード（`include/s1ap/S1AP_UnsuccessfulOutcome.c`）由来の `-Wmissing-field-initializers` が大量に発生する一方で、自前コードでは `has_location` 未使用と `next_pdu_session_id > 255` 判定が警告源になっていることを再確認。
+    - `s1n2_convert_uplink_nas_transport()` のロケーション抽出フローで `has_location` を実際に利用するデバッグ出力を追加し、PLMN/TAC/Cell ID が欠落しているケースをログに残すよう調整（未使用変数警告を解消）。
+    - `s1n2_add_e_rab_context()` の PDU セッション ID 割当て処理を見直し、`uint8_t` のオーバーフロー後に `> 255` が常に偽になる警告を、0 ラップアラウンド検知による再初期化 (`0 → 1`) へ修正。
+    - 変更後に `make` を再実行し、上記2箇所以外からの新規警告が出ないことを確認（S1AP 自動生成コードの警告は引き続き現状維持の前提）。
+    - **Security Mode Command/Complete 変換メモ**
+    - `convert_5g_nas_to_4g()` 内の Security Mode Command (0x5D) 変換で 5G NAS の MAC/シーケンス番号を破棄し、4G 側では `0x37 0x5D` から始まるプレーンなメッセージを生成するよう更新。ログに削除した MAC を出力して解析性を確保。
+    - 変換成功ログに `MAC stripped` フラグを付け、`s1n2_convert_smc_5g_to_4g()` で抽出したアルゴリズム情報 (ngKSI/UE Security Capability/IMEISV要求/追加セキュリティ情報) を従来通りキャッシュするフローを維持。
+    - `tests/test_security_mode.c` を既存のビルド成果物と静的ライブラリにリンクする形でビルドし、`build/test_security_mode` を実行して Security Mode Command/Complete 双方向のユニットテストがパスすることを確認。
+    - 実行コマンド
+        - ビルド: `make`
+        - テストバイナリリンク: `gcc tests/test_security_mode.c build/obj/src/nas/s1n2_nas.o ... -o build/test_security_mode`
+        - テスト実行: `build/test_security_mode`
+    - 備考: `convert_4g_nas_to_5g()` 経路に既知の警告 (`identity_start` 未使用、IMEISV 長変数) が残存しているため、後続での整理候補。
+    - 2025-10-08 追記: `convert_4g_nas_to_5g()` / `s1n2_extract_imsi_from_5g_registration_request()` で残っていた未使用変数警告（`identity_start` と `imeisv_len`）を解消。IMEISVの長さをログ出力に含めるよう調整し、`make -B build/obj/src/nas/s1n2_nas.o` → `make` → `build/test_security_mode` で再ビルド＆テスト済み（警告ゼロ、テスト成功）。
+    - 2025-10-08 追記: `tests/unit/test_imsi_extraction.c` を追加し、SUCI から IMSI を抽出するユニットテストを実装。`make tests` で `build/test_security_mode` / `build/tests/unit/test_imsi_extraction` の両バイナリを生成、各テストを実行して成功を確認（IMSI抽出ログと非SUCI時のエラー検出ログを確認）。Makefile に `tests`/`test` ターゲットと `build/tests/unit/` 出力ルールを追加して、再現性のあるテストビルド手順を整備。
+    - 2025-10-08 追記: `docs/module_responsibilities.md` を新設。モジュールごとの役割と `.env_s1n2` 主要環境変数の一覧を整理し、`make tests` + 主要テストバイナリの実行で回帰を確認。
+    - 2025-10-08 追記: Makefile の `src` ソース収集を `find src -type f -name '*.c'` ベースの再帰探索へ移行し、除外リスト（`gtp_tunnel_mock.c` / `s1n2_converter_simple.c`）を維持したままディレクトリ追加時に自動追従できるよう改修。`make` / `make tests` / `build/test_security_mode` / `build/tests/unit/test_imsi_extraction` を再実行して全て成功したことを確認。
+    - 2025-10-08 追記: `tests/` 配下のソース収集も `find tests -type f -name '*.c'` で自動化し、`tests/stubs.c` などバイナリ化したくない補助実装は `TEST_EXCLUDES` で除外するよう Makefile を整理。生成先を `build/tests/...` に統一したため、旧 `build/test_security_mode` は `build/tests/test_security_mode` へ移行。`tests/test_suci_utils.c` も自動検出され、`make clean && make` → `make tests` 後に `build/tests/test_security_mode` / `build/tests/test_suci_utils` / `build/tests/unit/test_imsi_extraction` を順次実行して全て成功したことを確認。
+    - 2025-10-08 追記: 目標ディレクトリ構造（案）に沿って `src/app/` `src/core/` `src/auth/` `src/ngap/` `src/transport/` へソースを再配置し、`gtp_tunnel.h` など重複ヘッダを `include/` に統合。`make clean && make` / `make tests` → `./build/tests/test_security_mode` / `./build/tests/test_suci_utils` / `./build/tests/unit/test_imsi_extraction` を再実行し、再構成後も成功することを確認。
+    - 2025-10-08 追記: `src/ngap/ngap_builder.c` の Open5GS asn1c ヘッダ参照を `NGAP_*.h` 直接指定へ切り替え、再配置後に壊れていた `../` パス依存を解消。再度 `make clean && make` → `make tests` を実行し、`./build/tests/test_security_mode` / `./build/tests/test_suci_utils` / `./build/tests/unit/test_imsi_extraction` の各バイナリを起動して正常終了を確認（ビルド警告は従来通り自動生成コードのみ）。
+    - 2025-10-08 追記: TEID/GTP-U リファクタリング第2段の進捗メモ。
+        - **目的**: `src/core/s1n2_converter.c` から GTP-U/TEID 管理を切り離し、`core` レイヤの責務をシグナリング調停に絞り込む。
+        - **実施作業**:
+            - `src/core/s1n2_gtp.c` / `include/s1n2_gtp.h` を新設し、TEID マッピング管理・GTP-U ヘッダ組み立て/解析・GTP-U メッセージ処理を移設。
+            - `include/s1n2_converter.h` と `src/app/main.c` を更新して新モジュールをインクルードし、旧 `gtp_tunnel.*` への直接依存を段階的に削除。
+            - `Makefile` のソース自動収集に新ファイルを追加し、旧 `src/gtp_tunnel*.c` をビルド対象から外すよう調整。
+            - `src/core/s1n2_converter.c` から TEID/GTP-U 関連関数群を削除し、UE マッピング/NAS 変換中心の構成へ向けたクリーンアップを開始。
+        - **検証状況**:
+            - `make -j4` を実行したところ、`s1n2_converter.c` の未整理ブロック（削除後の関数境界崩れ）が原因で多数のコンパイルエラーを検出。構文修復とインクルード整理が残課題。
+        - **次のアクション**:
+            - `s1n2_converter.c` の残存コードを再配置してビルドを復旧し、TEID/GTP-U 分離を完了する。
+            - ビルド成功後に `make tests` を再実行し、ユニットテスト回帰を確認する。
+        - **s1n2_converter 分割フェーズ2計画**
+                - 作業対象: `src/core/s1n2_converter.c`（3,151行）。構造調査の結果を踏まえ、責務ごとにモジュールへ再配置してオーケストレーション層を軽量化する。
+                - 分割案（公開APIは既存 `s1n2_converter.h` を継続利用）:
+
+                    | 担当領域 | 想定ファイル | 主なロジック/公開関数 | 備考 |
+                    | --- | --- | --- | --- |
+                    | NGSetup/S1Setup 変換 | `src/core/s1n2_setup.c` | `s1n2_convert_s1setup_to_ngsetup`, `s1n2_convert_ngsetup_to_s1setup`, `s1n2_process_pending_s1setup` | 環境変数フォールバックと遅延送信を同居させる |
+                    | 初期UE/NASトランスポート | `src/core/s1n2_nas_transport.c` | `s1n2_convert_initial_ue_message`, `s1n2_convert_downlink_nas_transport`, `s1n2_convert_uplink_nas_transport`, `s1n2_convert_ngap_downlink_nas_transport` + 各種 `build_*` ヘルパ | NAS変換・IMSI抽出を集約し、`convert_4g_nas_to_5g` 系を呼び出す窓口にする |
+                    | セッション/E-RAB 管理 | `src/core/s1n2_session.c` | `s1n2_convert_initial_context_setup_request(_enhanced)`, `s1n2_convert_initial_context_setup_response`, `s1n2_add/find/remove_e_rab_context`, `s1n2_extract_e_rab_setup_from_s1ap` | E-RAB → PDU セッション変換と TEID 初期化ロジックを纏める |
+                    | TEID/GTP-U | `src/core/s1n2_gtp.c` | `s1n2_add/find/remove_teid_mapping`, `s1n2_parse/build_gtpu_header`, `s1n2_handle_gtpu_message` | `gtp_tunnel_*` 呼び出しとメトリクス更新を司る |
+                    | メトリクス/ヘルスチェック | `src/core/s1n2_metrics.c` | `s1n2_init_metrics`, `s1n2_update_metrics`, `s1n2_print_metrics`, `s1n2_health_check` | 外部依存が少なく第1弾切り出し候補 |
+                    | 中央調停（残置） | 既存 `src/core/s1n2_converter.c` | SCTP/GTP 入出力と各モジュール呼び出し | 司令塔としての役割に専念 |
+
+                - 工程順序: ①メトリクス系の切り出し → ②TEID/GTP-U → ③NAS トランスポート → ④セッション/E-RAB → ⑤セットアップ。各段で `make` / `make tests` を実行し、`build/tests/*` バイナリで回帰確認。
+                - 次アクション: Todo #3（第1弾コード分割）で `s1n2_metrics.c` を新設し、既存 `s1n2_init/update/print_metrics` と `s1n2_health_check` を移動。ヘッダ差分は `s1n2_converter.h` 既存宣言を再利用し、`s1n2_converter.c` からの参照を新ファイルへリンクさせる。
+
+- 10/5
+    - **Security Mode Command/Complete 変換タスク整理**
+        - **下り (5G→4G) Security Mode Command 対応**
+            - `convert_5g_nas_to_4g()` にメッセージ種別 `0x5D` を追加し、5G NASの Security header type(=3) と MAC/SEQ を除去して 4G 側の `0x37 0x5D` 形式へ再構成する。
+            - `NAS security algorithms` IE から 5G NEA/NIA → 4G EEA/EIA ビットマップへの写像テーブルを実装し、`Selected NAS security algorithms` に正しく反映する。
+            - IMEISV request (IEI=0xE) と Additional 5G security information (IEI=0x36) を 4G の対応 IE へ写像、未知 IE はログ警告の上でスキップする。
+            - 変換未実装時に発生していた `[WARN] 5G NAS message type 0x5D not supported for conversion` ログを解消し、フォールバック送信を防ぐ。
+        - **上り (4G→5G) Security Mode Complete 対応**
+            - `convert_4g_nas_to_5g()` で PD=0x07, msg type=0x5E を検出し、5G Security Mode Complete (0x5E) を生成する分岐を追加する。
+            - UE Security Capability IE を再利用しつつ、IMEISV 送信有無を保持する。追加 IE が無い場合は 5G 側でも省略する。
+            - 既存の Registration Request へのフォールバックを抑止し、AMF で Security Mode Complete が到達することを確認する。
+        - **検証・ログ整備**
+            - s1n2 ログに Security Mode Command/Complete 変換の成否を INFO レベルで出力し、エラー時は WARN で 5G/4G の PD・msg type を記録する。
+            - `docker compose --env-file .env_s1n2 -f docker-compose.s1n2.yml logs s1n2 -f` で変換ログを監視しつつ、Wireshark で 4G 側の `0x37 0x5D` / 5G 側の `0x7E 0x00 0x5E` を確認する。
+            - テストシナリオ: Authentication 成功後に Security Mode Command/Complete が双方向に通過すること、警告ログが消えること、UE が平文 Security Mode Command を受理すること。
+        - **フォローアップ**
+            - Security Mode 以降の InitialContextSetup / PDU Session 処理で NAS 保護モードが切り替わるため、以後の NAS 変換で Security header type ≠0 に対応する仕組みを検討する。
+            - RES*/Kgnb 再利用が必要な場合に備え、UE マッピングへ選択アルゴリズムと ngKSI をキャッシュする。
+        - **実装タスク・チェックリスト**
+            - [ ] `convert_5g_nas_to_4g()` に Security Mode Command (0x5D) の専用パーサーを追加し、MAC(4B)+SQN(1B)を無視して平文ヘッダを再構成する。
+            - [ ] 5G `NAS security algorithms` → 4G `selected NAS security algorithms` のビット写像テーブルを `s1n2_security_alg_map[]` として実装し、UEマッピングへ選択結果をキャッシュする。
+            - [ ] IEI=0x0E(IMEISV request) と IEI=0x36(Additional 5G security information) について、LTE側で送出可能な IE に再符号化するハンドラを新設する。
+            - [ ] `convert_4g_nas_to_5g()` に Security Mode Complete (0x5E) 変換分岐を追加し、UE Security Capability/IMEISV IE をそのまま再利用して 5G NAS を生成する。
+            - [ ] Security Mode Command/Complete の変換成否を INFO、失敗時に WARN ログへ出力する共通関数 `s1n2_log_security_mode_result()` を用意し、NAS PD / msg type を併記する。
+            - [ ] `tests/` 配下に Security Mode Command/Complete の単体テストベクタを追加し、ビット写像・IE再構成・ログ出力が期待通りになることを自動検証する。
+            - [ ] ZMQ統合環境で Authentication 成功後に Security Mode Command/Complete が往復すること、Wiresharkで `0x37 0x5D` / `0x7E 0x00 0x5E` が観測できることを tcpdump キャプチャで確認する。
+    - **Authentication Reject 調査メモ**
+        - 最新ビルド適用後、Security Mode Command 前段で AMF から Authentication Reject (NAS type `0x58`) が返却される事象を再現。過去のビルドでは発生していなかった。
+        - `docker logs s1n2` では 5G Authentication Request → 4G Authentication Request 変換が成功し、RAND/AUTN のキャッシュ (`Cached RAND for UE`) まで完了している一方、4G Authentication Response 変換時に `[WARN] Padded 4G RES ...` のみ出力され、`Found cached RAND...` ログが一切出ない。
+        - 新実装の `convert_4g_nas_to_5g()` では `ctx` / `ctx->auth_ctx` が `NULL` の場合に即座にゼロパディングした RES* を生成するフローへ落ちる。今回のログから `ctx->auth_ctx` を参照する分岐に入っておらず、AMF へ 0 埋めされた RES* が送信され Reject に繋がっていると判断。
+        - 呼び出し側の一部（例: `s1n2_converter.c` L1874/L1915 のリプレイ経路）で依然 `convert_4g_nas_to_5g(NULL, NULL, ...)` の旧呼び出しが残存しており、実稼働パスでも `ctx` が伝播していない可能性が高い。Authentication Response 変換で UE マッピングを受け取れていない点も一致。
+        - 対応方針:
+            1. `convert_4g_nas_to_5g` を呼ぶ全経路を棚卸しし、`ctx` / `ue_map` を正しく渡すよう修正。
+            2. `ctx->auth_ctx` が未初期化の場合に WARN ログを出してフォールバック（旧挙動の RES 転送 or 明示的なエラー）へ切り替える安全策を検討。
+            3. RES* 計算成功時に RAND/AUTN を即クリアしているため、KASME/Knas導出ブロックの実行順序を見直し、キー導出後にクリアする。
+            4. 暫定のテスト復旧として RES* 未計算時はゼロパディングではなく旧 4G RES をそのまま送信し Reject を防ぐ。
 - 10/3
     - **Authentication Response (4G→5G) 変換機能実装完了**
         - `convert_4g_nas_to_5g()` 関数に 4G Authentication Response (0x53) を 5G Authentication Response (0x57) に変換する処理を追加
@@ -3136,4 +4278,1782 @@ if (authentication_response_parameter->length == 8) {
     - `10/04 17:05:09.559: [amf] DEBUG: [imsi-001011234567895] Security mode command`
 - 約5秒周期で当該ログが出力されており、NASセキュリティ確立処理が進行している兆候。
 - 次の確認事項: Security Mode CompleteがUE→AMFで到達するか、およびs1n2ログでの反映状況。
+
+
+## 2025年10月8日 - s1n2 ワークスペース整理後のディレクトリ構造
+
+不要資産を削除して再検証を完了した直後の `sXGP-5G/` 配下の状態を記録する。深さ1までの構造と主要ディレクトリの概要は以下の通り。
+
+```text
+sXGP-5G/
+├── .env_s1n2
+├── Dockerfile
+├── Makefile
+├── docker-compose.s1n2.yml
+├── asn1/
+├── build/                    # make tests / make release で再生成される成果物 (.gitignore 済み)
+├── config/
+│   └── auth_keys.yaml        # s1n2 バイナリが参照する唯一の設定ファイル
+├── include/
+│   ├── internal/
+│   ├── ngap/
+│   ├── s1ap/
+│   └── *.h                   # GTP/NAS/コンバータ関連ヘッダ
+├── open5gs_lib/
+│   └── asn1c/, core/, ngap/… # Open5GS 由来の ASN.1 ランタイム & 補助コード
+├── src/
+│   ├── app/, auth/, context/, core/, nas/, transport/
+│   └── s1n2-converter 本体実装
+├── tests/
+│   ├── stubs.c
+│   ├── test_security_mode.c
+│   ├── test_suci_utils.c
+│   └── unit/test_imsi_extraction.c
+└── .git/
+```
+
+### メモ
+- `libs/`, `docs/`, `auto-backup.sh`, `emergency-restore.sh` など旧ランタイム管理資産は削除済み。
+- ビルド成果物は `build/` 配下へ集約し、`.gitignore` で追跡対象外に設定。
+- 追加の一時ファイルが発生した場合も `build/` 以下に置く運用とする。
+
+
+## 2025年10月9日 - Option 2 実装進捗: Phase 1 完了
+
+**4G NAS MAC 計算機能の実装に着手**
+
+### Phase 1: AES-CMAC ライブラリ統合 ✅ 完了
+
+1. **セキュリティモジュール作成**
+   - `include/internal/s1n2_security.h` - NAS セキュリティ API 定義
+     - 関数: `s1n2_nas_compute_mac()`, `s1n2_compute_smc_mac()`
+     - アルゴリズム列挙: EIA0/1/2/3, EEA0/1/2/3
+   - `src/auth/s1n2_security.c` - 128-EIA2 (AES-CMAC) 実装
+     - OpenSSL CMAC_CTX API を使用
+     - 3GPP TS 33.401 B.2.3 に準拠した入力フォーマット
+     - `COUNT || BEARER || DIRECTION || MESSAGE` の形式で MAC 計算
+
+2. **テストプログラム作成と検証**
+   - `tests/test_nas_mac.c` - 単体テスト
+   - 実行結果: ✅ All tests passed!
+   - 出力例:
+     ```
+     [INFO] Computed MAC: 0D 79 E6 55
+     [INFO] Complete integrity-protected NAS message:
+            37 0D 79 E6 55 00 07 5D 02 01 02 F0 70 C1
+            ^^ MAC-I      ^^ Plain NAS message
+     ```
+
+3. **UE コンテキスト拡張**
+   - `include/s1n2_converter.h` の `ue_id_mapping_t` に追加:
+     ```c
+     uint8_t k_nas_int[16];    // K_NASint - NAS integrity protection key
+     uint8_t k_nas_enc[16];    // K_NASenc - NAS encryption key
+     bool has_nas_keys;        // Whether NAS keys are available
+     uint32_t nas_ul_count;    // Uplink NAS COUNT
+     uint32_t nas_dl_count;    // Downlink NAS COUNT
+     ```
+
+4. **SMC 変換ロジック更新**
+   - `src/nas/s1n2_nas.c` の `s1n2_convert_smc_5g_to_4g()` を大幅改修:
+     - Step 1: Plain NAS メッセージ構築 (security header type 0)
+     - Step 2: 4G NAS 鍵が利用可能なら MAC 計算
+     - Step 3: Integrity-protected メッセージ構築 (security header type 3)
+   - ロジック:
+     ```c
+     if (security_cache && security_cache->has_nas_keys) {
+         // EIA アルゴリズムを selected_alg_4g から抽出
+         // s1n2_compute_smc_mac() で MAC 計算
+         // security header type 3 でメッセージを構築
+     } else {
+         // 鍵がない場合は plain NAS (security header type 0) を送信
+     }
+     ```
+
+5. **ビルド確認**
+   - コンパイル: ✅ 成功 (OpenSSL 3.0 deprecation 警告のみ)
+   - リンク: ✅ 成功
+   - バイナリ生成: `build/s1n2-converter`
+
+### 次のステップ: Phase 2 - AMF Key Exchange
+
+**課題**: 現在 `security_cache->has_nas_keys` は常に false
+**必要な作業**:
+1. Open5GS AMF のキー導出コードを調査
+2. AMF から s1n2 への 4G NAS 鍵通知メカニズムを設計
+   - オプション A: N2 メッセージ拡張 (Initial Context Setup Request に付与)
+   - オプション B: s1n2 → AMF への HTTP/gRPC API
+   - オプション C: 共有メモリ/Redis 経由のキャッシュ
+3. AMF 側のコード修正
+4. s1n2 での鍵受信・保存処理実装
+
+### テスト予定
+- Phase 2 完了後:
+  1. ZMQ 環境でのエンドツーエンドテスト
+  2. Wireshark で integrity-protected SMC (0x37...) を確認
+  3. UE が Security Mode Complete を返すことを確認
+- Phase 3 (実機 UE 接続):
+  1. 実際のスマートフォンで接続テスト
+  2. Attach 成功とデータ通信を確認
+
+### 参考文献
+- 3GPP TS 33.401: 4G (EPS) Security Architecture
+- 3GPP TS 24.301: NAS Protocol for EPS
+- OpenSSL CMAC Manual: `man 3 CMAC_Init`
+
+---
+
+## 2025年10月9日 (午後) - Phase 2 完了: 4G KDF 実装と統合
+
+**AMF 変更不要! s1n2 完結型アプローチの実装完了**
+
+### 重要な発見: E2E セキュリティ破棄の副産物を活用
+
+ユーザーからの指摘により、**s1n2 は既に UE の K (Ki) と OPc を保持している**ことを再確認:
+- `config/auth_keys.yaml` から読み込み済み
+- Authentication の段階で E2E セキュリティを諦めた代償として、s1n2 が全ての暗号鍵を保持
+- これにより **AMF の変更なし** で 4G NAS 鍵導出が可能
+
+### Phase 2 実装内容
+
+#### 1. 4G KDF 関数群の実装
+
+`src/auth/s1n2_auth.c` に追加:
+
+- **`kdf_hmac_sha256()`** - 汎用 KDF (3GPP TS 33.401 Annex A.2)
+  - `KDF(Key, S) = HMAC-SHA-256(Key, FC || P0 || L0 || P1 || L1 || ...)`
+
+- **`s1n2_kdf_kasme()`** - K_ASME 導出
+  - `K_ASME = KDF(CK||IK, FC=0x10, PLMN, SQN^AK)`
+
+- **`s1n2_kdf_nas_keys()`** - K_NASint / K_NASenc 導出
+  - `K_NASint = KDF(K_ASME, FC=0x15, 0x01, alg_id)`
+  - `K_NASenc = KDF(K_ASME, FC=0x15, 0x02, alg_id)`
+
+- **`s1n2_derive_4g_nas_keys()`** - ワンストップ鍵導出ヘルパー
+  - `Ki + RAND → CK, IK → K_ASME → K_NASint, K_NASenc`
+
+#### 2. Authentication Response 処理への統合
+
+`src/nas/s1n2_nas.c` の `convert_4g_nas_to_5g()` を修正:
+- RES* 計算成功後、引き続き 4G NAS 鍵を導出
+- UE context (`ue_id_mapping_t`) に鍵をキャッシュ:
+  ```c
+  ue_mapping->k_nas_int[16]    // K_NASint
+  ue_mapping->k_nas_enc[16]    // K_NASenc
+  ue_mapping->has_nas_keys     // true
+  ue_mapping->nas_dl_count = 0 // ダウンリンクカウンタ初期化
+  ```
+
+#### 3. 完全な鍵導出フロー
+
+```
+[Authentication Request (AMF→s1n2→UE)]
+  s1n2 が RAND と SQN^AK をキャッシュ
+
+[Authentication Response (UE→s1n2→AMF)]
+  ↓
+  1. RES* 計算 (既存機能)
+     s1n2_auth_compute_res_star_with_imsi()
+  ↓
+  2. 4G NAS 鍵導出 (NEW!)
+     ┌─ auth_keys.yaml から Ki, OPc 取得
+     ├─ Milenage: Ki + RAND → CK, IK
+     ├─ K_ASME = KDF(CK||IK, PLMN, SQN^AK)
+     ├─ K_NASint = KDF(K_ASME, 0x01, EIA2)
+     └─ K_NASenc = KDF(K_ASME, 0x02, EEA2)
+  ↓
+  3. UE context に保存
+     has_nas_keys = true
+
+[Security Mode Command (AMF→s1n2→UE)]
+  ↓
+  s1n2_convert_smc_5g_to_4g() 実行
+  ↓
+  if (ue_mapping->has_nas_keys) {
+      // Plain NAS 構築
+      // MAC 計算: AES-CMAC(K_NASint, plain_nas)
+      // Integrity-protected メッセージ構築 (0x37...)
+  } else {
+      // フォールバック: Plain NAS (0x07...)
+  }
+```
+
+### 実装済みの処理フロー
+
+1. ✅ **Milenage f2-f5** - CK, IK 導出 (既存)
+2. ✅ **4G KDF (K_ASME)** - CK||IK → K_ASME (新規)
+3. ✅ **4G KDF (NAS keys)** - K_ASME → K_NASint, K_NASenc (新規)
+4. ✅ **AES-CMAC (EIA2)** - MAC 計算 (Phase 1 で実装済み)
+5. ✅ **SMC 変換ロジック** - 鍵があれば MAC 計算、なければ plain NAS (Phase 1 で実装済み)
+6. ✅ **自動鍵導出** - Auth Response 処理時に自動実行 (新規)
+
+### 次のステップ: Phase 3 - テストと検証
+
+1. **Docker コンテナ起動**
+   ```bash
+   cd sXGP-5G
+   docker compose -f docker-compose.s1n2.yml up
+   ```
+
+2. **ZMQ UE 接続テスト**
+   - srsRAN UE で Attach 実行
+   - s1n2 ログで以下を確認:
+     - `[SUCCESS] 4G NAS keys derived and cached for UE`
+     - `[INFO] Computed 4G NAS MAC for SMC: XX XX XX XX`
+   - Wireshark で integrity-protected SMC 確認 (0x37...)
+   - UE が Security Mode Complete を返すか確認
+
+3. **実機 UE 接続テスト** (Phase 3 完了後)
+   - 実際のスマートフォンで接続
+   - Attach 成功とデータ通信を確認
+
+### ビルド状況
+- ✅ コンパイル成功
+- ✅ リンク成功
+- ✅ バイナリ: `build/s1n2-converter` (19MB)
+- ⏳ 実行テスト待ち
+
+### コード変更サマリ
+1. `include/s1n2_auth.h` - 4G KDF 関数プロトタイプ追加
+2. `src/auth/s1n2_auth.c` - 4G KDF 実装 (約 250 行追加)
+3. `src/nas/s1n2_nas.c` - Auth Response 処理に鍵導出を統合
+4. `include/s1n2_converter.h` - UE context に 4G NAS 鍵フィールド追加 (Phase 1)
+5. `src/auth/s1n2_security.c` - AES-CMAC 実装 (Phase 1)
+
+### 技術的ハイライト
+- **AMF 変更ゼロ**: s1n2 が既に持っている情報だけで完結
+- **標準準拠**: 3GPP TS 33.401 の KDF を正確に実装
+- **自動化**: 認証成功時に鍵を自動導出・キャッシュ
+- **フォールバック**: 鍵がない場合は plain NAS で動作継続
+
+---
+
+## 2025年10月9日 (夕方) - Phase 3: 初回テスト実行と結果分析
+
+### テスト実行結果
+
+#### ✅ 成功した機能
+
+1. **4G NAS 鍵導出の自動実行**
+   ```
+   [INFO] Deriving 4G NAS keys for upcoming Security Mode Command
+   [s1n2_auth] [DEBUG] K_ASME: 9E2383DE34B0144E589F835D015A50CA...
+   [s1n2_auth] [DEBUG] K_NASint: 7AE51F9D6A414E40AC38D6CBA0A3798D
+   [s1n2_auth] [DEBUG] K_NASenc: 01DBA25B91EE32907ACFFC4F9BB5C6E3
+   ```
+   - Authentication Response 処理時に自動的に鍵導出
+   - K_ASME, K_NASint, K_NASenc が正しく計算されている
+
+2. **4G NAS MAC 計算の実行**
+   ```
+   [INFO] Computed 4G NAS MAC for SMC: 9B 2A 9E 29 (COUNT=0x00000000, EIA=2)
+   ```
+   - EIA2 (AES-CMAC) アルゴリズムで MAC 計算
+   - COUNT=0 で開始
+
+3. **Integrity-protected Security Mode Command 送信**
+   ```
+   [DEBUG] 4G Security Mode Command bytes: 37 9B 2A 9E 29 00 07 5D 02 01 02 F0 70 C1
+   ```
+   - `0x37` = Security header type 3 (integrity protected with new EPS security context)
+   - `9B 2A 9E 29` = MAC-I (4 bytes)
+   - `00` = Sequence number (NAS COUNT の LSB)
+   - `07 5D 02 01 02 F0 70 C1` = Plain NAS message
+
+#### ⚠️ 未解決の問題
+
+1. **UE が Security Mode Complete を返さない**
+   - AMF ログに Security Mode Command の再送信が繰り返し表示
+   ```
+   10/09 13:27:45.638: [amf] DEBUG: Security mode command
+   10/09 13:27:51.643: [amf] DEBUG: Security mode command (再送)
+   10/09 13:27:57.649: [amf] DEBUG: Security mode command (再送)
+   ```
+   - UE 側で MAC 検証が失敗している可能性
+
+### 問題の可能性
+
+#### 1. PLMN ID の不一致 (可能性: 低)
+- コード: `uint8_t plmn_id[3] = {0x00, 0xF1, 0x10}; // MCC=001, MNC=01`
+- 環境変数: `MCC=001`, `MNC=01`
+- → PLMN ID は正しい
+
+#### 2. SQN^AK の問題 (可能性: 中)
+- UE は AUTN から自分で SQN^AK を抽出
+- s1n2 も AUTN から SQN^AK を抽出してキャッシュ
+- → 同じ値のはず だが、要確認
+
+#### 3. Bearer ID / Direction の不一致 (可能性: 高)
+- 現在のコード:
+  ```c
+  s1n2_compute_smc_mac(alg, key, count, plain_nas, len, mac)
+  ```
+- `s1n2_compute_smc_mac()` 内部で Bearer=0, Direction=DOWNLINK を想定
+- しかし、SMC の MAC 計算では:
+  - **Bearer = 0** (signalling bearer)
+  - **Direction = 1** (downlink)
+- → 実装を確認する必要あり
+
+#### 4. MAC 計算の入力データ (可能性: 中)
+- 現在: Plain NAS メッセージ全体 (07 5D 02 01 02 F0 70 C1)
+- 3GPP TS 24.301: Security header type 0 の PDU を入力とする
+- → これは正しい
+
+### 次のアクション
+
+1. **`s1n2_security.c` の `s1n2_compute_smc_mac()` を確認**
+   - Bearer ID と Direction が正しく設定されているか
+   - 入力フォーマットが 3GPP 仕様に準拠しているか
+
+2. **UE 側の詳細ログを有効化**
+   - srsRAN UE の NAS レイヤーのデバッグログを確認
+   - MAC 検証失敗の詳細な理由を特定
+
+3. **テストベクターでの検証**
+   - 既知の K_NASint, RAND, COUNT で MAC 計算
+   - 3GPP TS 33.401 Annex C のテストベクターと比較
+
+4. **Wireshark での詳細解析**
+   - S1AP メッセージの NAS-PDU を抽出
+   - MAC の 4 バイトが正しい位置にあるか確認
+
+### 実装状況サマリ
+
+| Phase | 機能 | 状態 | 備考 |
+|-------|------|------|------|
+| Phase 1 | AES-CMAC 実装 | ✅ 完了 | 単体テストで動作確認済み |
+| Phase 1 | UE context 拡張 | ✅ 完了 | k_nas_int, k_nas_enc フィールド追加 |
+| Phase 2 | 4G KDF 実装 | ✅ 完了 | K_ASME, K_NASint 導出成功 |
+| Phase 2 | 自動鍵導出 | ✅ 完了 | Auth Response 時に実行 |
+| Phase 2 | MAC 計算統合 | ✅ 完了 | SMC 変換時に MAC 計算 |
+| Phase 3 | Integrity-protected SMC 送信 | ✅ 完了 | 0x37 ヘッダで送信 |
+| Phase 3 | UE の MAC 検証 | ❌ 失敗 | Security Mode Complete 未受信 |
+
+### 技術的考察
+
+成功した部分:
+- 鍵導出チェーン全体が動作 (Ki → CK/IK → K_ASME → K_NASint)
+- MAC 計算自体も実行されている
+- メッセージフォーマットは正しい (0x37 + MAC + SEQ + Plain NAS)
+
+失敗している部分:
+- UE 側での MAC 検証
+- おそらく MAC 計算時のパラメータ (Bearer, Direction, 入力範囲) に微妙な違い
+
+この種の問題は暗号プロトコル実装で典型的なもので、仕様書の細部を注意深く読む必要がある。
+
+---
+
+## 2025年10月9日 (深夜) - Wireshark解析と問題の深掘り
+
+### Wiresharkキャプチャ分析結果
+
+#### 送信されているメッセージ
+**s1n2から送信された4G Security Mode Command**:
+```
+NAS-PDU: 37 80 80 91 87 00 07 5D 02 01 02 F0 70 C1
+- 0x37: Security header type 3 (integrity protected with new EPS security context) ✅
+- 80 80 91 87: MAC-I (4 bytes) ✅
+- 00: Sequence number (NAS COUNT LSB) ✅
+- 07 5D 02 01 02 F0 70 C1: Plain NAS message ✅
+```
+
+**UEからの応答**:
+```
+Security Mode Reject
+- EMM cause: MAC failure (20) ❌
+```
+
+#### s1n2ログとの照合
+- **s1n2ログ**: `Computed 4G NAS MAC for SMC: 80 80 91 87`
+- **Wireshark**: MAC = `80 80 91 87`
+- ✅ **完全一致!**
+
+### 鍵導出パラメータの確認
+
+最新のログから抽出:
+```
+RAND:    5DB1C2AB3083C456D9240D687233EB5A
+SQN^AK:  5019B8C3393F
+PLMN ID: 00F110 (MCC=001, MNC=01)
+CK:      84CF7458B4383EFA782C0F5E9C2C2D05
+IK:      E2910051EBEC598CB37ACF2F278B3D35
+K_ASME:  46F2070161D2F077BFED1C8657DE99341255032542BC81C1FF7D468078EAA4FB
+K_NASint: C93E670C47D22CD3BF870C117E834B91
+```
+
+### MAC計算パラメータ
+- **Algorithm**: EIA2 (AES-CMAC) ✅
+- **COUNT**: 0x00000000 ✅
+- **Bearer**: 0 (signalling radio bearer) ✅
+- **Direction**: 1 (downlink) ✅
+- **Plain NAS**: `07 5D 02 01 02 F0 70 C1` ✅
+
+すべてのパラメータは3GPP TS 33.401に準拠しています。
+
+### 問題の仮説
+
+#### 仮説1: SQN^AKの解釈 (可能性: 高)
+3GPP TS 33.401では K_ASME 導出に **SQN⊕AK** を使いますが、UE側の実装によっては:
+- 一部の実装が **SQN** (AKでXOR解除後) を使う可能性
+- s1n2は AUTNから抽出した **SQN⊕AK** をそのまま使用
+- UE側で異なる値を使っている可能性
+
+#### 仮説2: PLMN IDのエンディアン (可能性: 中)
+K_ASME導出時の PLMN ID:
+- s1n2: `00 F1 10` (半オクテットスワップ形式)
+- 3GPP仕様: Serving Network Identity は文字列形式の場合も
+
+#### 仮説3: CK/IKの導出順序 (可能性: 低)
+K_ASMEの入力は `CK || IK` (CKが先):
+- s1n2: 正しく `memcpy(key, ck, 16); memcpy(key + 16, ik, 16);`
+- UE側で逆順の可能性は低い
+
+#### 仮説4: MAC計算の入力メッセージ範囲 (可能性: 中)
+現在の実装:
+- Plain NAS全体 (`07 5D 02 01 02 F0 70 C1`) を入力
+- 3GPP TS 24.301: Security header type 0の完全なNAS PDUを使用
+
+これは正しいはずですが、実装によって解釈が異なる可能性。
+
+### 次のデバッグステップ
+
+1. **srsRANのソースコード確認**
+   - `srsue/src/stack/upper/nas.cc` で K_ASME 導出を確認
+   - MAC計算の実装を確認
+
+2. **テストベクターでの単体検証**
+   - 3GPP TS 33.401 Annex C.1 のテストベクターを使用
+   - s1n2の実装が標準と一致するか確認
+
+3. **Open5GS AMFのコード確認**
+   - AMF側の K_ASME 導出を確認
+   - 5G K_NASintと4G K_NASintの関係を確認
+
+4. **AK値の確認**
+   - f5関数でAKを計算: `AK = f5(Ki, RAND)`
+   - `SQN = (SQN⊕AK) ⊕ AK` で検証
+   - s1n2とUEで同じAKを計算しているか確認
+
+### 技術的洞察
+
+この問題は **鍵材料の導出チェーンのどこかに1バイトのずれ**がある典型的な暗号実装バグです。すべてのパラメータが正しく見えても、微妙なエンディアンや順序の違いで異なる鍵が生成される可能性があります。
+
+標準規格 (3GPP TS 33.401) は非常に詳細ですが、実装の細部 (例: パディング、ビットオーダー) で解釈の余地があり、これが互換性問題を引き起こします。
+
+
+
+---
+
+## 2025年10月13日 (20:10) - Integrity Protection実装完了、MAC検証エラー発見
+
+### 実装結果
+✅ **Integrity Protection機能の実装完了**
+- s1n2コンバータに5G uplink MAC計算機能を追加
+- Security Mode Completeに Integrity Protection header（`7e 02 [MAC(4)]`）を追加
+- ビルド・デプロイ成功
+
+### 確認された動作
+1. **s1n2ログで確認**:
+   ```
+   [INFO] ✓ Added 5G Integrity Protection to Security Mode Complete
+   [DEBUG] 5G UL MAC: 57 F8 1B A9 (COUNT=0x00000000)
+   [DEBUG] Protected NAS format: EPD=0x7E, Sec=0x02, MAC=[4 bytes], Plain[43 bytes]
+   [INFO] UplinkNASTransport -> NGAP UplinkNASTransport sent (92 bytes, PPID=60)
+   ```
+
+2. **AMFログで確認** - **重要な発見**:
+   ```
+   [amf] WARNING: NAS MAC verification failed(0x57f81ba9 != 0xaf595eb1)
+   [amf] WARNING: NAS MAC verification failed(0x389d6e21 != 0xbd97e0b9)
+   ```
+   - AMFは **Integrity ProtectedメッセージをFを受信している**
+   - s1n2が計算したMAC (`0x57f81ba9`, `0x389d6e21`) と AMFが期待するMACが異なる
+   - **MAC検証失敗** → Registration処理が進まない
+
+### 問題の根本原因
+**MACパラメータの不一致**
+- s1n2: `direction=0 (uplink), COUNT=0x00000000`
+- AMF期待値: 不明（異なるCOUNT値を使用している可能性）
+
+考えられる原因：
+1. **COUNTの同期問題**: AMFとs1n2で使用しているCOUNT値が異なる
+2. **downlink COUNTの誤使用**: AMFがdownlink COUNTを期待しているが、s1n2がuplink COUNTを使用
+3. **4G→5G変換時のCOUNT引き継ぎ**: 4GのNAS COUNTを5Gで継続使用すべきか？
+
+### 次のステップ
+1. **AMFのCOUNT値を調査**
+   - AMFログで使用されているCOUNT値を確認
+   - Open5GS AMFのソースコード（nas-security.c:170付近）を確認
+
+2. **COUNTパラメータの修正**
+   - AMFが期待するCOUNT値に合わせる
+   - 必要に応じて、4GのNAS COUNTを5Gに引き継ぐ
+
+3. **再テスト**
+   - MAC検証が成功するか確認
+   - InitialContextSetupRequest（Registration Accept）が送信されるか確認
+
+### 技術メモ
+- `.dockerignore`を追加（`build/`ディレクトリを除外）してDocker内でのビルド問題を解決
+- Docker再起動（`docker restart`）ではイメージ更新されない → `docker rm && docker compose up`で再作成が必要
+
+---
+
+## 2025年10月13日 (18:00) - Integrity Protection実装方針確定
+
+### 問題の整理
+**現状**:
+- ✅ NAS message container TLV形式修正完了（Length=25表示）
+- ❌ AMF ERROR: "Security-mode : No Integrity Protected"
+- ❌ AMFがSecurity Mode Commandを6秒ごとに再送
+
+**原因**:
+s1n2コンバータが4G Integrity Protected NAS（`47 49 36 DA...`）を5G平文NAS（`7e 00 5e...`）に変換している。
+3GPP TS 24.501では5G Security Mode CompleteはIntegrity Protected必須。
+
+### 設計方針決定: s1n2コンバータ単独で解決
+
+**重要**: Open5GSやsrsRANには機能的変更を加えず、s1n2コンバータのみで対応する。
+
+#### 利用可能なリソース
+s1n2コンバータは既に以下を保持:
+- ✅ `k_nas_int[16]` - 4G下りMAC計算で使用中（NIA2/EIA2）
+- ✅ `nas_ul_count` - UE mappingで管理
+- ✅ `s1n2_nas_compute_mac()` - MAC計算関数実装済み
+- ✅ NIA/EIA algorithm情報
+
+→ **結論**: 既存リソースで5G Integrity Protection追加が可能！
+
+### 実装計画
+
+#### Phase 1: 5G Uplink MAC計算実装
+
+**ファイル**: `src/nas/s1n2_nas.c`
+
+**ステップ1**: UE mappingにuplink count管理追加
+```c
+// include/s1n2_converter.h
+typedef struct {
+    // ... existing fields ...
+    uint32_t nas_ul_count_5g;  // 5G uplink NAS COUNT
+    bool has_sent_smc;          // Security Mode Complete送信済みフラグ
+} ue_id_mapping_t;
+```
+
+**ステップ2**: 5G Uplink MAC計算ヘルパー関数追加
+```c
+// src/nas/s1n2_nas.c
+static int s1n2_compute_5g_uplink_mac(
+    const ue_id_mapping_t *ue_map,
+    const uint8_t *plain_nas,    // Plain 5G NAS message (without security header)
+    size_t plain_len,
+    uint8_t *mac_out             // Output: 4-byte MAC
+) {
+    if (!ue_map || !ue_map->has_nas_keys || !plain_nas || !mac_out) {
+        return -1;
+    }
+
+    // 5G uplink direction
+    uint8_t direction = 0;  // 0 = uplink
+    uint8_t bearer = 0;     // Signalling radio bearer
+
+    // Algorithm: Use same as 4G (typically NIA2/EIA2)
+    s1n2_nas_integrity_alg_t alg = S1N2_NAS_EIA2;
+    // TODO: Get from ue_map->cached_nia if available
+
+    // COUNT: Use 5G uplink count
+    uint32_t count = ue_map->nas_ul_count_5g;
+
+    // Compute MAC using existing function
+    return s1n2_nas_compute_mac(alg, ue_map->k_nas_int, count,
+                                bearer, direction, plain_nas, plain_len, mac_out);
+}
+```
+
+**ステップ3**: Security Mode Complete変換に5G Integrity Protection追加
+```c
+// src/nas/s1n2_nas.c の s1n2_nas_convert_4g_to_5g() 内
+// Security Mode Complete (0x5E) 処理部分を修正
+
+if (msg_type == 0x5E) {
+    // ... existing conversion logic ...
+
+    // Build plain 5G NAS message first (existing code)
+    uint8_t plain_5g_nas[512];
+    size_t plain_len = 0;
+
+    plain_5g_nas[plain_len++] = 0x7E;  // Extended protocol discriminator
+    plain_5g_nas[plain_len++] = 0x00;  // Security header type (plain)
+    plain_5g_nas[plain_len++] = 0x5E;  // Message type: Security Mode Complete
+
+    // ... add IEs (IMEISV, NAS message container, etc.) ...
+
+    // NOW: Add 5G Integrity Protection
+    uint8_t mac[4];
+    if (ue_map && ue_map->has_nas_keys) {
+        if (s1n2_compute_5g_uplink_mac(ue_map, plain_5g_nas, plain_len, mac) == 0) {
+            // Prepend security header
+            // Final format: [EPD=0x7E][Sec=0x02][MAC(4)][Plain NAS]
+
+            size_t protected_len = 6 + plain_len;  // EPD(1) + Sec(1) + MAC(4) + Plain
+
+            nas_5g[0] = 0x7E;  // Extended protocol discriminator
+            nas_5g[1] = 0x02;  // Security header type 2: Integrity protected
+            memcpy(nas_5g + 2, mac, 4);
+            memcpy(nas_5g + 6, plain_5g_nas, plain_len);
+
+            *nas_5g_len = protected_len;
+
+            // Increment uplink count
+            ue_map->nas_ul_count_5g++;
+
+            printf("[INFO] Added 5G Integrity Protection to Security Mode Complete\n");
+            printf("[DEBUG] 5G UL MAC: %02X %02X %02X %02X (COUNT=0x%08X)\n",
+                   mac[0], mac[1], mac[2], mac[3], ue_map->nas_ul_count_5g - 1);
+
+            return 0;
+        } else {
+            printf("[WARN] Failed to compute 5G uplink MAC, sending plain\n");
+        }
+    }
+
+    // Fallback: send plain (existing behavior)
+    memcpy(nas_5g, plain_5g_nas, plain_len);
+    *nas_5g_len = plain_len;
+}
+```
+
+#### Phase 2: 初期化とカウンタ管理
+
+**ファイル**: `src/context/s1n2_context.c`
+
+```c
+// UE context初期化時
+ue_id_mapping_t* s1n2_context_add_ue_mapping(...) {
+    // ... existing code ...
+    ue->nas_ul_count_5g = 0;
+    ue->has_sent_smc = false;
+    // ...
+}
+```
+
+**ファイル**: `src/nas/s1n2_nas.c`
+
+```c
+// Security Mode Command処理時（下り方向）
+// NAS下りカウントをインクリメント（既存）
+security_map->nas_dl_count++;
+
+// Security Mode Complete処理時（上り方向）
+// NAS上りカウントは上記のMAC計算後にインクリメント（新規）
+```
+
+### 検証計画
+
+#### 自動テスト
+```bash
+# 1. ビルド
+cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G
+make clean && make
+
+# 2. Dockerイメージ再ビルド
+cd /home/taihei/docker_open5gs_sXGP-5G
+docker compose -f docker-compose.s1n2.yml build s1n2
+
+# 3. 再起動とキャプチャ
+docker restart srsue_zmq-s1n2 srsenb_zmq-s1n2 s1n2
+sleep 30
+sudo timeout 60 tcpdump -i br-sXGP-5G -w log/test_integrity_$(date +%s).pcap 'sctp port 38412'
+
+# 4. 自動分析
+./analyze_5g_flow.sh log/test_integrity_*.pcap
+```
+
+#### 期待される結果
+- ✅ Security Mode Complete: `7e 02 [MAC] 00 5e...` (Integrity Protected)
+- ✅ AMFログ: ERROR消失
+- ✅ InitialContextSetupRequest (procedureCode=14) 出現
+- ✅ analyze_5g_flow.sh: "TEST PASSED"
+
+#### 詳細検証（tshark）
+```bash
+# Frame番号確認
+tshark -r log/test_integrity_*.pcap | grep "Security mode complete"
+
+# 該当フレームの詳細表示
+tshark -r log/test_integrity_*.pcap -Y "frame.number == X" -V | grep -A10 "NAS-5GS"
+
+# 期待される出力:
+# Extended protocol discriminator: 0x7e
+# Security header type: Integrity protected (2)
+# Message authentication code: [4 bytes]
+# Message type: Security mode complete (0x5e)
+```
+
+#### デバッグログ確認
+```bash
+# s1n2コンバータログ
+docker logs s1n2 2>&1 | grep -i "5G UL MAC\|Integrity Protection"
+
+# AMFログ（エラーがないことを確認）
+docker logs amf-s1n2 2>&1 | grep -i "Security-mode\|No Integrity"
+```
+
+### カスタムログ追加（詰まった場合）
+
+#### AMF側（Open5GS）
+**ファイル**: `sources/open5gs/src/amf/gmm-sm.c:1953`付近
+
+```c
+// エラーメッセージの前に詳細ログ追加
+printf("[DEBUG-AMF] Security Mode Complete received:\n");
+printf("  Security header type: %d\n", h.type);
+printf("  Integrity protected: %d\n", h.integrity_protected);
+printf("  Expected MAC: [compute here]\n");
+printf("  Received MAC: %02X %02X %02X %02X\n", ...);
+```
+
+#### srsRANログ強化
+- 必要に応じて4G NAS MACの詳細ログを追加
+- 現時点では不要（4G側は正常動作）
+
+---
+
+## 📋 標準作業手順（SOP: Standard Operating Procedure）
+
+### 1. コンテナ起動とテスト実行
+
+#### 1.1 コンテナの起動（5Gスタンドアロン構成）
+```bash
+cd /home/taihei/docker_open5gs_sXGP-5G
+docker compose -f docker-compose.5g-all.yml up -d
+```
+
+#### 1.2 s1n2コンバータの起動
+```bash
+cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G
+docker compose -f docker-compose.s1n2.yml up -d
+```
+
+#### 1.3 コンテナ状態の確認
+```bash
+docker ps --format "table {{.Names}}\t{{.Status}}"
+```
+**期待結果**: 以下のコンテナがすべて `Up` 状態
+- `s1n2_converter`
+- `amf`, `smf`, `upf`, `nrf`, `ausf`, `udm`, `udr`, `pcf`, `bsf`
+
+#### 1.4 srsUE（4G）の起動とアタッチ
+```bash
+# 別ターミナルで実行
+docker exec -it srsue_4g srsue /config/ue.conf
+```
+**期待動作**: 4G EPC (MME) へのアタッチが成功し、PDNセッションが確立される
+
+---
+
+### 2. パケットキャプチャの取得
+
+#### 2.1 リアルタイムキャプチャ（テスト中）
+```bash
+# br-sXGP-5G ブリッジインターフェース上で SCTP (port 38412) をキャプチャ
+# 60秒間または100パケットまで取得
+timeout 60 tcpdump -i br-sXGP-5G -c 100 -w /home/taihei/docker_open5gs_sXGP-5G/log/$(date +%Y%m%d_%H%M%S).pcap 'sctp port 38412'
+```
+
+**オプション説明**:
+- `-i br-sXGP-5G`: s1n2↔AMF間の仮想ブリッジをキャプチャ
+- `-c 100`: 100パケット取得後に自動停止
+- `'sctp port 38412'`: NGAP (5G N2インターフェース) のみフィルタ
+- `timeout 60`: 60秒後に強制終了（無限キャプチャ防止）
+
+#### 2.2 バックグラウンドキャプチャ（長期テスト用）
+```bash
+# バックグラウンドで起動し、PIDを記録
+tcpdump -i br-sXGP-5G -w /home/taihei/docker_open5gs_sXGP-5G/log/$(date +%Y%m%d_%H%M%S).pcap 'sctp port 38412' &
+TCPDUMP_PID=$!
+echo "tcpdump PID: $TCPDUMP_PID"
+
+# テスト実施...
+
+# 終了時
+kill $TCPDUMP_PID
+```
+
+#### 2.3 キャプチャファイルの確認
+```bash
+ls -lht /home/taihei/docker_open5gs_sXGP-5G/log/*.pcap | head -5
+```
+
+---
+
+### 3. パケット分析（tshark使用）
+
+#### 3.1 基本分析: NASメッセージ一覧の表示
+```bash
+PCAP_FILE="/home/taihei/docker_open5gs_sXGP-5G/log/最新のファイル.pcap"
+
+tshark -r "$PCAP_FILE" -Y "nas-5gs" \
+  -T fields \
+  -e frame.number \
+  -e nas-5gs.mm.message_type \
+  -e ngap.procedureCode \
+  -E header=y \
+  -E separator="|" \
+  -E quote=d
+```
+
+**出力例**:
+```
+frame.number|nas-5gs.mm.message_type|ngap.procedureCode
+8|"Security mode complete"|"14"
+10|"Security mode command"|"14"
+```
+
+#### 3.2 詳細分析: Security Mode Complete の Integrity Protection 確認
+```bash
+tshark -r "$PCAP_FILE" -Y "nas-5gs.mm.message_type == 0x5e" \
+  -T fields \
+  -e frame.number \
+  -e nas-5gs.security_header_type \
+  -e nas-5gs.message_authentication_code \
+  -e nas-5gs.mm.message_type_name \
+  -E header=y
+```
+
+**チェックポイント**:
+- `nas-5gs.security_header_type`: `0x00` (平文) なら ❌、`0x02` or `0x04` なら ✅
+- `nas-5gs.message_authentication_code`: 存在すれば Integrity Protected
+
+#### 3.3 NGAPプロシージャの流れ確認
+```bash
+tshark -r "$PCAP_FILE" -Y "ngap" \
+  -T fields \
+  -e frame.number \
+  -e ngap.procedureCode \
+  -e ngap.ProtocolIE_ID \
+  -E header=y
+```
+
+**期待される正常フロー**:
+1. `InitialUEMessage` (procedureCode=15) - UEからの最初のメッセージ
+2. `DownlinkNASTransport` (procedureCode=4) - AMF→UE (Security Mode Command)
+3. `UplinkNASTransport` (procedureCode=46) - UE→AMF (Security Mode Complete)
+4. **`InitialContextSetupRequest` (procedureCode=14)** ← これが来れば成功
+5. `InitialContextSetupResponse` (procedureCode=14)
+
+#### 3.4 自動分析スクリプトの使用
+```bash
+# 5G Registration フローの完全性チェック
+/home/taihei/docker_open5gs_sXGP-5G/sXGP-5G/analyze_5g_flow.sh "$PCAP_FILE"
+```
+
+**出力例**:
+```
+=== 5G Registration Flow Analysis ===
+File: 20251013_205530.pcap
+
+✓ Security Mode Command found (Frame 6)
+✓ Security Mode Complete found (Frame 8)
+✗ InitialContextSetupRequest NOT FOUND
+✗ Registration Accept NOT FOUND
+
+Result: ❌ TEST FAILED
+Reason: Registration flow incomplete
+```
+
+---
+
+### 4. ログ確認
+
+#### 4.1 AMFログ（Open5GS）
+```bash
+docker logs amf 2>&1 | tail -100
+```
+
+**重要なログパターン**:
+- ✅ 成功: `[gmm] INFO: [imsi-xxx] Security mode complete`
+- ❌ 失敗: `[gmm] ERROR: [imsi-xxx] Security-mode : No Integrity Protected`
+- ⚠️ 警告: `[gmm] WARNING: MAC verification failed`
+
+#### 4.2 s1n2コンバータログ
+```bash
+docker logs s1n2_converter 2>&1 | tail -100
+```
+
+**チェックポイント**:
+- `[s1n2] 4G→5G NAS conversion: Security Mode Complete`
+- `[s1n2] Computed 5G UL MAC: 0xXXXXXXXX`
+- `[s1n2] Adding NAS message container (Registration Request)`
+
+#### 4.3 複数コンテナの同時ログ監視
+```bash
+# AMF と s1n2 を同時に tail -f
+docker logs -f amf 2>&1 | grep --line-buffered "Security\|Registration" &
+docker logs -f s1n2_converter 2>&1 | grep --line-buffered "5G NAS\|MAC"
+```
+
+---
+
+### 5. デバッグワークフロー
+
+#### 5.1 問題発生時の標準手順
+1. **パケットキャプチャを取得**（上記 §2）
+2. **Security Mode Complete の Integrity Protection を確認**（§3.2）
+3. **AMFログで拒否理由を確認**（§4.1）
+4. **s1n2ログでMAC計算値を確認**（§4.2）
+5. **WiresharkでMAC値を比較**:
+   ```bash
+   wireshark "$PCAP_FILE" &
+   # Filter: nas-5gs.mm.message_type == 0x5e
+   # 確認: Message Authentication Code フィールド
+   ```
+
+#### 5.2 よくある問題と対処法
+
+| 症状 | 原因 | 対処法 |
+|------|------|--------|
+| `No Integrity Protected` エラー | Security header type が 0x00 (平文) | s1n2で5G NAS Security Headerを再構成 |
+| `MAC verification failed` | MAC計算が間違っている | COUNT, K_NASint, direction パラメータを確認 |
+| InitialContextSetupRequest が来ない | Security Mode Complete が拒否された | 上記2つのいずれかが原因 |
+| AMFが Security Mode Command を繰り返す | Security Mode Complete のタイムアウト | s1n2がメッセージを送信していない可能性 |
+
+---
+
+### 6. GitHub Copilot による自動化
+
+上記すべての手順は GitHub Copilot Chat で自動実行可能です:
+
+**例: パケットキャプチャ→分析の一連実行**
+```
+ユーザー: "60秒間パケットキャプチャして、Security Mode Completeの
+         Integrity Protectionを確認して"
+
+Copilot: (以下を自動実行)
+  1. timeout 60 tcpdump ...
+  2. tshark -r ... -Y "nas-5gs.mm.message_type == 0x5e"
+  3. 結果を解釈して報告
+```
+
+**設定済み機能**:
+- ✅ パイプ (`|`) や `&&` を含むコマンドの自動実行
+- ✅ `sudo` 不要な tcpdump（setcap による特権付与済み）
+- ✅ システムコマンド（ps, lsof, netstat など）の自動実行
+
+---
+
+### 7. クリーンアップ
+
+#### 7.1 コンテナの停止
+```bash
+# s1n2コンバータ停止
+cd /home/taihei/docker_open5gs_sXGP-5G/sXGP-5G
+docker compose -f docker-compose.s1n2.yml down
+
+# 5Gコア停止
+cd /home/taihei/docker_open5gs_sXGP-5G
+docker compose -f docker-compose.5g-all.yml down
+```
+
+#### 7.2 古いキャプチャファイルの削除
+```bash
+# 7日以上前のpcapファイルを削除
+find /home/taihei/docker_open5gs_sXGP-5G/log -name "*.pcap" -mtime +7 -delete
+```
+
+#### 7.3 ログのアーカイブ
+```bash
+# 重要なキャプチャは日付付きディレクトリに保存
+mkdir -p /home/taihei/docker_open5gs_sXGP-5G/log/archive/$(date +%Y%m%d)
+mv /home/taihei/docker_open5gs_sXGP-5G/log/*.pcap \
+   /home/taihei/docker_open5gs_sXGP-5G/log/archive/$(date +%Y%m%d)/
+```
+
+---
+
+## 2025-10-18: Security Mode Complete MAC検証失敗の根本原因調査
+
+### 問題の経緯
+
+**初期症状:**
+- Security Mode Complete送信後、AMFが "No Security Context" エラーを出力
+- 以前のログ: `10/17 17:06:09.121: [gmm] ERROR: [imsi-001011234567895] No Security Context`
+
+**調査の過程:**
+1. **Plain NAS送信の試み (2025-10-17):**
+   - S1-N2がSecurity Mode CompleteをIntegrity Protectionなしで送信
+   - 結果: AMFが "No Integrity Protected" エラーで拒否
+   - AMFのチェック: `gmm-sm.c:1952` で `h.integrity_protected == 0` を検出
+
+2. **Dummy MAC送信の検討:**
+   - S1-N2が適当なMAC値(例: `00 00 00 00`)でIntegrity Protected NASを送信する案
+   - 仮説: AMFはMAC検証に失敗しても処理を継続するのではないか？
+
+3. **決定的な発見 (2025-10-18):**
+   - `SECURITY_CONTEXT_IS_VALID` マクロの定義を調査
+   - **重大な発見**: `mac_failed` フラグは実際にチェックされている！
+
+### 根本原因の解明
+
+#### 1. SECURITY_CONTEXT_IS_VALID マクロの定義
+
+**ファイル:** `sources/open5gs/src/amf/context.h`
+
+```c
+#define SECURITY_CONTEXT_IS_VALID(__aMF) \
+    ((__aMF) && \
+    ((__aMF)->security_context_available == 1) && \
+     ((__aMF)->mac_failed == 0) && \          ← ★ ここでチェック!
+     ((__aMF)->nas.ue.ksi != OGS_NAS_KSI_NO_KEY_IS_AVAILABLE))
+```
+
+**重要なポイント:**
+- `mac_failed == 0` が Security Context 有効性の**必須条件**
+- MAC検証に失敗すると、Security Contextが無効と判定される
+
+#### 2. Security Mode Complete 処理フロー
+
+**ファイル:** `sources/open5gs/src/amf/gmm-sm.c:1934-1960`
+
+```c
+case OGS_NAS_5GS_SECURITY_MODE_COMPLETE:
+    ogs_debug("[%s] Security mode complete", amf_ue->supi);
+
+    // ステップ1: Integrity Protectedヘッダーの有無をチェック
+    if (h.integrity_protected == 0) {
+        ogs_error("[%s] Security-mode : No Integrity Protected", amf_ue->supi);
+        break;  // ← Plain NASは拒否
+    }
+
+    // ステップ2: Security Contextの有効性をチェック
+    if (!SECURITY_CONTEXT_IS_VALID(amf_ue)) {
+        ogs_error("[%s] No Security Context", amf_ue->supi);  // ← ここでエラー!
+        break;
+    }
+
+    // ステップ3以降: 正常処理
+    CLEAR_NG_CONTEXT(amf_ue);
+    CLEAR_AMF_UE_TIMER(amf_ue->t3560);
+    gmm_cause = gmm_handle_security_mode_complete(...);
+```
+
+#### 3. MAC検証処理
+
+**ファイル:** `sources/open5gs/src/amf/nas-security.c:189-197`
+
+```c
+if (security_header_type.integrity_protected) {
+    uint8_t mac[NAS_SECURITY_MAC_SIZE];
+
+    // MAC計算
+    ogs_nas_mac_calculate(amf_ue->selected_int_algorithm,
+        amf_ue->knas_int, amf_ue->ul_count.i32,
+        amf_ue->nas.access_type,
+        OGS_NAS_SECURITY_UPLINK_DIRECTION, pkbuf, mac);
+
+    // MAC検証
+    if (h->message_authentication_code != mac32) {
+        ogs_warn("NAS MAC verification failed(0x%x != 0x%x)", ...);
+        amf_ue->mac_failed = 1;  // ← フラグ設定
+    }
+}
+// ⚠️ 関数はOGS_OKを返して継続 (処理は中断しない)
+```
+
+#### 4. 完全な処理フロー (失敗パターン)
+
+```
+[1] AMFがSecurity Mode Completeを受信
+    ↓
+[2] nas_security_decode() でNASメッセージ解析
+    ↓
+[3] security_header_type.integrity_protected = 1 と判定
+    ↓
+[4] MAC検証実行
+    - AMFのK_NASint: 43D878E1...
+    - S1-N2が計算したMAC: FB EB AF 35
+    - AMFが期待するMAC: D8 2F B5 71
+    - 不一致!
+    ↓
+[5] amf_ue->mac_failed = 1 設定
+    ↓
+[6] nas_security_decode() がOGS_OKを返す (処理継続)
+    ↓
+[7] gmm-sm.c の Security Mode Complete処理に戻る
+    ↓
+[8] h.integrity_protected == 0 チェック
+    - 結果: 0x02なのでOK (通過)
+    ↓
+[9] SECURITY_CONTEXT_IS_VALID(amf_ue) チェック
+    - security_context_available: 1 ✓
+    - mac_failed: 1 ✗  ← ここで失敗!
+    - 結果: FALSE
+    ↓
+[10] "No Security Context" エラー出力
+    ↓
+[11] break で処理中断
+```
+
+### 因果関係の明確化
+
+**質問:** MAC検証失敗とSecurity Context未確立は別の問題か?
+
+**回答:** 別の問題ではなく、**因果関係**がある:
+
+1. **直接原因:** MAC検証失敗により `mac_failed = 1` が設定される
+2. **間接結果:** `SECURITY_CONTEXT_IS_VALID` が FALSE を返す
+3. **最終症状:** "No Security Context" エラーが出力される
+
+つまり、"No Security Context" エラーは、実は **MAC検証失敗の結果** である。
+
+### 以前のログの再解釈
+
+```
+10/17 17:06:09.120: [nas] WARNING: NAS MAC verification failed(0x1c6cd2dd != 0x1a3dec01)
+10/17 17:06:09.121: [gmm] ERROR: [imsi-001011234567895] No Security Context
+```
+
+この2行のログは連続していて:
+- **1行目:** MAC検証失敗 → `mac_failed = 1` 設定
+- **2行目:** `SECURITY_CONTEXT_IS_VALID` チェック失敗 → エラー出力
+
+### 根本原因の本質
+
+**なぜMAC検証が失敗するのか?**
+
+1. **S1-N2とAMFは異なる鍵階層を使用:**
+   - S1-N2: 4G UEの `CK||IK` から5G鍵を導出
+     - Kausf → Kseaf → Kamf → K_NASint_5g
+     - K_NASint_5g: `A6B1BA0E7AA9266A0714827E3F26B6F6`
+   - AMF: AUSFから受信した `Kseaf` から鍵を導出
+     - Kseaf → Kamf → K_NASint
+     - K_NASint: `43D878E13B1CE2FF1FF2C95FD3B5E8ED`
+
+2. **異なるAUSFセッション:**
+   - S1-N2: 4G認証応答から独自にKausfを導出
+   - AMF: AUSFとの通信で別のKseafを取得
+   - 結果: 完全に異なる鍵階層
+
+3. **MAC値の不一致:**
+   - S1-N2が計算したMAC: `FB EB AF 35`
+   - AMFが期待するMAC: `D8 2F B5 71`
+   - 絶対に一致しない
+
+### 試行したアプローチと失敗理由
+
+#### アプローチ1: Plain NAS送信
+```
+実装: Security Mode CompleteをIntegrity Protectionなしで送信
+結果: ❌ 失敗
+理由: AMFがh.integrity_protected == 0でエラー (gmm-sm.c:1952)
+```
+
+#### アプローチ2: Dummy MAC送信 (検討のみ)
+```
+計画: 適当なMAC値(例: 00 00 00 00)でIntegrity Protected NASを送信
+予想結果: ❌ 失敗確実
+理由:
+  1. AMFがMAC検証実行
+  2. mac_failed = 1 設定
+  3. SECURITY_CONTEXT_IS_VALID が FALSE
+  4. "No Security Context" エラー
+```
+
+### S1-N2のみの修正では解決不可能
+
+**結論:** 現在のOpen5GS AMF実装では、S1-N2コンバータのみの修正では解決できない。
+
+**理由:**
+1. 正しいMACを計算するには、AMFと同じK_NASintが必要
+2. S1-N2とAMFは異なる鍵階層を使用
+3. AMFが使用するKseafはAUSFから取得され、S1-N2からは取得不可能
+4. `mac_failed` フラグは `SECURITY_CONTEXT_IS_VALID` マクロでチェックされる
+5. MAC検証失敗は必ず "No Security Context" エラーを引き起こす
+
+### 解決に必要な修正
+
+以下のいずれかが必要:
+
+**オプション1: AMF側の修正**
+```c
+// sources/open5gs/src/amf/context.h
+#define SECURITY_CONTEXT_IS_VALID(__aMF) \
+    ((__aMF) && \
+    ((__aMF)->security_context_available == 1) && \
+     /* ((__aMF)->mac_failed == 0) && */  /* ← この行をコメントアウト */ \
+     ((__aMF)->nas.ue.ksi != OGS_NAS_KSI_NO_KEY_IS_AVAILABLE))
+```
+
+**オプション2: AMFでmac_failedを強制リセット**
+```c
+// sources/open5gs/src/amf/gmm-sm.c
+case OGS_NAS_5GS_SECURITY_MODE_COMPLETE:
+    // 特定条件(S1-N2経由の場合など)でリセット
+    if (特定条件) {
+        amf_ue->mac_failed = 0;  // 強制リセット
+    }
+```
+
+**オプション3: S1-N2とAMF間でKseafを共有**
+- RedisやHTTP APIを使用してKseafを同期
+- 両方のコンポーネントの修正が必要
+
+### 今後の方針
+
+ユーザーの要件:
+- ✅ **S1-N2コンバータのコードの修正のみで対応できること**
+- ✅ **必ずしも3GPP標準に沿っていなくても良い**
+
+しかし、調査の結果:
+- ❌ **S1-N2のみの修正では技術的に不可能**
+- AMF側の最小限の修正が必須
+
+次のステップ:
+1. AMFの`SECURITY_CONTEXT_IS_VALID`マクロを修正する (最小限の変更)
+2. または、別のアーキテクチャアプローチを検討する
+
+
+### 補足調査: S1-N2がSBI経由でAMFの鍵情報を取得できるか?
+
+#### 調査目的
+
+S1-N2コンバータがOpen5GSのSBI (Service Based Interface)を使用してAMFからK_NASintやKseafを取得し、AMFと同じ鍵を使用することは可能か?
+
+#### Open5GS AMFが提供するSBI API
+
+**確認したファイル:**
+- `sources/open5gs/src/amf/amf-sm.c` - SBIメッセージ処理
+- `sources/open5gs/src/amf/namf-handler.c` - Namfサービスハンドラ
+- `sources/open5gs/src/amf/context.h` - UE Context構造体定義
+
+**提供されているSBI API:**
+
+1. **Namf_Communication サービス** (`/namf-comm/v1`)
+   - `/ue-contexts/{supi}/n1-n2-messages` (POST)
+     - SMFからAMFへのN1/N2メッセージ転送
+     - 用途: PDU Session関連のNASメッセージ送信
+   - `/ue-contexts/{supi}/transfer` (POST)
+     - UE Context Transfer要求/応答
+     - 用途: AMF間のUE Context移動
+
+2. **Namf_Callback サービス** (`/namf-callback/v1`)
+   - `/{supi}/sm-context-status/{psi}` (POST)
+     - SM Context状態通知
+   - `/{ueContextId}/dereg-notify` (POST)
+     - 登録解除通知
+   - `/{ueContextId}/sdm-data-change-notify` (POST)
+     - 加入者データ変更通知
+
+**重要な発見:**
+
+```c
+// sources/open5gs/src/amf/context.h:385-392
+struct amf_ue_s {
+    // ...
+    uint8_t         knas_int[OGS_SHA256_DIGEST_SIZE/2];  // ← K_NASint (16 bytes)
+    uint8_t         knas_enc[OGS_SHA256_DIGEST_SIZE/2];  // ← K_NASenc (16 bytes)
+    uint32_t        dl_count;
+    union {
+        // ...
+    } ul_count;
+    uint8_t         kgnb[OGS_SHA256_DIGEST_SIZE];
+    // ...
+};
+```
+
+`knas_int`と`knas_enc`はamf_ue_t構造体に存在するが、**外部APIで公開されていない**。
+
+#### 調査結果: 既存APIでは不可能
+
+**理由:**
+
+1. **セキュリティ鍵はSBI APIで公開されていない**
+   - `knas_int`, `knas_enc`, `kamf` などのフィールドはAMF内部データ
+   - 3GPP標準のNamfサービス(TS 29.518)にも鍵取得APIは定義されていない
+   - セキュリティ上の理由から、鍵情報を外部に公開することは許可されていない
+
+2. **UE Context Transfer APIでも鍵は転送されない**
+   - `/ue-contexts/{supi}/transfer` APIは存在するが、
+   - これはAMF間のハンドオーバー用
+   - 実装を確認したが、セキュリティ鍵の転送は含まれていない
+
+3. **Kseaf取得も不可能**
+   - AUSFから取得したKseafもAMF内部に保持
+   - 外部に公開するAPIは存在しない
+
+#### 解決策: カスタムSBI APIの追加が必要
+
+**方法1: 非標準のカスタムAPIを追加**
+
+AMFに新しいエンドポイントを追加:
+
+```c
+// sources/open5gs/src/amf/amf-sm.c に追加
+CASE(OGS_SBI_SERVICE_NAME_NAMF_CUSTOM)  // 新しいサービス名
+    SWITCH(sbi_message.h.resource.component[0])
+    CASE("ue-security-context")  // /namf-custom/v1/ue-security-context/{supi}
+        SWITCH(sbi_message.h.method)
+        CASE(OGS_SBI_HTTP_METHOD_GET)
+            // K_NASint, Kseafを返すカスタムハンドラ
+            amf_custom_handle_get_security_context(stream, &sbi_message);
+            break;
+        END
+    END
+END
+
+// namf-handler.c に追加
+int amf_custom_handle_get_security_context(
+        ogs_sbi_stream_t *stream, ogs_sbi_message_t *recvmsg)
+{
+    amf_ue_t *amf_ue;
+    char *supi;
+
+    supi = recvmsg->h.resource.component[1];
+    amf_ue = amf_ue_find_by_supi(supi);
+
+    if (amf_ue && SECURITY_CONTEXT_IS_VALID(amf_ue)) {
+        // JSON レスポンス構築
+        // { "knas_int": "...", "knas_enc": "...", "ul_count": ... }
+        return send_security_context_response(stream, amf_ue);
+    }
+    return OGS_ERROR;
+}
+```
+
+**S1-N2側の実装:**
+
+```c
+// sXGP-5G/src/nas/s1n2_nas.c に追加
+int s1n2_get_amf_security_context(const char *supi,
+                                   uint8_t *knas_int_out,
+                                   uint32_t *ul_count_out)
+{
+    // HTTPクライアント実装
+    char url[256];
+    snprintf(url, sizeof(url),
+             "http://amf:7777/namf-custom/v1/ue-security-context/%s", supi);
+
+    // HTTP GET リクエスト送信
+    http_response_t *response = http_get(url);
+
+    // JSON パース
+    if (response && response->status == 200) {
+        parse_json_and_extract_knas_int(response->body, knas_int_out);
+        parse_json_and_extract_ul_count(response->body, ul_count_out);
+        return 0;
+    }
+    return -1;
+}
+```
+
+**使用方法:**
+
+```c
+// Security Mode Complete構築時
+uint8_t amf_knas_int[16];
+uint32_t amf_ul_count;
+
+if (s1n2_get_amf_security_context(supi, amf_knas_int, &amf_ul_count) == 0) {
+    // AMFの鍵を使用してMACを計算
+    s1n2_compute_5g_uplink_mac_with_key(amf_knas_int, amf_ul_count, nas_5g, out, mac);
+    // Integrity Protected NASを構築
+    build_integrity_protected_nas(mac, amf_ul_count, nas_5g, out);
+} else {
+    ogs_error("Failed to get AMF security context");
+}
+```
+
+#### 方法2: 共有メモリ/Redisを使用
+
+AMFとS1-N2の両方で鍵情報を共有:
+
+**AMF側:**
+
+```c
+// sources/open5gs/src/amf/gmm-sm.c
+// Security Mode Command送信後にRedisに保存
+case OGS_NAS_5GS_SECURITY_MODE_COMMAND:
+    // ...
+    if (SECURITY_CONTEXT_IS_VALID(amf_ue)) {
+        redis_set_ue_security_context(amf_ue->supi,
+                                       amf_ue->knas_int,
+                                       amf_ue->ul_count.i32);
+    }
+```
+
+**S1-N2側:**
+
+```c
+// Security Mode Complete構築時
+uint8_t knas_int[16];
+uint32_t ul_count;
+
+if (redis_get_ue_security_context(supi, knas_int, &ul_count) == 0) {
+    // AMFと同じ鍵を使用
+    s1n2_compute_5g_uplink_mac_with_key(knas_int, ul_count, nas_5g, out, mac);
+}
+```
+
+#### 結論
+
+**質問:** S1-N2がSBI経由でAMFのK_NASintを取得できるか?
+
+**回答:** **既存のOpen5GS実装では不可能。以下の理由:**
+
+1. ✅ **技術的には実装可能:**
+   - AMFに非標準のカスタムSBI APIを追加すれば実現可能
+   - S1-N2からHTTP GETでK_NASintを取得できる
+   - AMFと同じ鍵を使用してMACを計算可能
+
+2. ❌ **しかし、AMF側の修正が必須:**
+   - 新しいSBIエンドポイントの追加 (`/namf-custom/v1/ue-security-context/{supi}`)
+   - セキュリティコンテキストを返すハンドラの実装
+   - または、Redis等の共有ストレージへの書き込み処理追加
+
+3. ⚠️ **セキュリティ上の懸念:**
+   - K_NASintをネットワーク経由で送信することはセキュリティリスク
+   - TLS必須、認証・認可メカニズムが必要
+   - 3GPP標準外のアプローチ
+
+4. 📊 **実装コスト:**
+   - AMF側: 約100-200行のコード追加
+   - S1-N2側: HTTPクライアント実装 (約100-150行)
+   - 合計: 約200-350行の追加コード
+
+**最終結論:**
+
+**ユーザーの要件「S1-N2のみの修正で対応できること」は満たせません。**
+
+いずれのアプローチも、AMF側の修正が必須です:
+- カスタムSBI API追加
+- 共有メモリ/Redis実装
+- または、`SECURITY_CONTEXT_IS_VALID`マクロの修正
+
+**最も実装コストが低いのは:**
+- AMFの`SECURITY_CONTEXT_IS_VALID`マクロから`mac_failed`チェックを削除 (1行の変更)
+- これにより、S1-N2が送信するMAC値が不正でもAMFは処理を継続
+
+**推奨アプローチ:**
+
+オプション1: `SECURITY_CONTEXT_IS_VALID`マクロ修正 (最小変更)
+- 変更箇所: 1ファイル、1行
+- セキュリティリスク: 低 (4G S1APのIntegrity Protectionで保護)
+- 3GPP準拠: 非準拠 (MAC検証スキップ)
+
+オプション2: カスタムSBI API追加 (標準的)
+- 変更箇所: AMF 3ファイル (~200行)、S1-N2 2ファイル (~150行)
+- セキュリティリスク: 中 (TLS使用で軽減可能)
+- 3GPP準拠: 非準拠 (非標準API)
+- メリット: 正しいMACを計算可能
+
+
+---
+
+### 補足調査2: AUSFの鍵管理とSBI API
+
+#### 調査目的
+AUSFがKausfやKseafをどのように管理し、AMFにどのように提供しているかを調査。S1-N2がAUSFから直接鍵情報を取得できるかを確認する。
+
+#### Open5GS AUSFの鍵管理
+
+**確認したファイル:**
+- `sources/open5gs/src/ausf/context.h` - AUSF UE Context構造体定義
+- `sources/open5gs/src/ausf/nudm-handler.c` - UDMとの通信処理
+- `sources/open5gs/src/ausf/nausf-handler.c` - Nausfサービスハンドラ
+- `sources/open5gs/src/ausf/ausf-sm.c` - AUSF状態機械・SBIルーティング
+- `sources/open5gs/lib/sbi/types.h` - SBIサービス定義
+
+**ausf_ue_s構造体 (context.h:83-88):**
+```c
+struct ausf_ue_s {
+    ogs_sbi_object_t sbi;
+    ogs_pool_id_t id;
+    ogs_fsm_t sm;
+
+    char *ctx_id;
+    char *suci;
+    char *supi;
+    char *serving_network_name;
+
+    OpenAPI_auth_type_e auth_type;
+    // ...
+    uint8_t rand[OGS_RAND_LEN];
+    uint8_t xres_star[OGS_MAX_RES_LEN];
+    uint8_t hxres_star[OGS_MAX_RES_LEN];
+    uint8_t kausf[OGS_SHA256_DIGEST_SIZE];  // ← Kausf (32 bytes)
+    uint8_t kseaf[OGS_SHA256_DIGEST_SIZE];  // ← Kseaf (32 bytes)
+};
+```
+
+#### AUSFの5G AKA認証フロー
+
+**1. 認証要求受信 (AMF → AUSF)**
+- エンドポイント: `POST /nausf-auth/v1/ue-authentications`
+- ハンドラ: `ausf_nausf_auth_handle_authenticate()` (nausf-handler.c:25-63)
+- 処理内容:
+  * AMFから`AuthenticationInfo`を受信
+  * `serving_network_name`を保存
+  * UDMに認証ベクトル要求 (`NUDM_UEAU_Get`)
+
+**2. UDMから認証ベクトル受信**
+- ハンドラ: `ausf_nudm_ueau_handle_get()` (nudm-handler.c:37-280)
+- 受信データ: `AuthenticationInfoResult` (from UDM)
+  * `rand` - Random Challenge
+  * `xres_star` - Expected Response
+  * `autn` - Authentication Token
+  * **`kausf`** - Key for AUSF (UDM/UDRから取得)
+  * `supi` - Subscriber Permanent Identifier
+
+**3. Kausfの保存と処理 (nudm-handler.c:198-203):**
+```c
+ogs_ascii_to_hex(
+    AuthenticationVector->rand,
+    strlen(AuthenticationVector->rand),
+    ausf_ue->rand, sizeof(ausf_ue->rand));
+ogs_ascii_to_hex(
+    AuthenticationVector->xres_star,
+    strlen(AuthenticationVector->xres_star),
+    ausf_ue->xres_star, sizeof(ausf_ue->xres_star));
+ogs_ascii_to_hex(
+    AuthenticationVector->kausf,  // ← UDMから受信したKausf
+    strlen(AuthenticationVector->kausf),
+    ausf_ue->kausf, sizeof(ausf_ue->kausf));  // ← 32バイトに変換して保存
+```
+
+**4. AMFに認証チャレンジ応答 (nudm-handler.c:208-274)**
+- レスポンス: `UeAuthenticationCtx` (201 Created)
+- 含まれる内容:
+  * `rand` - AMFに転送
+  * `autn` - AMFに転送
+  * `hxres_star` - AMFに転送 (XRES*のハッシュ値)
+  * **`_links`** - 認証確認用エンドポイントURL
+  * **`kausf`は送信しない** - セキュリティ上の理由
+
+**5. 認証確認 (AMF → AUSF)**
+- エンドポイント: `PUT /nausf-auth/v1/ue-authentications/{authCtxId}/5g-aka-confirmation`
+- ハンドラ: `ausf_nausf_auth_handle_authenticate_confirmation()` (nausf-handler.c:65-118)
+- 処理内容:
+  * AMFから`ConfirmationData`を受信
+  * `res_star`を検証 (UEから受信したRES* vs 期待値XRES*)
+  * UDMに認証結果通知 (`NUDM_UEAU_ResultConfirmationInform`)
+
+**6. Kseaf導出とAMFへの送信 (nudm-handler.c:456-463)**
+```c
+// Kseafの導出
+ogs_kdf_kseaf(ausf_ue->serving_network_name,
+        ausf_ue->kausf, ausf_ue->kseaf);  // ← Kausf → Kseaf
+
+// HEX文字列に変換
+ogs_hex_to_ascii(ausf_ue->kseaf, sizeof(ausf_ue->kseaf),
+        kseaf_string, sizeof(kseaf_string));
+
+// レスポンスに含める
+ConfirmationDataResponse.kseaf = kseaf_string;  // ← AMFに送信
+```
+
+**7. AMFへのレスポンス**
+- HTTP 200 OK
+- Body: `ConfirmationDataResponse`
+  * `auth_result` - AUTHENTICATION_SUCCESS/FAILURE
+  * `supi` - 加入者ID
+  * **`kseaf`** - ← これがAMFに渡される唯一の鍵情報
+
+#### AUSF SBI APIの提供サービス
+
+**提供されているエンドポイント (ausf-sm.c:108-179):**
+
+1. **Nausf_UEAuthentication サービス** (`/nausf-auth/v1`)
+   - `POST /ue-authentications`
+     - 新規認証開始
+     - リクエスト: `AuthenticationInfo` (supi_or_suci, serving_network_name)
+     - レスポンス: `UeAuthenticationCtx` (rand, autn, hxres_star, links)
+
+   - `PUT /ue-authentications/{authCtxId}/5g-aka-confirmation`
+     - 認証確認
+     - リクエスト: `ConfirmationData` (res_star)
+     - レスポンス: `ConfirmationDataResponse` (auth_result, supi, **kseaf**)
+
+   - `DELETE /ue-authentications/{authCtxId}`
+     - 認証コンテキスト削除
+     - レスポンス: 204 No Content
+
+2. **Nnrf_NFManagement サービス** (NRFへの登録・通知用)
+   - `POST /nnrf-nfm/v1/nf-status-notify`
+     - NFステータス通知受信
+
+#### 重要な発見
+
+**❌ AUSFはKausfを外部に公開しない:**
+- `AuthenticationVector.kausf`はUDM→AUSF間でのみ送信
+- AMFには送信されない (3GPP TS 29.509準拠)
+- セキュリティ上の理由: Kausfは中間鍵で、外部公開すべきでない
+
+**✅ AUSFはKseafのみをAMFに送信:**
+- Kseaf = KDF(Kausf, serving_network_name) (TS 33.501)
+- AMFが受け取るのは`ConfirmationDataResponse.kseaf`のみ
+- この時点でKseafは**1回だけ送信**され、その後はAMFが保持
+
+**⚠️ 認証確認は1回限り:**
+- `5g-aka-confirmation`エンドポイントは認証時に1度だけ呼ばれる
+- 認証完了後、ausf_ueコンテキストは削除される可能性がある
+- S1-N2が後からKseafを取得しようとしても、コンテキストが存在しない
+
+#### S1-N2がAUSFからKseafを取得できるか?
+
+**シナリオ1: 認証確認時に傍受**
+- 可能性: AMF → AUSF の`5g-aka-confirmation`リクエストを監視
+- 問題点:
+  * AUSFは`ConfirmationDataResponse.kseaf`をHTTPレスポンスで返すだけ
+  * S1-N2はこの通信を傍受できない (AMF-AUSF間の直接通信)
+  * HTTPSでTLS暗号化されている可能性が高い
+
+**シナリオ2: カスタムAPI追加**
+- 可能性: `/nausf-custom/v1/ue-security-context/{supi}`エンドポイント追加
+- 実装例:
+```c
+// sources/open5gs/src/ausf/ausf-sm.c に追加
+CASE(OGS_SBI_SERVICE_NAME_NAUSF_CUSTOM)
+    SWITCH(sbi_message.h.resource.component[0])
+    CASE("ue-security-context")
+        SWITCH(sbi_message.h.method)
+        CASE(OGS_SBI_HTTP_METHOD_GET)
+            ausf_custom_handle_get_security_context(stream, &sbi_message);
+            break;
+        END
+    END
+END
+
+// nausf-handler.c に追加
+int ausf_custom_handle_get_security_context(
+        ogs_sbi_stream_t *stream, ogs_sbi_message_t *recvmsg)
+{
+    ausf_ue_t *ausf_ue;
+    char *supi;
+
+    supi = recvmsg->h.resource.component[1];
+    ausf_ue = ausf_ue_find_by_supi(supi);
+
+    if (ausf_ue) {
+        // JSON レスポンス構築
+        // { "kseaf": "...", "serving_network_name": "..." }
+        return send_kseaf_response(stream, ausf_ue);
+    }
+    return OGS_ERROR;
+}
+```
+
+**問題点:**
+- ❌ **認証完了後、ausf_ueが削除される**
+  * AUSFはステートレス設計 (認証完了後はコンテキスト不要)
+  * `ausf_ue_remove(ausf_ue)`が呼ばれる (ue-sm.c)
+  * S1-N2が後からリクエストしても、コンテキストが存在しない
+
+- ❌ **3GPP標準外のアプローチ**
+  * TS 29.509にカスタムAPIは定義されていない
+  * セキュリティ上のリスク (Kseafをネットワーク経由で再送信)
+
+**シナリオ3: Redis/共有メモリでKseafを保存**
+- AUSFが認証確認時に、KseafをRedisに保存:
+```c
+// nudm-handler.c の ausf_nudm_ueau_handle_result_confirmation_inform() 内
+if (AuthEvent->success == true) {
+    ogs_kdf_kseaf(ausf_ue->serving_network_name,
+            ausf_ue->kausf, ausf_ue->kseaf);
+
+    // Redisに保存
+    redis_set_ue_kseaf(ausf_ue->supi, ausf_ue->kseaf,
+                       ausf_ue->serving_network_name);
+}
+```
+
+- S1-N2が取得:
+```c
+// Security Mode Complete構築時
+uint8_t kseaf[OGS_SHA256_DIGEST_SIZE];
+char serving_network_name[256];
+
+if (redis_get_ue_kseaf(supi, kseaf, serving_network_name) == 0) {
+    // KseafからK_NASintを導出
+    derive_knas_int_from_kseaf(kseaf, serving_network_name, knas_int);
+
+    // AMFと同じ鍵を使用
+    s1n2_compute_5g_uplink_mac_with_key(knas_int, ul_count, nas_5g, out, mac);
+}
+```
+
+**利点:**
+- ✅ AUSF内のKseafを再利用可能
+- ✅ S1-N2がAMFと同じ鍵階層を使用できる
+- ✅ HTTPSでの鍵送信が不要
+
+**問題点:**
+- ❌ **AUSF側の修正が必須** (Redisへの書き込み処理)
+- ❌ Redis依存性の追加 (インフラ変更)
+- ⚠️ Kseafの寿命管理が必要 (いつ削除するか?)
+
+#### 結論
+
+**質問:** S1-N2がAUSFからKausfやKseafを取得できるか?
+
+**回答:** **既存のOpen5GS実装では不可能。以下の理由:**
+
+1. **✅ 技術的には実装可能だが、AUSF修正が必須:**
+   - カスタムSBI API追加: `/nausf-custom/v1/ue-security-context/{supi}`
+   - または、Redis/共有メモリへのKseaf保存処理追加
+   - いずれもAUSF側のコード変更が必要
+
+2. **❌ 既存のNausf APIでは取得不可能:**
+   - Nausf_UEAuthenticationサービスは認証時の1回限り
+   - `ConfirmationDataResponse.kseaf`はAMFにのみ送信される
+   - 認証完了後、`ausf_ue`コンテキストは削除される可能性が高い
+   - S1-N2が後からリクエストしても、コンテキストが存在しない
+
+3. **⚠️ AUSFの設計思想と矛盾:**
+   - AUSFはステートレス設計 (認証完了後はコンテキスト不要)
+   - 長期的なUEコンテキスト保持はAMFとUDMの責務
+   - KseafはAMFに委譲した時点で、AUSF側では管理しない
+
+4. **🔄 AMFから取得する方が合理的:**
+   - AMFは認証後もKseafを保持し続ける
+   - AMFからK_NASintを取得する方が、アーキテクチャ的に正しい
+   - AUSFはKseaf導出の1回限りの役割
+
+#### 比較: AMF vs AUSF からの鍵取得
+
+| アプローチ | 修正箇所 | 実現可能性 | 3GPP準拠 | 備考 |
+|----------|---------|----------|---------|-----|
+| **AMFカスタムAPI** | AMF (~200行) | ✅ 高 | ❌ 非準拠 | AMFは鍵を常に保持 |
+| **AUSFカスタムAPI** | AUSF (~200行) | ⚠️ 低 | ❌ 非準拠 | コンテキスト削除問題 |
+| **AUSF+Redis** | AUSF (~100行) + Redis | ✅ 中 | ❌ 非準拠 | Redisインフラ追加 |
+| **AMF+Redis** | AMF (~100行) + Redis | ✅ 高 | ❌ 非準拠 | Redisインフラ追加 |
+| **マクロ修正** | AMF (1行) | ✅ 最高 | ❌ 非準拠 | 最も簡単 |
+
+#### 推奨アプローチ
+
+**最も現実的な選択肢:**
+
+1. **オプション1: AMFマクロ修正 (最小変更)**
+   - 変更: `SECURITY_CONTEXT_IS_VALID`から`mac_failed`チェックを削除
+   - 工数: 1行変更、テスト数時間
+   - リスク: 低 (4G S1APのIntegrity Protectionで保護済み)
+
+2. **オプション2: AMFカスタムAPI (標準的)**
+   - 変更: AMFに`/namf-custom/v1/ue-security-context/{supi}` API追加
+   - 工数: AMF ~200行 + S1-N2 ~150行
+   - メリット: S1-N2がAMFと同じK_NASintを使用可能
+   - リスク: 中 (TLS使用で軽減)
+
+**AUSFから取得するアプローチは推奨しない理由:**
+- 認証完了後のコンテキスト管理が不明確
+- AUSFの設計思想 (ステートレス) と矛盾
+- AMFが鍵を保持している方が合理的
+- Redis導入の追加工数
+
+**結論:**
+- **ユーザーの要件「S1-N2のみの修正で対応できること」は満たせません**
+- AMFまたはAUSFの修正が必須
+- 最も実装コストが低いのは: **AMFマクロ修正 (1行変更)**
+- 最も標準的なのは: **AMFカスタムAPI追加 (~350行)**
 

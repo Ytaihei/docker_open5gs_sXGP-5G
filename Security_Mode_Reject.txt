@@ -1,0 +1,250 @@
+# AMFから送信されるSecurity Mode Command
+NG Application Protocol (DownlinkNASTransport)
+    NGAP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-DownlinkNASTransport (4)
+            criticality: ignore (1)
+            value
+                DownlinkNASTransport
+                    protocolIEs: 3 items
+                        Item 0: id-AMF-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-AMF-UE-NGAP-ID (10)
+                                criticality: reject (0)
+                                value
+                                    AMF-UE-NGAP-ID: 1
+                        Item 1: id-RAN-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-RAN-UE-NGAP-ID (85)
+                                criticality: reject (0)
+                                value
+                                    RAN-UE-NGAP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (38)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 7e03ddbdadb7007e005d020104f070f070e1360102
+                                        Non-Access-Stratum 5GS (NAS)PDU
+                                            Security protected NAS 5GS message
+                                                Extended protocol discriminator: 5G mobility management messages (126)
+                                                0000 .... = Spare Half Octet: 0
+                                                .... 0011 = Security header type: Integrity protected with new 5GS security context (3)
+                                                Message authentication code: 0xddbdadb7
+                                                Sequence number: 0
+                                            Plain NAS 5GS Message
+                                                Extended protocol discriminator: 5G mobility management messages (126)
+                                                0000 .... = Spare Half Octet: 0
+                                                .... 0000 = Security header type: Plain NAS message, not security protected (0)
+                                                Message type: Security mode command (0x5d)
+                                                NAS security algorithms
+                                                    0000 .... = Type of ciphering algorithm: 5G-EA0 (null ciphering algorithm) (0)
+                                                    .... 0010 = Type of integrity protection algorithm: 128-5G-IA2 (2)
+                                                0000 .... = Spare Half Octet: 0
+                                                NAS key set identifier - ngKSI
+                                                    .... 0... = Type of security context flag (TSC): Native security context (for KSIAMF)
+                                                    .... .001 = NAS key set identifier: 1
+                                                UE security capability - Replayed UE security capabilities
+                                                    Length: 4
+                                                    1... .... = 5G-EA0: Supported
+                                                    .1.. .... = 128-5G-EA1: Supported
+                                                    ..1. .... = 128-5G-EA2: Supported
+                                                    ...1 .... = 128-5G-EA3: Supported
+                                                    .... 0... = 5G-EA4: Not supported
+                                                    .... .0.. = 5G-EA5: Not supported
+                                                    .... ..0. = 5G-EA6: Not supported
+                                                    .... ...0 = 5G-EA7: Not supported
+                                                    0... .... = 5G-IA0: Not supported
+                                                    .1.. .... = 128-5G-IA1: Supported
+                                                    ..1. .... = 128-5G-IA2: Supported
+                                                    ...1 .... = 128-5G-IA3: Supported
+                                                    .... 0... = 5G-IA4: Not supported
+                                                    .... .0.. = 5G-IA5: Not supported
+                                                    .... ..0. = 5G-IA6: Not supported
+                                                    .... ...0 = 5G-IA7: Not supported
+                                                    1... .... = EEA0: Supported
+                                                    .1.. .... = 128-EEA1: Supported
+                                                    ..1. .... = 128-EEA2: Supported
+                                                    ...1 .... = 128-EEA3: Supported
+                                                    .... 0... = EEA4: Not supported
+                                                    .... .0.. = EEA5: Not supported
+                                                    .... ..0. = EEA6: Not supported
+                                                    .... ...0 = EEA7: Not supported
+                                                    0... .... = EIA0: Not supported
+                                                    .1.. .... = 128-EIA1: Supported
+                                                    ..1. .... = 128-EIA2: Supported
+                                                    ...1 .... = 128-EIA3: Supported
+                                                    .... 0... = EIA4: Not supported
+                                                    .... .0.. = EIA5: Not supported
+                                                    .... ..0. = EIA6: Not supported
+                                                    .... ...0 = EIA7: Not supported
+                                                IMEISV request
+                                                    1110 .... = Element ID: 0xe-
+                                                    .... 0... = Spare bit(s): 0x00
+                                                    .... .001 = IMEISV request: IMEISV requested (1)
+                                                Additional 5G security information
+                                                    Element ID: 0x36
+                                                    Length: 1
+                                                    0... .... = Spare: 0
+                                                    .0.. .... = Spare: 0
+                                                    ..0. .... = Spare: 0
+                                                    ...0 .... = Spare: 0
+                                                    .... 0... = Spare: 0
+                                                    .... .0.. = Spare: 0
+                                                    .... ..1. = Retransmission of initial NAS message request (RINMR): Requested
+                                                    .... ...0 = Horizontal derivation parameter (HDP): Not required
+
+## 16進ダンプ
+0000   8a e5 a5 90 19 71 d6 6e e5 89 e7 a4 08 00 45 02
+0010   00 70 f5 2e 40 00 40 84 ec 7e ac 18 00 0c ac 18
+0020   00 1e 96 0c cf bf 14 78 80 af 00 00 00 00 03 00
+0030   00 10 dd ca 52 ea 00 01 a0 00 00 00 00 00 00 03
+0040   00 3d 46 80 f0 01 00 01 00 01 00 00 00 3c 00 04
+0050   40 29 00 00 03 00 0a 00 02 00 01 00 55 00 02 00
+0060   01 00 26 00 16 15 7e 03 dd bd ad b7 00 7e 00 5d
+0070   02 01 04 f0 70 f0 70 e1 36 01 02 00 00 00
+
+
+
+# s1n2コンバータから送信されるSecurity Mode Command
+S1 Application Protocol
+    S1AP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-downlinkNASTransport (11)
+            criticality: ignore (1)
+            value
+                DownlinkNASTransport
+                    protocolIEs: 3 items
+                        Item 0: id-MME-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-MME-UE-S1AP-ID (0)
+                                criticality: reject (0)
+                                value
+                                    MME-UE-S1AP-ID: 1
+                        Item 1: id-eNB-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-eNB-UE-S1AP-ID (8)
+                                criticality: reject (0)
+                                value
+                                    ENB-UE-S1AP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (26)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 371b675e0800075d020102f070c1
+                                    Non-Access-Stratum (NAS)PDU
+                                        0011 .... = Security header type: Integrity protected with new EPS security context (3)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        Message authentication code: 0x1b675e08
+                                        Sequence number: 0
+                                        0000 .... = Security header type: Plain NAS message, not security protected (0)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        NAS EPS Mobility Management Message Type: Security mode command (0x5d)
+                                        NAS security algorithms - Selected NAS security algorithms
+                                            0... .... = Spare bit(s): 0x00
+                                            .000 .... = Type of ciphering algorithm: EPS encryption algorithm EEA0 (null ciphering algorithm) (0)
+                                            .... 0... = Spare bit(s): 0x00
+                                            .... .010 = Type of integrity protection algorithm: EPS integrity algorithm 128-EIA2 (2)
+                                        0000 .... = Spare half octet: 0
+                                        .... 0... = Type of security context flag (TSC): Native security context (for KSIasme or KSIamf)
+                                        .... .001 = NAS key set identifier:  (1) ASME
+                                        UE security capability - Replayed UE security capabilities
+                                            Length: 2
+                                            1... .... = EEA0: Supported
+                                            .1.. .... = 128-EEA1: Supported
+                                            ..1. .... = 128-EEA2: Supported
+                                            ...1 .... = 128-EEA3: Supported
+                                            .... 0... = EEA4: Not supported
+                                            .... .0.. = EEA5: Not supported
+                                            .... ..0. = EEA6: Not supported
+                                            .... ...0 = EEA7: Not supported
+                                            0... .... = EIA0: Not supported
+                                            .1.. .... = 128-EIA1: Supported
+                                            ..1. .... = 128-EIA2: Supported
+                                            ...1 .... = 128-EIA3: Supported
+                                            .... 0... = EIA4: Not supported
+                                            .... .0.. = EIA5: Not supported
+                                            .... ..0. = EIA6: Not supported
+                                            .... ...0 = EPS-UPIP: Not supported
+                                        IMEISV request
+                                            1100 .... = Element ID: 0xc-
+                                            .... 0... = Spare bit(s): 0x00
+                                            .... .001 = IMEISV request: IMEISV requested (1)
+
+## 16進ダンプ
+0000   72 eb 2d aa dd 80 8a e5 a5 90 19 71 08 00 45 02
+0010   00 68 5d 67 40 00 40 84 84 32 ac 18 00 1e ac 18
+0020   00 28 8e 3c 89 14 7a 39 48 8a 00 00 00 00 03 00
+0030   00 10 e1 20 23 2c 00 01 a0 00 00 00 00 00 00 03
+0040   00 36 e2 a6 a0 b0 00 00 00 02 00 00 00 12 00 0b
+0050   40 22 00 00 03 00 00 00 02 00 01 00 08 00 02 00
+0060   01 00 1a 00 0f 0e 37 1b 67 5e 08 00 07 5d 02 01
+0070   02 f0 70 c1 00 00
+
+
+
+# UEから出てくるSecurity Mode Reject
+S1 Application Protocol
+    S1AP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-uplinkNASTransport (13)
+            criticality: ignore (1)
+            value
+                UplinkNASTransport
+                    protocolIEs: 5 items
+                        Item 0: id-MME-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-MME-UE-S1AP-ID (0)
+                                criticality: reject (0)
+                                value
+                                    MME-UE-S1AP-ID: 1
+                        Item 1: id-eNB-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-eNB-UE-S1AP-ID (8)
+                                criticality: reject (0)
+                                value
+                                    ENB-UE-S1AP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (26)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 075f14
+                                    Non-Access-Stratum (NAS)PDU
+                                        0000 .... = Security header type: Plain NAS message, not security protected (0)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        NAS EPS Mobility Management Message Type: Security mode reject (0x5f)
+                                        EMM cause
+                                            Cause: MAC failure (20)
+                        Item 3: id-EUTRAN-CGI
+                            ProtocolIE-Field
+                                id: id-EUTRAN-CGI (100)
+                                criticality: ignore (1)
+                                value
+                                    EUTRAN-CGI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Test network (001)
+                                        Mobile Network Code (MNC): Test network (01)
+                                        0000 0000 0001 1001 1011 0000 0001 .... = cell-ID: 0x0019b01
+                        Item 4: id-TAI
+                            ProtocolIE-Field
+                                id: id-TAI (67)
+                                criticality: ignore (1)
+                                value
+                                    TAI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Test network (001)
+                                        Mobile Network Code (MNC): Test network (01)
+                                        tAC: 1 (0x0001)
+
+## 16進ダンプ
+0000   8a e5 a5 90 19 71 72 eb 2d aa dd 80 08 00 45 02
+0010   00 74 00 08 40 00 40 84 e1 85 ac 18 00 28 ac 18
+0020   00 1e 89 14 8e 3c af 8a 51 0f 00 00 00 00 03 00
+0030   00 10 e2 a6 a0 b0 00 01 a0 00 00 00 00 00 00 03
+0040   00 41 e1 20 23 2d 00 01 00 02 00 00 00 12 00 0d
+0050   40 2d 00 00 05 00 00 00 02 00 01 00 08 00 02 00
+0060   01 00 1a 00 04 03 07 5f 14 00 64 40 08 00 00 f1
+0070   10 00 19 b0 10 00 43 40 06 00 00 f1 10 00 01 00
+0080   00 00

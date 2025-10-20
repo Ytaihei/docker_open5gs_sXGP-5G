@@ -1,0 +1,89 @@
+Plain NAS 5GS Message
+    Extended protocol discriminator: 5G mobility management messages (126)
+    0000 .... = Spare Half Octet: 0
+    .... 0000 = Security header type: Plain NAS message, not security protected (0)
+    Message type: Registration request (0x41)
+    5GS registration type
+        .... 1... = Follow-On Request bit (FOR): Follow-on request pending
+        .... .001 = 5GS registration type: initial registration (1)
+    NAS key set identifier
+        0... .... = Type of security context flag (TSC): Native security context (for KSIAMF)
+        .111 .... = NAS key set identifier: 7
+    5GS mobile identity
+        Length: 13
+        0... .... = Spare: 0
+        .000 .... = SUPI format: IMSI (0)
+        .... 0... = Spare: 0
+        .... .001 = Type of identity: SUCI (1)
+        Mobile Country Code (MCC): France (208)
+        Mobile Network Code (MNC): Thales communications & Security (93)
+        Routing indicator: 0000
+        .... 0000 = Protection scheme Id: NULL scheme (0)
+        Home network public key identifier: 0
+        MSIN: 0000000001
+    5GMM capability
+        Element ID: 0x10
+        Length: 1
+        0... .... = Service gap control (SGC): Not supported
+        .0.. .... = IP header compression for control plane CIoT 5GS optimization (5G-IPHC-CP CIoT): Not supported
+        ..0. .... = N3 data transfer (N3 data): Not supported
+        ...0 .... = Control plane CIoT 5GS optimization (5G-CP CIoT): Not supported
+        .... 0... = Restriction on use of enhanced coverage support (RestrictEC): Not supported
+        .... .0.. = LTE Positioning Protocol (LPP) capability: Not supported
+        .... ..0. = ATTACH REQUEST message containing PDN CONNECTIVITY REQUEST message for handover support (HO attach): Not supported
+        .... ...0 = EPC NAS supported (S1 mode): Not supported
+    UE security capability
+        Element ID: 0x2e
+        Length: 4
+        1... .... = 5G-EA0: Supported
+        .1.. .... = 128-5G-EA1: Supported
+        ..1. .... = 128-5G-EA2: Supported
+        ...1 .... = 128-5G-EA3: Supported
+        .... 0... = 5G-EA4: Not supported
+        .... .0.. = 5G-EA5: Not supported
+        .... ..0. = 5G-EA6: Not supported
+        .... ...0 = 5G-EA7: Not supported
+        1... .... = 5G-IA0: Supported
+        .1.. .... = 128-5G-IA1: Supported
+        ..1. .... = 128-5G-IA2: Supported
+        ...1 .... = 128-5G-IA3: Supported
+        .... 0... = 5G-IA4: Not supported
+        .... .0.. = 5G-IA5: Not supported
+        .... ..0. = 5G-IA6: Not supported
+        .... ...0 = 5G-IA7: Not supported
+        1... .... = EEA0: Supported
+        .1.. .... = 128-EEA1: Supported
+        ..1. .... = 128-EEA2: Supported
+        ...1 .... = 128-EEA3: Supported
+        .... 0... = EEA4: Not supported
+        .... .0.. = EEA5: Not supported
+        .... ..0. = EEA6: Not supported
+        .... ...0 = EEA7: Not supported
+        1... .... = EIA0: Supported
+        .1.. .... = 128-EIA1: Supported
+        ..1. .... = 128-EIA2: Supported
+        ...1 .... = 128-EIA3: Supported
+        .... 0... = EIA4: Not supported
+        .... .0.. = EIA5: Not supported
+        .... ..0. = EIA6: Not supported
+        .... ...0 = EIA7: Not supported
+    NSSAI - Requested NSSAI
+        Element ID: 0x2f
+        Length: 10
+        S-NSSAI 1
+            Length: 4
+            Slice/service type (SST): eMBB (1)
+            Slice differentiator (SD): 66051
+        S-NSSAI 2
+            Length: 4
+            Slice/service type (SST): eMBB (1)
+            Slice differentiator (SD): 1122867
+    5GS update type
+        Element ID: 0x53
+        Length: 1
+        0... .... = Spare: 0
+        .0.. .... = Spare: 0
+        ..00 .... = EPS Preferred CIoT network behaviour (EPS-PNB-CIoT): no additional information (0)
+        .... 00.. = 5GS Preferred CIoT network behaviour (5GS PNB-CIoT): no additional information (0)
+        .... ..0. = NG-RAN Radio Capability Update (NG-RAN-RCU): Not Needed
+        .... ...0 = SMS over NAS transport requested (SMS requested): Not supported

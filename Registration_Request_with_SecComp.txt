@@ -1,0 +1,242 @@
+# UEから送信されるSecurity Mode Complete
+S1 Application Protocol
+    S1AP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-uplinkNASTransport (13)
+            criticality: ignore (1)
+            value
+                UplinkNASTransport
+                    protocolIEs: 5 items
+                        Item 0: id-MME-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-MME-UE-S1AP-ID (0)
+                                criticality: reject (0)
+                                value
+                                    MME-UE-S1AP-ID: 1
+                        Item 1: id-eNB-UE-S1AP-ID
+                            ProtocolIE-Field
+                                id: id-eNB-UE-S1AP-ID (8)
+                                criticality: reject (0)
+                                value
+                                    ENB-UE-S1AP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (26)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 47f99c541b00075e23093335940096783351f3
+                                    Non-Access-Stratum (NAS)PDU
+                                        0100 .... = Security header type: Integrity protected and ciphered with new EPS security context (4)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        Message authentication code: 0xf99c541b
+                                        Sequence number: 0
+                                        Ciphered message: 075e23093335940096783351f3
+                                        0000 .... = Security header type: Plain NAS message, not security protected (0)
+                                        .... 0111 = Protocol discriminator: EPS mobility management messages (0x7)
+                                        NAS EPS Mobility Management Message Type: Security mode complete (0x5e)
+                                        Mobile identity - IMEISV - IMEISV (3534900698733153)
+                                            Element ID: 0x23
+                                            Length: 9
+                                            0011 .... = Identity Digit 1: 3
+                                            .... 0... = Odd/even indication: Even number of identity digits
+                                            .... .011 = Mobile Identity Type: IMEISV (3)
+                                            BCD Digits: 3534900698733153
+                                            1111 .... = Filler: 0xf
+                        Item 3: id-EUTRAN-CGI
+                            ProtocolIE-Field
+                                id: id-EUTRAN-CGI (100)
+                                criticality: ignore (1)
+                                value
+                                    EUTRAN-CGI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Test network (001)
+                                        Mobile Network Code (MNC): Test network (01)
+                                        0000 0000 0001 1001 1011 0000 0001 .... = cell-ID: 0x0019b01
+                        Item 4: id-TAI
+                            ProtocolIE-Field
+                                id: id-TAI (67)
+                                criticality: ignore (1)
+                                value
+                                    TAI
+                                        pLMNidentity: 00f110
+                                        Mobile Country Code (MCC): Test network (001)
+                                        Mobile Network Code (MNC): Test network (01)
+                                        tAC: 1 (0x0001)
+
+## 16進ダンプ
+0000   c2 67 99 3b 43 f7 32 61 d2 38 7c ae 08 00 45 02
+0010   00 84 00 08 40 00 40 84 e1 75 ac 18 00 28 ac 18
+0020   00 1e b5 e4 8e 3c c8 34 4c 90 00 00 00 00 03 00
+0030   00 10 91 c1 6d 9b 00 01 a0 00 00 00 00 00 00 03
+0040   00 51 9d 23 db 26 00 01 00 02 00 00 00 12 00 0d
+0050   40 3d 00 00 05 00 00 00 02 00 01 00 08 00 02 00
+0060   01 00 1a 00 14 13 47 f9 9c 54 1b 00 07 5e 23 09
+0070   33 35 94 00 96 78 33 51 f3 00 64 40 08 00 00 f1
+0080   10 00 19 b0 10 00 43 40 06 00 00 f1 10 00 01 00
+0090   00 00
+
+
+
+# s1n2コンバータから送信されるRegistration Request
+NG Application Protocol (UplinkNASTransport)
+    NGAP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-UplinkNASTransport (46)
+            criticality: ignore (1)
+            value
+                UplinkNASTransport
+                    protocolIEs: 4 items
+                        Item 0: id-RAN-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-RAN-UE-NGAP-ID (85)
+                                criticality: reject (0)
+                                value
+                                    RAN-UE-NGAP-ID: 1
+                        Item 1: id-AMF-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-AMF-UE-NGAP-ID (10)
+                                criticality: reject (0)
+                                value
+                                    AMF-UE-NGAP-ID: 1
+                        Item 2: id-NAS-PDU
+                            ProtocolIE-Field
+                                id: id-NAS-PDU (38)
+                                criticality: reject (0)
+                                value
+                                    NAS-PDU: 7e004101000d0100f110ffff000021436587592e04f070f070
+                                        Non-Access-Stratum 5GS (NAS)PDU
+                                            Plain NAS 5GS Message
+                                                Extended protocol discriminator: 5G mobility management messages (126)
+                                                0000 .... = Spare Half Octet: 0
+                                                .... 0000 = Security header type: Plain NAS message, not security protected (0)
+                                                Message type: Registration request (0x41)
+                                                5GS registration type
+                                                    .... 0... = Follow-On Request bit (FOR): No follow-on request pending
+                                                    .... .001 = 5GS registration type: initial registration (1)
+                                                NAS key set identifier
+                                                    0... .... = Type of security context flag (TSC): Native security context (for KSIAMF)
+                                                    .000 .... = NAS key set identifier: 0
+                                                5GS mobile identity
+                                                    Length: 13
+                                                    0... .... = Spare: 0
+                                                    .000 .... = SUPI format: IMSI (0)
+                                                    .... 0... = Spare: 0
+                                                    .... .001 = Type of identity: SUCI (1)
+                                                    Mobile Country Code (MCC): Test network (001)
+                                                    Mobile Network Code (MNC): Test network (01)
+                                                    Routing indicator:
+                                                    .... 0000 = Protection scheme Id: NULL scheme (0)
+                                                    Home network public key identifier: 0
+                                                    MSIN: 1234567895
+                                                UE security capability
+                                                    Element ID: 0x2e
+                                                    Length: 4
+                                                    1... .... = 5G-EA0: Supported
+                                                    .1.. .... = 128-5G-EA1: Supported
+                                                    ..1. .... = 128-5G-EA2: Supported
+                                                    ...1 .... = 128-5G-EA3: Supported
+                                                    .... 0... = 5G-EA4: Not supported
+                                                    .... .0.. = 5G-EA5: Not supported
+                                                    .... ..0. = 5G-EA6: Not supported
+                                                    .... ...0 = 5G-EA7: Not supported
+                                                    0... .... = 5G-IA0: Not supported
+                                                    .1.. .... = 128-5G-IA1: Supported
+                                                    ..1. .... = 128-5G-IA2: Supported
+                                                    ...1 .... = 128-5G-IA3: Supported
+                                                    .... 0... = 5G-IA4: Not supported
+                                                    .... .0.. = 5G-IA5: Not supported
+                                                    .... ..0. = 5G-IA6: Not supported
+                                                    .... ...0 = 5G-IA7: Not supported
+                                                    1... .... = EEA0: Supported
+                                                    .1.. .... = 128-EEA1: Supported
+                                                    ..1. .... = 128-EEA2: Supported
+                                                    ...1 .... = 128-EEA3: Supported
+                                                    .... 0... = EEA4: Not supported
+                                                    .... .0.. = EEA5: Not supported
+                                                    .... ..0. = EEA6: Not supported
+                                                    .... ...0 = EEA7: Not supported
+                                                    0... .... = EIA0: Not supported
+                                                    .1.. .... = 128-EIA1: Supported
+                                                    ..1. .... = 128-EIA2: Supported
+                                                    ...1 .... = 128-EIA3: Supported
+                                                    .... 0... = EIA4: Not supported
+                                                    .... .0.. = EIA5: Not supported
+                                                    .... ..0. = EIA6: Not supported
+                                                    .... ...0 = EIA7: Not supported
+                        Item 3: id-UserLocationInformation
+                            ProtocolIE-Field
+                                id: id-UserLocationInformation (121)
+                                criticality: reject (0)
+                                value
+                                    UserLocationInformation: userLocationInformationNR (1)
+                                        userLocationInformationNR
+                                            nR-CGI
+                                                pLMNIdentity: b7f3a8
+                                                    Mobile Country Code (MCC): Unassigned (813)
+                                                        [Expert Info (Warning/Malformed): MCC contains non-decimal digits]
+                                                            [MCC contains non-decimal digits]
+                                                            [Severity level: Warning]
+                                                            [Group: Malformed]
+                                                    Mobile Network Code (MNC): Unknown (90)
+                                                        [Expert Info (Warning/Malformed): MNC contains non-decimal digits]
+                                                            [MNC contains non-decimal digits]
+                                                            [Severity level: Warning]
+                                                            [Group: Malformed]
+                                                0000 0000 0000 0000 0001 1001 1011 0000 0001 .... = nRCellIdentity: 0x000019b01
+                                            tAI
+                                                pLMNIdentity: 000000
+                                                    Mobile Country Code (MCC): Unknown (000)
+                                                    Mobile Network Code (MNC): Unknown (000)
+                                                tAC: 1 (0x000001)
+
+## 16進ダンプ
+0000   36 2d ec 54 11 03 c2 67 99 3b 43 f7 08 00 45 02
+0010   00 84 00 10 40 00 40 84 e1 89 ac 18 00 1e ac 18
+0020   00 0c 92 c2 96 0c ce 57 5b e5 00 00 00 00 03 00
+0030   00 10 13 bc 2b 9b 00 01 a0 00 00 00 00 00 00 03
+0040   00 54 0e 1a a4 dc 00 00 00 04 00 00 00 3c 00 2e
+0050   40 40 00 00 04 00 55 00 02 00 01 00 0a 00 02 00
+0060   01 00 26 00 1a 19 7e 00 41 01 00 0d 01 00 f1 10
+0070   ff ff 00 00 21 43 65 87 59 2e 04 f0 70 f0 70 00
+0080   79 00 0f 40 b7 f3 a8 00 00 19 b0 10 00 00 00 00
+0090   00 01
+
+
+
+# AMFのErrorIndication
+NG Application Protocol (ErrorIndication)
+    NGAP-PDU: initiatingMessage (0)
+        initiatingMessage
+            procedureCode: id-ErrorIndication (9)
+            criticality: ignore (1)
+            value
+                ErrorIndication
+                    protocolIEs: 3 items
+                        Item 0: id-AMF-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-AMF-UE-NGAP-ID (10)
+                                criticality: ignore (1)
+                                value
+                                    AMF-UE-NGAP-ID: 1
+                        Item 1: id-RAN-UE-NGAP-ID
+                            ProtocolIE-Field
+                                id: id-RAN-UE-NGAP-ID (85)
+                                criticality: ignore (1)
+                                value
+                                    RAN-UE-NGAP-ID: 1
+                        Item 2: id-Cause
+                            ProtocolIE-Field
+                                id: id-Cause (15)
+                                criticality: ignore (1)
+                                value
+                                    Cause: protocol (3)
+                                        protocol: message-not-compatible-with-receiver-state (3)
+
+## 16進ダンプ
+0000   c2 67 99 3b 43 f7 36 2d ec 54 11 03 08 00 45 02
+0010   00 58 73 cc 40 00 40 84 6d f9 ac 18 00 0c ac 18
+0020   00 1e 96 0c 92 c2 18 a1 a9 5f 00 00 00 00 03 00
+0030   00 10 0e 1a a4 dc 00 01 a0 00 00 00 00 00 00 03
+0040   00 28 13 bc 2b 9c 00 00 00 02 00 00 00 3c 00 09
+0050   40 14 00 00 03 00 0a 40 02 00 01 00 55 40 02 00
+0060   01 00 0f 40 01 66
