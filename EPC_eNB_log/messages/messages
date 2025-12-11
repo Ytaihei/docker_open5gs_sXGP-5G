@@ -1,0 +1,40 @@
+Route Table 254
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.0.1      0.0.0.0         UG    0      0        0 eth1
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 lo
+169.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 eth1
+172.24.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth1
+Route Table 5
+Route Table 254
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.0.1      0.0.0.0         UG    0      0        0 eth1
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 lo
+169.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 eth1
+172.24.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth1
+Route Table 5
+Route Table 254
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.0.1      0.0.0.0         UG    0      0        0 eth1
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 lo
+169.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 eth1
+172.24.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth1
+Route Table 5
+Route Table 254
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.0.1      0.0.0.0         UG    0      0        0 eth1
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 lo
+169.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 eth1
+172.24.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth1
+Route Table 5
+Route Table 254
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.0.1      0.0.0.0         UG    0      0        0 eth1
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 lo
+169.0.0.0       0.0.0.0         255.0.0.0       U     0      0        0 eth1
+172.24.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth1
+Route Table 5

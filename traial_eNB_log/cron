@@ -1,0 +1,18 @@
+Dec  2 11:59:20 info crond (busybox 1.37.0) started, log level 8
+Dec  2 12:00:01 info USER root pid 5080 cmd /bin/sh /bin/sys_monitor &
+Dec  2 12:00:01 info USER root pid 5082 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Dec  2 12:00:01 info USER root pid 5084 cmd logrotate /etc/logrotate.conf
+Dec  2 12:01:00 info USER root pid 6945 cmd /bin/sh /bin/sys_monitor &
+Dec  2 12:01:00 info USER root pid 6946 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Dec  2 12:02:00 info USER root pid 8720 cmd /bin/sh /bin/sys_monitor &
+Dec  2 12:02:00 info USER root pid 8721 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Dec  2 12:03:00 info USER root pid 10002 cmd /bin/sh /bin/sys_monitor &
+Dec  2 12:03:00 info USER root pid 10003 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Dec  2 12:04:00 info USER root pid 11980 cmd /bin/sh /bin/sys_monitor &
+Dec  2 12:04:00 info USER root pid 11981 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Dec  2 12:05:00 info USER root pid 13330 cmd /bin/sh /bin/sys_monitor &
+Dec  2 12:05:00 info USER root pid 13331 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Dec  2 12:06:00 info USER root pid 14615 cmd /bin/sh /bin/sys_monitor &
+Dec  2 12:06:00 info USER root pid 14616 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Dec  2 12:07:00 info USER root pid 15854 cmd /bin/sh /bin/sys_monitor &
+Dec  2 12:07:00 info USER root pid 15855 cmd /bin/sh /usr/local/bin/motorcomm_phy

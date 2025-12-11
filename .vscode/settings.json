@@ -266,6 +266,11 @@
         }
     },
     "chat.tools.autoApprove": true,
+    "chat.tools.file.autoApprove": {
+        "/dev/null": {
+            "approve": true
+        }
+    },
     // ===== Chat 活用効率向上の実用追加設定 =====
     "workbench.commandPalette.preserveInput": true, // 連続で似たコマンドを呼ぶ際に入力保持
     "editor.quickSuggestionsDelay": 50, // デフォルトより早く候補を表示
@@ -296,5 +301,19 @@
     "remote.SSH.useLocalServer": false,
     "remote.SSH.remotePlatform": {
         "taihei-nuc-ubuntu": "linux"
-    } // 空白差分を無視し本質比較
+    },
+    // Copilot Chat ターミナルコマンド自動承認設定
+    "chat.tools.autoApprove": true,
+    "chat.tools.terminal.autoApprove": {
+        // /dev/null へのリダイレクトを含むコマンドを許可
+        "/.*2>\\/dev\\/null.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        // tshark コマンド全般を許可
+        "/^tshark.*/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }

@@ -1,0 +1,1252 @@
+Nov 14 15:13:46 err socket O_NONBLOCK
+Nov 14 15:13:46 err logTag: enodeb_net
+Nov 14 15:13:46 err stklokSyslogOpen: 0 3 1
+Nov 14 15:13:46 info : [STK_MD_YS ] bktIdx [0], numBlks [1000000], listValidBktSet [10000], listFreeBktSet [0], checkBktMemThr [2000] 
+Nov 14 15:13:46 info : [STK_MD_YS ] bktIdx [1], numBlks [90000], listValidBktSet [900], listFreeBktSet [0], checkBktMemThr [180] 
+Nov 14 15:13:47 info : [STK_MD_YS ] bktIdx [2], numBlks [260000], listValidBktSet [2600], listFreeBktSet [0], checkBktMemThr [520] 
+Nov 14 15:13:47 info : [STK_MD_YS ] bktIdx [3], numBlks [6000], listValidBktSet [60], listFreeBktSet [0], checkBktMemThr [9] 
+Nov 14 15:13:47 info : [STK_MD_YS ] bktIdx [4], numBlks [5000], listValidBktSet [50], listFreeBktSet [0], checkBktMemThr [7] 
+Nov 14 15:13:47 info : [STK_MD_YS ] bktIdx [5], numBlks [30], listValidBktSet [6], listFreeBktSet [0], checkBktMemThr [1] 
+Nov 14 15:13:47 info : [STK_MD_YS ] bktIdx [6], numBlks [30], listValidBktSet [6], listFreeBktSet [0], checkBktMemThr [1] 
+Nov 14 15:13:47 info : [STK_MD_YS ] bktIdx [7], numBlks [30], listValidBktSet [6], listFreeBktSet [0], checkBktMemThr [1] 
+Nov 14 15:13:47 info : [STK_MD_APP] memAddr = 0x7e589748, heapCb = 0x1547280, size = 10000000
+Nov 14 15:13:48 info : [STK_MD_APP] memAddr = 0x7b6f7708, heapCb = 0x1555968, size = 3000000
+Nov 14 15:13:48 info : [STK_MD_APP] memAddr = 0x716f2388, heapCb = 0x1564050, size = 10000000
+Nov 14 15:13:48 info : [STK_MD_APP] memAddr = 0x6c7c8608, heapCb = 0x1572738, size = 10000000
+Nov 14 15:13:49 info : [STK_MD_APP] memAddr = 0x5e829108, heapCb = 0x1580e20, size = 6194304
+Nov 14 15:13:49 info : [STK_MD_APP] memAddr = 0x542df108, heapCb = 0x158f508, size = 4194304
+Nov 14 15:13:49 info : [STK_MD_APP] memAddr = 0x15d3d50, heapCb = 0x15ac2d8, size = 128
+Nov 14 15:13:49 alert tmr start thread
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4897 mem region 7
+Nov 14 15:13:49 info : [STK_MD_YS ] created thread mtTmrHdlr with tid 4897 for stask 0 tskPrior 13 tsk 0x14354d
+Nov 14 15:13:49 alert enter tmr mtTmrHdlr
+Nov 14 15:13:49 info : [STK_MD_APP] mibcli Error: Cannot allocate memory
+Nov 14 15:13:49 info : [STK_MD_APP] mibcli get FAP.0.FAP_LTE.0.LTE_X_RADISYS_NUM_OF_CELLS timeout, wrSmDfltNumCells(1)
+Nov 14 15:13:49 info : [STK_MD_APP] strValue WR_TAG_NOS_OF_CELLS         = 1 
+Nov 14 15:13:49 info : [STK_MD_APP] wrSmDfltNumCells(1)
+Nov 14 15:13:49 info : [STK_MD_APP] No Of Unlicensed Cells Configured = 0 
+Nov 14 15:13:49 info : [STK_MD_APP] Num of Tx antenna is  ::2
+Nov 14 15:13:49 info : [STK_MD_APP] DLFS for cell 0 is 0
+Nov 14 15:13:49 info : [STK_MD_APP] CNM:nghCellCfg plmnId:201
+Nov 14 15:13:49 info : [STK_MD_APP] CNM Status ::0
+Nov 14 15:13:49 info : [STK_MD_APP] N1PucchAN is 16.
+Nov 14 15:13:49 info : [STK_MD_APP] Configured CSG AccsMode 1
+Nov 14 15:13:49 info : [STK_MD_APP]  PJ_FWD_MAX_SDU_CNT_PER_TTI Read 32 
+Nov 14 15:13:49 info : [STK_MD_APP] gIsCaEn(0), gIsDcEn(0), numOfCells(1)
+Nov 14 15:13:49 info : [STK_MD_YS ] ipc_initItf open succ,fd:7
+Nov 14 15:13:49 info : [STK_MD_YS ] ipc_initItf LTEL3_DATA_HIGH 
+Nov 14 15:13:49 info : [STK_MD_YS ] ll_src_addr:128,prio:1,ll_dst_addr:177
+Nov 14 15:13:49 info : [STK_MD_YS ] ipc_initItf LTEL3_DATA_HIGH_C1 
+Nov 14 15:13:49 info : [STK_MD_YS ] ll_src_addr:129,prio:1,ll_dst_addr:178
+Nov 14 15:13:49 info : [STK_MD_APP] RBUF[SS_RNG_BUF_RX_TO_DLRLC] eSize:20 ==> 32
+Nov 14 15:13:49 info : [STK_MD_APP] RBUF[SS_RNG_BUF_RX_TO_DLRLC] Created with id =11 rSize:640 eSize:32 15d3dd8
+Nov 14 15:13:49 info : [STK_MD_APP] RBUF[SS_RNG_BUF_RX_TO_ULPDCP] eSize:20 ==> 32
+Nov 14 15:13:49 info : [STK_MD_APP] RBUF[SS_RNG_BUF_RX_TO_ULPDCP] Created with id =12 rSize:640 eSize:32 15d3df0
+Nov 14 15:13:49 info : [STK_MD_APP] RBUF[SS_RNG_BUF_DLRLC_TO_DLMAC0] eSize:24 ==> 32
+Nov 14 15:13:49 info : [STK_MD_APP] RBUF[SS_RNG_BUF_DLRLC_TO_DLMAC0] Created with id =14 rSize:512 eSize:32 15d3eb0
+Nov 14 15:13:49 info : [STK_MD_APP] RBUF[SS_RNG_BUF_DLRLC_TO_DLMAC1] eSize:24 ==> 32
+Nov 14 15:13:49 info : [STK_MD_APP] RBUF[SS_RNG_BUF_DLRLC_TO_DLMAC1] Created with id =15 rSize:512 eSize:32 15d7ed0
+Nov 14 15:13:49 info : [STK_MD_YS ] Compile: Sep 17 2025 16:41:22
+Nov 14 15:13:49 info : [STK_MD_YS ] Current EnodeB Version is L_5.0
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4919 mem region 7
+Nov 14 15:13:49 info : [STK_MD_APP] created pthread with tid 4919 for tsk 0x142d9d
+Nov 14 15:13:49 info : [STK_MD_APP] Set priority 58
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4920 mem region 0
+Nov 14 15:13:49 info : [STK_MD_YS ] created thread mtTskHdlr with tid 4920 for stask 1 tskPrior 32 tsk 0x142f09
+Nov 14 15:13:49 info : [STK_MD_APP] pthread_setaffinity_np tId=4a9ff450 coreId=3
+Nov 14 15:13:49 info : [STK_MD_APP] Set priority 58
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4921 mem region 1
+Nov 14 15:13:49 info : [STK_MD_YS ] created thread mtTskHdlr with tid 4921 for stask 2 tskPrior 32 tsk 0x142f09
+Nov 14 15:13:49 info : [STK_MD_APP] pthread_setaffinity_np tId=4a1ff450 coreId=3
+Nov 14 15:13:49 info : [STK_MD_APP] Set priority 58
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4922 mem region 2
+Nov 14 15:13:49 info : [STK_MD_YS ] created thread mtTskHdlr with tid 4922 for stask 3 tskPrior 32 tsk 0x142f09
+Nov 14 15:13:49 info : [STK_MD_APP] pthread_setaffinity_np tId=499ff450 coreId=3
+Nov 14 15:13:49 info : [STK_MD_APP] Set priority 87
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4923 mem region 3
+Nov 14 15:13:49 info : [STK_MD_YS ] created thread mtTskHdlr with tid 4923 for stask 4 tskPrior 3 tsk 0x142f09
+Nov 14 15:13:49 info : [STK_MD_APP] pthread_setaffinity_np tId=491ff450 coreId=2
+Nov 14 15:13:49 info : [STK_MD_APP] Set priority 89
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4924 mem region 4
+Nov 14 15:13:49 info : [STK_MD_YS ] created thread mtTskHdlr with tid 4924 for stask 5 tskPrior 1 tsk 0x142f09
+Nov 14 15:13:49 info : [STK_MD_APP] pthread_setaffinity_np tId=489ff450 coreId=1
+Nov 14 15:13:49 info : [STK_MD_YS ] CNM:: Init in yscb[inst 0] done...
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4927 mem region 7
+Nov 14 15:13:49 info : [STK_MD_APP] created pthread with tid 4927 for tsk 0x4cf0e5
+Nov 14 15:13:49 info : [STK_MD_APP] SCreateSmmAppTst tid = 481ff450
+Nov 14 15:13:49 info : [STK_MD_APP] gtpuSockThreadInit start thread
+Nov 14 15:13:49 info : [STK_MD_APP] map thread 4928 mem region 6
+Nov 14 15:13:49 info : [STK_MD_APP] created pthread with tid 4928 for tsk 0xeece9
+Nov 14 15:13:49 err : [STK_MD_YS ] Key:log_dir value: /var/log
+Nov 14 15:13:49 err : [STK_MD_YS ] Key:file_num value: 9
+Nov 14 15:13:49 err : [STK_MD_YS ] Key:file_size value: 10
+Nov 14 15:13:49 err : [STK_MD_YS ] Key:core value: 0
+Nov 14 15:13:49 err : [STK_MD_YS ] pthread_create success[1174402128] U64[8] uint64_t[8] Pointer[4] suseconds_t[4] core[0]
+Nov 14 15:13:49 info : [STK_MD_APP] SocketRcvThreadInit start thread
+Nov 14 15:13:49 alert ssdStart i=0
+Nov 14 15:13:49 alert ssdStart i=1
+Nov 14 15:13:49 alert ssdStart i=2
+Nov 14 15:13:49 alert ssdStart i=3
+Nov 14 15:13:49 alert ssdStart i=4
+Nov 14 15:13:49 alert ssdStart i=5
+Nov 14 15:13:49 alert ssdStart i=6
+Nov 14 15:13:49 alert ssdStart i=7
+Nov 14 15:13:49 alert ssdStart i=8
+Nov 14 15:13:59 err : [STK_MD_YS ] MMSG from danipc socket error Interrupted system call
+Nov 14 15:14:04 err : [STK_MD_YS ] MMSG from danipc socket error Interrupted system call
+Nov 14 15:14:07 err : [STK_MD_YS ] TTI trace: msgType[1] Switch[0] stubVal[65535] No[]
+Nov 14 15:14:07 err : [STK_MD_YS ] TTI_No : 0 is not a interger. 
+Nov 14 15:14:07 info : [STK_MD_APP] smGetIpAddrByItf: ifName = eth1
+Nov 14 15:14:07 info : [STK_MD_APP] smGetIpAddrByItf: ifr.ifr_name = eth1
+Nov 14 15:14:07 info : [STK_MD_APP] smGetIpAddrByItf: IpAddr = ac18006f
+Nov 14 15:14:07 info : [STK_MD_APP] smGetIpAddrByItf: interface eth1 is UP
+Nov 14 15:14:07 info : [STK_MD_APP] TENB CFG UPDATE [1:0:1:60:8989]
+Nov 14 15:14:07 info : [STK_MD_APP] tsCb.enbIp is 0, and enbIpAddr is 1862277292 
+Nov 14 15:14:07 info : [STK_MD_APP] TENB_STATS:tenbSocketStats=1:tenbFileStats=0:tenbConsoleStats=1
+Nov 14 15:14:07 info : [STK_MD_APP] AUG27_TENB_STATS:tenbStatsPeriodicity=60:tendStatsSocketPort=8989:enbIpAddr=ac18006f
+Nov 14 15:14:07 alert sock cmInetSocket type=2, protocol=0
+Nov 14 15:14:07 alert sock sockFd=17
+Nov 14 15:14:07 alert sock cmInetSocket type=2, protocol=0
+Nov 14 15:14:07 alert sock sockFd=19
+Nov 14 15:14:07 alert sock cmInetSocket type=2, protocol=0
+Nov 14 15:14:07 alert sock sockFd=18
+Nov 14 15:14:07 alert sock IPV6_SUPPORTED
+Nov 14 15:14:07 alert sock fd =18, port=0, addr=0x100007f
+Nov 14 15:14:07 alert sock bind success fd =18, port=0, addr=0x100007f
+Nov 14 15:14:07 alert SbMiLsbCfgReq
+Nov 14 15:14:07 alert SbMiLsbCfgReq success
+Nov 14 15:14:07 alert SbMiLsbCfgReq
+Nov 14 15:14:07 alert SbMiLsbCfgReq success
+Nov 14 15:14:07 alert SbMiLsbCfgReq
+Nov 14 15:14:07 alert SbMiLsbCfgReq success
+Nov 14 15:14:07 alert SbMiLsbCfgReq
+Nov 14 15:14:07 alert SbMiLsbCfgReq success
+Nov 14 15:14:07 alert SCTP Cfg Cfm received for the element [1], wrSbCfg=1, wrSbSctSapCnt=0, wrSbSctTSapCnt=0, wrSbSctSapCntTmp=0, smCb.ipChangeFlag=0, wrSbSctTSapCnt=0
+Nov 14 15:14:07 alert SCTP Cfg Cfm received for the element [3], wrSbCfg=3, wrSbSctSapCnt=0, wrSbSctTSapCnt=1, wrSbSctSapCntTmp=0, smCb.ipChangeFlag=0, wrSbSctTSapCnt=1
+Nov 14 15:14:07 alert SCTP Cfg Cfm received for the element [2], wrSbCfg=7, wrSbSctSapCnt=1, wrSbSctTSapCnt=1, wrSbSctSapCntTmp=1, smCb.ipChangeFlag=0, wrSbSctTSapCnt=1
+Nov 14 15:14:07 alert SCTP Cfg Cfm received for the element [2], wrSbCfg=7, wrSbSctSapCnt=2, wrSbSctTSapCnt=1, wrSbSctSapCntTmp=2, smCb.ipChangeFlag=0, wrSbSctTSapCnt=1
+Nov 14 15:14:07 info : [STK_MD_APP] usN1Pucch(16), bNumSrPerTti(8), usTotalSpsN1PucchRes(0), usTotalCaN1PucchRes(8), cellCfgIdx(0)
+Nov 14 15:14:07 info : [STK_MD_APP] wrSmmEnbBuildGenCfg:Number Of Cells = 1
+Nov 14 15:14:07 info : [STK_MD_APP] in smm rrcLogEnable = 1
+Nov 14 15:14:07 info : [STK_MD_APP] in wr_smm_enb_utils.c  IP address = 0.0.0.0
+Nov 14 15:14:07 info : [STK_MD_APP] wrSmmEnbBuildCellCfg:cellId 1 Duplex mode is 2
+Nov 14 15:14:07 info : [STK_MD_APP] wrSmmEnbBldSib1Cfg: Frequency Band Indicator is 39
+Nov 14 15:14:07 alert ssdStart i=9
+Nov 14 15:14:07 alert ssdStart i=10
+Nov 14 15:14:07 alert ssdStart i=11
+Nov 14 15:14:07 alert ssdStart i=12
+Nov 14 15:14:07 info : [STK_MD_APP] in wr_smm_rrc. Ipaddress = 0.0.0.0
+Nov 14 15:14:07 info : [STK_MD_APP] in smm rrcLogEnable = 1
+Nov 14 15:14:07 info : [STK_MD_APP] nhGenCfg rrcLogEnable  = 1
+Nov 14 15:14:07 info : [STK_MD_MAC] nothing to do with ICC, return
+Nov 14 15:14:07 info : [STK_MD_MAC] PjLibObdDlInitReq,nothing to do with ICC, return
+Nov 14 15:14:07 info : [STK_MD_APP] [APP] SapProcId 0 inst 1
+Nov 14 15:14:07 info : [STK_MD_YS ] LBT SIM is DISABLED !!!!!!!!!!!!!
+Nov 14 15:14:07 info : [STK_MD_YS ] YsMiLysCntrlReq():cntrlReq for elmnt= 1, action=4,subaction=2
+Nov 14 15:14:07 info : [STK_MD_YS ] LYS ARST CNTRL
+Nov 14 15:14:07 info : [STK_MD_YS ] LYS SAACNT CNTRL[6000]
+Nov 14 15:14:07 alert SbMiLsbCntrlReq success
+Nov 14 15:14:07 alert sbLiOpenServer
+Nov 14 15:14:07 alert sock protocal=132, type =3
+Nov 14 15:14:07 alert sock cmInetSocket type=3, protocol=132
+Nov 14 15:14:07 alert sock sockFd=21
+Nov 14 15:14:07 alert sock tptaddr type=4, addr=0x0
+Nov 14 15:14:07 alert sock IPV6_SUPPORTED
+Nov 14 15:14:07 alert sock fd =21, port=0, addr=0x6f0018ac
+Nov 14 15:14:07 alert sock bind success fd =21, port=0, addr=0x6f0018ac
+Nov 14 15:14:07 alert hiAssignConCb, hiSendThrMsg
+Nov 14 15:14:07 alert !!!open hiAssignConCb cmInetSendMsg fd =18, ret=0, errno = 0, bufLen = 8
+Nov 14 15:14:07 alert HiUiHitServOpenReq success
+Nov 14 15:14:07 alert fdGrp->servFd = 18, hiProcThrMsg
+Nov 14 15:14:07 alert hiProcThrAddCon
+Nov 14 15:14:07 alert /home1/hudongjing/code/B39/lte_app/enodeb-ca/radisys/src/tucl/hi_bdy2.c,4802,HI_CONCFM
+Nov 14 15:14:07 alert SbLiHitConCfm
+Nov 14 15:14:07 alert SbLiHitConCfm success
+Nov 14 15:14:07 err : [STK_MD_APP] Ipv4type[4] port[2152]
+Nov 14 15:14:07 info : [STK_MD_EPR] setsockopt success! buflen = 8388608
+Nov 14 15:14:07 err : [STK_MD_APP] DSCP[0] socketFd[22]servConId[0]
+Nov 14 15:14:07 info : [STK_MD_APP] Server Socket FD =[22]
+Nov 14 15:14:07 info : [STK_MD_APP] MC wrEmmSendSchedEnbCfg:: numTxAntPorts=2 ulSchdType=2 ulPfs.tptCoeffi=0 ulPfs.fairCoeffi=0
+Nov 14 15:14:07 info : [STK_MD_APP] MC wrEmmSendSchedEnbCfg: accsModen 1
+Nov 14 15:14:07 info : [STK_MD_MAC] PUSCH: c[3] DeltaShft[3] n1PerRb[12] mi[0] totalCce[5] P[0] n1PlusOne[5] n1Pucch[16] n1Max[25] n1Cs[0] n1RbPart[0] n1Rb[3] mixedRb[0] exclRb[5] puschRbStart[3]
+Nov 14 15:14:07 info : [STK_MD_MAC] CFI[1] (rbStart, bwAvail)(3, 19)
+Nov 14 15:14:07 info : [STK_MD_MAC] PUSCH: c[3] DeltaShft[3] n1PerRb[12] mi[0] totalCce[13] P[1] n1PlusOne[13] n1Pucch[16] n1Max[41] n1Cs[0] n1RbPart[0] n1Rb[4] mixedRb[0] exclRb[6] puschRbStart[3]
+Nov 14 15:14:07 info : [STK_MD_MAC] CFI[2] (rbStart, bwAvail)(3, 19)
+Nov 14 15:14:07 info : [STK_MD_MAC] PUSCH: c[3] DeltaShft[3] n1PerRb[12] mi[0] totalCce[21] P[2] n1PlusOne[22] n1Pucch[16] n1Max[58] n1Cs[0] n1RbPart[0] n1Rb[5] mixedRb[0] exclRb[7] puschRbStart[4]
+Nov 14 15:14:07 info : [STK_MD_MAC] CFI[3] (rbStart, bwAvail)(4, 17)
+Nov 14 15:14:07 info : [STK_MD_MAC] ========cellId[1][def cfi=2,maxCfi=3]========
+Nov 14 15:14:07 err : [STK_MD_APP] maxUePerDlSf = 1, maxDlUeNewTxPerTti = 1 cpu_type=3
+Nov 14 15:14:07 err : [STK_MD_APP] maxUePerDlSf = 1, maxDlUeNewTxPerTti = 1 cpu_type=3
+Nov 14 15:14:07 info : [STK_MD_APP] Before Vendor Params
+Nov 14 15:14:07 info : [STK_MD_YS ] UNLICENSED CONFIG AT CL 0 for cell 1 --------- 
+Nov 14 15:14:07 info : [STK_MD_YS ] CL:MIMO_DBG:: !!!! num Antenna ports =2!!!!
+Nov 14 15:14:07 info : [STK_MD_YS ] Inside ysMsCfgSm. Event = 3, PhyState = 0
+Nov 14 15:14:07 info : [STK_MD_YS ] INFO: FAPI_E_PARAM_REQ 0 !!
+Nov 14 15:14:07 info : [STK_MD_YS ] ys_qcSendParReq carrierId=0,phyState=0
+Nov 14 15:14:07 info : [STK_MD_YS ] ys_qcParRspHndl carrierId=0,n_tlv=8
+Nov 14 15:14:07 info : [STK_MD_YS ] ys_qcSendConfigReq carrierId=0 n_tlv=36, tlvNumMax=50
+Nov 14 15:14:07 info : [STK_MD_YS ]  ys_qcConfRspHndl carrierId=0 
+Nov 14 15:14:07 info : [STK_MD_YS ] ys_qcSendStartReq carrierId=0
+Nov 14 15:14:07 info : [STK_MD_YS ]  YsUiCtfCfgCfm transId 257
+Nov 14 15:14:07 info find assoccb, assocCb->suAssocId = 1, suAssocId = 2
+Nov 14 15:14:07 warning : [STK_MD_YS ] SF IND abormal, sfn (219), subframe(4),  carrierId(0)
+Nov 14 15:14:07 alert SzLiSctStaInd suId = 0 status = 1, suAssocId = 1
+Nov 14 15:14:07 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:07 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:07 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:07 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:07 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:07 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:07 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:07 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:07 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:159 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:07 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=232 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:07 info : [STK_MD_YS ] Data Rate DL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:07 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:07 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:07 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:07 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:1
+Nov 14 15:14:07 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:07 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:07 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:14:07 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(379) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:07 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:07 info : [STK_MD_APP] MEM: ValidBkt:(9993/897/2597/58/49/6/6)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33840/9959/1497/3492/)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299995/89999/6000/3995/)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149916/49958/14991/5998/)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:07 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[391:4], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[391:5], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[391:6], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[391:7], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[391:8], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[391:9], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[392:0], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[392:1], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[392:2], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[392:3], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[392:4], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[392:5], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] ys_qcSfIndHndl process late, dummy this TTI[392:6], phyTime[392, 7]
+Nov 14 15:14:09 warning : [STK_MD_YS ] SF IND abormal, sfn (393), subframe(0),  carrierId(0)
+Nov 14 15:14:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:13 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:14:13 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:14:13 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:14:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:13 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:14:13 info : [STK_MD_APP] 
+Nov 14 15:14:13 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:13 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:13 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:13 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:13 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:13 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:13 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:13 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:13 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2394 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:13 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3488 1UE=8 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:13 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:13 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 8, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:13 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:13 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:13 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:14:13 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:13 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:13 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(8/0)
+Nov 14 15:14:13 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(5999) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:13 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:13 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2597/58/49/6/6)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33840/9959/1497/3492/)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149909/49958/14991/5998/)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:13 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:14:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:19 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:14:19 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:14:19 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:14:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:19 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:14:19 info : [STK_MD_APP] 
+Nov 14 15:14:19 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:19 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:19 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:19 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:19 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:19 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:19 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:19 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:19 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:19 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3496 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:19 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:19 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:19 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:19 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:19 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:14:19 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:19 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:19 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:14:19 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:19 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:19 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2597/58/49/6/6)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33840/9959/1497/3492/)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149909/49958/14991/5998/)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:19 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:14:25 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:25 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:14:25 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:14:25 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:14:25 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:25 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:25 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:14:25 info : [STK_MD_APP] 
+Nov 14 15:14:25 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:25 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:25 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:25 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:25 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:25 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:25 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:25 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:25 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2398 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:25 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3496 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:25 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:25 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:25 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:25 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:25 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:14:25 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:25 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:25 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:14:25 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:25 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:25 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2597/58/49/6/6)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33840/9959/1497/3492/)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149909/49958/14991/5998/)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:25 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:14:31 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:31 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:14:31 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:14:31 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:14:31 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:31 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:31 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:14:31 info : [STK_MD_APP] 
+Nov 14 15:14:31 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:31 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:31 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:31 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:31 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:31 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:31 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:31 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:31 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2400 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:31 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:31 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:31 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:31 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:31 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:31 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:14:31 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:31 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:31 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:14:31 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:31 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:31 info : [STK_MD_APP] MEM: ValidBkt:(9995/897/2597/58/49/6/6)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33840/9959/1497/3492/)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149909/49958/14991/5998/)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:31 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:14:37 info find assoccb, assocCb->suAssocId = 1, suAssocId = 2
+Nov 14 15:14:37 info : [STK_MD_YS ] Time : 30 sec
+Nov 14 15:14:37 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:37 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:14:37 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:14:37 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:14:37 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:37 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:37 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:14:37 info : [STK_MD_APP] 
+Nov 14 15:14:37 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:37 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:37 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:37 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:37 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:37 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:37 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:37 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:37 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:37 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3495 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:37 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:37 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:37 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:37 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:37 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:14:37 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:37 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:37 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:14:37 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:37 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:37 info : [STK_MD_APP] MEM: ValidBkt:(9995/897/2597/58/49/6/6)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33840/9959/1497/3492/)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149909/49958/14991/5998/)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:37 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:14:43 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:43 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:14:43 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:14:43 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:14:43 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:43 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:43 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:14:43 info : [STK_MD_APP] 
+Nov 14 15:14:43 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:43 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:43 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:43 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:43 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:43 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:43 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:43 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:43 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:4798 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:43 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3498 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:43 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:43 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:43 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:43 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:43 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:14:43 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:43 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:43 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:14:43 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:43 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:43 info : [STK_MD_APP] MEM: ValidBkt:(9993/897/2597/58/49/6/6)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33839/9959/1497/3492/)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149909/49958/14991/5998/)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:43 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:14:49 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:49 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:14:49 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:14:49 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:14:49 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:49 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:49 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:14:49 info : [STK_MD_APP] 
+Nov 14 15:14:49 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:49 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:49 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:49 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:49 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:49 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:49 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:49 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:49 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:49 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3496 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:49 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:49 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:49 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:49 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:49 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:14:49 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:49 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:49 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:14:49 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:49 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:49 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2597/58/49/6/6)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33839/9959/1497/3492/)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149909/49958/14991/5998/)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:49 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:14:55 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:55 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:14:55 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:14:55 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:14:55 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:55 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:14:55 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:14:55 info : [STK_MD_APP] 
+Nov 14 15:14:55 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:14:55 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:14:55 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:14:55 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:14:55 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:14:55 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:14:55 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:14:55 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:14:55 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2398 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:14:55 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:14:55 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:14:55 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:14:55 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:14:55 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:14:55 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:14:55 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:14:55 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:14:55 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:14:55 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:14:55 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:14:55 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149909/49958/14991/5998/)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:14:55 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:01 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:01 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:01 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:01 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:01 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:01 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:01 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:01 info : [STK_MD_APP] 
+Nov 14 15:15:01 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:01 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:01 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:01 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:01 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:01 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:01 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:01 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:01 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:01 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:01 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:01 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:01 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:01 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:01 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:01 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:01 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:01 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:01 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:01 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:01 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:01 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:07 info find assoccb, assocCb->suAssocId = 1, suAssocId = 2
+Nov 14 15:15:07 info find assoccb, assocCb->suAssocId = 2, suAssocId = 2
+Nov 14 15:15:07 alert SzLiSctStaInd suId = 0 status = 12, suAssocId = 2
+Nov 14 15:15:07 info : [STK_MD_YS ] Time : 60 sec
+Nov 14 15:15:07 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:07 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:07 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:07 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:07 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:07 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:07 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:07 info : [STK_MD_APP] 
+Nov 14 15:15:07 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:07 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:07 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:07 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:07 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:07 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:07 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:07 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:07 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:07 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:07 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:07 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:07 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:07 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:07 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:07 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:07 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:07 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:07 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:07 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:07 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:07 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:13 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:13 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:13 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:13 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:13 info : [STK_MD_APP] 
+Nov 14 15:15:13 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:13 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:13 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:13 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:13 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:13 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:13 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:13 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:13 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2398 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:13 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3496 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:13 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:13 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:13 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:13 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:13 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:13 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:13 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:13 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:13 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:13 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:13 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:13 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:19 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:19 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:19 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:19 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:19 info : [STK_MD_APP] 
+Nov 14 15:15:19 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:19 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:19 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:19 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:19 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:19 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:19 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:19 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:19 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:19 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:19 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:19 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:19 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:19 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:19 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:19 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:19 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:19 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:19 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:19 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:19 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:19 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:25 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:25 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:25 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:25 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:25 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:25 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:25 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:25 info : [STK_MD_APP] 
+Nov 14 15:15:25 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:25 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:25 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:25 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:25 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:25 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:25 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:25 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:25 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2400 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:25 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3496 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:25 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:25 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:25 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:25 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:25 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:25 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:25 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:25 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:25 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:25 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:25 info : [STK_MD_APP] MEM: ValidBkt:(9993/897/2596/58/49/6/6)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:25 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:31 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:31 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:31 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:31 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:31 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:31 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:31 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:31 info : [STK_MD_APP] 
+Nov 14 15:15:31 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:31 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:31 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:31 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:31 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:31 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:31 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:31 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:31 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2398 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:31 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:31 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:31 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:31 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:31 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:31 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:31 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:31 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:31 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:31 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:31 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:31 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:31 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:37 info find assoccb, assocCb->suAssocId = 1, suAssocId = 2
+Nov 14 15:15:37 info : [STK_MD_YS ] Time : 90 sec
+Nov 14 15:15:37 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:37 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:37 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:37 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:37 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:37 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:37 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:37 info : [STK_MD_APP] 
+Nov 14 15:15:37 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:37 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:37 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:37 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:37 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:37 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:37 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:37 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:37 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2398 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:37 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3496 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:37 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:37 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:37 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:37 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:37 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:37 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:37 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:37 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:37 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:37 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:37 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:37 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:43 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:43 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:43 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:43 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:43 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:43 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:43 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:43 info : [STK_MD_APP] 
+Nov 14 15:15:43 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:43 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:43 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:43 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:43 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:43 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:43 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:43 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:43 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2398 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:43 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:43 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:43 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:43 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:43 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:43 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:43 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:43 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:43 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:43 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:43 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:43 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:43 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:49 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:49 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:49 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:49 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:49 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:49 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:49 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:49 info : [STK_MD_APP] 
+Nov 14 15:15:49 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:49 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:49 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:49 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:49 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:49 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:49 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:49 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:49 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:49 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:49 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:49 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:49 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:49 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:49 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:49 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:49 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:49 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:49 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:49 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:49 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:49 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:15:55 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:55 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:15:55 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:15:55 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:15:55 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:55 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:15:55 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:15:55 info : [STK_MD_APP] 
+Nov 14 15:15:55 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:15:55 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:15:55 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:15:55 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:15:55 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:15:55 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:15:55 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:15:55 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:15:55 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:15:55 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:15:55 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:15:55 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:15:55 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:15:55 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:15:55 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:15:55 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:15:55 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:15:55 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:15:55 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:15:55 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:15:55 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:15:55 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:16:01 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:01 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:16:01 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:16:01 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:16:01 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:01 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:01 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:16:01 info : [STK_MD_APP] 
+Nov 14 15:16:01 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:16:01 info : [STK_MD_RAM] RACH INFO: msg1[0|0]  msg2[0|0]  msg3[0|0|0|0|0]  msg4[0|0|0|0|0|0|0]msg5[0] rees[0]
+Nov 14 15:16:01 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:16:01 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:16:01 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:16:01 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:16:01 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:16:01 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:16:01 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2400 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:16:01 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3497 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:16:01 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:16:01 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:16:01 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:16:01 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:16:01 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:16:01 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:16:01 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:16:01 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:16:01 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:16:01 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:16:01 info : [STK_MD_APP] MEM: ValidBkt:(9994/897/2596/58/49/6/6)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33838/9959/1497/3492/)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299992/9994/3999/9998/)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19993/19997/6000/4999/)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89999/6000/3995/)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149908/49958/14991/5998/)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:16:01 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:16:06 err : [STK_MD_MAC] MAC-I does not match!!!!Recv_MACI:0x0 Cal_MACI:0x4599af88. 
+Nov 14 15:16:07 info find assoccb, assocCb->suAssocId = 1, suAssocId = 2
+Nov 14 15:16:07 info find assoccb, assocCb->suAssocId = 2, suAssocId = 2
+Nov 14 15:16:07 alert SzLiSctStaInd suId = 0 status = 12, suAssocId = 2
+Nov 14 15:16:07 info : [STK_MD_YS ] Time : 120 sec
+Nov 14 15:16:07 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:07 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:16:07 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:16:07 info : [STK_MD_APP] 1          0     0     18      0      0      0      0     14       14       16        0         0         220     9    4     
+Nov 14 15:16:07 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:07 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:07 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:16:07 info : [STK_MD_APP] 
+Nov 14 15:16:07 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:16:07 info : [STK_MD_RAM] RACH INFO: msg1[1|0]  msg2[1|0]  msg3[1|0|0|0|1]  msg4[1|0|0|1|0|1|0]msg5[1] rees[0]
+Nov 14 15:16:07 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:7 PrbUsage:0% | UL_Total:36000 PrbCnt:220 PrbUsage:0%
+Nov 14 15:16:07 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:17|  DL - [28~26]:0 [25~20]:7 [19~10]:3 [9~0]:1
+Nov 14 15:16:07 info : [STK_MD_APP] SChed:: (PCell)::(11) HQFDBK :: 11
+Nov 14 15:16:07 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(11/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:16:07 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(38/1):(39/0/0/0)
+Nov 14 15:16:07 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:16:07 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(17/17/0) ZeroBoOcc:2374 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:1
+Nov 14 15:16:07 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3484 1UE=13 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:16:07 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:16:07 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 6, PdusRetx = 0, TimeOut = 2, SduDiscarded = 0
+Nov 14 15:16:07 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:5 NacksInStaPdu:0 BytesUnused:136 PollTimerExpires SRB:2 DRB:0 MaxRetx:0 RetransPdus:2
+Nov 14 15:16:07 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 17, unexpPdus = 0, errorPdus = 0
+Nov 14 15:16:07 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:16:07 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:16:07 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=5
+Nov 14 15:16:07 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:16:07 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:16:07 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:16:07 info : [STK_MD_APP] MEM: ValidBkt:(9995/895/2596/58/48/6/6)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33820/9955/1497/3488/)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299988/9989/3999/9996/)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19992/19997/6000/4998/)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89993/6000/3994/)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149852/49952/14983/5996/)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:16:07 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:16:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:13 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:16:13 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:16:13 info : [STK_MD_APP] 1          0     0     0       0      0      0      0     0        0        0         0         0         0       0    0     
+Nov 14 15:16:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:13 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:13 info : [STK_MD_APP] Total DL TPT::0 UL TPT::0 No. UE: 0
+Nov 14 15:16:13 info : [STK_MD_APP] 
+Nov 14 15:16:13 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:16:13 info : [STK_MD_RAM] RACH INFO: msg1[1|0]  msg2[1|0]  msg3[1|0|0|0|1]  msg4[1|0|0|1|0|1|0]msg5[1] rees[0]
+Nov 14 15:16:13 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:0 PrbUsage:0%
+Nov 14 15:16:13 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0|  DL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:0
+Nov 14 15:16:13 info : [STK_MD_APP] SChed:: (PCell)::(0) HQFDBK :: 0
+Nov 14 15:16:13 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(0/0/0)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:16:13 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(0/0):(0/0/0/0)
+Nov 14 15:16:13 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(0/0/0)
+Nov 14 15:16:13 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(0/0/0) ZeroBoOcc:2399 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:0
+Nov 14 15:16:13 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3495 1UE=0 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:16:13 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:16:13 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 0, PdusRetx = 0, TimeOut = 0, SduDiscarded = 0
+Nov 14 15:16:13 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:0 NacksInStaPdu:0 BytesUnused:0 PollTimerExpires SRB:0 DRB:0 MaxRetx:0 RetransPdus:0
+Nov 14 15:16:13 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 0, unexpPdus = 0, errorPdus = 0
+Nov 14 15:16:13 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:16:13 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:16:13 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:16:13 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:16:13 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:16:13 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:16:13 info : [STK_MD_APP] MEM: ValidBkt:(9995/895/2596/58/48/6/6)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33820/9955/1497/3488/)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9359696
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299988/9989/3999/9996/)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19992/19997/6000/4998/)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89993/6000/3994/)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149852/49952/14983/5996/)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:16:13 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128
+Nov 14 15:16:19 info : [STK_MD_UE ] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:19 info : [STK_MD_UE ] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:19 info : [STK_MD_UE ] UEID  BO    TPT    #TX  #RETX  BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4  CW0_CQI  CQI_CNT  CW0_IT   CW1_IT  PDBLB  RESBLER  |  UL_TPT  #TX  #RETX  BLER  CQI  ITBS  RESBLER  
+Nov 14 15:16:19 info : [STK_MD_UE ] ====  --    ---    ---  -----  ----  ----  ---     -----  -----  -----  -----  -------  -------  ------   ------  -----  -------  |  ==----  ---  -----  ----  ---  ----  -------  
+Nov 14 15:16:19 info : [STK_MD_UE ] 62    0      1      10   24     33    31    34      0      0      0      0      9        30       4        0       0      80.00   |  0       2    0      0     5    4     0.00     
+Nov 14 15:16:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:19 info : [STK_MD_APP] CELLID     BLER  #DTX  PRB     #RI_1  #RI_2  #RI_3  #RI_4 CW0_CQI  CW1_CQI  CW0_ITBS  CW1_ITBS  ULBLER    PRB     CQI  ITBS  
+Nov 14 15:16:19 info : [STK_MD_APP] ======     ----  ----  ---     -----  -----  -----  ----- -------  -------  --------  --------  ==----    ---     ---  ----  
+Nov 14 15:16:19 info : [STK_MD_APP] 1          25    31    34      0      0      0      0     9        9        4         0         0         20      5    4     
+Nov 14 15:16:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:19 info : [STK_MD_APP] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nov 14 15:16:19 info : [STK_MD_APP] Total DL TPT::1 UL TPT::0 No. UE: 1
+Nov 14 15:16:19 info : [STK_MD_APP] 
+Nov 14 15:16:19 info : [STK_MD_APP] Cell1: ri1Cnt = 0, ri2Cnt = 0, ri3Cnt = 0, ri4Cnt = 0
+Nov 14 15:16:19 info : [STK_MD_RAM] RACH INFO: msg1[2|0]  msg2[2|0]  msg3[2|0|0|0|2]  msg4[2|0|0|2|0|2|0]msg5[2] rees[0]
+Nov 14 15:16:19 info : [STK_MD_APP] PRB REPORT: Cell1 DL_Total:60000 PrbCnt:0 PrbUsage:0% | UL_Total:36000 PrbCnt:20 PrbUsage:0%
+Nov 14 15:16:19 info : [STK_MD_APP] MCS REPORT: Cell1 UL - [28~26]:0 [25~20]:0 [19~10]:0 [9~0]:2|  DL - [28~26]:0 [25~20]:0 [19~10]:10 [9~0]:0
+Nov 14 15:16:19 info : [STK_MD_APP] SChed:: (PCell)::(34) HQFDBK :: 34
+Nov 14 15:16:19 info : [STK_MD_APP] Cell1:: TB1:: (A/N/D)::(2/1/31)    TB2:: (A/N/D)::(0/0/0)
+Nov 14 15:16:19 info : [STK_MD_APP] Cell1 CQI:: Recp(Pucch/Pusch):Rcvd(pcqi/rawacqireport/apcqi/AppReprt)::(57/0):(35/0/0/0)
+Nov 14 15:16:19 info : [STK_MD_APP] Cell1 CQI:: CqiDropCnt/PucchCqiSnrDropCnt/PuschCqiSnrDropCnt::(22/22/0)
+Nov 14 15:16:19 info : [STK_MD_APP] UL CELL1::(DCI0/CrcPass/CrcFail)::(2/2/0) ZeroBoOcc:2377 dbgUeIdChngAndDatReqInClCnt: 0 DelayedDatReqInMac: 0 rgPrachRcvd:1
+Nov 14 15:16:19 info : [STK_MD_APP] DL Scheduling UEs/TTI: Nil=3461 1UE=36 2UE=0 3UE=0 4UE=0 5UE=0  6UE=0 7UE=0 8UE=0 9UE=0 10UE=0  11UE=0 12UE=0 13UE=0 14UE=0 15UE=0 16UE=0 17UE+=0
+Nov 14 15:16:19 info : [STK_MD_YS ] Data Rate DL: tfu=0.01 rgu=0.00 kwu=0.00 pju=0.00 UL: tfu=0.00 rgu=0.00 kwu=0.00 pju=0.00
+Nov 14 15:16:19 info : [STK_MD_MAC] RLC Stats: PDUs Sent = 2, PdusRetx = 8, TimeOut = 9, SduDiscarded = 0
+Nov 14 15:16:19 info : [STK_MD_MAC] RLC Stats:AMDL: StaPduSent:1 NacksInStaPdu:0 BytesUnused:110 PollTimerExpires SRB:9 DRB:0 MaxRetx:1 RetransPdus:8
+Nov 14 15:16:19 info : [STK_MD_MAC] RLC UL Stats: PDUs Rcvd = 3, unexpPdus = 0, errorPdus = 0
+Nov 14 15:16:19 info : [STK_MD_MAC] RLC Stats:AMUL: PdusDiscarded:0 ReOrdTimerExpires:0 StaPduRcvd:0 NackInStaPduRcvd:0 numRcvL2MeasReq:0
+Nov 14 15:16:19 info : [STK_MD_MAC] PDCP Stats: SDUs Dropped(0/0), SPAcc Cipher Queue=0, Decipher=0, Rb Overload DROP=0, dbgPdcpQSizeThreshHoldDropCnt=0
+Nov 14 15:16:19 info : [STK_MD_MAC]             MmThredHldDrp=0, spaccQDropCnt=0, dlSpaccPktDrop=0, pdcpDatCfmsReceived=0
+Nov 14 15:16:19 info : [STK_MD_MAC] CELL1::Paging(send/delay)::(0/0)
+Nov 14 15:16:19 info : [STK_MD_APP] EGTP: RCV:(0) SND:(0) Discard:(0/0/0/0/0/0) DynaMemThCheckOK:(6000) DynMemThreBktMask:(0x0) SendDropsReason19:(0) EgUMsg:(0/0) EVTEGTUDATREQ:(0/0)
+Nov 14 15:16:19 info : [STK_MD_APP] EGTP: echo:(0: 0 1: 0 2: 0 3: 0 4: 0 5: 0 6: 0 7: 0 8: 0 9: 0) 
+Nov 14 15:16:19 info : [STK_MD_APP] MEM: ValidBkt:(9994/895/2597/58/48/6/6)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC MEM[0] : ValidBkt:(33820/9955/1497/3488/)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC HEAP[0] : validSize = 9353048
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC MEM[1] : ValidBkt:(299988/9989/3999/9996/)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC HEAP[1] : validSize = 2923528
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC MEM[2] : ValidBkt:(19992/19997/6000/4998/)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC HEAP[2] : validSize = 8258216
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC MEM[3] : ValidBkt:(299989/89990/6000/3993/)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC HEAP[3] : validSize = 8258184
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC MEM[4] : ValidBkt:(149852/49952/14983/5996/)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC HEAP[4] : validSize = 5933896
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC MEM[5] : ValidBkt:(150000/40000/8000/6000/)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC HEAP[5] : validSize = 4194304
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC MEM[6] : ValidBkt:(0/0/0/0/)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC HEAP[6] : validSize = 0
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC MEM[7] : ValidBkt:(50/10/10/10/)
+Nov 14 15:16:19 info : [STK_MD_APP] STATIC HEAP[7] : validSize = 128

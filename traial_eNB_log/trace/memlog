@@ -1,0 +1,16 @@
+Dec  2 11:59:44 info [LTE-M]region = 6, bktIdx = 0, trigger save static mem
+Dec  2 11:59:44 info [LTE-M]saveStaticMemStart
+Dec  2 11:59:44 info [LTE-M]ragionId,BlkIdx,stayTime,file,cnt
+Dec  2 11:59:44 info [LTE-M]saveStaticMemStop
+Dec  2 11:59:44 info [LTE-M]region = 6, bktIdx = 1, trigger save static mem
+Dec  2 11:59:44 info [LTE-M]saveStaticMemStart
+Dec  2 11:59:44 info [LTE-M]ragionId,BlkIdx,stayTime,file,cnt
+Dec  2 11:59:44 info [LTE-M]saveStaticMemStop
+Dec  2 11:59:44 info [LTE-M]region = 6, bktIdx = 2, trigger save static mem
+Dec  2 11:59:44 info [LTE-M]saveStaticMemStart
+Dec  2 11:59:44 info [LTE-M]ragionId,BlkIdx,stayTime,file,cnt
+Dec  2 11:59:44 info [LTE-M]saveStaticMemStop
+Dec  2 11:59:44 info [LTE-M]region = 6, bktIdx = 3, trigger save static mem
+Dec  2 11:59:44 info [LTE-M]saveStaticMemStart
+Dec  2 11:59:44 info [LTE-M]ragionId,BlkIdx,stayTime,file,cnt
+Dec  2 11:59:44 info [LTE-M]saveStaticMemStop

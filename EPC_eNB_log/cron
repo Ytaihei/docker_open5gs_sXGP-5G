@@ -1,0 +1,14 @@
+Jan  1 15:01:00 info USER root pid 4299 cmd /bin/sh /bin/sys_monitor &
+Jan  1 15:01:00 info USER root pid 4300 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Jan  1 15:02:00 info USER root pid 5880 cmd /bin/sh /bin/sys_monitor &
+Jan  1 15:02:00 info USER root pid 5881 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Jan  1 15:03:00 info USER root pid 7379 cmd /bin/sh /bin/sys_monitor &
+Jan  1 15:03:00 info USER root pid 7380 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Jan  1 15:04:00 info USER root pid 8881 cmd /bin/sh /bin/sys_monitor &
+Jan  1 15:04:00 info USER root pid 8882 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Jan  1 15:05:00 info USER root pid 10291 cmd /bin/sh /bin/sys_monitor &
+Jan  1 15:05:00 info USER root pid 10292 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Jan  1 15:06:00 info USER root pid 11776 cmd /bin/sh /bin/sys_monitor &
+Jan  1 15:06:00 info USER root pid 11777 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Jan  1 15:07:00 info USER root pid 12841 cmd /bin/sh /bin/sys_monitor &
+Jan  1 15:07:00 info USER root pid 12842 cmd /bin/sh /usr/local/bin/motorcomm_phy

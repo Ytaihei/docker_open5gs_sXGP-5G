@@ -1,7 +1,7 @@
 services:
   mongo:
     image: mongo:6.0
-    container_name: mongo
+    container_name: mongo-4g
     command: --bind_ip 0.0.0.0
     env_file:
       - .env
@@ -21,7 +21,7 @@ services:
     build:
       context: ../..
       dockerfile: open5gs/base/Dockerfile
-    container_name: webui
+    container_name: webui-4g
     env_file:
       - .env
     depends_on:
@@ -44,7 +44,7 @@ services:
     build:
       context: ../..
       dockerfile: open5gs/base/Dockerfile
-    container_name: hss
+    container_name: hss-4g
     env_file:
       - .env
     environment:
@@ -73,7 +73,7 @@ services:
     depends_on:
       - smf
       - upf
-    container_name: sgwc
+    container_name: sgwc-4g
     env_file:
       - .env
     environment:
@@ -97,7 +97,7 @@ services:
     depends_on:
       - smf
       - upf
-    container_name: sgwu
+    container_name: sgwu-4g
     env_file:
       - .env
     environment:
@@ -118,7 +118,7 @@ services:
     build:
       context: ../..
       dockerfile: open5gs/base/Dockerfile
-    container_name: smf
+    container_name: smf-4g
     env_file:
       - .env
     environment:
@@ -148,7 +148,7 @@ services:
       dockerfile: open5gs/base/Dockerfile
     depends_on:
       - smf
-    container_name: upf
+    container_name: upf-4g
     env_file:
       - .env
     environment:
@@ -181,7 +181,7 @@ services:
       - sgwu
       - smf
       - upf
-    container_name: mme
+    container_name: mme-4g
     env_file:
       - .env
     environment:
@@ -209,7 +209,7 @@ services:
     build:
       context: ../..
       dockerfile: open5gs/base/Dockerfile
-    container_name: pcrf
+    container_name: pcrf-4g
     env_file:
       - .env
     environment:
@@ -288,8 +288,14 @@ services:
 
 networks:
   default:
-    external: true
-    name: br-open5gs_4g
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-open5gs_4g
+    ipam:
+      config:
+        - subnet: 172.24.0.0/16
+          gateway: 172.24.1.1
+          ip_range: 172.24.1.0/24
 
 volumes:
   mongodbdata:

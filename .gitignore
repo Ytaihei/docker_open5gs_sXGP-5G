@@ -10,3 +10,4 @@ db/
 docker-backup/*.tar
 sXGP-5G/build/
 sXGP-5G-backup-*.zip
+backups/

@@ -1,0 +1,91 @@
+15:02:45.215777 *VERBOSE*:(-1246104496) [_httpd_parse_arguments] socket bind to port '7547'
+15:02:45.215987 *VERBOSE*:(-1246104496) [hssl_module_init] SSL _not_ enabled
+15:02:45.216067 *VERBOSE*:(-1246104496) [_hssl_server_context_init] enabled=0, certificate=(nil), ca=(nil)
+15:02:45.216139 *VERBOSE*:(-1246104496) [hssl_module_init] init hssl_context_t = "0xb5700488", ret=0
+15:02:45.216211 *VERBOSE*:(-1246104496) [httpd_init] socket bind to port '7547'
+15:02:45.216397 *VERBOSE*:(-1246104496) [httpd_register_secure] register service:t(0xb5700510):
+15:02:45.216475 *VERBOSE*:(-1246104496) [httpd_register_secure] register service:t(0xb5700620):
+15:02:45.216553 *VERBOSE*:(-1246104496) [httpd_run] starting run routine
+15:02:45.217779 *VERBOSE*:(-1246104496) [_httpd_register_signal_handler] registering termination signal handler (SIGNAL:2)
+15:02:45.352100 *VERBOSE*:(-1248857008) [hurl_dump] PROTOCOL : 1
+15:02:45.352193 *VERBOSE*:(-1248857008) [hurl_dump]     HOST : baiomc.cloudapp.net
+15:02:45.352268 *VERBOSE*:(-1248857008) [hurl_dump]     PORT : 8443
+15:02:45.352339 *VERBOSE*:(-1248857008) [hurl_dump]  CONTEXT : /smallcell/AcsService
+15:02:45.353511 *VERBOSE*:(-1248857008) [_hssl_library_init] Initializing library
+15:02:45.362362 *VERBOSE*:(-1248857008) [hssl_module_init] SSL enabled
+15:02:45.362470 *VERBOSE*:(-1248857008) [_hssl_server_context_init] enabled=1, certificate=(nil), ca=0xb56008c8
+15:02:45.426623 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certification authority contacted
+15:02:45.426710 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certificate verification callback registered
+15:02:45.426967 *VERBOSE*:(-1248857008) [hssl_module_init] init hssl_context_t = "0xb56008a8", ret=0
+15:03:25.458301 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "0xb56008a8"
+15:03:25.458667 *VERBOSE*:(-1248857008) [hsocket_close] closing socket 0xb5612ad8 (-1)...
+15:03:25.458747 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "(nil)"
+15:03:25.488966 *VERBOSE*:(-1248857008) [hurl_dump] PROTOCOL : 1
+15:03:25.489075 *VERBOSE*:(-1248857008) [hurl_dump]     HOST : baiomc.cloudapp.net
+15:03:25.489150 *VERBOSE*:(-1248857008) [hurl_dump]     PORT : 8443
+15:03:25.489222 *VERBOSE*:(-1248857008) [hurl_dump]  CONTEXT : /smallcell/AcsService
+15:03:25.489425 *VERBOSE*:(-1248857008) [hssl_module_init] SSL enabled
+15:03:25.489499 *VERBOSE*:(-1248857008) [_hssl_server_context_init] enabled=1, certificate=(nil), ca=0xb5611468
+15:03:25.490423 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certification authority contacted
+15:03:25.490503 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certificate verification callback registered
+15:03:25.492771 *VERBOSE*:(-1248857008) [hssl_module_init] init hssl_context_t = "0xb5611ad8", ret=0
+15:04:05.527990 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "0xb5611ad8"
+15:04:05.528328 *VERBOSE*:(-1248857008) [hsocket_close] closing socket 0xb5612d88 (-1)...
+15:04:05.528407 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "(nil)"
+15:04:45.208966 *VERBOSE*:(-1248857008) [hurl_dump] PROTOCOL : 1
+15:04:45.209062 *VERBOSE*:(-1248857008) [hurl_dump]     HOST : baiomc.cloudapp.net
+15:04:45.209138 *VERBOSE*:(-1248857008) [hurl_dump]     PORT : 8443
+15:04:45.209210 *VERBOSE*:(-1248857008) [hurl_dump]  CONTEXT : /smallcell/AcsService
+15:04:45.209410 *VERBOSE*:(-1248857008) [hssl_module_init] SSL enabled
+15:04:45.209482 *VERBOSE*:(-1248857008) [_hssl_server_context_init] enabled=1, certificate=(nil), ca=0xb5611f30
+15:04:45.211399 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certification authority contacted
+15:04:45.211479 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certificate verification callback registered
+15:04:45.211875 *VERBOSE*:(-1248857008) [hssl_module_init] init hssl_context_t = "0xb5611ad8", ret=0
+15:05:25.253078 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "0xb5611ad8"
+15:05:25.253431 *VERBOSE*:(-1248857008) [hsocket_close] closing socket 0xb5614048 (-1)...
+15:05:25.253520 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "(nil)"
+15:05:25.275822 *VERBOSE*:(-1248857008) [hurl_dump] PROTOCOL : 1
+15:05:25.275921 *VERBOSE*:(-1248857008) [hurl_dump]     HOST : baiomc.cloudapp.net
+15:05:25.275997 *VERBOSE*:(-1248857008) [hurl_dump]     PORT : 8443
+15:05:25.276069 *VERBOSE*:(-1248857008) [hurl_dump]  CONTEXT : /smallcell/AcsService
+15:05:25.276268 *VERBOSE*:(-1248857008) [hssl_module_init] SSL enabled
+15:05:25.276341 *VERBOSE*:(-1248857008) [_hssl_server_context_init] enabled=1, certificate=(nil), ca=0xb5611ad8
+15:05:25.279088 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certification authority contacted
+15:05:25.279171 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certificate verification callback registered
+15:05:25.279403 *VERBOSE*:(-1248857008) [hssl_module_init] init hssl_context_t = "0xb5611468", ret=0
+15:06:05.321393 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "0xb5611468"
+15:06:05.321753 *VERBOSE*:(-1248857008) [hsocket_close] closing socket 0xb5614060 (-1)...
+15:06:05.321834 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "(nil)"
+15:06:05.344957 *VERBOSE*:(-1248857008) [hurl_dump] PROTOCOL : 1
+15:06:05.345141 *VERBOSE*:(-1248857008) [hurl_dump]     HOST : baiomc.cloudapp.net
+15:06:05.345219 *VERBOSE*:(-1248857008) [hurl_dump]     PORT : 8443
+15:06:05.345289 *VERBOSE*:(-1248857008) [hurl_dump]  CONTEXT : /smallcell/AcsService
+15:06:05.345487 *VERBOSE*:(-1248857008) [hssl_module_init] SSL enabled
+15:06:05.345737 *VERBOSE*:(-1248857008) [_hssl_server_context_init] enabled=1, certificate=(nil), ca=0xb5611ad8
+15:06:05.347481 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certification authority contacted
+15:06:05.348582 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certificate verification callback registered
+15:06:05.349811 *VERBOSE*:(-1248857008) [hssl_module_init] init hssl_context_t = "0xb5611468", ret=0
+15:06:45.378054 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "0xb5611468"
+15:06:45.378381 *VERBOSE*:(-1248857008) [hsocket_close] closing socket 0xb5614090 (-1)...
+15:06:45.378457 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "(nil)"
+15:06:45.905261 *VERBOSE*:(-1248857008) [hurl_dump] PROTOCOL : 1
+15:06:45.905353 *VERBOSE*:(-1248857008) [hurl_dump]     HOST : baiomc.cloudapp.net
+15:06:45.905428 *VERBOSE*:(-1248857008) [hurl_dump]     PORT : 8443
+15:06:45.905497 *VERBOSE*:(-1248857008) [hurl_dump]  CONTEXT : /smallcell/AcsService
+15:06:45.906718 *VERBOSE*:(-1248857008) [hssl_module_init] SSL enabled
+15:06:45.906793 *VERBOSE*:(-1248857008) [_hssl_server_context_init] enabled=1, certificate=(nil), ca=0xb5611f18
+15:06:45.908157 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certification authority contacted
+15:06:45.908238 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certificate verification callback registered
+15:06:45.909694 *VERBOSE*:(-1248857008) [hssl_module_init] init hssl_context_t = "0xb5611078", ret=0
+15:07:25.948025 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "0xb5611078"
+15:07:25.948361 *VERBOSE*:(-1248857008) [hsocket_close] closing socket 0xb5614060 (-1)...
+15:07:25.948439 *VERBOSE*:(-1248857008) [_hssl_server_context_destroy] destroy hssl_context_t = "(nil)"
+15:07:26.488162 *VERBOSE*:(-1248857008) [hurl_dump] PROTOCOL : 1
+15:07:26.488256 *VERBOSE*:(-1248857008) [hurl_dump]     HOST : baiomc.cloudapp.net
+15:07:26.488332 *VERBOSE*:(-1248857008) [hurl_dump]     PORT : 8443
+15:07:26.488403 *VERBOSE*:(-1248857008) [hurl_dump]  CONTEXT : /smallcell/AcsService
+15:07:26.489624 *VERBOSE*:(-1248857008) [hssl_module_init] SSL enabled
+15:07:26.489706 *VERBOSE*:(-1248857008) [_hssl_server_context_init] enabled=1, certificate=(nil), ca=0xb5611ad8
+15:07:26.491622 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certification authority contacted
+15:07:26.492649 *VERBOSE*:(-1248857008) [_hssl_server_context_init] Certificate verification callback registered
+15:07:26.492895 *VERBOSE*:(-1248857008) [hssl_module_init] init hssl_context_t = "0xb5611468", ret=0

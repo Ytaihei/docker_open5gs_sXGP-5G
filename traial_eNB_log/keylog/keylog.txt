@@ -1,0 +1,2013 @@
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|mkfs.ext4 LOG_PART
+2020/01/01 00:00:03 up 0 min|LOG|runtime_monitor|mkfs.ext4 CONFIG_PART, no bakcup ?
+2020/01/01 00:00:03 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:4.0K
+2020/01/01 00:00:03 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      1.5M    109.5M   1% /mnt/flash
+/dev/mmcblk0p36         673.0M    724.0K    623.3M   0% /mnt/log
+2020/01/01 06:00:15 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 06:00:15 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 06:00:15 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 06:00:15 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 06:00:16 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 06:00:16 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:44 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:44 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 15:01:13 up 1 min|LOG|IMAGEUPGR   |Starting upgrade BaiBLQ_5.0.5.2.IMG
+2020/01/01 15:01:13 up 1 min|LOG|IMAGEUPGR   |Upgrade user man
+2020/01/01 15:01:13 up 1 min|LOG|IMAGEUPGR   |Current version : BaiBLQ_5.0.5.2
+2020/01/01 15:01:34 up 1 min|LOG|IMAGEUPGR   |Upgrade version : BaiBLQ_5.0.5.2
+2020/01/01 15:01:36 up 1 min|LOG|IMAGEUPGR   |Upgrading zone 2
+2020/01/01 15:02:18 up 2 min|LOG|IMAGEUPGR   |Upgrade flag normal
+2020/01/01 15:02:18 up 2 min|LOG|IMAGEUPGR   |The QAFB_Search:
+2020/01/01 15:02:18 up 2 min|LOG|IMAGEUPGR   |Upgrade success!
+2020/01/01 15:02:23 up 2 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2020/01/01 15:02:23 up 2 min|LOG|=REBOOT=    |[ssh-ip192.168.150.3-port52449]
+2020/01/01 15:02:23 up 2 min|LOG|=REBOOT=    |dropbear(5207)->+sh(5209)->+sh(5234)->+/usr/sbin/reboot(5244)
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:4.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      1.6M    109.4M   1% /mnt/flash
+/dev/mmcblk0p36         673.0M    732.0K    623.3M   0% /mnt/log
+2020/01/01 15:00:11 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:11 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:12 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:12 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:40 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:40 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 15:02:07 up 2 min|LOG|GEN_CERT    |IPSEC: Generate Cert with sn=1202000746251ED0006
+2020/01/01 15:02:08 up 2 min|LOG|GEN_CERT    |IPSEC: Installing certificate
+2020/01/01 15:02:22 up 2 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:02:22 up 2 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 15:02:44 up 2 min|LOG|IMAGEUPGR   |Starting upgrade BaiBLQ_5.0.5.2.IMG
+2020/01/01 15:02:44 up 2 min|LOG|IMAGEUPGR   |Upgrade user man
+2020/01/01 15:02:44 up 2 min|LOG|IMAGEUPGR   |Current version : BaiBLQ_5.0.5.2
+2020/01/01 15:02:52 up 2 min|ERR|ONDEATH_PRE |WatchdogfsmOamProxy
+2020/01/01 15:03:05 up 3 min|LOG|IMAGEUPGR   |Upgrade version : BaiBLQ_5.0.5.2
+2020/01/01 15:03:08 up 3 min|LOG|IMAGEUPGR   |Upgrading zone 1
+2025/02/15 09:41:22 up 3 min|ERR|ONDEATH     |halt_event[WatchdogfsmOamProxy]:20200101150245:0:
+2025/02/15 09:41:29 up 3 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M    728.0K    623.3M   0% /mnt/log
+2025/02/15 09:41:33 up 3 min|ERR|ONDEATH_POS |disk_free: 643055616 core_size: 0 halt_size: 670228
+2025/02/15 09:41:33 up 3 min|ERR|ONDEATH_POS |keep core and halt 
+2025/02/15 09:41:34 up 3 min|ERR|ONDEATH_POS |halt_event: Create 000_20200101150245.tar.gz, size: 655.2K
+2025/02/15 09:41:34 up 3 min|ERR|ONDEATH_POS |halt_event: Reboot till uptime to 900s
+2025/02/15 09:41:56 up 3 min|LOG|IMAGEUPGR   |Upgrade flag normal
+2025/02/15 09:41:56 up 3 min|LOG|IMAGEUPGR   |The QAFB_Search:
+2025/02/15 09:41:56 up 3 min|LOG|IMAGEUPGR   |Upgrade success!
+2025/02/15 09:45:11 up 7 min|ERR|IPSEC       |ipsec tunnel1 transfer error! up it
+2025/02/15 09:45:11 up 7 min|ERR|IPSEC       |ipsec tunnel2 transfer error! up it
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      1.7M    109.3M   1% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:06 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:06 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:08 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:08 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:35 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:35 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 15:02:02 up 2 min|LOG|GEN_CERT    |IPSEC: Installing certificate
+2020/01/01 15:02:15 up 2 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:02:15 up 2 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2025/02/15 09:50:13 up 4 min|ERR|IPSEC       |ipsec tunnel1 transfer error! up it
+2025/02/15 09:50:13 up 4 min|ERR|IPSEC       |ipsec tunnel2 transfer error! up it
+2025/02/15 09:50:39 up 4 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/02/15 09:50:39 up 4 min|LOG|=REBOOT=    |[background process]
+2025/02/15 09:50:39 up 4 min|LOG|=REBOOT=    |haserl(8786)->+sh(8787)->+sh(8796)->+/usr/sbin/reboot(8797)
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:09 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:09 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:01:11 up 1 min|ERR|SYS_MONITOR |SYS_MONITOR: Create enodeb cnt file
+2020/01/01 15:01:56 up 1 min|LOG|OAM         |after import config,oam reboot system!!!
+2020/01/01 15:01:56 up 1 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2020/01/01 15:01:56 up 1 min|LOG|=REBOOT=    |[background process]
+2020/01/01 15:01:56 up 1 min|LOG|=REBOOT=    |(0)->+init(1)->+oam(2814)->+/usr/sbin/reboot(4679)
+2020/01/01 15:01:56 up 2 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:01:56 up 2 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:17 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:17 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:18 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:18 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:01:10 up 1 min|ERR|SYS_MONITOR |SYS_MONITOR: Create enodeb cnt file
+2020/01/01 15:02:02 up 2 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:02:02 up 2 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:01:10 up 1 min|ERR|SYS_MONITOR |SYS_MONITOR: Create enodeb cnt file
+2020/01/01 15:01:56 up 1 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:01:56 up 1 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:01:09 up 1 min|ERR|SYS_MONITOR |SYS_MONITOR: Create enodeb cnt file
+2020/01/01 15:01:54 up 1 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:01:54 up 1 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      1.7M    109.3M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:15 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:15 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:43 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:43 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 15:02:10 up 2 min|LOG|GEN_CERT    |IPSEC: Installing certificate
+2020/01/01 15:02:23 up 2 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:02:23 up 2 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:06 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:06 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:07 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:07 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:34 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:34 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 15:01:24 up 1 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2020/01/01 15:01:24 up 1 min|LOG|=REBOOT=    |[background process]
+2020/01/01 15:01:24 up 1 min|LOG|=REBOOT=    |haserl(4174)->+sh(4175)->+sh(4184)->+/usr/sbin/reboot(4185)
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:07 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:07 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:09 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:09 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+                                                                                                                                           2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:08 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:08 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:09 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:09 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:37 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:37 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 15:01:57 up 2 min|LOG|GEN_CERT    |IPSEC: Installing certificate
+2020/01/01 15:02:11 up 2 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:02:11 up 2 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:09 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:09 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:38 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:38 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:11 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:11 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:11 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:11 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:40 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:40 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 15:02:00 up 2 min|LOG|GEN_CERT    |IPSEC: Installing certificate
+2020/01/01 15:02:13 up 2 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:02:13 up 2 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:06 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:06 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:08 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:08 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:35 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:35 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2020/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.1M    108.9M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2020/01/01 15:00:11 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2020/01/01 15:00:11 up 0 min|LOG|UDHCPC      |deconfig eth1
+2020/01/01 15:00:11 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2020/01/01 15:00:11 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2020/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2020/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |This upgrade is not started from QAFB, no need do Parameters Migration ,Do The Exit 
+2020/01/01 15:00:40 up 0 min|LOG|IPSEC       |IPSEC:Starting ipsec ...
+2020/01/01 15:00:40 up 0 min|LOG|IPSEC       |IPSEC:Waiting oam ...
+2020/01/01 15:01:59 up 2 min|LOG|GEN_CERT    |IPSEC: Installing certificate
+2020/01/01 15:02:13 up 2 min|LOG|ENODEB      |eNodeB:oam ready...
+2020/01/01 15:02:13 up 2 min|LOG|ANT_DETECT  |ant_detect:wait oam ready...
+2020/01/01 15:03:34 up 3 min|LOG|UDHCPC      |bound eth1 192.168.10.102  netmask 255.255.255.0 router 192.168.10.1  DHCP Server:192.168.10.1
+2020/01/01 15:03:34 up 3 min|LOG|UDHCPC      |bound eth1 dns 192.168.10.1
+2025/09/29 16:20:14 up 3 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/09/29 16:20:44 up 4 min|LOG|OAM         |autostart-fun:OMC_CONCT_FLAG set 1, omc connect success(in hdoammsg)
+2025/09/29 16:31:11 up 14 min|LOG|OAM         |autostart-fun:OMC_CONCT_FLAG set 1, omc connect success(in hdoammsg)
+2025/09/29 16:44:31 up 28 min|LOG|IMAGEUPGR   |Starting upgrade /tmp/up/VQ_5.1.0.3.17.IMG
+2025/09/29 16:44:31 up 28 min|LOG|IMAGEUPGR   |Upgrade user lmt
+2025/09/29 16:44:31 up 28 min|LOG|IMAGEUPGR   |Current version : BaiBLQ_5.0.5.2
+2025/09/29 16:44:57 up 28 min|LOG|IMAGEUPGR   |Upgrade version : VQ_5.1.0.3.17
+2025/09/29 16:45:02 up 28 min|LOG|IMAGEUPGR   |Upgrading zone 2
+2025/09/29 16:45:22 up 28 min|LOG|OAM         |autostart-fun:OMC_CONCT_FLAG set 1, omc connect success(in hdoammsg)
+2025/09/29 16:45:50 up 29 min|LOG|IMAGEUPGR   |Upgrade flag null
+2025/09/29 16:45:51 up 29 min|LOG|IMAGEUPGR   |The QAFB_Search:
+2025/09/29 16:45:51 up 29 min|LOG|IMAGEUPGR   |Upgrade success!
+2025/09/29 16:45:56 up 29 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/09/29 16:45:56 up 29 min|LOG|=REBOOT=    |[background process]
+2025/09/29 16:45:56 up 29 min|LOG|=REBOOT=    |haserl(17670)->+sh(17671)->+sh(17680)->+/usr/sbin/reboot(17681)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:03 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      1.7M    109.3M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2025/01/01 15:00:04 up 0 min|DBG|BOARDINIT   |In upflag null mode
+2025/01/01 15:00:04 up 0 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/01/01 15:00:04 up 0 min|LOG|=REBOOT=    |[background process]
+2025/01/01 15:00:04 up 0 min|LOG|=REBOOT=    |rcS(230)->+run-parts(309)->+sh(718)->+/usr/sbin/reboot(1210)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      1.8M    109.2M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2025/01/01 15:00:06 up 0 min|LOG|UDHCPC      |deconfig eth1
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:07 up 0 min|LOG|UDHCPC      |bound eth1 192.168.10.102  netmask 255.255.255.0 router 192.168.10.1  DHCP Server:192.168.10.1
+2025/01/01 15:00:07 up 0 min|LOG|UDHCPC      |bound eth1 dns 192.168.10.1
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/09/29 16:47:12 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/09/29 16:47:25 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/09/29 16:47:38 up 0 min|LOG|OAM         |ResetParamSucces lmt password
+2025/09/29 16:47:38 up 0 min|LOG|OAM         |DoConfigUserConf0x66050003 successfully, userID=1, userName=admin, passWord secret
+2025/09/29 16:47:38 up 0 min|LOG|OAM         |Config network parameter, reboot.
+2025/09/29 16:47:38 up 0 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/09/29 16:47:38 up 0 min|LOG|=REBOOT=    |[background process]
+2025/09/29 16:47:38 up 0 min|LOG|=REBOOT=    |S93oam_intel(1887)->+start_Oam.sh(3407)->+oam(3472)->+/usr/sbin/reboot(3709)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2025/01/01 15:00:07 up 0 min|LOG|UDHCPC      |deconfig eth1
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:08 up 0 min|LOG|UDHCPC      |bound eth1 192.168.10.102  netmask 255.255.255.0 router 192.168.10.1  DHCP Server:192.168.10.1
+2025/01/01 15:00:08 up 0 min|LOG|UDHCPC      |bound eth1 dns 192.168.10.1
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/09/29 16:48:31 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/09/29 16:48:39 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/09/29 16:49:08 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/09/29 16:53:32 up 5 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/09/29 16:53:32 up 5 min|LOG|=REBOOT=    |[background process]
+2025/09/29 16:53:32 up 5 min|LOG|=REBOOT=    |haserl(12432)->+sh(12433)->+sh(12448)->+/usr/sbin/reboot(12449)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |WAN1: dhcp on eth1:1
+2025/01/01 15:00:06 up 0 min|LOG|UDHCPC      |deconfig eth1
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:07 up 0 min|LOG|UDHCPC      |bound eth1 192.168.10.102  netmask 255.255.255.0 router 192.168.10.1  DHCP Server:192.168.10.1
+2025/01/01 15:00:07 up 0 min|LOG|UDHCPC      |bound eth1 dns 192.168.10.1
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/09/29 16:54:57 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/09/29 16:55:06 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/09/29 16:55:30 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/09/29 17:39:36 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/09/29 17:39:40 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/09/29 17:40:04 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:03 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/09/29 17:48:42 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/09/29 17:48:44 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/09/29 17:49:08 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.4M    622.6M   0% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:25 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:49 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.5M    622.4M   0% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:24 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:49 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.5M    622.4M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:23 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.5M    622.4M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:23 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 15:17:09 up 17 min|LOG|LMT         |Get /var/log log 
+2025/10/09 17:31:19 up 3 days,  1:09|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:22 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/10/15 20:21:58 up 1 day,  3:04|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:25 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:49 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 15:09:41 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/01/01 15:09:41 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:13 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:13 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+                                                                                                        2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:26 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:50 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/13 13:47:21 up 11 days, 22:47|LOG|LMT         |Get /var/log log 
+2025/01/13 19:47:58 up 12 days,  4:48|LOG|LMT         |Get /var/log log 
+2025/01/13 19:59:38 up 12 days,  4:59|LOG|LMT         |Get /var/log log 
+2025/01/13 20:06:23 up 12 days,  5:06|LOG|LMT         |Get /var/log log 
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:22 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:22 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 15:03:31 up 3 min|LOG|LMT         |Get /var/log log 
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:22 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 15:33:01 up 33 min|LOG|LMT         |Get /var/log log 
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/10/29 02:50:04 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/10/29 02:50:08 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/10/29 02:50:32 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/10/29 14:10:05 up 11:20|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/10/29 14:10:05 up 11:20|LOG|=REBOOT=    |[background process]
+2025/10/29 14:10:05 up 11:20|LOG|=REBOOT=    |haserl(3745)->+sh(3753)->+sh(3766)->+/usr/sbin/reboot(3767)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/10/29 14:10:52 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/10/29 14:10:56 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/10/29 14:11:20 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/10/29 14:16:47 up 6 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/10/29 14:16:47 up 6 min|LOG|=REBOOT=    |[background process]
+2025/10/29 14:16:47 up 6 min|LOG|=REBOOT=    |haserl(13759)->+sh(13760)->+sh(13769)->+/usr/sbin/reboot(13770)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/10/29 14:17:31 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/10/29 14:17:35 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/10/29 14:17:59 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/10/30 23:58:52 up 1 day,  9:41|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/10/30 23:58:52 up 1 day,  9:41|LOG|=REBOOT=    |[background process]
+2025/10/30 23:58:52 up 1 day,  9:41|LOG|=REBOOT=    |haserl(16053)->+sh(16054)->+sh(16063)->+/usr/sbin/reboot(16064)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:660.0K
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.7M    622.3M   0% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/10/30 23:59:38 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/10/30 23:59:41 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/10/31 00:00:05 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/10/31 00:08:59 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/10/31 00:08:59 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/10/31 00:09:06 up 9 min|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4109.6.1761836946
+2025/10/31 00:09:20 up 10 min|LOG|OAM         |Stk restart, set mme status to 0
+2025/10/31 00:09:25 up 10 min|LOG|WATCHDOG    |Restart enodeb_net
+2025/10/31 00:10:55 up 11 min|ERR|WATCHDOG    |The mme is still not connected one minute after restarting the stk, reboot!
+2025/10/31 00:10:55 up 11 min|ERR|ONDEATH_PRE |enodeb_net
+2025/10/31 00:11:03 up 11 min|ERR|ONDEATH     |halt_event[enodeb_net]:20251031001055::
+2025/10/31 00:11:04 up 11 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.0M    623.0M   0% /mnt/log
+2025/10/31 00:11:06 up 11 min|ERR|ONDEATH_POS |disk_free: 642727936 core_size: 1097728 halt_size: 1238425
+2025/10/31 00:11:06 up 11 min|ERR|ONDEATH_POS |keep core and halt 
+2025/10/31 00:11:07 up 11 min|ERR|ONDEATH_POS |halt_event: Create 001_20251031001055.tar.gz, size: 2.1M
+2025/10/31 00:11:07 up 11 min|ERR|ONDEATH_POS |halt_event: Reboot till uptime to 900s
+2025/10/31 00:14:17 up 15 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/10/31 00:14:17 up 15 min|LOG|=REBOOT=    |[background process]
+2025/10/31 00:14:17 up 15 min|LOG|=REBOOT=    |enodeb_restart(14392)->+reboot-fap(15787)->+ondeath_postrod(16615)->+/usr/sbin/reboot(21207)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.8M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/10/31 00:15:01 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/10/31 00:15:04 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/10/31 00:15:28 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/10/31 00:16:58 up 2 min|LOG|FAP         |Upload 001_20251031001055.tar.gz
+2025/10/31 00:18:25 up 3 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/10/31 00:18:25 up 3 min|LOG|=REBOOT=    |[background process]
+2025/10/31 00:18:25 up 3 min|LOG|=REBOOT=    |haserl(9380)->+sh(9381)->+sh(9390)->+/usr/sbin/reboot(9391)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.8M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/10/31 00:19:09 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/10/31 00:19:12 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/10/31 00:19:36 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/10/31 11:23:22 up 11:04|LOG|LMT         |Get /var/log log 
+2025/10/31 16:22:09 up 16:03|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4116.6.1761895329
+2025/10/31 16:22:21 up 16:03|LOG|OAM         |Stk restart, set mme status to 0
+2025/10/31 16:22:26 up 16:03|LOG|WATCHDOG    |Restart enodeb_net
+2025/11/03 13:05:06 up 3 days, 12:46|LOG|LMT         |Get /var/log log 
+2025/11/03 13:08:39 up 3 days, 12:49|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/03 13:08:39 up 3 days, 12:49|LOG|=REBOOT=    |[background process]
+2025/11/03 13:08:39 up 3 days, 12:49|LOG|=REBOOT=    |haserl(10965)->+sh(10966)->+sh(10975)->+/usr/sbin/reboot(10976)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.8M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/03 13:09:24 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/03 13:09:28 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/03 13:09:52 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/03 13:12:46 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/03 14:01:32 up 52 min|LOG|LMT         |Get /var/log log 
+2025/11/04 12:40:01 up 23:31|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 12:40:01 up 23:31|LOG|=REBOOT=    |[background process]
+2025/11/04 12:40:01 up 23:31|LOG|=REBOOT=    |haserl(7442)->+sh(7443)->+sh(7452)->+/usr/sbin/reboot(7453)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.8M   1% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 12:40:47 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 12:40:49 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 12:41:14 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 12:47:58 up 7 min|LOG|LMT         |Get /var/log log 
+2025/11/04 13:41:07 up  1:00|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 13:41:07 up  1:00|LOG|=REBOOT=    |[background process]
+2025/11/04 13:41:07 up  1:00|LOG|=REBOOT=    |haserl(27792)->+sh(27793)->+sh(27802)->+/usr/sbin/reboot(27803)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.8M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 13:41:54 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 13:41:57 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 13:42:21 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 13:45:15 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/04 14:10:15 up 28 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 14:10:15 up 28 min|LOG|=REBOOT=    |[background process]
+2025/11/04 14:10:15 up 28 min|LOG|=REBOOT=    |haserl(32249)->+sh(32250)->+sh(32259)->+/usr/sbin/reboot(32260)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.7M   1% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 14:11:00 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 14:11:03 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 14:11:27 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 14:14:53 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/04 14:24:11 up 13 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 14:24:11 up 13 min|LOG|=REBOOT=    |[background process]
+2025/11/04 14:24:11 up 13 min|LOG|=REBOOT=    |haserl(19999)->+sh(20000)->+sh(20009)->+/usr/sbin/reboot(20010)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.7M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 14:24:57 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 14:25:00 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 14:25:24 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 14:34:16 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/04 14:34:16 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/04 14:36:30 up 11 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 14:36:30 up 11 min|LOG|=REBOOT=    |[background process]
+2025/11/04 14:36:30 up 11 min|LOG|=REBOOT=    |haserl(18566)->+sh(18567)->+sh(18582)->+/usr/sbin/reboot(18583)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.7M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 14:37:15 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 14:37:19 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 14:37:43 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 14:41:06 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/04 15:15:51 up 39 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 15:15:51 up 39 min|LOG|=REBOOT=    |[background process]
+2025/11/04 15:15:51 up 39 min|LOG|=REBOOT=    |haserl(7973)->+sh(7974)->+sh(7983)->+/usr/sbin/reboot(7984)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.7M   1% /mnt/log
+2025/01/01 15:00:12 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:12 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 15:16:41 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 15:16:45 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 15:17:13 up 1 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 15:21:05 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/04 17:24:26 up  2:08|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 17:24:26 up  2:08|LOG|=REBOOT=    |[background process]
+2025/11/04 17:24:26 up  2:08|LOG|=REBOOT=    |haserl(25862)->+sh(25863)->+sh(25872)->+/usr/sbin/reboot(25873)
+2025/01/01 00:00:03 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:03 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.2M    620.7M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 17:25:12 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 17:25:15 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 17:25:39 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 17:29:26 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/04 18:16:15 up 51 min|LOG|LMT         |Get /var/log log 
+2025/11/04 18:32:53 up  1:08|LOG|LMT         |Get /var/log log 
+2025/11/04 19:49:54 up  2:25|LOG|LMT         |Backup Current Configuration 
+2025/11/04 19:55:34 up  2:30|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4064.6.1762253734
+2025/11/04 19:55:47 up  2:30|LOG|OAM         |Stk restart, set mme status to 0
+2025/11/04 19:55:52 up  2:31|LOG|WATCHDOG    |Restart enodeb_net
+2025/11/04 19:57:19 up  2:32|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 19:57:19 up  2:32|LOG|=REBOOT=    |[background process]
+2025/11/04 19:57:19 up  2:32|LOG|=REBOOT=    |haserl(22554)->+sh(22555)->+sh(22564)->+/usr/sbin/reboot(22565)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 19:58:05 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 19:58:08 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 19:58:32 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 20:05:30 up 7 min|LOG|LMT         |Get /var/log log 
+2025/11/04 20:09:42 up 12 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 20:09:42 up 12 min|LOG|=REBOOT=    |[background process]
+2025/11/04 20:09:42 up 12 min|LOG|=REBOOT=    |haserl(19229)->+sh(19230)->+sh(19239)->+/usr/sbin/reboot(19240)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 20:10:28 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 20:10:31 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 20:10:55 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 20:14:08 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/04 20:26:19 up 16 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 20:26:19 up 16 min|LOG|=REBOOT=    |[background process]
+2025/11/04 20:26:19 up 16 min|LOG|=REBOOT=    |haserl(21363)->+sh(21364)->+sh(21373)->+/usr/sbin/reboot(21374)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 20:27:07 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 20:27:10 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 20:27:34 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 20:31:16 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/04 20:39:35 up 12 min|LOG|LMT         |Get /var/log log 
+2025/11/04 20:45:29 up 18 min|LOG|LMT         |Get /var/log log 
+2025/11/04 20:45:43 up 19 min|LOG|LMT         |Get /var/log log 
+2025/11/04 20:58:58 up 32 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 20:58:58 up 32 min|LOG|=REBOOT=    |[background process]
+2025/11/04 20:58:58 up 32 min|LOG|=REBOOT=    |haserl(4132)->+sh(4133)->+sh(4142)->+/usr/sbin/reboot(4143)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 20:59:44 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 20:59:48 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 21:00:12 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 21:03:56 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/04 21:12:43 up 13 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 21:12:43 up 13 min|LOG|=REBOOT=    |[background process]
+2025/11/04 21:12:43 up 13 min|LOG|=REBOOT=    |haserl(19187)->+sh(19188)->+sh(19197)->+/usr/sbin/reboot(19198)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 21:13:32 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 21:13:35 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 21:14:00 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 21:23:50 up 10 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 21:23:50 up 10 min|LOG|=REBOOT=    |[background process]
+2025/11/04 21:23:50 up 10 min|LOG|=REBOOT=    |haserl(18204)->+sh(18205)->+sh(18214)->+/usr/sbin/reboot(18215)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 21:24:34 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 21:24:38 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 21:25:02 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 21:29:45 up 5 min|LOG|LMT         |Get /var/log log 
+2025/11/04 21:50:43 up 26 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/04 21:50:43 up 26 min|LOG|=REBOOT=    |[background process]
+2025/11/04 21:50:43 up 26 min|LOG|=REBOOT=    |haserl(31057)->+sh(31058)->+sh(31067)->+/usr/sbin/reboot(31068)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/04 21:51:29 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/04 21:51:33 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/04 21:51:57 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/04 21:54:31 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/04 22:21:10 up 30 min|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4141.6.1762262470
+2025/11/04 22:21:24 up 30 min|LOG|OAM         |Stk restart, set mme status to 0
+2025/11/04 22:21:29 up 30 min|LOG|WATCHDOG    |Restart enodeb_net
+2025/11/05 09:58:02 up 12:06|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 09:58:02 up 12:06|LOG|=REBOOT=    |[background process]
+2025/11/05 09:58:02 up 12:06|LOG|=REBOOT=    |haserl(12548)->+sh(12549)->+sh(12558)->+/usr/sbin/reboot(12559)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 09:58:50 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 09:58:53 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 09:59:17 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 10:06:22 up 7 min|LOG|LMT         |Get /var/log log 
+2025/11/05 10:17:59 up 19 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 10:17:59 up 19 min|LOG|=REBOOT=    |[background process]
+2025/11/05 10:17:59 up 19 min|LOG|=REBOOT=    |haserl(24499)->+sh(24500)->+sh(24509)->+/usr/sbin/reboot(24510)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 10:18:44 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 10:18:47 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 10:19:11 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 10:22:09 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/05 10:22:21 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/05 10:46:58 up 28 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 10:46:58 up 28 min|LOG|=REBOOT=    |[background process]
+2025/11/05 10:46:58 up 28 min|LOG|=REBOOT=    |haserl(32004)->+sh(32005)->+sh(32014)->+/usr/sbin/reboot(32015)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 10:47:46 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 10:47:51 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 10:48:15 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 10:51:02 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/05 11:13:14 up 25 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 11:13:14 up 25 min|LOG|=REBOOT=    |[background process]
+2025/11/05 11:13:14 up 25 min|LOG|=REBOOT=    |haserl(29201)->+sh(29202)->+sh(29211)->+/usr/sbin/reboot(29212)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 11:14:00 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 11:14:03 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 11:14:27 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 11:19:35 up 6 min|LOG|LMT         |Get /var/log log 
+2025/11/05 11:23:19 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/05 11:23:19 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/05 11:26:51 up 13 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 11:26:51 up 13 min|LOG|=REBOOT=    |[background process]
+2025/11/05 11:26:51 up 13 min|LOG|=REBOOT=    |haserl(18922)->+sh(18923)->+sh(18932)->+/usr/sbin/reboot(18933)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 11:27:36 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 11:27:39 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 11:28:03 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 11:31:20 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/05 11:46:17 up 19 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 11:46:17 up 19 min|LOG|=REBOOT=    |[background process]
+2025/11/05 11:46:17 up 19 min|LOG|=REBOOT=    |haserl(26445)->+sh(26446)->+sh(26455)->+/usr/sbin/reboot(26456)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 11:47:03 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 11:47:06 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 11:47:30 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 11:51:24 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/05 12:04:33 up 17 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 12:04:33 up 17 min|LOG|=REBOOT=    |[background process]
+2025/11/05 12:04:33 up 17 min|LOG|=REBOOT=    |haserl(22567)->+sh(22568)->+sh(22577)->+/usr/sbin/reboot(22578)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.7M   1% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 12:05:19 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 12:05:23 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 12:05:47 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 12:09:19 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/05 12:40:29 up 35 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 12:40:29 up 35 min|LOG|=REBOOT=    |[background process]
+2025/11/05 12:40:29 up 35 min|LOG|=REBOOT=    |haserl(5407)->+sh(5409)->+sh(5425)->+/usr/sbin/reboot(5429)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.6M   1% /mnt/log
+2025/01/01 15:00:13 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:13 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 12:41:21 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 12:41:24 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 12:41:48 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 12:46:09 up 5 min|LOG|LMT         |Get /var/log log 
+2025/11/05 12:50:41 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/05 12:50:41 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/05 12:54:01 up 13 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 12:54:01 up 13 min|LOG|=REBOOT=    |[background process]
+2025/11/05 12:54:01 up 13 min|LOG|=REBOOT=    |haserl(18955)->+sh(18956)->+sh(18965)->+/usr/sbin/reboot(18966)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.6M   1% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 12:54:49 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 12:54:53 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 12:55:17 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 12:58:20 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/05 13:23:24 up 29 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 13:23:24 up 29 min|LOG|=REBOOT=    |[background process]
+2025/11/05 13:23:24 up 29 min|LOG|=REBOOT=    |haserl(32230)->+sh(32231)->+sh(32240)->+/usr/sbin/reboot(32241)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.6M   1% /mnt/log
+2025/01/01 15:00:15 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:15 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:19 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:19 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 13:24:17 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 13:24:21 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 13:24:45 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 13:27:16 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/05 13:44:39 up 20 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 13:44:39 up 20 min|LOG|=REBOOT=    |[background process]
+2025/11/05 13:44:39 up 20 min|LOG|=REBOOT=    |haserl(25059)->+sh(25060)->+sh(25069)->+/usr/sbin/reboot(25070)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.6M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 13:45:25 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 13:45:28 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 13:45:52 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 13:48:40 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/05 14:06:08 up 21 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 14:06:08 up 21 min|LOG|=REBOOT=    |[background process]
+2025/11/05 14:06:08 up 21 min|LOG|=REBOOT=    |haserl(25406)->+sh(25407)->+sh(25416)->+/usr/sbin/reboot(25417)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.6M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 14:06:55 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 14:06:58 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 14:07:22 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 14:14:32 up 8 min|LOG|LMT         |Get /var/log log 
+2025/11/05 14:32:57 up 26 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 14:32:57 up 26 min|LOG|=REBOOT=    |[background process]
+2025/11/05 14:32:57 up 26 min|LOG|=REBOOT=    |haserl(31338)->+sh(31339)->+sh(31348)->+/usr/sbin/reboot(31349)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.3M    620.6M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 14:33:43 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 14:33:46 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 14:34:10 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 14:37:59 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/05 14:50:01 up 16 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 14:50:01 up 16 min|LOG|=REBOOT=    |[background process]
+2025/11/05 14:50:01 up 16 min|LOG|=REBOOT=    |haserl(21671)->+sh(21672)->+sh(21681)->+/usr/sbin/reboot(21682)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 14:50:47 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 14:50:50 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 14:51:14 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 14:55:12 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/05 15:10:49 up 20 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 15:10:49 up 20 min|LOG|=REBOOT=    |[background process]
+2025/11/05 15:10:49 up 20 min|LOG|=REBOOT=    |haserl(28142)->+sh(28143)->+sh(28152)->+/usr/sbin/reboot(28153)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 15:11:37 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 15:11:41 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 15:12:04 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 15:14:40 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/05 15:26:43 up 15 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 15:26:43 up 15 min|LOG|=REBOOT=    |[background process]
+2025/11/05 15:26:43 up 15 min|LOG|=REBOOT=    |haserl(22235)->+sh(22236)->+sh(22245)->+/usr/sbin/reboot(22246)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 15:27:30 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 15:27:34 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 15:27:59 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 15:31:17 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/05 15:53:46 up 26 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 15:53:46 up 26 min|LOG|=REBOOT=    |[background process]
+2025/11/05 15:53:46 up 26 min|LOG|=REBOOT=    |haserl(31067)->+sh(31068)->+sh(31077)->+/usr/sbin/reboot(31078)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 15:54:32 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 15:54:36 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 15:54:59 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/05 15:58:07 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/05 16:30:27 up 36 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/05 16:30:27 up 36 min|LOG|=REBOOT=    |[background process]
+2025/11/05 16:30:27 up 36 min|LOG|=REBOOT=    |haserl(8869)->+sh(8870)->+sh(8879)->+/usr/sbin/reboot(8880)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/05 16:31:13 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/05 16:31:17 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/05 16:31:42 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 11:19:35 up 18:48|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 11:19:35 up 18:48|LOG|=REBOOT=    |[background process]
+2025/11/06 11:19:35 up 18:48|LOG|=REBOOT=    |haserl(28925)->+sh(28926)->+sh(28935)->+/usr/sbin/reboot(28936)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 11:20:21 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 11:20:24 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 11:20:48 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 13:01:59 up  1:42|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 13:01:59 up  1:42|LOG|=REBOOT=    |[background process]
+2025/11/06 13:01:59 up  1:42|LOG|=REBOOT=    |haserl(5815)->+sh(5816)->+sh(5825)->+/usr/sbin/reboot(5826)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 13:02:45 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 13:02:48 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 13:03:12 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 13:28:40 up 26 min|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4428.6.1762403320
+2025/11/06 13:28:54 up 26 min|LOG|OAM         |Stk restart, set mme status to 0
+2025/11/06 13:28:59 up 26 min|LOG|WATCHDOG    |Restart enodeb_net
+2025/11/06 13:31:01 up 28 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 13:31:01 up 28 min|LOG|=REBOOT=    |[background process]
+2025/11/06 13:31:01 up 28 min|LOG|=REBOOT=    |haserl(3061)->+sh(3062)->+sh(3071)->+/usr/sbin/reboot(3072)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 13:31:48 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 13:31:51 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 13:32:15 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 13:36:28 up 5 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 13:36:28 up 5 min|LOG|=REBOOT=    |[background process]
+2025/11/06 13:36:28 up 5 min|LOG|=REBOOT=    |haserl(10487)->+sh(10488)->+sh(10497)->+/usr/sbin/reboot(10498)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 13:37:14 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 13:37:17 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 13:37:41 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 13:54:44 up 17 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 13:54:44 up 17 min|LOG|=REBOOT=    |[background process]
+2025/11/06 13:54:44 up 17 min|LOG|=REBOOT=    |haserl(25895)->+sh(25896)->+sh(25905)->+/usr/sbin/reboot(25906)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.6M   1% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 13:55:29 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 13:55:31 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 13:55:55 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 14:05:30 up 10 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 14:05:30 up 10 min|LOG|=REBOOT=    |[background process]
+2025/11/06 14:05:30 up 10 min|LOG|=REBOOT=    |haserl(18557)->+sh(18558)->+sh(18567)->+/usr/sbin/reboot(18568)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.5M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 14:06:16 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 14:06:19 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 14:06:43 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 14:08:36 up 2 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 14:08:36 up 2 min|LOG|=REBOOT=    |[background process]
+2025/11/06 14:08:36 up 2 min|LOG|=REBOOT=    |haserl(7589)->+sh(7590)->+sh(7599)->+/usr/sbin/reboot(7600)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.5M   1% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 14:09:24 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 14:09:28 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 14:09:52 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 14:19:13 up 10 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 14:19:13 up 10 min|LOG|=REBOOT=    |[background process]
+2025/11/06 14:19:13 up 10 min|LOG|=REBOOT=    |haserl(18193)->+sh(18194)->+sh(18203)->+/usr/sbin/reboot(18204)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.5M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 14:19:59 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 14:20:02 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 14:20:26 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 14:51:48 up 32 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 14:51:48 up 32 min|LOG|=REBOOT=    |[background process]
+2025/11/06 14:51:48 up 32 min|LOG|=REBOOT=    |haserl(6215)->+sh(6216)->+sh(6225)->+/usr/sbin/reboot(6226)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.5M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 14:52:34 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 14:52:37 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 14:53:01 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 15:11:29 up 19 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 15:11:29 up 19 min|LOG|=REBOOT=    |[background process]
+2025/11/06 15:11:29 up 19 min|LOG|=REBOOT=    |haserl(23831)->+sh(23832)->+sh(23841)->+/usr/sbin/reboot(23842)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.4M    620.5M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 15:12:13 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 15:12:17 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 15:12:41 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/06 18:32:59 up  3:21|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/06 18:32:59 up  3:21|LOG|=REBOOT=    |[background process]
+2025/11/06 18:32:59 up  3:21|LOG|=REBOOT=    |haserl(18025)->+sh(18026)->+sh(18035)->+/usr/sbin/reboot(18036)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/06 18:33:46 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/06 18:33:48 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/06 18:34:13 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/07 10:12:17 up 15:38|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/07 10:12:17 up 15:38|LOG|=REBOOT=    |[background process]
+2025/11/07 10:12:17 up 15:38|LOG|=REBOOT=    |haserl(30334)->+sh(30335)->+sh(30344)->+/usr/sbin/reboot(30345)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/07 10:13:04 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/07 10:13:07 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/07 10:13:31 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/07 11:38:24 up  1:25|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/07 11:38:24 up  1:25|LOG|=REBOOT=    |[background process]
+2025/11/07 11:38:24 up  1:25|LOG|=REBOOT=    |haserl(27435)->+sh(27437)->+sh(27452)->+/usr/sbin/reboot(27454)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/07 11:39:12 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/07 11:39:16 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/07 11:39:40 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/07 12:16:16 up 37 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/07 12:16:16 up 37 min|LOG|=REBOOT=    |[background process]
+2025/11/07 12:16:16 up 37 min|LOG|=REBOOT=    |haserl(12674)->+sh(12675)->+sh(12684)->+/usr/sbin/reboot(12685)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/07 12:17:03 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/07 12:17:06 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/07 12:17:30 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/07 13:33:16 up  1:16|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/07 13:33:16 up  1:16|LOG|=REBOOT=    |[background process]
+2025/11/07 13:33:16 up  1:16|LOG|=REBOOT=    |haserl(12577)->+sh(12580)->+sh(12593)->+/usr/sbin/reboot(12594)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/07 13:34:02 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/07 13:34:05 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/07 13:34:29 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/07 13:43:20 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/07 13:43:21 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/07 13:50:04 up 16 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/07 13:50:04 up 16 min|LOG|=REBOOT=    |[background process]
+2025/11/07 13:50:04 up 16 min|LOG|=REBOOT=    |haserl(21771)->+sh(21772)->+sh(21781)->+/usr/sbin/reboot(21782)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/07 13:50:51 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/07 13:50:55 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/07 13:51:20 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/07 14:29:20 up 38 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/07 14:29:20 up 38 min|LOG|=REBOOT=    |[background process]
+2025/11/07 14:29:20 up 38 min|LOG|=REBOOT=    |haserl(9918)->+sh(9919)->+sh(9928)->+/usr/sbin/reboot(9929)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/07 14:30:05 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/07 14:30:08 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/07 14:30:32 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/07 14:39:24 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/07 14:39:24 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/07 14:47:24 up 17 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/07 14:47:24 up 17 min|LOG|=REBOOT=    |[background process]
+2025/11/07 14:47:24 up 17 min|LOG|=REBOOT=    |haserl(25172)->+sh(25173)->+sh(25183)->+/usr/sbin/reboot(25184)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/07 14:48:13 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/07 14:48:17 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/07 14:48:41 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/07 15:54:12 up  1:06|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/07 15:54:12 up  1:06|LOG|=REBOOT=    |[background process]
+2025/11/07 15:54:12 up  1:06|LOG|=REBOOT=    |haserl(7997)->+sh(7998)->+sh(8007)->+/usr/sbin/reboot(8008)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.5M    620.5M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/07 15:54:57 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/07 15:55:01 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/07 15:55:25 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/10 10:59:54 up 2 days, 19:05|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/10 10:59:54 up 2 days, 19:05|LOG|=REBOOT=    |[background process]
+2025/11/10 10:59:54 up 2 days, 19:05|LOG|=REBOOT=    |haserl(19253)->+sh(19254)->+sh(19263)->+/usr/sbin/reboot(19264)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.6M    620.4M   1% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/10 11:00:42 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/10 11:00:45 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/10 11:01:09 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/10 11:42:43 up 42 min|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4511.6.1762742563
+2025/11/10 11:42:56 up 42 min|LOG|OAM         |Stk restart, set mme status to 0
+2025/11/10 11:43:01 up 42 min|LOG|WATCHDOG    |Restart enodeb_net
+2025/11/10 15:30:22 up  4:30|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/10 15:30:22 up  4:30|LOG|=REBOOT=    |[background process]
+2025/11/10 15:30:22 up  4:30|LOG|=REBOOT=    |haserl(6829)->+sh(6830)->+sh(6839)->+/usr/sbin/reboot(6840)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.6M    620.4M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:22 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/10 06:31:12 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/10 15:31:35 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/10 15:38:56 up 8 min|LOG|LMT         |Get /var/log log 
+2025/11/10 15:40:28 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/10 15:40:28 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/10 15:49:44 up 19 min|LOG|LMT         |Get /var/log log 
+2025/11/10 16:14:52 up 44 min|LOG|LMT         |Get /var/log log 
+2025/11/10 18:37:02 up  3:06|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4423.6.1762767422
+2025/11/10 18:37:13 up  3:06|LOG|OAM         |Stk restart, set mme status to 0
+2025/11/10 18:37:18 up  3:06|LOG|WATCHDOG    |Restart enodeb_net
+2025/11/11 15:10:16 up 23:39|LOG|LMT         |Get /var/log log 
+2025/11/11 15:23:12 up 23:52|LOG|LMT         |Get /var/log log 
+2025/11/11 17:10:01 up 1 day,  1:39|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/11 17:10:01 up 1 day,  1:39|LOG|=REBOOT=    |[background process]
+2025/11/11 17:10:01 up 1 day,  1:39|LOG|=REBOOT=    |haserl(9081)->+sh(9084)->+sh(9100)->+/usr/sbin/reboot(9101)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:2.1M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      3.7M    620.3M   1% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/11 17:10:48 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/11 17:10:51 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/11 17:11:16 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/11 17:16:40 up 6 min|LOG|LMT         |Get /var/log log 
+2025/11/11 19:13:27 up  2:03|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4119.6.1762856007
+2025/11/11 19:13:39 up  2:03|LOG|OAM         |Stk restart, set mme status to 0
+2025/11/11 19:13:44 up  2:03|LOG|WATCHDOG    |Restart enodeb_net
+2025/11/11 19:51:49 up  2:41|LOG|WATCHDOG    |/opt/qcom/bin/enodeb_tdd (pid=25146) is abnormal, collect logs and reboot!!!
+2025/11/11 19:51:49 up  2:41|ERR|ONDEATH_PRE |/opt/qcom/bin/enodeb_tdd
+2025/11/11 19:52:00 up  2:41|ERR|ONDEATH     |halt_event[/opt/qcom/bin/enodeb_tdd]:20251111195149::
+2025/11/11 19:52:01 up  2:41|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.6M    622.4M   0% /mnt/log
+2025/11/11 19:52:03 up  2:41|ERR|ONDEATH_POS |disk_free: 642129920 core_size: 1052672 halt_size: 4766655
+2025/11/11 19:52:03 up  2:41|ERR|ONDEATH_POS |keep core and halt 
+2025/11/11 19:52:05 up  2:41|ERR|ONDEATH_POS |halt_event: Create 002_20251111195149.tar.gz, size: 5.5M
+2025/11/11 19:52:05 up  2:41|ERR|ONDEATH_POS |halt_event: Reboot till uptime to 900s
+2025/11/11 19:52:08 up  2:41|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/11 19:52:08 up  2:41|LOG|=REBOOT=    |[background process]
+2025/11/11 19:52:08 up  2:41|LOG|=REBOOT=    |watchdogd(2895)->+reboot-fap(31942)->+ondeath_postrod(377)->+/usr/sbin/reboot(830)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:5.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      7.1M    616.9M   1% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/11 19:52:53 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/11 19:52:56 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/11 19:53:20 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/11 19:54:50 up 2 min|LOG|FAP         |Upload 002_20251111195149.tar.gz
+2025/11/12 10:49:32 up 14:57|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/12 10:49:32 up 14:57|LOG|=REBOOT=    |[background process]
+2025/11/12 10:49:32 up 14:57|LOG|=REBOOT=    |haserl(29666)->+sh(29667)->+sh(29676)->+/usr/sbin/reboot(29677)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:5.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      7.1M    616.8M   1% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/12 10:50:17 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/12 10:50:21 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/12 10:50:45 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/12 10:56:49 up 6 min|LOG|LMT         |Get Signal Backup File 
+2025/11/12 10:58:40 up 8 min|LOG|LMT         |Get Signal Backup File 
+2025/11/12 11:07:59 up 18 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/12 11:07:59 up 18 min|LOG|=REBOOT=    |[background process]
+2025/11/12 11:07:59 up 18 min|LOG|=REBOOT=    |haserl(24620)->+sh(24621)->+sh(24630)->+/usr/sbin/reboot(24631)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:5.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      7.2M    616.8M   1% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:24 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/12 02:08:50 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/12 11:09:14 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/12 11:12:50 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/12 14:19:07 up  3:10|LOG|LMT         |Get /var/log log 
+2025/11/12 19:21:11 up  8:12|LOG|LMT         |Get /var/log log 
+2025/11/12 20:15:06 up  9:06|LOG|LMT         |Get /var/log log 
+2025/11/12 21:17:53 up 10:09|LOG|LMT         |Get /var/log log 
+2025/11/13 13:44:22 up 1 day,  2:36|LOG|LMT         |Get /var/log log 
+2025/11/13 14:27:13 up 1 day,  3:18|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4121.6.1763011633
+2025/11/13 14:27:25 up 1 day,  3:19|LOG|WATCHDOG    |/opt/qcom/bin/enodeb_tdd (pid=4121) is abnormal, collect logs and reboot!!!
+2025/11/13 14:27:25 up 1 day,  3:19|ERR|ONDEATH_PRE |/opt/qcom/bin/enodeb_tdd
+2025/11/13 14:27:36 up 1 day,  3:19|ERR|ONDEATH     |halt_event[/opt/qcom/bin/enodeb_tdd]:20251113142725::
+2025/11/13 14:27:40 up 1 day,  3:19|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.7M    622.3M   0% /mnt/log
+2025/11/13 14:29:26 up 1 day,  3:21|ERR|ONDEATH_POS |disk_free: 642035712 core_size: 17256448 halt_size: 9622253
+2025/11/13 14:29:26 up 1 day,  3:21|ERR|ONDEATH_POS |keep core and halt 
+2025/11/13 14:29:33 up 1 day,  3:21|ERR|ONDEATH_POS |halt_event: Create 003_20251113142725.tar.gz, size: 24.2M
+2025/11/13 14:29:33 up 1 day,  3:21|ERR|ONDEATH_POS |halt_event: Reboot till uptime to 900s
+2025/11/13 14:29:36 up 1 day,  3:21|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/13 14:29:36 up 1 day,  3:21|LOG|=REBOOT=    |[background process]
+2025/11/13 14:29:36 up 1 day,  3:21|LOG|=REBOOT=    |watchdogd(2895)->+reboot-fap(8992)->+ondeath_postrod(9978)->+/usr/sbin/reboot(12491)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     25.9M    598.1M   4% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/13 14:30:21 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/13 14:30:24 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/13 14:30:48 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/13 14:32:21 up 2 min|LOG|FAP         |Upload 003_20251113142725.tar.gz
+2025/11/13 18:16:44 up  3:46|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/13 18:16:44 up  3:46|LOG|=REBOOT=    |[background process]
+2025/11/13 18:16:44 up  3:46|LOG|=REBOOT=    |haserl(9312)->+sh(9313)->+sh(9322)->+/usr/sbin/reboot(9323)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     25.9M    598.0M   4% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/13 18:17:30 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/13 18:17:33 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/13 18:17:57 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/13 18:28:03 up 10 min|LOG|LMT         |Get /var/log log 
+2025/11/13 18:41:09 up 24 min|LOG|LMT         |Get /var/log log 
+2025/11/13 18:44:18 up 27 min|LOG|LMT         |Get /var/log log 
+2025/11/13 18:49:13 up 32 min|LOG|LMT         |Get /var/log log 
+2025/11/13 19:00:31 up 43 min|LOG|LMT         |Get /var/log log 
+2025/11/13 19:17:34 up  1:00|LOG|LMT         |Get /var/log log 
+2025/11/13 19:30:06 up  1:13|LOG|LMT         |Get /var/log log 
+2025/11/13 19:58:54 up  1:41|LOG|LMT         |Get /var/log log 
+2025/11/13 20:27:28 up  2:10|LOG|LMT         |Get /var/log log 
+2025/11/13 20:34:10 up  2:17|LOG|LMT         |Get /var/log log 
+2025/11/13 20:42:46 up  2:25|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/13 20:42:46 up  2:25|LOG|=REBOOT=    |[background process]
+2025/11/13 20:42:46 up  2:25|LOG|=REBOOT=    |haserl(27952)->+sh(27953)->+sh(27966)->+/usr/sbin/reboot(27967)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     26.0M    598.0M   4% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/13 20:43:32 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/13 20:43:36 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/13 20:43:59 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/13 20:46:01 up 2 min|LOG|LMT         |Get /var/log log 
+2025/11/13 20:49:53 up 6 min|LOG|LMT         |Get /var/log log 
+2025/11/13 21:08:25 up 25 min|LOG|LMT         |Get /var/log log 
+2025/11/14 10:54:30 up 14:11|LOG|LMT         |Get /var/log log 
+2025/11/14 11:29:12 up 14:46|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/14 11:29:12 up 14:46|LOG|=REBOOT=    |[background process]
+2025/11/14 11:29:12 up 14:46|LOG|=REBOOT=    |haserl(26423)->+sh(26424)->+sh(26433)->+/usr/sbin/reboot(26434)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     26.0M    598.0M   4% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/14 11:30:00 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/14 11:30:04 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/14 11:30:29 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/14 11:35:20 up 5 min|LOG|LMT         |Get /var/log log 
+2025/11/14 11:37:11 up 7 min|LOG|LMT         |Backup Current Configuration 
+2025/11/14 12:02:21 up 32 min|LOG|LMT         |Get /var/log log 
+2025/11/14 13:19:46 up  1:50|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/14 13:19:46 up  1:50|LOG|=REBOOT=    |[background process]
+2025/11/14 13:19:46 up  1:50|LOG|=REBOOT=    |haserl(13665)->+sh(13666)->+sh(13675)->+/usr/sbin/reboot(13676)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     26.0M    598.0M   4% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:22 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 15:56:40 up 56 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/01/01 15:56:40 up 56 min|LOG|=REBOOT=    |[background process]
+2025/01/01 15:56:40 up 56 min|LOG|=REBOOT=    |haserl(29029)->+sh(29030)->+sh(29039)->+/usr/sbin/reboot(29040)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     26.0M    598.0M   4% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:22 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/01/01 15:05:54 up 6 min|LOG|LMT         |Get /var/log log 
+2025/01/01 15:07:33 up 7 min|LOG|LMT         |Get Signal Backup File 
+2025/01/01 15:07:40 up 7 min|LOG|LMT         |Get /var/log log 
+2025/01/01 15:07:56 up 8 min|LOG|LMT         |Backup Current Configuration 
+2025/11/14 14:39:07 up 21 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/14 15:12:16 up 55 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/14 15:12:16 up 55 min|LOG|=REBOOT=    |[background process]
+2025/11/14 15:12:16 up 55 min|LOG|=REBOOT=    |haserl(27434)->+sh(27435)->+sh(27444)->+/usr/sbin/reboot(27445)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     26.0M    598.0M   4% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/14 15:13:00 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/14 15:13:03 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/14 15:13:27 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/14 15:16:17 up 3 min|LOG|LMT         |Get Signal Backup File 
+2025/11/14 15:16:21 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/14 15:18:03 up 5 min|LOG|LMT         |Backup Current Configuration 
+2025/11/14 16:52:31 up  1:39|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/14 16:52:31 up  1:39|LOG|=REBOOT=    |[background process]
+2025/11/14 16:52:31 up  1:39|LOG|=REBOOT=    |haserl(28961)->+sh(28962)->+sh(28971)->+/usr/sbin/reboot(28972)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     26.0M    598.0M   4% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/14 16:53:20 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/14 16:53:23 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/14 16:53:47 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/14 16:57:31 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/14 17:00:48 up 7 min|LOG|LMT         |Get /var/log log 
+2025/11/14 17:10:16 up 17 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/14 17:10:16 up 17 min|LOG|=REBOOT=    |[background process]
+2025/11/14 17:10:16 up 17 min|LOG|=REBOOT=    |haserl(23777)->+sh(23778)->+sh(23787)->+/usr/sbin/reboot(23788)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     26.0M    598.0M   4% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/14 17:11:00 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/14 17:11:04 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/14 17:11:28 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/14 17:14:01 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/14 17:24:07 up 13 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/14 17:24:07 up 13 min|LOG|=REBOOT=    |[background process]
+2025/11/14 17:24:07 up 13 min|LOG|=REBOOT=    |haserl(18722)->+sh(18723)->+sh(18732)->+/usr/sbin/reboot(18733)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:24.2M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     26.0M    598.0M   4% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/14 17:24:53 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/14 17:24:57 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/14 17:25:21 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/14 17:28:48 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/14 17:52:46 up 28 min|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4116.6.1763110366
+2025/11/14 17:52:57 up 28 min|LOG|WATCHDOG    |/opt/qcom/bin/enodeb_tdd (pid=4116) is abnormal, collect logs and reboot!!!
+2025/11/14 17:52:57 up 28 min|ERR|ONDEATH_PRE |/opt/qcom/bin/enodeb_tdd
+2025/11/14 17:53:06 up 28 min|ERR|ONDEATH     |halt_event[/opt/qcom/bin/enodeb_tdd]:20251114175257::
+2025/11/14 17:53:07 up 28 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.8M    622.2M   0% /mnt/log
+2025/11/14 17:54:48 up 30 min|ERR|ONDEATH_POS |disk_free: 641925120 core_size: 16216064 halt_size: 1556180
+2025/11/14 17:54:48 up 30 min|ERR|ONDEATH_POS |keep core and halt 
+2025/11/14 17:54:53 up 30 min|ERR|ONDEATH_POS |halt_event: Create 004_20251114175257.tar.gz, size: 15.5M
+2025/11/14 17:54:53 up 30 min|ERR|ONDEATH_POS |halt_event: Reboot till uptime to 900s
+2025/11/14 17:54:56 up 30 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/14 17:54:56 up 30 min|LOG|=REBOOT=    |[background process]
+2025/11/14 17:54:56 up 30 min|LOG|=REBOOT=    |watchdogd(2891)->+reboot-fap(30737)->+ondeath_postrod(31575)->+/usr/sbin/reboot(1098)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.3M    606.6M   3% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/14 17:55:42 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/14 17:55:44 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/14 17:56:09 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/14 17:57:35 up 2 min|LOG|FAP         |Upload 004_20251114175257.tar.gz
+2025/11/14 18:11:09 up 15 min|LOG|LMT         |Get /var/log log 
+2025/11/14 18:58:07 up  1:02|LOG|LMT         |Get /var/log log 
+2025/11/14 19:53:08 up  1:57|LOG|LMT         |Get /var/log log 
+2025/11/15 13:04:07 up 19:08|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 13:04:07 up 19:08|LOG|=REBOOT=    |[background process]
+2025/11/15 13:04:07 up 19:08|LOG|=REBOOT=    |haserl(5242)->+sh(5243)->+sh(5252)->+/usr/sbin/reboot(5253)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.3M    606.6M   3% /mnt/log
+2025/01/01 15:00:12 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:12 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:16 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 13:04:57 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 13:05:01 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 13:05:25 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 13:09:45 up 5 min|LOG|LMT         |Get /var/log log 
+2025/11/15 13:14:17 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/15 13:14:17 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/15 13:25:02 up 20 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 13:25:02 up 20 min|LOG|=REBOOT=    |[background process]
+2025/11/15 13:25:02 up 20 min|LOG|=REBOOT=    |haserl(30064)->+sh(30065)->+sh(30074)->+/usr/sbin/reboot(30076)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.3M    606.6M   3% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 13:25:48 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 13:25:51 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 13:26:15 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 13:28:35 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/15 13:35:43 up 10 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 13:35:43 up 10 min|LOG|=REBOOT=    |[background process]
+2025/11/15 13:35:43 up 10 min|LOG|=REBOOT=    |haserl(15427)->+sh(15428)->+sh(15437)->+/usr/sbin/reboot(15438)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.3M    606.6M   3% /mnt/log
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:10 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:14 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 13:36:31 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 13:36:35 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 13:37:00 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 13:39:13 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/15 13:45:49 up 9 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 13:45:49 up 9 min|LOG|=REBOOT=    |[background process]
+2025/11/15 13:45:49 up 9 min|LOG|=REBOOT=    |haserl(15861)->+sh(15862)->+sh(15871)->+/usr/sbin/reboot(15872)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.4M    606.6M   3% /mnt/log
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:09 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:13 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 13:46:37 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 13:46:41 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 13:47:05 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 13:50:22 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/15 14:21:03 up 34 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 14:21:03 up 34 min|LOG|=REBOOT=    |[background process]
+2025/11/15 14:21:03 up 34 min|LOG|=REBOOT=    |haserl(5195)->+sh(5196)->+sh(5205)->+/usr/sbin/reboot(5206)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.4M    606.6M   3% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 14:21:50 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 14:21:52 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 14:22:17 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 14:24:28 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/15 14:31:08 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/15 14:31:08 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/15 14:43:51 up 22 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 14:43:51 up 22 min|LOG|=REBOOT=    |[background process]
+2025/11/15 14:43:51 up 22 min|LOG|=REBOOT=    |haserl(26396)->+sh(26397)->+sh(26406)->+/usr/sbin/reboot(26407)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.4M    606.6M   3% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 14:44:36 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 14:44:40 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 14:45:04 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 14:47:23 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/15 14:48:41 up 4 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 14:48:41 up 4 min|LOG|=REBOOT=    |[background process]
+2025/11/15 14:48:41 up 4 min|LOG|=REBOOT=    |haserl(10827)->+sh(10828)->+sh(10837)->+/usr/sbin/reboot(10838)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.4M    606.6M   3% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 14:49:27 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 14:49:30 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 14:49:54 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 14:52:29 up 3 min|LOG|LMT         |Get /var/log log 
+2025/11/15 14:58:46 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/15 14:58:46 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/15 19:26:26 up  4:37|LOG|LMT         |Get /var/log log 
+2025/11/15 19:31:09 up  4:42|LOG|LMT         |Get /var/log log 
+2025/11/15 19:32:54 up  4:43|LOG|LMT         |Backup Current Configuration 
+2025/11/15 19:53:35 up  5:04|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 19:53:35 up  5:04|LOG|=REBOOT=    |[background process]
+2025/11/15 19:53:35 up  5:04|LOG|=REBOOT=    |haserl(5816)->+sh(5817)->+sh(5826)->+/usr/sbin/reboot(5827)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.4M    606.6M   3% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 19:54:21 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 19:54:24 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 19:54:49 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 20:00:18 up 6 min|LOG|LMT         |Get /var/log log 
+2025/11/15 20:01:17 up 7 min|LOG|LMT         |Get /var/log log 
+2025/11/15 20:03:40 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/15 20:03:40 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/15 20:25:52 up 31 min|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/15 20:25:52 up 31 min|LOG|=REBOOT=    |[background process]
+2025/11/15 20:25:52 up 31 min|LOG|=REBOOT=    |haserl(4312)->+sh(4314)->+sh(4330)->+/usr/sbin/reboot(4334)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.4M    606.6M   3% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/15 20:26:38 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/15 20:26:41 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/15 20:27:05 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/15 20:30:18 up 4 min|LOG|LMT         |Get /var/log log 
+2025/11/16 01:16:46 up  4:50|LOG|LMT         |Get /var/log log 
+2025/11/18 11:33:00 up 2 days, 15:06|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/18 11:33:00 up 2 days, 15:06|LOG|=REBOOT=    |[background process]
+2025/11/18 11:33:00 up 2 days, 15:06|LOG|=REBOOT=    |haserl(634)->+sh(635)->+sh(648)->+/usr/sbin/reboot(649)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:15.5M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     17.4M    606.6M   3% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/18 11:33:44 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/18 11:33:48 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/18 11:34:12 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/18 14:52:57 up  3:19|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4318.6.1763445177
+2025/11/18 14:53:10 up  3:19|LOG|WATCHDOG    |/opt/qcom/bin/enodeb_tdd (pid=4318) is abnormal, collect logs and reboot!!!
+2025/11/18 14:53:10 up  3:19|ERR|ONDEATH_PRE |/opt/qcom/bin/enodeb_tdd
+2025/11/18 14:53:20 up  3:20|ERR|ONDEATH     |halt_event[/opt/qcom/bin/enodeb_tdd]:20251118145310::
+2025/11/18 14:53:22 up  3:20|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.9M    622.1M   0% /mnt/log
+2025/11/18 14:55:08 up  3:21|ERR|ONDEATH_POS |disk_free: 641802240 core_size: 18030592 halt_size: 5723449
+2025/11/18 14:55:08 up  3:21|ERR|ONDEATH_POS |keep core and halt 
+2025/11/18 14:55:14 up  3:21|ERR|ONDEATH_POS |halt_event: Create 005_20251118145310.tar.gz, size: 21.6M
+2025/11/18 14:55:14 up  3:21|ERR|ONDEATH_POS |halt_event: Reboot till uptime to 900s
+2025/11/18 14:55:17 up  3:21|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/18 14:55:17 up  3:21|LOG|=REBOOT=    |[background process]
+2025/11/18 14:55:17 up  3:21|LOG|=REBOOT=    |watchdogd(2883)->+reboot-fap(9461)->+ondeath_postrod(10349)->+/usr/sbin/reboot(12836)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:21.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     23.5M    600.5M   4% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/18 14:56:04 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/18 14:56:07 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/18 14:56:31 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/18 14:57:59 up 2 min|LOG|FAP         |Upload 005_20251118145310.tar.gz
+2025/11/18 15:05:22 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/18 15:05:22 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/19 18:23:22 up 1 day,  3:27|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4121.6.1763544202
+2025/11/19 18:23:33 up 1 day,  3:27|LOG|WATCHDOG    |/opt/qcom/bin/enodeb_tdd (pid=4121) is abnormal, collect logs and reboot!!!
+2025/11/19 18:23:33 up 1 day,  3:27|ERR|ONDEATH_PRE |/opt/qcom/bin/enodeb_tdd
+2025/11/19 18:23:45 up 1 day,  3:28|ERR|ONDEATH     |halt_event[/opt/qcom/bin/enodeb_tdd]:20251119182333::
+2025/11/19 18:23:48 up 1 day,  3:28|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      1.9M    622.0M   0% /mnt/log
+2025/11/19 18:25:38 up 1 day,  3:30|ERR|ONDEATH_POS |disk_free: 641769472 core_size: 19521536 halt_size: 9773620
+2025/11/19 18:25:38 up 1 day,  3:30|ERR|ONDEATH_POS |keep core and halt 
+2025/11/19 18:25:45 up 1 day,  3:30|ERR|ONDEATH_POS |halt_event: Create 006_20251119182333.tar.gz, size: 26.6M
+2025/11/19 18:25:46 up 1 day,  3:30|ERR|ONDEATH_POS |halt_event: Reboot till uptime to 900s
+2025/11/19 18:25:49 up 1 day,  3:30|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/19 18:25:49 up 1 day,  3:30|LOG|=REBOOT=    |[background process]
+2025/11/19 18:25:49 up 1 day,  3:30|LOG|=REBOOT=    |watchdogd(2896)->+reboot-fap(21719)->+ondeath_postrod(22706)->+/usr/sbin/reboot(25406)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:26.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     28.5M    595.4M   5% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/19 18:26:34 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/19 18:26:38 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/19 18:27:02 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/19 18:28:39 up 2 min|LOG|FAP         |Upload 006_20251119182333.tar.gz
+2025/11/19 18:35:54 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/19 18:35:54 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:26.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     28.6M    595.4M   5% /mnt/log
+2025/01/01 15:00:13 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:13 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:17 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:17 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:28 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:52 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/21 13:44:59 up 21 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:26.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     28.6M    595.4M   5% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/01/01 15:00:22 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/01/01 15:00:46 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/23 16:47:02 up 22 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/25 10:49:47 up 1 day, 18:25|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/25 10:49:47 up 1 day, 18:25|LOG|=REBOOT=    |[background process]
+2025/11/25 10:49:47 up 1 day, 18:25|LOG|=REBOOT=    |haserl(21790)->+sh(21791)->+sh(21800)->+/usr/sbin/reboot(21801)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:26.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     28.6M    595.3M   5% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/25 10:50:32 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/25 10:50:34 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/25 10:50:59 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/25 10:59:51 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 1 = 0 
+2025/11/25 10:59:51 up 9 min|ERR|BOARDCONF   |boardconf reboot,cause txpath 2 = 0 
+2025/11/26 10:10:12 up 23:20|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/26 10:10:12 up 23:20|LOG|=REBOOT=    |[background process]
+2025/11/26 10:10:12 up 23:20|LOG|=REBOOT=    |haserl(10898)->+sh(10899)->+sh(10908)->+/usr/sbin/reboot(10909)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:26.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     28.7M    595.3M   5% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/26 10:10:58 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/26 10:11:01 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/26 10:11:25 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/26 11:58:22 up  1:47|LOG|runtime_monitor|/local/qcom/bin/bzip2-wrapper is called, Create /tmp/coredumps/core.mac_1nd.4118.6.1764125902
+2025/11/26 11:58:36 up  1:48|LOG|WATCHDOG    |/opt/qcom/bin/enodeb_tdd (pid=4118) is abnormal, collect logs and reboot!!!
+2025/11/26 11:58:36 up  1:48|ERR|ONDEATH_PRE |/opt/qcom/bin/enodeb_tdd
+2025/11/26 11:58:46 up  1:48|ERR|ONDEATH     |halt_event[/opt/qcom/bin/enodeb_tdd]:20251126115836::
+2025/11/26 11:58:48 up  1:48|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M      2.1M    621.9M   0% /mnt/log
+2025/11/26 12:00:25 up  1:49|ERR|ONDEATH_POS |disk_free: 641622016 core_size: 17469440 halt_size: 3172544
+2025/11/26 12:00:25 up  1:49|ERR|ONDEATH_POS |keep core and halt 
+2025/11/26 12:00:30 up  1:49|ERR|ONDEATH_POS |halt_event: Create 007_20251126115836.tar.gz, size: 18.6M
+2025/11/26 12:00:30 up  1:49|ERR|ONDEATH_POS |halt_event: Reboot till uptime to 900s
+2025/11/26 12:00:33 up  1:50|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/26 12:00:33 up  1:50|LOG|=REBOOT=    |[background process]
+2025/11/26 12:00:33 up  1:50|LOG|=REBOOT=    |watchdogd(2888)->+reboot-fap(4531)->+ondeath_postrod(5429)->+/usr/sbin/reboot(7333)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:18.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     20.7M    603.3M   3% /mnt/log
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:08 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:12 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/26 12:01:20 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/26 12:01:23 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/26 12:01:48 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/26 12:03:17 up 2 min|LOG|FAP         |Upload 007_20251126115836.tar.gz
+2025/11/26 16:42:01 up  4:41|LOG|LMT         |Get /var/log log 
+2025/11/26 18:29:14 up  6:28|LOG|LMT         |Get /var/log log 
+2025/11/28 11:49:59 up 1 day, 23:49|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/11/28 11:49:59 up 1 day, 23:49|LOG|=REBOOT=    |[background process]
+2025/11/28 11:49:59 up 1 day, 23:49|LOG|=REBOOT=    |haserl(17886)->+sh(17887)->+sh(17896)->+/usr/sbin/reboot(17897)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:18.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     20.7M    603.3M   3% /mnt/log
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:06 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/11/28 11:50:44 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/11/28 11:50:48 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/11/28 11:51:12 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/11/28 16:50:02 up  4:59|LOG|LMT         |Get /var/log log 
+2025/12/02 10:14:42 up 3 days, 22:24|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/12/02 10:14:42 up 3 days, 22:24|LOG|=REBOOT=    |[background process]
+2025/12/02 10:14:42 up 3 days, 22:24|LOG|=REBOOT=    |haserl(24257)->+sh(24258)->+sh(24267)->+/usr/sbin/reboot(24268)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:18.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     21.8M    602.2M   3% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:11 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/12/02 10:15:25 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/12/02 10:15:28 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/12/02 10:15:53 up 0 min|LOG|ENODEB      |eNodeB:oam ready...
+2025/12/02 11:58:09 up  1:43|LOG|=REBOOT=    |!!!Calling /usr/sbin/reboot
+2025/12/02 11:58:09 up  1:43|LOG|=REBOOT=    |[background process]
+2025/12/02 11:58:09 up  1:43|LOG|=REBOOT=    |haserl(20271)->+sh(20272)->+sh(20290)->+/usr/sbin/reboot(20294)
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor Clean /mnt/log/halt_event but keep last one,size:18.6M
+2025/01/01 00:00:02 up 0 min|LOG|runtime_monitor|/bin/disk_monitor is called.
+/dev/mmcblk0p35         120.0M      2.2M    108.8M   2% /mnt/flash
+/dev/mmcblk0p36         673.0M     21.8M    602.2M   3% /mnt/log
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth0 link up Unknown! Unknown! (255)
+2025/01/01 15:00:07 up 0 min|LOG|NETWORK     |eth1 link up 1000Mb/s Full
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |Last version is not BS Version 
+2025/01/01 15:00:10 up 0 min|LOG|IMAGEUPGR   |No need do Parameters Migration ,Do The Exit 
+2025/12/02 11:58:53 up 0 min|LOG|NTPINIT     |Succ, get date from ntp.nict.jp
+2025/12/02 11:58:56 up 0 min|LOG|OAM         |Cell power is less than 40dbm, do not check vswr value!!!
+2025/12/02 11:59:20 up 0 min|LOG|ENODEB      |eNodeB:oam ready...

@@ -1,0 +1,836 @@
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = main, core = 255
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = smmapp_tst, core = 255
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = l2_log, core = 255
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = mem_log, core = 7
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = ssd_tmr, core = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = phy_recv, core = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = soft_cn, core = 255
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = gtpu_sock, core = 255
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillBaseThd:868 Read Base Thd Name = bin_log, core = 3
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_ThdBindCoreAndName:932 Thd ssd_tmr Bind Core 2 Success
+Nov 14 15:13:49 debug [LTE-C][SMM]wr_smm_init.c:wrSmSetValueFromNvConifg:1313 wrSmSetValueFromNvConifg: LTE_STATION_LB_MODE:[0], LTE_STATION_LB_ENABLE: [0], LTE_STATION_LB_USER_COUNT_THRESHOLD:[0], LTE_STATION_LB_DIFF_USER_COUNT:[0], IP_INTERFACE_IPV4_ADDRESS: [], LTE_STATION_LB_CLIENT_ADDRESS: [0.0.0.0]
+Nov 14 15:13:49 debug [LTE-C][SMM]wr_smm_cfg.c:smWrReadConfigParams:3075 measNREventB1RptCfg.timeToTrigger = 3 
+Nov 14 15:13:49 debug [LTE-C][SMM]wr_smm_cfg.c:smWrReadConfigParams:3122 Hysteresys = 3 
+Nov 14 15:13:49 debug [LTE-C][SMM]wr_smm_watchdog_tmr.c:wrRegWatchDog:405 Send WR_MSG_TYPE_WATCHDOG_ADD_PID_REQ Message to SM Application
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_ThdBindCoreAndName:932 Thd phy_recv Bind Core 1 Success
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTskInfo:522 Mode init,current cellCnt = 1 carrierMode = 1 DuplexMode = 1,read mode cellCnt = 0 carrierMode = 0 DuplexMode = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillSTskInfo:480 Read sTask name = rrc_s1_app, affinity = 3, sTaskIdx = 0, sTaskPrio = 32
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillSTskInfo:480 Read sTask name = egtp_dat_app, affinity = 3, sTaskIdx = 1, sTaskPrio = 32
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillSTskInfo:480 Read sTask name = rlc_ul, affinity = 3, sTaskIdx = 2, sTaskPrio = 32
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillSTskInfo:480 Read sTask name = rlc_dl, affinity = 2, sTaskIdx = 3, sTaskPrio = 3
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillSTskInfo:480 Read sTask name = mac_1nd, affinity = 1, sTaskIdx = 4, sTaskPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 215, tTaskInst = 0, tTaskType = 1, tTaskPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 12, sTaskBind = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 216, tTaskInst = 0, tTaskType = 1, tTaskPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 8, sTaskBind = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 216, tTaskInst = 1, tTaskType = 1, tTaskPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 9, sTaskBind = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 217, tTaskInst = 0, tTaskType = 1, tTaskPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 1, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 227, tTaskInst = 0, tTaskType = 1, tTaskPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 2, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 227, tTaskInst = 1, tTaskType = 1, tTaskPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 3, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 218, tTaskInst = 0, tTaskType = 1, tTaskPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 3, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 223, tTaskInst = 0, tTaskType = 1, tTaskPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 2, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 209, tTaskInst = 0, tTaskType = 1, tTaskPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 13, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 91, tTaskInst = 0, tTaskType = 1, tTaskPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 17, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 234, tTaskInst = 0, tTaskType = 1, tTaskPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 4, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 219, tTaskInst = 0, tTaskType = 1, tTaskPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 14, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 211, tTaskInst = 0, tTaskType = 1, tTaskPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 10, sTaskBind = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 212, tTaskInst = 0, tTaskType = 1, tTaskPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 11, sTaskBind = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 226, tTaskInst = 0, tTaskType = 1, tTaskPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 15, sTaskBind = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 136, tTaskInst = 0, tTaskType = 1, tTaskPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 16, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 117, tTaskInst = 0, tTaskType = 1, tTaskPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 6, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 14, tTaskInst = 0, tTaskType = 1, tTaskPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 7, sTaskBind = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 215, tTaskInst = 1, tTaskType = 1, tTaskPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 18, sTaskBind = 3
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTskInfo:561 Read xml Stask = 5 , tTask = 19
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTskInfo:522 Mode init,current cellCnt = 1 carrierMode = 1 DuplexMode = 1,read mode cellCnt = 1 carrierMode = 0 DuplexMode = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 214, tTaskInst = 0, tTaskType = 1, tTaskPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 19, sTaskBind = 4
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 214, tTaskInst = 2, tTaskType = 1, tTaskPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 22, sTaskBind = 4
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 228, tTaskInst = 0, tTaskType = 1, tTaskPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 20, sTaskBind = 4
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:407 Read tTask id = 213, tTaskInst = 0, tTaskType = 1, tTaskPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTTskInfo:410 Read tTaskFuncIdx = 21, sTaskBind = 4
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_FillTskInfo:561 Read xml Stask = 5 , tTask = 23
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:631 stask rrc_s1_app create ok,
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:633 core = 3, uisTskId = 1, uisTskIdx = 0, uiPrio = 32
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:631 stask egtp_dat_app create ok,
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:633 core = 3, uisTskId = 2, uisTskIdx = 1, uiPrio = 32
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:631 stask rlc_ul create ok,
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:633 core = 3, uisTskId = 3, uisTskIdx = 2, uiPrio = 32
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:631 stask rlc_dl create ok,
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:633 core = 2, uisTskId = 4, uisTskIdx = 3, uiPrio = 3
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:631 stask mac_1nd create ok,
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:633 core = 1, uisTskId = 5, uisTskIdx = 4, uiPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 215, uiInst = 0, uiuType = 1, uiPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 12, uiSTskIndx = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 216, uiInst = 0, uiuType = 1, uiPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 8, uiSTskIndx = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 216, uiInst = 1, uiuType = 1, uiPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 9, uiSTskIndx = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 217, uiInst = 0, uiuType = 1, uiPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 1, uiSTskIndx = 0
+Nov 14 15:13:49 debug [LTE-C][UMM]wr_tmr.c:wrInitEmmTmr:317 Init Emm Tmr
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 227, uiInst = 0, uiuType = 1, uiPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 2, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 227, uiInst = 1, uiuType = 1, uiPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 3, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 218, uiInst = 0, uiuType = 1, uiPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 3, uiSTskIndx = 0
+Nov 14 15:13:49 debug [LTE-C][UMM]wr_tmr.c:wrInitEmmTmr:317 Init Emm Tmr
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 223, uiInst = 0, uiuType = 1, uiPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 2, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 209, uiInst = 0, uiuType = 1, uiPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 13, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 91, uiInst = 0, uiuType = 1, uiPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 17, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SON]nl_pt_son.c:nlInitSonDB:381 In SON PT nlInitSonDB
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 234, uiInst = 0, uiuType = 1, uiPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 4, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 219, uiInst = 0, uiuType = 1, uiPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 14, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 211, uiInst = 0, uiuType = 1, uiPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 10, uiSTskIndx = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 212, uiInst = 0, uiuType = 1, uiPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 11, uiSTskIndx = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 226, uiInst = 0, uiuType = 1, uiPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 15, uiSTskIndx = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 136, uiInst = 0, uiuType = 1, uiPrio = 2
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 16, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 117, uiInst = 0, uiuType = 1, uiPrio = 1
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 6, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 14, uiInst = 0, uiuType = 1, uiPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 7, uiSTskIndx = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 215, uiInst = 1, uiuType = 1, uiPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 18, uiSTskIndx = 3
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 214, uiInst = 0, uiuType = 1, uiPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 19, uiSTskIndx = 4
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 214, uiInst = 2, uiuType = 1, uiPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 22, uiSTskIndx = 4
+Nov 14 15:13:49 info [LTE-C][CL]ys_ms_init.c:ysActvInit:552 CNM:: Init in yscb[inst 0] done...
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 228, uiInst = 0, uiuType = 1, uiPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 20, uiSTskIndx = 4
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:672 create ttask success, id = 213, uiInst = 0, uiuType = 1, uiPrio = 0
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:674 uiFuncIdx = 21, uiSTskIndx = 4
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_PrcCreatTsk:679 create stask count = 5, create ttask count = 23
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_init.c:tst:1914 TAPA TASKS SUCCESSFULLY REGISTERED
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_init.c:tst:1921 Enabled SM Debug Prints
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_init.c:SCreateSmmAppTst:1125 *********#012In SCreateSmmAppTst#012**********
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_init.c:SCreateSmmAppTst:1154 SCreateSmmAppTst tid = 481ff450
+Nov 14 15:13:49 err [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_ThdBindCoreAndName:928 Base Thd Bind Core Failed, ThdId = 1184887888, name = mem_log, Core = 7
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_tsk_cfg.c:WR_SMM_ThdBindCoreAndName:932 Thd bin_log Bind Core 3 Success
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_init.c:SocketRcvThread:1366 Waiting for LB IP
+Nov 14 15:13:49 debug [LTE-C][SMM]wr_smm_init.c:wrSmmAppTstCaller:1095 wrSmmAppTstCaller() 481ff450
+Nov 14 15:13:49 info [LTE-C][SMM]wr_smm_init.c:wrSmmAppTstCaller:1107 wrSmmAppTstCaller() 481ff450
+Nov 14 15:13:54 debug [LTE-C][SMM]wr_smm_watchdog_tmr.c:wrSendKick:459 Send WR_MSG_TYPE_WATCHDOG_KICK_REQ Message to SM Application
+Nov 14 15:13:59 debug [LTE-C][SMM]wr_smm_watchdog_tmr.c:wrSendKick:459 Send WR_MSG_TYPE_WATCHDOG_KICK_REQ Message to SM Application
+Nov 14 15:14:04 debug [LTE-C][SMM]wr_smm_watchdog_tmr.c:wrSendKick:459 Send WR_MSG_TYPE_WATCHDOG_KICK_REQ Message to SM Application
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetHotSpotDisable:2451 cellidx0 HOT SPOT disable 0
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetDcnParameters:392 set MME DCN policy = 1, default dcn = 0
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetMmeSharedParameters:383 set g_MocnMmeShared = 0
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetlteSpecZteHoEnable:6410 msmSetlteSpecZteHoEnable: specZteHoEnable = 0.
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetLteAmbrSchParameter:3216 AMBR SCHD CFG: schByWeight[0] qci6Weight[80] qci7Weight[20] qci8Weight[5] qci9Weight[2] cellIdx[0]
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetLteAmbrSchParameter:3216 AMBR SCHD CFG: schByWeight[0] qci6Weight[80] qci7Weight[20] qci8Weight[5] qci9Weight[2] cellIdx[1]
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetLteAmbrSchParameter:3216 AMBR SCHD CFG: schByWeight[0] qci6Weight[80] qci7Weight[20] qci8Weight[5] qci9Weight[2] cellIdx[2]
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetPciCollisionAlarmRptCfg:3302  | PCI collision confusion detect switch [disable]
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetPoolInfoById:6571 msmSetPoolInfoById: poolId = 0.
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetPoolInfoById:6595 msmSetPoolInfoById: set poolId[0], poolInfoType[1] succeeded.
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSelectUeImsi:6778 Imsi []
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:MsmSetPmUploadInterval:6818 g_pmPeriodUploadInterval = 900
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetPciCollisionAlarmRptCfg:3302  | PCI collision confusion detect switch [disable]
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:MsmSetPdcpQci1DiscTimer:6839 Set PDCP QCI DISCARD TIMER SUCCESS
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetOptimizeKpiParameters:6931 cellIdx=0,DLThrpCoefficient = 1.000000,DLTimeCoefficient=1.000000,ULThrpCoefficient=1.000000,ULTimeCoefficient=1.000000
+Nov 14 15:14:06 info [LTE-C][MSM]wr_msm_common.c:msmSetMacSchedResourceConfigParameters:1079 cell=0,ulPrbRssiEnable=0,dlTxPowerCheck=0
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:MsmSetPdcpQci1DiscTimer:6839 Set PDCP QCI DISCARD TIMER SUCCESS
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetOptimizeKpiParameters:6931 cellIdx=1,DLThrpCoefficient = 1.000000,DLTimeCoefficient=1.000000,ULThrpCoefficient=1.000000,ULTimeCoefficient=1.000000
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetMacSchedResourceConfigParameters:1079 cell=1,ulPrbRssiEnable=0,dlTxPowerCheck=0
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetBlindRedirectSwitch:2269  | <---- oam_config  [blindRedirectSwitch:0] [stack]
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetHoGeranSwitch:2281  | <---- oam_config  [HoGeranSwitch:0] [stack]
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetInteroperUTRACfg:2330  | <---- oam_config  [InteroperUTRACfg:3] [stack]
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetInteroperNRCfg:2317  | <---- oam_config  [InteroperNRCfg:0] [stack]
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmDealPoolIpInfo:6641 set ip idx 0.
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmDealPoolIpInfo:6645 set ip idx 0 2887254127.
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmDealPoolIpInfo:6673 set vip succeeded, nofIp = 1, nofValidIp = 1.
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetNeighFreqCfgGeranParameters:3442 ---numGeranFreq = 0
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetNeighborListInUse5gNrParameters:1696 DBG_CELLIDX:0: lss 5G pci[0] gNbLength[0] cio[0] earfcnDl[0] tac[0] 
+Nov 14 15:14:07 info [LTE-C][MSM]wr_msm_common.c:msmSetNeighFreqCfgNrParameters:1733 DBG_CELLIDX:0: ---lss 5G numNrFreq[0]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:smWrActvTsk:4330  | ------------------------------ stack startup begin [TDD] [1cell] [normal] [stack] ------------------------------
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbStaticCfgReq:6097 fapParameters.lteMultiS1IpParams.muLtiS1IpEnable 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbValidateFillMmeIp:7421 Secondary MME IP is 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbInitMmeCfg:6805 nof mme ip is 1.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbValidateFillMmeIp:7421 Secondary MME IP is 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbInitMmeCfg:6805 nof mme ip is 1.
+Nov 14 15:14:07 err [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbInitDbgCfg:6942 g_SeparaGoodtMCS=23,g_UlRBUnlimit=0
+Nov 14 15:14:07 err [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbInitDbgCfg:6944 g_GBR2AMBR=0, g_ScellCqiThrd=12, g_ScellDelCount=10
+Nov 14 15:14:07 info [LTE-C][UMM]wr_tmr.c:wrInitMacCfgTmr:517 Init macCfg Tmr
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:smGetS1cAddr:5366 Get S1c IpAddr: [0xac18006f], using ipsec IP
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:smGetS1uAddr:5451 Get S1u IpAddr: [0xac18006f]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:smGetX2Addr:5505 GNB X2 Close,Set The S1CIP at X2IP : [0xac18006f]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:0] [event:22] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2242  | ------------------------------> stack config begin [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbStaticCfgReq:6319 g_getImsiSwitch = 0
+Nov 14 15:14:07 err [LTE-C][UMM]wr_wireshark_utils.c:wrInitWireShark:187 update wireshark destination port and Ip address in wr_cfg.txt for logging
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_son_utils.c:smBuildNlNghCellCfg:1083 smBuildNlNghCellCfg: servCellId = 1, numNghEnb = 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_son.c:SmMiLnlCfgCfm:797 SON configuration done
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:18] [event:10] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_tucl.c:wrSmHiCfg:185 smCfgCb.nofEnbIps = 1
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_tucl.c:SmMiLhiCfgCfm:1203 TUCL CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:1] [event:11] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:smGetX2Addr:5505 GNB X2 Close,Set The S1CIP at X2IP : [0xac18006f]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_sctp.c:smBuildSbTSapCfg:450 Get X2 IpAddr: [0xac18006f]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_sctp.c:wrSmSbCfg:195 smCfgCb.nofEnbIps = 1
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_sctp.c:SmMiLsbCfgCfm:1483 SCTP CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:2] [event:12] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_s1ap.c:smBuildSzLSapCfg:403 Build S1AP LSap Cfg, ipaddr = ac18006f
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_s1ap.c:smBuildSzPeerCfg:674 mmeCfg->mmePoolId = 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_s1ap.c:smBuildSzPeerCfg:685 Build S1AP SzPeer Cfg, ipaddr = ac18001e
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_s1ap.c:smBuildSzPeerCfg:674 mmeCfg->mmePoolId = 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_s1ap.c:smBuildSzPeerCfg:685 Build S1AP SzPeer Cfg, ipaddr = ac180128
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_s1ap.c:SmMiLszCfgCfm:1761 S1AP CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:3] [event:13] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_egtp.c:smFillEgIpInfo:698 Fill EgIp Info: ac18006f
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_egtp.c:wrSmEgCfg:308 smCfgCb.nofEnbIps = 1
+Nov 14 15:14:07 info [LTE-C][EGTP]eg_mi.c:egTSapCfg:2341 egTSapCfg: tSapCb is NULL, will alloc
+Nov 14 15:14:07 info [LTE-C][EGTP]eg_mi.c:egTServerCfg:2655 maxDscp[1]dscpVal[0]
+Nov 14 15:14:07 info [LTE-C][EGTP]eg_mi.c:egTServerCfg:2806 suConnId 0,serverId0,dscp 0,port 2152
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_egtp.c:SmMiLegCfgCfm:2034 EGTP CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:5] [event:20] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_x2ap.c:smBuildCzProtCfg:676 Build X2AP Protocol Cfg, ipv4 Addr = ac18006f
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_x2ap.c:SmMiLczCfgCfm:3355 X2AP CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:4] [event:21] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbFillRmuAcbInfo:4842 Cell 0 DLFSS is 0
+Nov 14 15:14:07 err [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbBuildRmuProtCellCfg:5066 SM : Not Enough N1 PUCCH resources are available, so Changing itusN1Pucch(8), bNumSrPerTti(8), usTotalSpsN1PucchRes(0)
+Nov 14 15:14:07 info [LTE-C][RRM]rm_acb.cpp:CAccessClassBarring:183 Acb params for CellId 1
+Nov 14 15:14:07 info [LTE-C][RRM]rm_acb.cpp:CAccessClassBarring:186 BarringForEmergency 0 MO DataEnabled 0 MO Signal Enabled 0
+Nov 14 15:14:07 info [LTE-C][RRM]rm_acb.cpp:printAcbParams:126 ACB configuration: SpecialAccess Class=0 Factor=0 Time=5
+Nov 14 15:14:07 info [LTE-C][RRM]rm_acb.cpp:printAcbParams:126 ACB configuration: SpecialAccess Class=0 Factor=0 Time=5
+Nov 14 15:14:07 info [LTE-C][RRM]rm_uemanager.cpp:CUEManager:186 DBG_CELLID:1: CFG MAX NUM OF CSG UEs[32],CFG MAX NUM OF NON-CSG UEs[0], m_usMaxSigUEs[52], m_usMaxActiveUEs[32]
+Nov 14 15:14:07 info [LTE-C][RRM]rm_prbreportcollector.cpp:configurePRBReportCollector:121 Reporting Interval=0 WindowSize=0
+Nov 14 15:14:07 info [LTE-C][RRM]rm_prbbasedadmissioncontroller.cpp:CPRBBasedAdmissionController:151 DBG_CELLID:1: PRB CFG: NumAnt:2  MaxGBRPRB Limit: 100 ReportInterval: 0 WindowSize: 0
+Nov 14 15:14:07 info [LTE-C][RRM]rm_qcibasedadmissioncontroller.cpp:CQCIBasedAdmissionController:191 MAX QCI-1 bearers:25
+Nov 14 15:14:07 info [LTE-C][RRM]rm_schedulingrequestmgr.cpp:rmRcmSrPopulateSrResTbl:181 LBT enable = 0, 27subframeFail = 0, usNumUlSf = 8
+Nov 14 15:14:07 info [LTE-C][RRM]rm_mmemanager.cpp:addMME:133 New MME added: MME ID: 1
+Nov 14 15:14:07 info [LTE-C][RRM]rm_mmemanager.cpp:addMME:133 New MME added: MME ID: 2
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rrm.c:SmMiLrmCfgCfm:1536 RRM CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:17] [event:14] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:1]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:1] [transId:1000] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:4]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:4] [transId:1001] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:3]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:3] [transId:1002] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:32]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:32] [transId:1029] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:9]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:9] [transId:1003] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:9]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:9] [transId:1003] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:13]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:13] [transId:1022] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:8]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:8] [transId:1004] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:5]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:5] [transId:1005] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:10]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:10] [transId:1006] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:2]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:wrLSapCfg:1389  | wrCb.rgrSap alloc,  lSap->suId 0, lSap->dstInst 2
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:2] [transId:1007] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbBuildWrEnbCfg:3673 fapParameters.lteMultiS1IpParams.muLtiS1IpEnable 0
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:5] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgEnbAdd:5305 wrEmmCb.plmns.numPlmns = 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgEnbAdd:5314 numberOfRats = 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgEnbAdd:5322 mme plmnId MCC = [0-0-1], MNC = [0-1-0]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgEnbAdd:5330 plmn[0] - isRedirectionSupport[0]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1008] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbBldSib1Cfg:2112 [fun]wrSmmEnbBldSib1Cfg: cellId=140799544,sib1->valueTag = 21
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbBldMeasCellCfg:4061 nr subCarrierSpacing=1, nRB1Cfg->threshold_RSRP=100
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbBldMeasCellCfg:4078 nr nRB2Cfg->threshold1_RSRP=0, nRB2Cfg->threshold2_RSRP=0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbBuildCellCfg:1512 DBG_CELLIDX:0: cellCb->rgrCfg.dfltStartRnti = 61, .dfltRntiSize = 38
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enb_utils.c:wrSmmEnbBuildCellCfg:1768 smBuildCellCfg:eCSFB value from oam = 2
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg_cell:9741  | ----> config requst [elmnt:256] [type:1] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAddSib1:567 send plmn config to sib1 cell = 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAddSib1:574 send plmn config to sib1 MCC[0-0-1], MNC[0-1-0]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAddSib1:624 [fun]wrEmmCfgCellAddSib1: cellId=1 sib1->valueTag=22
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAddSib2:1341 wrSmEnableSrs is set to [0]and sib2->srsCfg.release[1]
+Nov 14 15:14:07 info [LTE-C][UMM]wr_umm_meas.c:wrUmmMeasFillCellCfgParams:1567 GeranB2.b2Threshold1RSRP = 35:
+Nov 14 15:14:07 info [LTE-C][UMM]wr_umm_meas.c:wrUmmMeasFillCellCfgParams:1569 GeranB2.b2Threshold1RSRQ = 0:
+Nov 14 15:14:07 info [LTE-C][UMM]wr_umm_meas.c:wrUmmMeasFillCellCfgParams:1571 GeranB2.b2Threshold2Geran = 15:
+Nov 14 15:14:07 info [LTE-C][UMM]wr_umm_meas.c:wrUmmMeasFillCellCfgParams:1573 GeranB2.hysteresis = 0:
+Nov 14 15:14:07 info [LTE-C][UMM]wr_umm_meas.c:wrUmmMeasFillCellCfgParams:1575 GeranB2.timeToTrigger = 0:
+Nov 14 15:14:07 info [LTE-C][UMM]wr_umm_meas.c:wrUmmMeasFillCellCfgParams:1577 GeranB2.maxReportCell = 1:
+Nov 14 15:14:07 info [LTE-C][UMM]wr_umm_meas.c:wrUmmMeasFillCellCfgParams:1579 GeranB2.reportInterval = 0:
+Nov 14 15:14:07 info [LTE-C][UMM]wr_umm_meas.c:wrUmmMeasFillCellCfgParams:1581 GeranB2.reportAmount = 0:
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_lteadv.c:wrEmmHdlLteAdvCfg:6379  Request lte adv feature configuration rcvd 
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAdd:6028 Updated the UL Scheduling type to RR
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAdd:6039 Updated the DL Scheduling type to RR
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAdd:6043 Updated the DLFS Scheduling type to NONDLFS
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAdd:6123 [OAM: Updated UL Power Control Parameters]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgCellAdd:6067 DBG_CELLID:1: cellCb->rgrCfg.dfltStartRnti = 61, .dfltRntiSize = 38
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1009] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:2] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1010] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:2] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1010] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:3] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1011] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:6] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgNeighFreqAdd:3612 Frequency(dlEarfcn) added is 38360
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1012] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:6] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1013] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:6] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1013] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:4] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgNeighCell:9154 neighCellCfg->numCells 0 maxcell 160 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1014] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:4] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgNeighCell:9154 neighCellCfg->numCells 0 maxcell 160 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1015] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:4] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgNeighCell:9154 neighCellCfg->numCells 0 maxcell 160 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1015] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:7] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1017] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:6] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1018] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:4] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgNeighCell:9154 neighCellCfg->numCells 0 maxcell 160 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1026] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:6] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1035] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:6] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1027] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCfgReq:1557 config request [elmnt:256]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgProtoCfg:9698  | ----> config requst [elmnt:256] [type:4] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmCfgNeighCell:9154 neighCellCfg->numCells 0 maxcell 160 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5547  | <---- config confirm [element:256] [transId:1028] [result:ok] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCfgCfm:5593 APP CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:6] [event:15] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rrc.c:SmMiLnhCfgCfm:1918 RRC CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:7] [event:16] [stack]
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjGenCfg:531 PDCP Gen Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjCpjSapCfg:795 PDCP cpj Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjPjuSapCfg:887 PDCP pju Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjPjuSapCfg:887 PDCP pju Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjKwuSapCfg:632 PDCP Gen Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjUdxSapCfg:715 PDCP cpj Sap Cfg Req sent
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:9] [event:16] [stack]
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjGenCfg:531 PDCP Gen Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjPjuSapCfg:887 PDCP pju Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjPjuSapCfg:887 PDCP pju Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjKwuSapCfg:632 PDCP Gen Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBuildPjUdxSapCfg:715 PDCP cpj Sap Cfg Req sent
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:10] [event:17] [stack]
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwGenCfg:484 RLC Gen Cfg Req sent
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rlc.c:wrSmKwUlCfg:375 Building CKW Cfg Req
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildCkwUsapCfg:564 RLC Ckw Upper Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwuUsapCfg:771 RLC Kwu Upper Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwuUsapCfg:771 RLC Kwu Upper Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwLsapCfg:947 RLC Rgu Lower Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwLsapCfg:947 RLC Rgu Lower Sap Cfg Req sent
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rlc.c:smProcKwUlCfgCfm:1725 RLC Cfg Cfm received for the element 1  wrKwU;Cfg 1
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rlc.c:smProcKwUlCfgCfm:1725 RLC Cfg Cfm received for the element 184  wrKwU;Cfg 5
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rlc.c:smProcKwUlCfgCfm:1725 RLC Cfg Cfm received for the element 185  wrKwU;Cfg d
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rlc.c:smProcKwUlCfgCfm:1725 RLC Cfg Cfm received for the element 185  wrKwU;Cfg d
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rlc.c:smProcKwUlCfgCfm:1725 RLC Cfg Cfm received for the element 186  wrKwU;Cfg f
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rlc.c:smProcKwUlCfgCfm:1725 RLC Cfg Cfm received for the element 189  wrKwU;Cfg 1f
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rlc.c:smProcKwUlCfgCfm:1748 RLC CONFIGURATION SUCCESSFULLY PERFORMED wrKwUlCfg 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:12] [event:17] [stack]
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwGenCfg:484 RLC Gen Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwuUsapCfg:771 RLC Kwu Upper Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwuUsapCfg:771 RLC Kwu Upper Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildUdxUsapCfg:656 RLC Kwu Upper Sap Cfg Req sent
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBuildKwLsapCfg:947 RLC Rgu Lower Sap Cfg Req sent
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:13] [event:18] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_tmr.c:smStartTmr:674 smStartTmr:SM_TMR_MAC_CFG_TMR received
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_tmr.c:smStopTmr:772 smStopTmr:SM_TMR_MAC_CFG_TMR received
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:14] [event:60] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:15] [event:19] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_cl.c:SmMiLysCfgCfm:1659 CL CONFIGURATION SUCCESSFULLY PERFORMED.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:16] [event:29] [stack]
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_cl.c:smBuildYsTenbStatsCntrl:819 Tenb STATS Cntrl Req to ys
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(1))
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:32] [event:30] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2359  | <------------------------------ stack config complete [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:wrSmHdlEnbAlarms:3741 ENABLING OF ALARMS IS SUCCESSFULLY PERFORMED. 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:25] [event:25] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2367  | ------------------------------> stack bind begin [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(1))
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rrc.c:SmMiLnhCntrlCfm:2010 Enabling RRC Alarms is successfully performed.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rrc.c:SmMiLnhCntrlCfm:2010 Enabling RRC Alarms is successfully performed.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_sctp.c:SmMiLsbCntrlCfm:1591 ---smCb.smState = 25, cntrl->hdr.elmId.elmnt=3,msgtype=0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_sctp.c:SmMiLsbCntrlCfm:1593 [FUN]SmMiLsbCntrlCfm, cntrl->cfm.status=2, reason = 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_sctp.c:SmMiLsbCntrlCfm:1639 Bind of SCTP TSap with TUCL is in progress
+Nov 14 15:14:07 err [LTE-C][SMM]wr_smm_sctp.c:SmMiLsbCntrlCfm:1658 SmMiLsbCntrlCfm failed!
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_sctp.c:SmMiLsbCntrlCfm:1591 ---smCb.smState = 25, cntrl->hdr.elmId.elmnt=3,msgtype=0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_sctp.c:SmMiLsbCntrlCfm:1593 [FUN]SmMiLsbCntrlCfm, cntrl->cfm.status=0, reason = 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_s1ap.c:SmMiLszCntrlCfm:1890 Bind of S1AP LSap with SCTP is in progress
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_enbapp_rsys.c:smBindUnBindWrToSztSap:2427 Bnd Cntrl Req to wr for S1AP, SapId = 0.
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(5))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_s1ap.c:WrIfmS1apBndCfm:805 [ALARM] Sending SZT_SAP_BND_OK to OAM
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:25]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCntrlCfm:5694 Bind of APP with S1AP is in progress.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:19] [event:26] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_egtp.c:smBindUnBindEgToHitSap:1312 smBindUnBindEgToHitSap: input suId = 0
+Nov 14 15:14:07 info [LTE-C][EGTP]eg_socklayer.c:EgTLOpenServerReq:829 servConId0,dscp0,socketfd 22
+Nov 14 15:14:07 info [LTE-C][EGTP]eg_tpt.c:egTptProcessTsapServers:836  nmbSrvs 192,suConnId0,server0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_egtp.c:SmMiLegCntrlCfm:2164 BIND OF EGTP LSAP WITH TUCL SUCCESSFULLY PERFORMED spid = 0.
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_enbapp_rsys.c:smBindUnBindWrToEgtSap:2568 Bnd Cntrl Req to wr for EGTP, SapId = 5.
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(8))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_egtp.c:WrIfmEgtpBndCfm:391 WrIfmEgtpBndCfm: EGT Bind Cfm
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_egtp.c:WrIfmEgtpBndCfm:400 [ALARM] Sending EGT_SAP_BND_OK to OAM 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:19]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCntrlCfm:5882 Bind of RRM to EGTP is in progress
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:20] [event:27] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(10))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_x2ap.c:WrIfmX2apBndCfm:655 [ALARM] Sending CZT_SAP_BND_OK to OAM
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:20]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrCntrlCfm:5713 Bind of RRM Tsap with X2AP is in progress.
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:21] [event:28] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_mac.c:SmMiLrgCntrlCfm:2616 BIND OF MAC WITH CL IS IN PROGRESS 
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_mac.c:smBindUnBindRgSchToTfuSap:994 SCH Lrg Cntrl Req to Bind Tfu 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_mac.c:SmMiLrgSchCntrlCfm:2760 BIND OF SCH WITH CL IS IN PROGRESS 
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBindUnBindKwToRguSap:1093 Cntrl Req to RLC to bind Rgu sap
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBindKwUdxSap:1018 RLC Cntrl Req to rg for Rgu sap
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_rlc.c:smBindUnBindKwToRguSap:1093 Cntrl Req to RLC to bind Rgu sap
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBindUnBindPjKwuSap:1005 PDCP Ctrl Req to PDCP instance 0 for Binding KWU sap
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_pdcp.c:smBindUnBindPjKwuSap:1005 PDCP Ctrl Req to PDCP instance 1 for Binding KWU sap
+Nov 14 15:14:07 err [LTE-C][SMM]wr_smm_pdcp.c:smPjActvTsk:1127 Received invalid event[0x54]
+Nov 14 15:14:07 err [LTE-C][SMM]wr_smm_pdcp.c:smPjActvTsk:1127 Received invalid event[0x54]
+Nov 14 15:14:07 err [LTE-C][SMM]wr_smm_pdcp.c:smPjActvTsk:1127 Received invalid event[0x54]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(4))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_l1.c:WrIfmL1BndCfm:396 [ALARM] Sending CTF_SAP_BND_OK Alarm to OAM 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:21]  [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(3))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_rrc.c:WrIfmRrcBndCfm:677 [ALARM] Sending NHU_SAP_BND_OK to OAM
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:21]  [stack]
+Nov 14 15:14:07 err [LTE-C][SMM]wr_smm_rrc.c:SmMiLnhStaInd:2325 Multiple Alarms received 0
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(32))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_son.c:WrLiNluBndCfm:144 [ALARM] Sending NLU_SAP_BND_OK to OAM
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:21]  [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(9))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_pdcp.c:WrIfmPdcpBndCfm:595 [ALARM] Sending PJU_SAP_BND_OK to OAM
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:21]  [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(9))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_pdcp.c:WrIfmPdcpBndCfm:595 [ALARM] Sending PJU_SAP_BND_OK to OAM
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:21]  [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(13))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_rrm.c:WrLiRmuBndCfm:440 [ALARM] Sending RMU_SAP_BND_OK to OAM
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:21]  [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(2))
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdBndCfm:574 [ALARM] Sending RGR_SAP_BND_OK to OAM
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:11] [state:21]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:22] [event:39] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rrm.c:SmMiLrmCntrlCfm:1646 BIND OF RRM WITH MAC IS IN PROGRESS
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:23] [event:31] [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2421  | <------------------------------ stack bind complete [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:285] [state:59]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrEventCellSetupStartHandler:6433  | ------------------------------> cell config begin [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(6))
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cell.c:wrFillCellRbCfg:407 Configuring cell RBs
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_rrc.c:wrSndNhuCellCfgReq:1382  | ----> rrc config req [cell_id:1] [stack]
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_rrc.c:WrIfmRrcCellCfgCfm:871  | <---- rrc config cfm [cell_id:1] [stack]
+Nov 14 15:14:07 notice [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdEnbCfgReq:1113 WrIfmSchdEnbCfgReq: Sending scheduler ENB Cfg Req
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cell.c:wrEmmCellSchdCfg:2681 schByWeight = 0 80 20 5 2  enable64QAM 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cell.c:wrEmmCellSchdCfg:2689 DBG_CELLID:1: ambrLimitSwitch = 0, ueAmbrDl = 10000 bps, ueAmbrUl = 10000 bps
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cell.c:wrEmmCellSchdCfg:2702 DBG_CELLID:1: subframeCfg:specialSubframeCfg 1:5
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cell.c:wrEmmCellSchdCfg:2817 ul bw = 2 25 
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cell.c:wrEmmCellSchdCfg:2818 dl bw = 2 25
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cell.c:wrEmmCellSchdCfg:2897  ul bw = 2 25 
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cell.c:wrEmmCellSchdCfg:2898 dl bw = 2 25
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdCfgCell:1344  | ----> mac config req [stack]
+Nov 14 15:14:07 err [LTE-C][UMM]wr_umm.c:wrUmmPrcSchdCfgCfm:5923 DBG_CELLID:0: Error in getting UECB for UEINDEX[0]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm.c:wrEmmSchdCellCfgCfm:744  | <---- mac config cfm [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm.c:wrEmmSchdCellCfgCfm:764 Scheduler SI configuration
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldCellAccInfo:363 sib1 cellid = 1 ,numPlmnIds = 1 , numPlmnsActivated = 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldCellAccInfo:381 build sib1 mcc[0-0-1], mnc[0-1-0]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldSIB1Msg:568 tmpNumSIs1:5 not be added to SIB1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldSIB1Msg:625 SIB5 info is skipped in SIB1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrBldDlBcchDlSchPdu:2739  | sib_info  [length:168] [msgOctets:21] [tbSize:176] [padOctets:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmSib1Config:550 Configuring SIB1 to MAC(Msg-Len:[22])
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdSiCfgReq:411  | ----> wr_mac_si_config_req [type:1] [siSchdInfo[-1]] [cell_id:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrEmmPbmBldSI:2493  | sib_info  [siSchd_num:5] [current_si:0] [period:1] [sibs_num:1] [sib2]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldSIB2IEs:1062 wrSibBldSIB2IEs:sib2Ie->extaddgrp_4.voiceServiceCauseInd_r12 is true
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrBldDlBcchDlSchPdu:2739  | sib_info  [length:264] [msgOctets:33] [tbSize:296] [padOctets:4]
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdSiCfgReq:411  | ----> wr_mac_si_config_req [type:2] [siSchdInfo[0]] [cell_id:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrEmmPbmBldSI:2493  | sib_info  [siSchd_num:5] [current_si:1] [period:2] [sibs_num:1] [sib3]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrBldDlBcchDlSchPdu:2739  | sib_info  [length:88] [msgOctets:11] [tbSize:88] [padOctets:0]
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdSiCfgReq:411  | ----> wr_mac_si_config_req [type:2] [siSchdInfo[1]] [cell_id:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrEmmPbmBldSI:2493  | sib_info  [siSchd_num:5] [current_si:2] [period:3] [sibs_num:1] [sib4]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrBldDlBcchDlSchPdu:2739  | sib_info  [length:20] [msgOctets:3] [tbSize:32] [padOctets:1]
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdSiCfgReq:411  | ----> wr_mac_si_config_req [type:2] [siSchdInfo[2]] [cell_id:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrEmmPbmBldSI:2493  | sib_info  [siSchd_num:5] [current_si:3] [period:6] [sibs_num:1] [sib9]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrBldDlBcchDlSchPdu:2739  | sib_info  [length:240] [msgOctets:30] [tbSize:256] [padOctets:2]
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdSiCfgReq:411  | ----> wr_mac_si_config_req [type:2] [siSchdInfo[3]] [cell_id:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmSibConfig:1132 Skipped SIB5 Configuration to MAC as nointer frequency configuration exists
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmMibConfig:416 Builiding MIB Message
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmMibConfig:427 Encoding MIB BCCH Message
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmMibConfig:440 CONFIG MIB BCCH Message
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdSiCfgReq:411  | ----> wr_mac_si_config_req [type:0] [siSchdInfo[-1]] [cell_id:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmMibConfig:453 CONFIG MIB BCCH Message DONE
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm.c:wrEmmSchdCellCfgCfm:772 Scheduler SI configuration DONE for cellId 1
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_plat.c:wrFillCtfVndrCellCfg:650 OP MODE : 4  PERIOD :2
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_l1.c:wrIfmPhyCellCfg:1328  | ----> phy config req [config] [cell config] [] [cell_id:1] [stack]
+Nov 14 15:14:07 err [LTE-C][UMM]wr_umm.c:wrUmmPrcSchdCfgCfm:5923 DBG_CELLID:0: Error in getting UECB for UEINDEX[0]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm.c:wrEmmSchdSiCfgCfm:1891 MIB CFG CFM is success
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_l1.c:WrIfmL1CfgCfm:533  | <---- phy config cfm [config] [] [cell_id:1] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm.c:wrEmmPrcPhyCfgCfm:1689 DBG_CELLID:1: Cell state = UP, Reason = PHY Configuration Confirm
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_l1.c:WrIfmL1CfgCfm:563 [ALARM] Sending CELL_CFG_SUCCESS to OAM 
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_l1.c:WrIfmL1CfgCfm:567 [ALARM] Sending CELL_CFG_AVAILABLE to OAM 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:257] [state:59]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:280] [state:59]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrEventCellAvaliableHandler:6664  | <------------------------------ cell config complete [stack]
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4019 MsmSmmDynCfgReq: cfgType=[74],cellIdx=[0].
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4433 MsmSmmDynCfgReq: MsmLteWiresharkParams 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_rrm.c:smSndRmuEnbStaInd:494  | ----> rrm status ind [cell_id:1]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_dyncfg.c:smDynCfgReq:4720 Received DYNAMIC CFG REQ for 74
+Nov 14 15:14:07 info [LTE-C][RRM]rm_cellmanager.cpp:triggerStartPrbUsageReport:190 Configuring the MAC to start PRB usage report  for the cell [1]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_lmm.c:WrMiLwrCntrlReq:1732 WrMiLwrCntrlReq(pst, elmnt(7))
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme_s1ap.c:wrEmmMmeBldSetupReq:888  | ====> s1 setup request [peer_id:1] [enb_id:140799544] [tai:1] [plmn:001010] [enb_type:home]  [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme_s1ap.c:wrEmmMmeBldSetupReq:888  | ====> s1 setup request [peer_id:2] [enb_id:140799544] [tai:1] [plmn:001010] [enb_type:home]  [stack]
+Nov 14 15:14:07 err [LTE-C][UMM]wr_umm.c:wrUmmPrcSchdCfgCfm:5923 DBG_CELLID:0: Error in getting UECB for UEINDEX[0]
+Nov 14 15:14:07 warning [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcStaInd:3990  | <==== s1 sctp up [reason:2] [sctpAlarmFlag:1] [mmePoolId:0] [mme_id:1] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcStaInd:3993 g_u16SctpStatus = 1, FF = 3, flag = 2, alarm = 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcStaInd:4013 sctp alarm
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_s1ap.c:SmMiLszStaInd:1958 S1AP ASSOCIATION SUCCESSFULLY ESTABLISHED.
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcSetupRsp:1410  | <==== s1 setup response [mme_id:1] [stack]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcGummeis:1101 NO OF Gummei 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmModPlmnInSib1:241 cell = 1, plmn actived
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmModPlmnInSib1:244 noActivePlmn=1,activate=1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmModPlmnInSib1:289 [fun]wrEmmPbmModPlmnInSib1: cellId=1,sib1->valueTag=23
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldCellAccInfo:363 sib1 cellid = 1 ,numPlmnIds = 1 , numPlmnsActivated = 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldCellAccInfo:381 build sib1 mcc[0-0-1], mnc[0-1-0]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldSIB1Msg:568 tmpNumSIs1:5 not be added to SIB1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrSibBldSIB1Msg:625 SIB5 info is skipped in SIB1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm_sib.c:wrBldDlBcchDlSchPdu:2739  | sib_info  [length:168] [msgOctets:21] [tbSize:176] [padOctets:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_pbm.c:wrEmmPbmSib1Config:550 Configuring SIB1 to MAC(Msg-Len:[22])
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_schd.c:WrIfmSchdSiCfgReq:411  | ----> wr_mac_si_config_req [type:1] [siSchdInfo[-1]] [cell_id:1]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcGummeis:1137 mmeCb->groupIds = 256
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme.c:wrEmmMmeUpdRelCap:1024 Received MME Relative Capacity = [255]
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcSetupRsp:1456 DBG_MMEID:1: eNodeB recfg(MME ADD)
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcSetupRsp:1484 g_u16SctpStatus = 1, FF = 3, flag = 2, alarm = 1
+Nov 14 15:14:07 info [LTE-C][EMM]wr_emm_cnm.c:wrEmmCnmPrcS1LnkUp:674 wrSmDfltNumCells = 1
+Nov 14 15:14:07 info [LTE-C][RRM]rm_mmemanager.cpp:upMME:166 MME UP: MME ID: 1 Active MME count: 1
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:259] [state:27]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrPowerUp:6449 smCb.cellSetupOngoing = 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrPowerUp:6455 idx = 0, s1connect = 1, powerup = 0, bRfCarrierOffEnable = 0
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_l1.c:wrIfmPhyCellCfg:1328  | ----> phy config req [reconfig] [tx power] [up] [cell_id:1] [stack]
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_l1.c:WrIfmL1CfgCfm:533  | <---- phy config cfm [reconfig] [tx power up] [cell_id:1] [stack]
+Nov 14 15:14:07 info [LTE-C][IFM]wr_ifm_l1.c:WrIfmL1CfgCfm:658 [ALARM] Sending CELL_RECFG_SUCCESS after TX_PWR_UP to OAM 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:281] [state:30]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrStaInd:7082  | rsys [event:280] [state:30]  [stack]
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrEventCellAvaliableHandler:6761  | ------------------------------ cell setup complete [stack] ------------------------------ 
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrPowerUp:6449 smCb.cellSetupOngoing = 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:SmMiLwrPowerUp:6455 idx = 0, s1connect = 1, powerup = 1, bRfCarrierOffEnable = 0
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2236  | nxp [state:30] [event:33] [stack]
+Nov 14 15:14:07 info [LTE-C][ENBAPP]wr_kpi.c:wrKpiInitKpiInfo:347 Marking startCollec as true
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_init.c:smWrProcSm:2481 Stop timer SM_TMR_DEF_IP_CHG_REQ_TMR
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_enbapp_rsys.c:wrSmDealDefIpChangeReq:3571 enter wrSmDealDefIpChangeReq.
+Nov 14 15:14:07 notice [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4019 MsmSmmDynCfgReq: cfgType=[12],cellIdx=[1].
+Nov 14 15:14:07 info [LTE-C][SMM]wr_smm_dyncfg.c:smDynCfgReq:4720 Received DYNAMIC CFG REQ for 12
+Nov 14 15:14:07 err [LTE-C][EMM]wr_emm_cfg.c:wrEmmDynCfgReq:11077 cellCb is NULL, cellIdx[1]
+Nov 14 15:14:19 info [LTE-C][SMM]wr_smm_init.c:SocketRcvThread:1379 servaddr.sin_addr.s_addr from 172.24.0.111
+Nov 14 15:14:19 info [LTE-C][SMM]wr_smm_init.c:SocketRcvThread:1387 cliaddr.sin_addr.s_addr from 0.0.0.0
+Nov 14 15:14:37 err [LTE-C][UMM]wr_tmr.c:wrProcTmr:1978 [fun]wrProcTmr: WR_TMR_MME_SETUP_RSP time-out
+Nov 14 15:14:37 alert [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcS1Abort:5983 MME is down. Reconnecting .....
+Nov 14 15:14:37 info [LTE-C][EMM]wr_emm_mme_s1ap.c:wrEmmMmeBldSetupReq:888  | ====> s1 setup request [peer_id:2] [enb_id:140799544] [tai:1] [plmn:001010] [enb_type:home]  [stack]
+Nov 14 15:14:37 warning [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcStaInd:3932  | <==== s1 sctp down [reason:1] [sctpAlarmFlag:1] [mmePoolId:0] [mme_id:2] [stack]
+Nov 14 15:14:39 info [LTE-C][SMM]wr_smm_init.c:wrSndL2MeasSendReq:5987 wrSndL2MeasSendReq received with measType[30]
+Nov 14 15:14:39 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:14:39 info [LTE-C][ENBAPP]wr_kpi.c:wrKpiInitKpiInfo:347 Marking startCollec as true
+Nov 14 15:14:39 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:14:39 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:14:39 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:14:39 info [LTE-C][MSM]wr_msm_common.c:msmSetPciCollisionAlarmRptCfg:3302  | PCI collision confusion detect switch [disable]
+Nov 14 15:14:39 notice [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4019 MsmSmmDynCfgReq: cfgType=[44],cellIdx=[0].
+Nov 14 15:14:39 info [LTE-C][SMM]wr_smm_dyncfg.c:smDynCfgReq:4720 Received DYNAMIC CFG REQ for 44
+Nov 14 15:14:39 info [LTE-C][SMM]wr_smm_dyncfg.c:smHdlDynIpChangeCfg:3816 smHdlDynIpChangeCfg poolId = 0.
+Nov 14 15:14:39 info [LTE-C][SMM]wr_smm_dyncfg.c:smHdlDynIpChangeCfg:3858 Received Ip change req, [Idx, ipAdddr] = [0, 2887254127], but ip not change, just ignore it.
+Nov 14 15:14:50 notice [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4019 MsmSmmDynCfgReq: cfgType=[74],cellIdx=[0].
+Nov 14 15:14:50 info [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4433 MsmSmmDynCfgReq: MsmLteWiresharkParams 
+Nov 14 15:14:50 info [LTE-C][SMM]wr_smm_dyncfg.c:smDynCfgReq:4720 Received DYNAMIC CFG REQ for 74
+Nov 14 15:14:50 err [LTE-C][UMM]wr_umm.c:wrUmmPrcSchdCfgCfm:5923 DBG_CELLID:0: Error in getting UECB for UEINDEX[0]
+Nov 14 15:14:50 notice [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4019 MsmSmmDynCfgReq: cfgType=[81],cellIdx=[0].
+Nov 14 15:14:50 info [LTE-C][SMM]wr_smm_dyncfg.c:smDynCfgReq:4720 Received DYNAMIC CFG REQ for 81
+Nov 14 15:14:50 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmDynCfgReq:11081  | <---- oam_wr_dyn_cfg_req [type:50] [cell_id:1]
+Nov 14 15:14:50 info [LTE-C][EMM]wr_emm_cfg.c:wrEmmDynCfgReq:11337 WanChkCfg Re-config succeeded.
+Nov 14 15:15:00 info [LTE-C][SMM]wr_smm_init.c:wrSndL2MeasSendReq:5987 wrSndL2MeasSendReq received with measType[30]
+Nov 14 15:15:00 info [LTE-C][ENBAPP]wr_kpi.c:wrKpiInitKpiInfo:347 Marking startCollec as true
+Nov 14 15:15:00 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:15:00 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:15:00 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:15:00 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:15:00 info [LTE-C][SMM]wr_smm_init.c:wrSndL2MeasSendReq:5987 wrSndL2MeasSendReq received with measType[30]
+Nov 14 15:15:00 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:15:00 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:15:00 info [LTE-C][ENBAPP]wr_kpi.c:wrKpiInitKpiInfo:347 Marking startCollec as true
+Nov 14 15:15:00 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:15:00 err [LTE-C][SMM]wr_smm_pdcp.c:SmMiLpjL2MeasCfm:2006 Error Condition qciVal[0]
+Nov 14 15:15:07 err [LTE-C][UMM]wr_tmr.c:wrProcTmr:1978 [fun]wrProcTmr: WR_TMR_MME_SETUP_RSP time-out
+Nov 14 15:15:07 alert [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcS1Abort:5983 MME is down. Reconnecting .....
+Nov 14 15:15:07 info [LTE-C][EMM]wr_emm_mme_s1ap.c:wrEmmMmeBldSetupReq:888  | ====> s1 setup request [peer_id:2] [enb_id:140799544] [tai:1] [plmn:001010] [enb_type:home]  [stack]
+Nov 14 15:15:37 err [LTE-C][UMM]wr_tmr.c:wrProcTmr:1978 [fun]wrProcTmr: WR_TMR_MME_SETUP_RSP time-out
+Nov 14 15:15:37 alert [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcS1Abort:5983 MME is down. Reconnecting .....
+Nov 14 15:15:37 info [LTE-C][EMM]wr_emm_mme_s1ap.c:wrEmmMmeBldSetupReq:888  | ====> s1 setup request [peer_id:2] [enb_id:140799544] [tai:1] [plmn:001010] [enb_type:home]  [stack]
+Nov 14 15:15:37 warning [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcStaInd:3932  | <==== s1 sctp down [reason:1] [sctpAlarmFlag:1] [mmePoolId:0] [mme_id:2] [stack]
+Nov 14 15:15:56 notice [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4019 MsmSmmDynCfgReq: cfgType=[74],cellIdx=[0].
+Nov 14 15:15:56 info [LTE-C][SMM]wr_smm_dyncfg.c:MsmSmmDynCfgReq:4433 MsmSmmDynCfgReq: MsmLteWiresharkParams 
+Nov 14 15:15:56 info [LTE-C][SMM]wr_smm_dyncfg.c:smDynCfgReq:4720 Received DYNAMIC CFG REQ for 74
+Nov 14 15:15:56 err [LTE-C][UMM]wr_umm.c:wrUmmPrcSchdCfgCfm:5923 DBG_CELLID:0: Error in getting UECB for UEINDEX[0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmAddUe:1683 
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmAddUe:1687  | ------------------------------ ue context allocate [cause:attach] [ue_count:1] ------------------------------ [cell_id:1] [ue_id:0] [crnti:61]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcUuDatInd:4525  | <==== rrc connection request [establishmentCause:3] [ysGT:7859] [cell_id:1] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_UU_IND_PDU] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:RRC_CONN_SETUP] created [trans id:0] [origin trans id:268435456] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:0] [crnti:61] transType [0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2439  | ------------------------------ ue access processor start ------------------------------ [cell_id:1] [ue_id:0] [crnti:61]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_rrccon.c:wrUmmRrcSetupHdlr:423 rrcConRqst establishCause:3
+Nov 14 15:16:05 info [LTE-C][RRM]rm_cellmanager.cpp:procUeAdmitReq:265 DBG_CRNTI:61: Resource Configuration during UE Admission: UE-Index [51], SRCfg Idx [32], CQICfg Idx [58]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmCommitUePhyCfgDedResInfo:13939  | ue_pucch_info [sr_config_index:32] [sr_pucch_res_index:6] [cqi_pmi_config_index:58] [cqi_pucch_res_index:12] [cell_id:1] [ue_id:0] [crnti:61]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRM_UEADMIT_RESP] received [trans id:0] [origin trans id:268435456] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmCommitUePhyCfgDedResInfo:13939  | ue_pucch_info [sr_config_index:32] [sr_pucch_res_index:6] [cqi_pmi_config_index:58] [cqi_pucch_res_index:12] [cell_id:1] [ue_id:0] [crnti:61]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:45] [duration:500ms] [tqCp.nxtEnt:1185] [ent:90] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:45] [timer type:trans] [tqExpire:1190] [ent2bUpd:FALSE] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_PHY_CFG] received [trans id:0] [origin trans id:268435456] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_SCHD_CFG] received [trans id:0] [origin trans id:268435456] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1291 | <---- timer stop [timer id:45] [timer type:trans] [entIdx:90] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_SCHD_CFG] received [trans id:0] [origin trans id:268435457] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_SCHD_CFG] received [trans id:0] [origin trans id:268435467] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_rrccon.c:wrUmmRrcConSndConSetup:361  | ====> rrc connection setup [cell_id:1] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:33] [duration:1000ms] [tqCp.nxtEnt:1185] [ent:95] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:33] [timer type:trans] [tqExpire:1195] [ent2bUpd:FALSE] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_CFG] received [trans id:0] [origin trans id:268435456] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_rrc_hdl.c:wrUmmUuGetTransIdFromMsg:181  | <==== rrc connection setup complete [cell_id:1] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_UU_IND_PDU] received [trans id:0] [origin trans id:268435456] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1291 | <---- timer stop [timer id:33] [timer type:trans] [entIdx:95] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_rrccon.c:wrUmmRrcParseUeId:1124 epsIdType 1 
+Nov 14 15:16:05 info [LTE-C][EMM]wr_emm_mme.c:wrEmmUpdateSelectedMme:4783 wrEmmUpdateSelectedMme: mmeId[1], state[2], mmeOvldFlag[0]
+Nov 14 15:16:05 info [LTE-C][EMM]wr_emm_mme.c:wrEmmUpdateSelectedMme:4787 wrEmmUpdateSelectedMme: relCapacity[255], dynCapacity[0]
+Nov 14 15:16:05 info [LTE-C][EMM]wr_emm_mme.c:wrEmmGetNextMmeCbPrb:4988 rrccon->mmeId = 1.
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmIsWhiteBlackListEnable:17307 Enb whiteBlackListType switch is close
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_rrccon.c:wrUmmRrcConS1InitUe:920  | ====> initial ue message [imsi:001011234567895] [stmsi:0xffffffff] [mme_id:1] [cell_id:1] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:42] [duration:10000ms] [tqCp.nxtEnt:1185] [ent:85] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:42] [timer type:ue] [tqExpire:1285] [ent2bUpd:FALSE] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:RRC_CONN_SETUP] free [trans id:0] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:33] [timer type:trans] [tmrEvnt:-1] [entIdx:95] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:77] [timer type:trans] [tmrEvnt:-1] [entIdx:95] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_S1_CON_CFM] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:DL_NAS] created [trans id:1] [origin trans id:268435472] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:0] [crnti:61] transType [5]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:DL_NAS] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_DAT_CFM] received [trans id:1] [origin trans id:268435472] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:DL_NAS] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:DL_NAS] free [trans id:1] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_UU_IND_PDU] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:UL_NAS] created [trans id:2] [origin trans id:268435488] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:0] [crnti:61] transType [4]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:UL_NAS] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:UL_NAS] free [trans id:2] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:77] [timer type:trans] [tmrEvnt:-1] [entIdx:0] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_S1_DAT_IND] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:DL_NAS] created [trans id:3] [origin trans id:268435504] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:0] [crnti:61] transType [5]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:DL_NAS] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_UU_IND_PDU] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:UL_NAS] created [trans id:4] [origin trans id:268435520] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:0] [crnti:61] transType [4]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrintNewTransPrcrs:3826  | trans_info: [cb:DL_NAS] is processed before [cb:UL_NAS] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:UL_NAS] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:UL_NAS] free [trans id:4] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:77] [timer type:trans] [tmrEvnt:-1] [entIdx:0] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_DAT_CFM] received [trans id:3] [origin trans id:268435504] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:DL_NAS] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:DL_NAS] free [trans id:3] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_S1_DAT_IND] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:INIT_CTXT_SETUP] created [trans id:5] [origin trans id:268435536] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:0] [crnti:61] transType [1]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrStopUeTmr:1693  | <---- timer stop [timer id:42] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1291 | <---- timer stop [timer id:42] [timer type:ue] [entIdx:85] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmGetErabInfoFrmIntCnxt:3730  | rab info  [rab_id:5] [qci:9] [other] [cell_id:1] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmGetErabInfoFrmIntCnxt:3738  | rab info  [dl_Mbr:0] [ul_Mbr:0] [dl_Gbr:0] [ul_Gbr:0] [cell_id:1] [ue_id:0]
+Nov 14 15:16:05 notice [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmSelectSecurityAlgo:8861 [Integrity] Algo as SNOW3G
+Nov 14 15:16:05 notice [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmSelectSecurityAlgo:8869 [Ciphering] Algo as NULL
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmInitCtxtPrcSetup:4465  | <==== initial context setup request [mme_s1ap_id:1] [enb_s1ap_id:1] [cell_id:1] [ue_id:0]
+Nov 14 15:16:05 err [LTE-C][UMM]wr_umm.c:wrUmmFindRabIndexWithErabId:10111 Find RabIndex With ErabId ERR!!RAB ID:5, rabIdx:11 
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmUeCapSndUeCapEnq:538  | ====> ue capability enquiry [cell_id:1] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:35] [duration:1000ms] [tqCp.nxtEnt:1188] [ent:98] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:35] [timer type:trans] [tqExpire:1198] [ent2bUpd:FALSE] [cell id:1] [ue id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmInitCtxtProcessor:6845 ue cap1 send ok
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_PHY_KDF] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_PHY_KDF] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_PHY_KDF] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:05 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_DAT_CFM] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm_rrc_hdl.c:wrUmmUuGetTransIdFromMsg:217  | <==== ue capability information [cell_id:1] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_UU_IND_PDU] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1291 | <---- timer stop [timer id:35] [timer type:trans] [entIdx:98] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmUeCapStoreCapInfo:1599 CAP CNT ueContLst->noComp.val = 3
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_ENC_CFM] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_ENC_CFM] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmUeCapHdlUeRaCapEncCfm:681  | ====> ue radio access capability info [cell_id:1] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_DEC_CFM] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_utils.c:wrUmmChk4MimoSCCap:10475 Find 4 layer support at item[15] in rf param v1020.
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_DEC_CFM] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmInitCtxtProcessor:7036  | capbility_info [release:r14] [band:39] [catDl:18] [catUl:13] [cell_id:1] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmInitCtxtProcessor:7043  | capbility_info [fgi_r8: bit1 -> 01111101 01111111 11110011 11111110 -> bit32] [cell_id:1] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmSecSndSecModeCmd:2199  | ====> security mode command [Cipher:0] [Integrity:1] [cell_id:1] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:36] [duration:10000ms] [tqCp.nxtEnt:1190] [ent:90] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:36] [timer type:trans] [tqExpire:1290] [ent2bUpd:FALSE] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_CFG] received [trans id:5] [origin trans id:268435542] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm_rrc_hdl.c:wrUmmUuGetTransIdFromMsg:251  | <==== security mode failure [cell_id:1] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_UU_IND_PDU] received [trans id:5] [origin trans id:268435536] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:INIT_CTXT_SETUP] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 notice [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmInitCtxtPrcRrcPdu:5819 DBG_CRNTI:61: [OTA] Received SecurityModeFailure
+Nov 14 15:16:06 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1291 | <---- timer stop [timer id:36] [timer type:trans] [entIdx:90] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][EMM]wr_emm_mme_s1ap.c:wrS1apFillCause:196 wrInitCtxtFillSetupFail: Cause Type[0]#011 Cause Value[26]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm_initcntsetup.c:wrUmmInitCtxtSndFail:5449  | ====> initial context setup failure [causeType:0] [mmePoolId:0] [cell_id:1] [ue_id:0]
+Nov 14 15:16:06 notice [LTE-C][UMM]wr_utils.c:wrPrintS1apCauseInfo:9651 [S1AP]:RADIO NW failure with cause as [Failure in the Radio Interface Procedure]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:46] [duration:1000ms] [tqCp.nxtEnt:1191] [ent:1] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:46] [timer type:ue] [tqExpire:1201] [ent2bUpd:FALSE] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:INIT_CTXT_SETUP] free [trans id:5] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3296 | ------------------------------ ue access processor end [success] ------------------------------ [imsi:001011234567895] [stmsi:0xffffffff] [cell_id:1] [ue_id:0] [crnti:61]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:35] [timer type:trans] [tmrEvnt:-1] [entIdx:98] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:36] [timer type:trans] [tmrEvnt:-1] [entIdx:90] [cell id:1] [ue id:0]
+Nov 14 15:16:06 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_DAT_CFM] received [trans id:5] [origin trans id:268435542] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:06 err [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4244 Transaction Cb could not be retrieved from transID [268435542]
+Nov 14 15:16:06 warning [LTE-C][UMM]wr_umm.c:wrUmmPrcIncMsg:4282  | trans_info: could not fetch any trans cb [cell id:1] [ue id:0]
+Nov 14 15:16:07 err [LTE-C][UMM]wr_tmr.c:wrProcTmr:1978 [fun]wrProcTmr: WR_TMR_MME_SETUP_RSP time-out
+Nov 14 15:16:07 alert [LTE-C][EMM]wr_emm_mme.c:wrEmmMmePrcS1Abort:5983 MME is down. Reconnecting .....
+Nov 14 15:16:07 info [LTE-C][EMM]wr_emm_mme_s1ap.c:wrEmmMmeBldSetupReq:888  | ====> s1 setup request [peer_id:2] [enb_id:140799544] [tai:1] [plmn:001010] [enb_type:home]  [stack]
+Nov 14 15:16:07 warning [LTE-C][UMM]wr_umm.c:wrUmmPrcTimerExp:7180  | <---- timer expired [timer id:46] [tqCp.nxtEnt:1201] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_LCL_CTXT_REL] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:CTXT_RELEASE] created [trans id:6] [origin trans id:268435552] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:0] [crnti:61] transType [8]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2483  | -- ue release processor start ---- [access_cause:attach] [access_state:connecting] [release_cause:other] [access_time: 15:16:7] [duration: 0h 0m 2s][cell_id:1] [ue_id:0] [crnti:61][L2:11|11|0|16|16|0|7]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:CTXT_RELEASE] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm_ctxtrel.c:wrUmmCtxtRelProcessor:931 DBG_CRNTI:61: context release because of LCL_CTXT_REL
+Nov 14 15:16:07 warning [LTE-C][UMM]wr_umm_ctxtrel.c:wrUmmUeLclCtxtRel:742 ue s1 cb is null [cell_id:1] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_tmr.c:wrStopUeTmr:1693  | <---- timer stop [timer id:46] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:46] [timer type:ue] [tmrEvnt:-1] [entIdx:1] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm_rrc_msg.c:wrUmmRrcBldConRls:4048  | ====> rrc connection release [cause:other] [redirection:false] [cell_id:1] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:34] [duration:2000ms] [tqCp.nxtEnt:1201] [ent:21] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:34] [timer type:trans] [tqExpire:1221] [ent2bUpd:FALSE] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_DAT_CFM] received [trans id:6] [origin trans id:268435552] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:CTXT_RELEASE] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1291 | <---- timer stop [timer id:34] [timer type:trans] [entIdx:21] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:15] [timer type:trans] [tmrEvnt:-1] [entIdx:21] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm_ctxtrel.c:wrUmmSendCtxtRelReq:625  | ====> ue context release request [cell_id:1] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_PHY_CFG] received [trans id:6] [origin trans id:268435552] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:CTXT_RELEASE] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_SCHD_CFG] received [trans id:6] [origin trans id:268435552] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:CTXT_RELEASE] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][RRM]rm_cellmanager.cpp:deleteUe:130 DBG_CRNTI:61: [RRM] UEID for UE delete.
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRM_UEREL_RESP] received [trans id:6] [origin trans id:268435552] [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:CTXT_RELEASE] processed [cell id:1] [rnti:61] [ue_id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:CTXT_RELEASE] free [trans id:6] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3320 | ------------------------------ ue release processor end ------------------------------ [cell_id:1] [ue_id:0] [crnti:61]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:34] [timer type:trans] [tmrEvnt:-1] [entIdx:21] [cell id:1] [ue id:0]
+Nov 14 15:16:07 info [LTE-C][UMM]wr_umm.c:wrUmmDelUe:2108  | ------------------------------ ue context delete [ue_count:0] ------------------------------ [imsi:001011234567895] [stmsi:0xffffffff] [cell_id:1] [ue_id:0] [crnti:61]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmAddUe:1683 
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmAddUe:1687  | ------------------------------ ue context allocate [cause:attach] [ue_count:1] ------------------------------ [cell_id:1] [ue_id:1] [crnti:62]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcUuDatInd:4525  | <==== rrc connection request [establishmentCause:3] [ysGT:9449] [cell_id:1] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_UU_IND_PDU] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:RRC_CONN_SETUP] created [trans id:0] [origin trans id:268439552] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:1] [crnti:62] transType [0]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2439  | ------------------------------ ue access processor start ------------------------------ [cell_id:1] [ue_id:1] [crnti:62]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm_rrccon.c:wrUmmRrcSetupHdlr:423 rrcConRqst establishCause:3
+Nov 14 15:16:17 info [LTE-C][RRM]rm_cellmanager.cpp:procUeAdmitReq:265 DBG_CRNTI:62: Resource Configuration during UE Admission: UE-Index [26], SRCfg Idx [27], CQICfg Idx [53]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmCommitUePhyCfgDedResInfo:13939  | ue_pucch_info [sr_config_index:27] [sr_pucch_res_index:3] [cqi_pmi_config_index:53] [cqi_pucch_res_index:6] [cell_id:1] [ue_id:1] [crnti:62]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRM_UEADMIT_RESP] received [trans id:0] [origin trans id:268439552] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmCommitUePhyCfgDedResInfo:13939  | ue_pucch_info [sr_config_index:27] [sr_pucch_res_index:3] [cqi_pmi_config_index:53] [cqi_pucch_res_index:6] [cell_id:1] [ue_id:1] [crnti:62]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:45] [duration:500ms] [tqCp.nxtEnt:1303] [ent:8] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:45] [timer type:trans] [tqExpire:1308] [ent2bUpd:FALSE] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_PHY_CFG] received [trans id:0] [origin trans id:268439552] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_SCHD_CFG] received [trans id:0] [origin trans id:268439552] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1291 | <---- timer stop [timer id:45] [timer type:trans] [entIdx:8] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_SCHD_CFG] received [trans id:0] [origin trans id:268439553] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_SCHD_CFG] received [trans id:0] [origin trans id:268439563] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm_rrccon.c:wrUmmRrcConSndConSetup:361  | ====> rrc connection setup [cell_id:1] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:33] [duration:1000ms] [tqCp.nxtEnt:1303] [ent:13] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:33] [timer type:trans] [tqExpire:1313] [ent2bUpd:FALSE] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_CFG] received [trans id:0] [origin trans id:268439552] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm_rrc_hdl.c:wrUmmUuGetTransIdFromMsg:181  | <==== rrc connection setup complete [cell_id:1] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_UU_IND_PDU] received [trans id:0] [origin trans id:268439552] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:RRC_CONN_SETUP] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1291 | <---- timer stop [timer id:33] [timer type:trans] [entIdx:13] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm_rrccon.c:wrUmmRrcParseUeId:1124 epsIdType 1 
+Nov 14 15:16:17 info [LTE-C][EMM]wr_emm_mme.c:wrEmmUpdateSelectedMme:4783 wrEmmUpdateSelectedMme: mmeId[1], state[2], mmeOvldFlag[0]
+Nov 14 15:16:17 info [LTE-C][EMM]wr_emm_mme.c:wrEmmUpdateSelectedMme:4787 wrEmmUpdateSelectedMme: relCapacity[255], dynCapacity[1]
+Nov 14 15:16:17 info [LTE-C][EMM]wr_emm_mme.c:wrEmmGetNextMmeCbPrb:4988 rrccon->mmeId = 1.
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmIsWhiteBlackListEnable:17307 Enb whiteBlackListType switch is close
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm_rrccon.c:wrUmmRrcConS1InitUe:920  | ====> initial ue message [imsi:001011234567895] [stmsi:0xffffffff] [mme_id:1] [cell_id:1] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:215   | ----> timer start [timer id:42] [duration:10000ms] [tqCp.nxtEnt:1304] [ent:4] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrAddTmrToList:267   |                   [timer id:42] [timer type:ue] [tqExpire:1404] [ent2bUpd:FALSE] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:RRC_CONN_SETUP] free [trans id:0] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:33] [timer type:trans] [tmrEvnt:-1] [entIdx:13] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_tmr.c:wrDelTmrFromList:1255  | timer is stopped [event:77] [timer type:trans] [tmrEvnt:-1] [entIdx:13] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_S1_CON_CFM] received [trans id:0] [origin trans id:0] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2432  | trans_info: [cb:DL_NAS] created [trans id:1] [origin trans id:268439568] [cell id:1] [ue id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansNew:2434  | ----[cell_id:1] [ue_id:1] [crnti:62] transType [5]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:DL_NAS] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmGetTransCbByMsg:4221   | trans_info: [msg:WR_UMM_RRC_DAT_CFM] received [trans id:1] [origin trans id:268439568] [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm.c:wrUmmPrcTrans:3635          | trans_info: [cb:DL_NAS] processed [cell id:1] [rnti:62] [ue_id:1]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm_dlnas.c:wrUmmDlNasProcessor:333 DBG_CRNTI:62: DL NAS RLC TRANSFER failed causeValue[35] and sending NAS Non Delivery Indication to MME
+Nov 14 15:16:17 info [LTE-C][UMM]wr_umm_s1ap_msg.c:wrS1apFillCause:301 wrInitCtxtFillSetupFail: Cause Type[0]#011 Cause Value[21]
+Nov 14 15:16:17 notice [LTE-C][UMM]wr_umm_dlnas.c:wrUmmDlNasSndNonDel:123 [msg]ueCb->mmePoolId = [0]
+Nov 14 15:16:17 notice [LTE-C][UMM]wr_umm_dlnas.c:wrUmmDlNasSndNonDel:129 DBG_CRNTI:62: [S1AP]:Sending NAS NON DELIVERY INDICATION [MME-UE-S1AP-ID:2] [eNB-UE-S1AP-ID:2] 
+Nov 14 15:16:17 notice [LTE-C][UMM]wr_utils.c:wrPrintS1apCauseInfo:9651 [S1AP]:RADIO NW failure with cause as [Radio Connection With UE Lost]
+Nov 14 15:16:17 info [LTE-C][UMM]wr_utils.c:wrUtlPrntIncTansFree:3289 | trans_info: [cb:DL_NAS] free [trans id:1] [cell id:1] [ue id:1]

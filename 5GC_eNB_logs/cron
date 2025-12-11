@@ -1,0 +1,7 @@
+Nov 14 15:13:27 info crond (busybox 1.37.0) started, log level 8
+Nov 14 15:14:07 info USER root pid 5517 cmd /bin/sh /bin/sys_monitor &
+Nov 14 15:14:07 info USER root pid 5519 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Nov 14 15:15:00 info USER root pid 7370 cmd /bin/sh /bin/sys_monitor &
+Nov 14 15:15:00 info USER root pid 7371 cmd /bin/sh /usr/local/bin/motorcomm_phy
+Nov 14 15:16:00 info USER root pid 8999 cmd /bin/sh /bin/sys_monitor &
+Nov 14 15:16:00 info USER root pid 9000 cmd /bin/sh /usr/local/bin/motorcomm_phy

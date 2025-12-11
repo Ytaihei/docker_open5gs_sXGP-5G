@@ -1,0 +1,2181 @@
+Log File Started At 2025-12-02T03:05:38
+12:05:38.493885 [INFO]_system:(Trace.cpp:437)|command [gzip -f /var/log/trace/.previous.oam.02-12-2025_02-58-55.123880.txt &]
+12:05:38.499192 [INFO]exec cmd:[gzip -f /var/log/trace/.previous.oam.02-12-2025_02-58-55.123880.txt &] ok!
+12:05:38.499601 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:05:38.500009 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:38.778447 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:38.803665 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:05:38.803801 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_TOTCHART_DL_PRB LTE_TOTCHART_UL_PRB LTE_TOTCHART_DL_TPT LTE_TOTCHART_UL_TPT LTE_TOT_UL_TPT LTE_TOT_DL_TPT ]
+12:05:38.803913 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:05:38.804115 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:38.904524 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:05:38.904619 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:05:38.904824 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:05:38.905027 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:38.954934 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:38.972725 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:05:38.972856 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.1: LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_TOTCHART_DL_PRB LTE_TOTCHART_UL_PRB LTE_TOTCHART_DL_TPT LTE_TOTCHART_UL_TPT LTE_TOT_UL_TPT LTE_TOT_DL_TPT ]
+12:05:38.972968 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:05:38.973172 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:39.616670 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:39.616722 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:39.616896 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:39.857672 [INFO](line:19954) init succ 
+12:05:39.858015 [INFO]HandleReadSyncState, sync state = DISP
+12:05:39.858304 [INFO]oam start monitor gps timer
+12:05:39.858395 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:39.858593 [INFO]checkGpsStatus:731
+12:05:39.858688 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:39.858734 [INFO]updateGpsCoordinate:337
+12:05:39.858781 [INFO]handleGpsPositionUpdate:3717
+12:05:39.858962 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:39.859134 [INFO]checkCellNoTraffic:1487
+12:05:39.859188 [INFO](line:1496) trafficThreshold is 3600
+12:05:39.859229 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:39.859370 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:39.859653 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:39.860861 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:39.861050 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:39.861186 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:40.862525 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:41.619623 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:41.619675 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:41.619848 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:41.727981 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:05:41.728865 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:41.729071 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:41.729206 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:41.849775 [INFO](line:19954) init succ 
+12:05:41.850055 [INFO]HandleReadSyncState, sync state = DISP
+12:05:41.850296 [INFO]oam start monitor gps timer
+12:05:41.850391 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:41.850585 [INFO]checkGpsStatus:731
+12:05:41.850670 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:41.850718 [INFO]updateGpsCoordinate:337
+12:05:41.850764 [INFO]handleGpsPositionUpdate:3717
+12:05:41.850933 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:41.851106 [INFO]checkCellNoTraffic:1487
+12:05:41.851163 [INFO](line:1496) trafficThreshold is 3600
+12:05:41.851205 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:41.851345 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:41.851623 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:41.852778 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:41.852966 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:41.853101 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:42.472999 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 7m 12s" 
+12:05:42.474222 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:05:42.482272 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:42.670468 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[0:0:0:0:0:0:0:0:0:0:0];" LTE_TOT_DL_TPT=0 
+12:05:42.671650 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:42.671906 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[0:0:0:0:0:0:0:0:0:0:0];" LTE_TOT_UL_TPT=0 
+12:05:42.673002 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:42.729100 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=18 CPU1_USAGE=0 
+12:05:42.730557 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:05:42.731138 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:05:42.740939 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:42.741177 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:42.741314 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:42.752857 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:05:42.752924 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:05:42.753111 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:05:42.753279 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:42.811852 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:05:42.812928 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.035765 [INFO]Received MibSetAttributesReq: FAP.0: TR069_SPV_IN_PROGRESS=0 
+12:05:43.036586 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.070161 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:0:0:0:0:0:0:0:0];" 
+12:05:43.073057 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.073334 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:0:0:0:0:0:0:0];" 
+12:05:43.074494 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.074747 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,0,1,0,2,0,0" 
+12:05:43.075644 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.075873 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,0,1,0,2,0,0" 
+12:05:43.076765 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.077102 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="NULL" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:05:43.080732 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.080969 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=0 
+12:05:43.081783 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.082003 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=0 
+12:05:43.082731 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.539445 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:05:43.540577 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.622330 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:43.622388 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:43.622555 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.853316 [INFO](line:19954) init succ 
+12:05:43.853663 [INFO]HandleReadSyncState, sync state = DISP
+12:05:43.853913 [INFO]oam start monitor gps timer
+12:05:43.854005 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:43.854196 [INFO]checkGpsStatus:731
+12:05:43.854261 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:43.854307 [INFO]updateGpsCoordinate:337
+12:05:43.854353 [INFO]handleGpsPositionUpdate:3717
+12:05:43.854518 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:43.854705 [INFO]checkCellNoTraffic:1487
+12:05:43.854760 [INFO](line:1496) trafficThreshold is 3600
+12:05:43.854801 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:43.854940 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.855195 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:43.856350 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.856536 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:43.856693 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:43.887069 [INFO][SAS] not enable 0
+12:05:44.858038 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:45.149519 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:05:45.625189 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:45.625240 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:45.625427 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:45.856080 [INFO](line:19954) init succ 
+12:05:45.856406 [INFO]HandleReadSyncState, sync state = DISP
+12:05:45.856678 [INFO]oam start monitor gps timer
+12:05:45.856769 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:45.856961 [INFO]checkGpsStatus:731
+12:05:45.857025 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:45.857070 [INFO]updateGpsCoordinate:337
+12:05:45.857116 [INFO]handleGpsPositionUpdate:3717
+12:05:45.857278 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:45.857446 [INFO]checkCellNoTraffic:1487
+12:05:45.857501 [INFO](line:1496) trafficThreshold is 3600
+12:05:45.857542 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:45.857702 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:45.857962 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:45.859184 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:45.859373 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:45.859505 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:46.724951 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:05:46.725775 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:46.725975 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:46.726111 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:47.628032 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:47.628084 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:47.628305 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:47.726024 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=19 CPU1_USAGE=0 
+12:05:47.727437 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:05:47.728006 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:05:47.738262 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:47.738481 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:47.739638 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:47.749981 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:05:47.750032 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:05:47.750219 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:05:47.750385 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:47.850926 [INFO](line:19954) init succ 
+12:05:47.851240 [INFO]HandleReadSyncState, sync state = DISP
+12:05:47.851491 [INFO]oam start monitor gps timer
+12:05:47.851584 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:47.851858 [INFO]checkGpsStatus:731
+12:05:47.851923 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:47.851969 [INFO]updateGpsCoordinate:337
+12:05:47.852015 [INFO]handleGpsPositionUpdate:3717
+12:05:47.852178 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:47.852344 [INFO]checkCellNoTraffic:1487
+12:05:47.852399 [INFO](line:1496) trafficThreshold is 3600
+12:05:47.852440 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:47.852580 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:47.852856 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:47.854020 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:47.854201 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:47.854334 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:48.670216 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[0:0:0:0:0:0:0:0:0:0:0];" LTE_TOT_DL_TPT=0 
+12:05:48.671420 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:48.671696 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[0:0:0:0:0:0:0:0:0:0:0];" LTE_TOT_UL_TPT=0 
+12:05:48.672812 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:48.903318 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:05:48.903392 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:05:48.903584 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:05:48.903790 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.070170 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:0:0:0:0:0:0:0:0];" 
+12:05:49.073065 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.073339 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:0:0:0:0:0:0:0];" 
+12:05:49.074520 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.074770 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,0,2,0,1,0,9" 
+12:05:49.075658 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.075885 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,0,2,0,1,0,9" 
+12:05:49.076782 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.077121 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="NULL" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:05:49.080694 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.080926 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=0 
+12:05:49.081737 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.081955 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=0 
+12:05:49.082676 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.620863 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:49.620917 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:49.621088 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.851866 [INFO](line:19954) init succ 
+12:05:49.852188 [INFO]HandleReadSyncState, sync state = DISP
+12:05:49.852439 [INFO]oam start monitor gps timer
+12:05:49.852530 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:49.852748 [INFO]checkGpsStatus:731
+12:05:49.852814 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:49.852859 [INFO]updateGpsCoordinate:337
+12:05:49.852904 [INFO]handleGpsPositionUpdate:3717
+12:05:49.853068 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:49.853242 [INFO]checkCellNoTraffic:1487
+12:05:49.853298 [INFO](line:1496) trafficThreshold is 3600
+12:05:49.853340 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:49.853483 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.853759 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:49.854914 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:49.855100 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:49.855234 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:50.856571 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:51.623702 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:51.623753 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:51.623917 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:51.724653 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:05:51.725450 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:51.725675 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:51.725813 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:51.856349 [INFO](line:19954) init succ 
+12:05:51.856627 [INFO]HandleReadSyncState, sync state = DISP
+12:05:51.856864 [INFO]oam start monitor gps timer
+12:05:51.856961 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:51.857153 [INFO]checkGpsStatus:731
+12:05:51.857220 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:51.857267 [INFO]updateGpsCoordinate:337
+12:05:51.857314 [INFO]handleGpsPositionUpdate:3717
+12:05:51.857476 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:51.857656 [INFO]checkCellNoTraffic:1487
+12:05:51.857711 [INFO](line:1496) trafficThreshold is 3600
+12:05:51.857753 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:51.857889 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:51.858145 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:51.859336 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:51.859523 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:51.859700 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:52.477202 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 7m 22s" 
+12:05:52.478529 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:05:52.492678 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:52.725743 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=15 CPU1_USAGE=0 
+12:05:52.727159 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:05:52.730743 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:05:52.737245 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:52.737452 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:52.737587 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:52.749957 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:05:52.750012 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:05:52.750196 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:05:52.750361 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:53.626517 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:53.626570 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:53.626744 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:53.857489 [INFO](line:19954) init succ 
+12:05:53.857843 [INFO]HandleReadSyncState, sync state = DISP
+12:05:53.858094 [INFO]oam start monitor gps timer
+12:05:53.858186 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:53.858402 [INFO]checkGpsStatus:731
+12:05:53.858469 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:53.858515 [INFO]updateGpsCoordinate:337
+12:05:53.858563 [INFO]handleGpsPositionUpdate:3717
+12:05:53.858754 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:53.858929 [INFO]checkCellNoTraffic:1487
+12:05:53.858984 [INFO](line:1496) trafficThreshold is 3600
+12:05:53.859026 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:53.859167 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:53.859425 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:53.860631 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:53.860822 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:53.860958 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:54.670402 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[0:0:0:0:0:0:0:0:0:0:0];" LTE_TOT_DL_TPT=0 
+12:05:54.671596 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:54.671866 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[0:0:0:0:0:0:0:0:0:0:0];" LTE_TOT_UL_TPT=0 
+12:05:54.672974 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.070211 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:0:0:0:0:0:0:0:0];" 
+12:05:55.073107 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.073379 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:0:0:0:0:0:0:0];" 
+12:05:55.074511 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.074769 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,0,0,0,0,0,0" 
+12:05:55.075654 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.075882 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,0,0,0,0,0,0" 
+12:05:55.076770 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.077103 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="NULL" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:05:55.080652 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.080884 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=0 
+12:05:55.081736 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.081952 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=0 
+12:05:55.082675 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.149811 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:05:55.629846 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:55.629899 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:55.630068 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.850745 [INFO](line:19954) init succ 
+12:05:55.851069 [INFO]HandleReadSyncState, sync state = DISP
+12:05:55.851320 [INFO]oam start monitor gps timer
+12:05:55.851413 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:55.851627 [INFO]checkGpsStatus:731
+12:05:55.851695 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:55.851740 [INFO]updateGpsCoordinate:337
+12:05:55.851786 [INFO]handleGpsPositionUpdate:3717
+12:05:55.851953 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:55.852119 [INFO]checkCellNoTraffic:1487
+12:05:55.852173 [INFO](line:1496) trafficThreshold is 3600
+12:05:55.852214 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:55.852356 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.852638 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:55.853796 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:55.853985 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:55.854118 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.254761 [INFO]Timer 8 Expired! (MOCNIpAddrTimer)
+12:05:56.254812 [INFO]Timer 9 Expired! (UptimeGettingTimer)
+12:05:56.254854 [INFO]Timer 7 Expired! (EnbIpAddrTimer)
+12:05:56.254903 [INFO]Stopping Timer 8 (MOCNIpAddrTimer)
+12:05:56.255088 [INFO]Starting Timer 8 (MOCNIpAddrTimer) expires in 60000 ms
+12:05:56.255132 [INFO]Stopping Timer 9 (UptimeGettingTimer)
+12:05:56.255313 [INFO]Starting Timer 9 (UptimeGettingTimer) expires in 60000 ms
+12:05:56.255357 [INFO]Stopping Timer 7 (EnbIpAddrTimer)
+12:05:56.255538 [INFO]Starting Timer 7 (EnbIpAddrTimer) expires in 30000 ms
+12:05:56.255657 [INFO]FindChildObject(MOCN_CFG.0) - failed to find.
+12:05:56.255719 [INFO]FindChildObject(MOCN_CFG.1) - failed to find.
+12:05:56.255779 [INFO]FindChildObject(MOCN_CFG.2) - failed to find.
+12:05:56.255838 [INFO]FindChildObject(MOCN_CFG.3) - failed to find.
+12:05:56.255895 [INFO]FindChildObject(MOCN_CFG.4) - failed to find.
+12:05:56.255953 [INFO]FindChildObject(MOCN_CFG.5) - failed to find.
+12:05:56.256011 [INFO]FindChildObject(MOCN_CFG.6) - failed to find.
+12:05:56.256069 [INFO]FindChildObject(MOCN_CFG.7) - failed to find.
+12:05:56.256127 [INFO]FindChildObject(MOCN_CFG.8) - failed to find.
+12:05:56.256184 [INFO]FindChildObject(MOCN_CFG.9) - failed to find.
+12:05:56.256241 [INFO]FindChildObject(MOCN_CFG.10) - failed to find.
+12:05:56.256300 [INFO]FindChildObject(MOCN_CFG.11) - failed to find.
+12:05:56.256358 [INFO]FindChildObject(MOCN_CFG.12) - failed to find.
+12:05:56.256416 [INFO]FindChildObject(MOCN_CFG.13) - failed to find.
+12:05:56.256473 [INFO]FindChildObject(MOCN_CFG.14) - failed to find.
+12:05:56.256530 [INFO]FindChildObject(MOCN_CFG.15) - failed to find.
+12:05:56.256578 [INFO]GetUptime:21310
+12:05:56.279130 [INFO]Fuc: super_system fgets buf is 7
+
+12:05:56.280574 [INFO]FindChildObject(MULTI_CFG.0) - failed to find.
+12:05:56.280677 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.0
+12:05:56.280739 [INFO]FindChildObject(MULTI_CFG.0) - failed to find.
+12:05:56.280807 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.0
+12:05:56.280878 [INFO]FindChildObject(MULTI_CFG.1) - failed to find.
+12:05:56.280944 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.1
+12:05:56.281001 [INFO]FindChildObject(MULTI_CFG.1) - failed to find.
+12:05:56.281067 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.1
+12:05:56.281136 [INFO]FindChildObject(MULTI_CFG.2) - failed to find.
+12:05:56.281202 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.2
+12:05:56.281258 [INFO]FindChildObject(MULTI_CFG.2) - failed to find.
+12:05:56.281325 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.2
+12:05:56.281373 [INFO]SetEnbIpv4Addr:29862 ipsec_enable=0,ipAddress=172.24.0.111
+12:05:56.281450 [INFO]FindChildObject(MOCN_CFG.0) - failed to find.
+12:05:56.281510 [INFO]FindChildObject(MOCN_CFG.1) - failed to find.
+12:05:56.281567 [INFO]FindChildObject(MOCN_CFG.2) - failed to find.
+12:05:56.281642 [INFO]FindChildObject(MOCN_CFG.3) - failed to find.
+12:05:56.281701 [INFO]FindChildObject(MOCN_CFG.4) - failed to find.
+12:05:56.281758 [INFO]FindChildObject(MOCN_CFG.5) - failed to find.
+12:05:56.281815 [INFO]FindChildObject(MOCN_CFG.6) - failed to find.
+12:05:56.281872 [INFO]FindChildObject(MOCN_CFG.7) - failed to find.
+12:05:56.281928 [INFO]FindChildObject(MOCN_CFG.8) - failed to find.
+12:05:56.281985 [INFO]FindChildObject(MOCN_CFG.9) - failed to find.
+12:05:56.282042 [INFO]FindChildObject(MOCN_CFG.10) - failed to find.
+12:05:56.282099 [INFO]FindChildObject(MOCN_CFG.11) - failed to find.
+12:05:56.282156 [INFO]FindChildObject(MOCN_CFG.12) - failed to find.
+12:05:56.282213 [INFO]FindChildObject(MOCN_CFG.13) - failed to find.
+12:05:56.282270 [INFO]FindChildObject(MOCN_CFG.14) - failed to find.
+12:05:56.282326 [INFO]FindChildObject(MOCN_CFG.15) - failed to find.
+12:05:56.282648 [INFO]GetValue:28578 find wan1_interface= "eth1"
+12:05:56.432669 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.432970 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.433792 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.434021 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.434769 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.435006 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.435781 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.436004 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.436776 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.436999 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.437744 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.437989 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.438795 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.439020 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.439810 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.440030 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.440801 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.441024 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.441786 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.442005 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.442769 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.442990 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:05:56.443754 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.443943 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.444079 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.444253 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.444384 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.444556 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.444688 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.444881 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.445014 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.445187 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.445318 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.445513 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.445647 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.445818 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.445950 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.446121 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.446252 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.446441 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.446574 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.446748 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.446879 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.447051 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.447182 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.724275 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:05:56.725125 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:56.725326 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:56.725464 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:57.632727 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:57.632779 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:57.632955 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:57.725372 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=14 CPU1_USAGE=0 
+12:05:57.726904 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:05:57.727541 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:05:57.737388 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:57.738644 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:57.738838 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:57.749166 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:05:57.749218 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:05:57.749407 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:05:57.749588 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:57.850167 [INFO](line:19954) init succ 
+12:05:57.850491 [INFO]HandleReadSyncState, sync state = DISP
+12:05:57.850770 [INFO]oam start monitor gps timer
+12:05:57.850862 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:57.851067 [INFO]checkGpsStatus:731
+12:05:57.851131 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:57.851175 [INFO]updateGpsCoordinate:337
+12:05:57.851220 [INFO]handleGpsPositionUpdate:3717
+12:05:57.851388 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:57.851562 [INFO]checkCellNoTraffic:1487
+12:05:57.851633 [INFO](line:1496) trafficThreshold is 3600
+12:05:57.851676 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:57.851821 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:57.852082 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:57.853267 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:57.853450 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:57.853585 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:58.854953 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:58.887309 [INFO][SAS] not enable 0
+12:05:58.905279 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:05:58.905329 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:05:58.905515 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:05:58.905693 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:59.635559 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:05:59.635630 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:05:59.635808 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:59.856452 [INFO](line:19954) init succ 
+12:05:59.856796 [INFO]HandleReadSyncState, sync state = DISP
+12:05:59.857051 [INFO]oam start monitor gps timer
+12:05:59.857142 [INFO]HandleReadGpsCounts, gps counts = 17
+12:05:59.857341 [INFO]checkGpsStatus:731
+12:05:59.857405 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:05:59.857450 [INFO]updateGpsCoordinate:337
+12:05:59.857496 [INFO]handleGpsPositionUpdate:3717
+12:05:59.857677 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:05:59.857845 [INFO]checkCellNoTraffic:1487
+12:05:59.857900 [INFO](line:1496) trafficThreshold is 3600
+12:05:59.857941 [INFO](line:1509)set cell no traffic alarm only one time (3600)
+12:05:59.858084 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:59.858367 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:05:59.859538 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:59.859761 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:05:59.859898 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:05:59.997328 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:00.004646 [INFO]Timer 4 Expired! (FlowStatRepeatTimer)
+12:06:00.004697 [INFO]Stopping Timer 4 (FlowStatRepeatTimer)
+12:06:00.004884 [INFO]Starting Timer 4 (FlowStatRepeatTimer) expires in 59996 ms
+12:06:00.004933 [INFO]FlowStatManager FSM: event (1) in current state (1)
+12:06:00.004979 [INFO]FlowStatManager FSM EXIT: end state (2)
+12:06:00.005118 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:00.670909 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[48:0:0:0:0:0:0:0:0:0:0];" LTE_TOT_DL_TPT=48 
+12:06:00.672296 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:00.672554 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[56:0:0:0:0:0:0:0:0:0:0];" LTE_TOT_UL_TPT=56 
+12:06:00.673729 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.070259 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=11 LTE_TOTCHART_UL_PRB="[11:0:0:0:0:0:0:0:0:0:0];" 
+12:06:01.073039 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=460
+12:06:01.073508 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.073790 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=3 LTE_TOTCHART_DL_PRB="[3:0:0:0:0:0:0:0:0:0:0];" 
+12:06:01.074736 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=460
+12:06:01.075145 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.075377 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,0,298,0,181,5,1" 
+12:06:01.076363 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.076618 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,0,298,0,181,5,1" 
+12:06:01.077580 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.077946 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:26:15:0:6:21:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:01.081843 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:01.086199 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:01.099279 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.099741 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:26:15:0:6:21:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:01.107272 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.107516 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:01.109365 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.110612 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:01.112732 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=234
+12:06:01.112865 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=47
+12:06:01.113027 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:01.119061 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.119309 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:01.122629 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=174
+12:06:01.122821 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:01.131113 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.131431 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:01.131550 [INFO]UpdateLedCellStatus:16627, rftxOpState:1, isCaEnable:0, numOfCells:1
+12:06:01.143539 [INFO]cmd ok:  echo timer >/sys/class/leds/active/trigger && echo 1000 >/sys/class/leds/active/delay_on && echo 1000 >/sys/class/leds/active/delay_off && echo 0 >/sys/class/leds/run/brightness 
+12:06:01.143889 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.144252 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:01.144435 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.144815 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:01.144926 [INFO]Subscription received for ue count
+12:06:01.144989 [INFO]HandleOamMessage:15575 numCells=1 caEnable=0 instance=0
+12:06:01.145037 [INFO]HandleOamMessage:15598,lteUE0Count=1
+12:06:01.145079 [INFO]with ue access
+12:06:01.145119 [INFO]GetcellNoTrafficTime:176
+12:06:01.145175 [INFO](line:179) cellNoTrafficTime is (3600:3600)
+12:06:01.145217 [INFO]SetcellNoTrafficTime:185
+12:06:01.145256 [INFO](line:187) ---cellNoTrafficTime is (0:0)
+12:06:01.145296 [INFO]GetCellNoTrafficAlarmFlag:193
+12:06:01.145369 [PP]OAM|OAM||SERIALISATION_ID_ALARM_EVENT||||TX
+12:06:01.145466 [INFO]SetCellNoTrafficAlarmFlag:200
+12:06:01.145508 [INFO](line:209) ---cellNoTrafficFlag is 0
+12:06:01.145547 [INFO](line:15619)set clear cell no traffic alarm
+12:06:01.145891 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.146202 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:01.146358 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.146547 [PP]OAM|OAM||SERIALISATION_ID_ALARM_EVENT||||RX
+12:06:01.146918 [INFO]AlarmEvent: m_additionalInfo= set clear cell no traffic alarm, m_addtnlInfo =Unspecified Additional Information
+12:06:01.147024 [INFO]HandleAlarmFilter: Received alarmId=11185, severity=0, specificProblem=[set clear cell no traffic alarm] additionalInfo=[Unspecified Additional Information] addtnlText=[] serialNum=2096
+12:06:01.147335 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.638432 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:01.638484 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:01.638693 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.722248 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:01.723084 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.723284 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:01.723424 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.853962 [INFO](line:19954) init succ 
+12:06:01.854222 [INFO]HandleReadSyncState, sync state = DISP
+12:06:01.854453 [INFO]oam start monitor gps timer
+12:06:01.854548 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:01.855431 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=314
+12:06:01.855619 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:01.865818 [INFO]affectedSubscriptionIds subscriber=45/QC_ADAPTER, subscriptionId=0
+12:06:01.867560 [INFO]checkGpsStatus:731
+12:06:01.867689 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:01.867738 [INFO]updateGpsCoordinate:337
+12:06:01.867787 [INFO]handleGpsPositionUpdate:3717
+12:06:01.867953 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:01.868112 [INFO]checkCellNoTraffic:1487
+12:06:01.868166 [INFO](line:1496) trafficThreshold is 3600
+12:06:01.868208 [INFO](line:1501)add the cell no traffic time (30)
+12:06:01.868368 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.869646 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:01.869826 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.870077 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:01.872270 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:01.872465 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:01.873624 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:02.469773 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 7m 32s" 
+12:06:02.470979 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:02.479960 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:02.723430 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=20 CPU1_USAGE=0 
+12:06:02.724870 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:02.725426 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:02.735446 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:02.736693 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:02.736841 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:02.757161 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:02.757233 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:02.757429 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:02.757522 [INFO]AlarmEvent: id=11185(No user on eNB), NONTRANSIENT, severity=0, specificProblem=set clear cell no traffic alarm, additionalInfo=Unspecified Additional Information, additionalText=, alarmType=3, observationTime=2025-12-02T03:06:01, alarmSerialNum=2096
+12:06:02.757590 [INFO]AlarmEventLog::HandleAlarmEvent(): id=11185(No user on eNB), NONTRANSIENT, severity=0, specificProblem=set clear cell no traffic alarm, additionalInfo=Unspecified Additional Information, additionalText=, alarmType=3, observationTime=2025-12-02T03:06:01, alarmSerialNum=2096, seqNum=13
+12:06:02.757688 [INFO]SerialisableFileStore::WriteObject(): id=11185(No user on eNB), NONTRANSIENT, severity=0, specificProblem=set clear cell no traffic alarm, additionalInfo=Unspecified Additional Information, additionalText=, alarmType=3, observationTime=2025-12-02T03:06:01, alarmSerialNum=2096, seqNum=13
+12:06:02.757758 [PP]OAM|TR069||SERIALISATION_ID_ALARM_EVENT||||TX
+12:06:02.757858 [PP]OAM|SNMP||SERIALISATION_ID_ALARM_EVENT||||TX
+12:06:02.757943 [INFO]updateLedAlarmStatus:21489, alarmId:11185, severity:0
+12:06:02.758117 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:02.886316 [INFO]Received MibSetAttributesReq: FAP.0: ALARM_CURRENT_ENTRIES=2 
+12:06:02.887495 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:02.891454 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:02.892076 [PP]TR069|MIB||SERIALISATION_ID_MIB_DELETE_OBJECT_REQ||||RX
+12:06:02.995682 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2686
+12:06:02.995760 [INFO]m_subscriptionNotifyInterface.SendSubscriptionDeleteNotification(deleted)
+12:06:02.995822 [PP]MIB|TR069||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_DELETE_IND||||TX
+12:06:03.003947 [PP]MIB|TR069||SERIALISATION_ID_MIB_DELETE_OBJECT_CNF||||TX
+12:06:03.004228 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.004484 [INFO]Received MibSetAttributesReq: FAP.0: ALARM_HISTORY_ENTRIES=10 
+12:06:03.005676 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:03.020873 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.021108 [PP]TR069|MIB||SERIALISATION_ID_MIB_CREATE_OBJECT_REQ||||RX
+12:06:03.021210 [INFO]MibManager outside modesc TR196_HISTORY_EVENT
+12:06:03.021267 [INFO]FindChildObject(TR196_HISTORY_EVENT.9) - failed to find.
+12:06:03.025120 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2386
+12:06:03.025648 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2678
+12:06:03.026670 [PP]MIB|TR069||SERIALISATION_ID_MIB_CREATE_OBJECT_CNF||||TX
+12:06:03.026899 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.027228 [INFO]Received MibSetAttributesReq: FAP.0.TR196_HISTORY_EVENT.9: ALARM_EVENT_TYPE=3 ALARM_PROBABLE_CAUSE="No user on eNB" ALARM_SPECIFIC_PROBLEM="set clear cell no traffic alarm" ALARM_PERCEIVED_SEVERITY=0 ALARM_IDENTIFIER=11185 ALARM_EVENT_TIME=1764644761 MANAGED_OBJECT_INSTANCE="Device.FaultMgmt.HistoryEvent.10." ALARM_ADDITIONAL_TEXT="2096" ALARM_ADDITIONAL_INFORMATION="Unspecified Additional Information" ALARM_NOTIFICATION_TYPE=2 
+12:06:03.030841 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2386
+12:06:03.031034 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2678
+12:06:03.032699 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.032931 [INFO]Received MibSetAttributesReq: FAP.0: ALARM_EXPEDITED_ENTRIES=10 
+12:06:03.035058 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:03.042293 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.042513 [PP]TR069|MIB||SERIALISATION_ID_MIB_CREATE_OBJECT_REQ||||RX
+12:06:03.043636 [INFO]MibManager outside modesc TR196_EXPEDITED_EVENT
+12:06:03.043701 [INFO]FindChildObject(TR196_EXPEDITED_EVENT.9) - failed to find.
+12:06:03.046519 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2336
+12:06:03.047742 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2684
+12:06:03.047950 [PP]MIB|TR069||SERIALISATION_ID_MIB_CREATE_OBJECT_CNF||||TX
+12:06:03.048183 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.048577 [INFO]Received MibSetAttributesReq: FAP.0.TR196_EXPEDITED_EVENT.9: ALARM_EVENT_TYPE=3 ALARM_PROBABLE_CAUSE="No user on eNB" ALARM_SPECIFIC_PROBLEM="set clear cell no traffic alarm" ALARM_PERCEIVED_SEVERITY=0 ALARM_IDENTIFIER=11185 ALARM_EVENT_TIME=1764644761 MANAGED_OBJECT_INSTANCE="Device.FaultMgmt.ExpeditedEvent.10." ALARM_ADDITIONAL_TEXT="2096" ALARM_ADDITIONAL_INFORMATION="Unspecified Additional Information" ALARM_NOTIFICATION_TYPE=2 
+12:06:03.052240 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2336
+12:06:03.052650 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=2684
+12:06:03.054156 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.368770 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:03.369895 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.598100 [INFO]Received MibSetAttributesReq: FAP.0: TR069_SPV_IN_PROGRESS=0 
+12:06:03.598971 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.639066 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:03.639117 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:03.639276 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.850031 [INFO](line:19954) init succ 
+12:06:03.850353 [INFO]HandleReadSyncState, sync state = DISP
+12:06:03.850603 [INFO]oam start monitor gps timer
+12:06:03.850716 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:03.850914 [INFO]checkGpsStatus:731
+12:06:03.850978 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:03.851025 [INFO]updateGpsCoordinate:337
+12:06:03.851071 [INFO]handleGpsPositionUpdate:3717
+12:06:03.851232 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:03.851401 [INFO]checkCellNoTraffic:1487
+12:06:03.851457 [INFO](line:1496) trafficThreshold is 3600
+12:06:03.851499 [INFO](line:1501)add the cell no traffic time (60)
+12:06:03.851663 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.851927 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:03.853103 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:03.853287 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:03.853422 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:04.101772 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:04.102862 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:05.104213 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:05.149995 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:06:05.641941 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:05.641994 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:05.642165 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:05.852815 [INFO](line:19954) init succ 
+12:06:05.853140 [INFO]HandleReadSyncState, sync state = DISP
+12:06:05.853390 [INFO]oam start monitor gps timer
+12:06:05.853483 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:05.853700 [INFO]checkGpsStatus:731
+12:06:05.853766 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:05.853814 [INFO]updateGpsCoordinate:337
+12:06:05.853860 [INFO]handleGpsPositionUpdate:3717
+12:06:05.854023 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:05.854193 [INFO]checkCellNoTraffic:1487
+12:06:05.854247 [INFO](line:1496) trafficThreshold is 3600
+12:06:05.854288 [INFO](line:1501)add the cell no traffic time (90)
+12:06:05.854433 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:05.854711 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:05.855886 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:05.856072 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:05.856207 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.549495 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.558682 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:06.558793 [INFO]Received MibGetAttributesReq: [FAP.0: LOCAL_TIMEZONE_OFFSET_TO_GMT ]
+12:06:06.558863 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:06.559055 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.626508 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.628309 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:06.628432 [INFO]GetMibAttributes: TR196_CURRENT_ALARM.0: Getting all attributes
+12:06:06.628533 [INFO]GetMibAttributes: TR196_CURRENT_ALARM.1: Getting all attributes
+12:06:06.628646 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:06.628855 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.670705 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[1324:48:0:0:0:0:0:0:0:0:0];" LTE_TOT_DL_TPT=1324 
+12:06:06.671921 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.672168 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[58:56:0:0:0:0:0:0:0:0:0];" LTE_TOT_UL_TPT=58 
+12:06:06.673299 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.719199 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.719639 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=67 
+12:06:06.720940 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:06.721498 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:06.731196 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.731437 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:06.731576 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:06.737848 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:06.737988 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.8: Getting all attributes
+12:06:06.738089 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.6: Getting all attributes
+12:06:06.738181 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.0: Getting all attributes
+12:06:06.738329 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.1: Getting all attributes
+12:06:06.738447 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.9: Getting all attributes
+12:06:06.738536 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.2: Getting all attributes
+12:06:06.738643 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.7: Getting all attributes
+12:06:06.738734 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.3: Getting all attributes
+12:06:06.738823 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.4: Getting all attributes
+12:06:06.738908 [INFO]GetMibAttributes: TR196_HISTORY_EVENT.5: Getting all attributes
+12:06:06.738986 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:06.739249 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.070239 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=4 LTE_TOTCHART_UL_PRB="[4:11:0:0:0:0:0:0:0:0:0];" 
+12:06:07.072189 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=460
+12:06:07.073346 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.073669 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=5 LTE_TOTCHART_DL_PRB="[5:3:0:0:0:0:0:0:0:0:0];" 
+12:06:07.074544 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=460
+12:06:07.074964 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.075202 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,86,33,0,177,0,0" 
+12:06:07.076095 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.076325 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,86,33,0,177,0,0" 
+12:06:07.077219 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.077557 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:26:15:0:9:23:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:07.081149 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:07.082748 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:07.088088 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.088486 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:26:15:0:9:23:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:07.096137 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.096418 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:07.098218 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.099831 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:07.102017 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.102255 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:07.102980 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.103260 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:07.103432 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.104718 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:07.104891 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.640528 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:07.640582 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:07.640778 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.720745 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=20 CPU1_USAGE=0 
+12:06:07.721708 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.721903 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:07.722042 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.752753 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:07.752807 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:07.752996 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:07.753176 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.853698 [INFO](line:19954) init succ 
+12:06:07.853990 [INFO]HandleReadSyncState, sync state = DISP
+12:06:07.854236 [INFO]oam start monitor gps timer
+12:06:07.854329 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:07.854527 [INFO]checkGpsStatus:731
+12:06:07.854591 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:07.854657 [INFO]updateGpsCoordinate:337
+12:06:07.854703 [INFO]handleGpsPositionUpdate:3717
+12:06:07.854865 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:07.855037 [INFO]checkCellNoTraffic:1487
+12:06:07.855094 [INFO](line:1496) trafficThreshold is 3600
+12:06:07.855135 [INFO](line:1501)add the cell no traffic time (120)
+12:06:07.855277 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.855543 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:07.856734 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:07.856924 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:07.857061 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:08.209613 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:08.210702 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:08.440258 [INFO]Received MibSetAttributesReq: FAP.0: TR069_SPV_IN_PROGRESS=0 
+12:06:08.441157 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:08.443918 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:08.445003 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:08.905758 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:06:08.905833 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:06:08.906025 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:06:08.906214 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.525164 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.534899 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:09.535106 [INFO]Received MibGetAttributesReq: [FAP.0: TR069_SW_VERSION_STRING LONG_SERIAL_NUMBER MAX_TX_POWER LTE_RFTX_OP_STATE LTE_S1CON_MODE LTE_MOCN_PLMN_PRIMARY LTE_S1SIG_LINK_PORT LTE_MME_IP_PLMN_LIST LTE_MME_PLMN_STATUS LTE_X_RADISYS_CA_ENABLE MME_STATUS GPS_ANT_STATUS REM_STATUS HMS_CONNECTED_STATE SAS_ENABLE_MODE SAS_OPERATION_STATUS SUPPORTED_EXACT_POWER_RANGE SAS_STATUS SAS_STATUS2 IPSEC_ENABLE MME_IP_INTERFACE MODULE_TYPE LTE_GET_IMSI_SWITCH LTE_LBO_SWITCH LTE_LBO_TRANSFER_MODE SFP_STATUS LTE_HALOB_ENABLE_STATE LTE_LICENSE_HALOB_CENTRALIZED_MODE_AVAILABLE LTE_LICENSE_HALOB_SINGLE_MODE_AVAILABLE LTE_LICENSE_CA_AVAILABLE LTE_LICENSE_DC_AVAILABLE TOGGLE_SWITCH LTE_MME_POOL_ENABLE LTE_POOL_MME_LIST1 LTE_POOL_MME_LIST2 LTE_POOL_IPSEC1_ADDRESS LTE_POOL_IPSEC2_ADDRESS LTE_MMELIST_TUNNEL_MAP LTE_MMEPOOL1_STATUS LTE_MMEPOOL2_STATUS TFCS_MANAGER_CONFIG_PRIMSRC WAN_CONFIG1_CONNECT_TYPE UPTIME_STATUS ETH1_STATUS_SPEED ETH1_STATUS_LINK_STATUS TFCS_SYNC_MGR_STATE TUNNEL_CONFIG1_TUNNELENABLE TUNNEL_CONFIG1_LINK_STATUS TUNNEL_CONFIG2_TUNNELENABLE TUNNEL_CONFIG2_LINK_STATUS LTE_MME_SHARED_ENABLE LTE_SIMPLE_LBT_ENABLE LTE_ENB_TYPE ][FAP.0.COMMISSIONING.0: UNIT_MAC_ADDRESS ]
+12:06:09.535315 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:09.535565 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.609220 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.617995 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:09.618128 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_TAC LTE_EXIST_PLMNID_LIST LTE_CELL_IDENTITY LTE_UL_PRB_RSSI_REPORT_ENABLE LTE_ENB_TYPE LTE_FREQ_BAND_INDICATOR LTE_DL_BANDWIDTH LTE_PHY_CELLID_LIST LTE_EARFCNDL_LIST LTE_EARFCNUL_LIST LTE_CELL_POWER_SET_ENABLE LTE_CELL_POWER_MODIFY LTE_TDD_SUBFRAME_ASSIGNMENT LTE_TDD_SPECIAL_SUB_FRAME_PATTERNS LTE_X_RADISYS_NUM_OF_CELLS LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_UE_SPEED_STATISTICS LTE_TOT_UL_TPT LTE_TOT_DL_TPT LTE_RF_CARRIER_COMMON_ADMIN_STATE ]
+12:06:09.618331 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:09.618550 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.639661 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:09.639731 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:09.639912 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.712108 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.722924 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:09.723057 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.1: LTE_EXIST_PLMNID_LIST LTE_CELL_IDENTITY LTE_FREQ_BAND_INDICATOR LTE_DL_BANDWIDTH LTE_PHY_CELLID_LIST LTE_EARFCNDL_LIST LTE_EARFCNUL_LIST LTE_CELL_POWER_SET_ENABLE LTE_CELL_POWER_MODIFY LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_UE_SPEED_STATISTICS LTE_TOT_UL_TPT LTE_TOT_DL_TPT LTE_RF_CARRIER_COMMON_ADMIN_STATE ]
+12:06:09.723165 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:09.723378 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.812164 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.813896 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:09.813971 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:09.814158 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.854777 [INFO](line:19954) init succ 
+12:06:09.855108 [INFO]HandleReadSyncState, sync state = DISP
+12:06:09.855358 [INFO]oam start monitor gps timer
+12:06:09.855449 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:09.855668 [INFO]checkGpsStatus:731
+12:06:09.855733 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:09.855780 [INFO]updateGpsCoordinate:337
+12:06:09.855826 [INFO]handleGpsPositionUpdate:3717
+12:06:09.855986 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:09.856154 [INFO]checkCellNoTraffic:1487
+12:06:09.856208 [INFO](line:1496) trafficThreshold is 3600
+12:06:09.856250 [INFO](line:1501)add the cell no traffic time (150)
+12:06:09.856393 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.856666 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:09.857843 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.858035 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:09.858173 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.888373 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.890687 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:09.890765 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:09.890957 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.960927 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:09.962772 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:09.962879 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:09.963067 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.033107 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.034830 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:10.034955 [INFO]GetMibAttributes: SIMPLE_LBT_STATUS.0: Getting all attributes
+12:06:10.035029 [INFO]GetMibAttributes: SIMPLE_LBT_STATUS.1: Getting all attributes
+12:06:10.035092 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:10.035278 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.105729 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.107580 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_INSTANCES_REQ||||RX
+12:06:10.107695 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_INSTANCES_CNF||||TX
+12:06:10.107884 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.306724 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.315918 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:10.316033 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_HOME_NODEB_NAME ]
+12:06:10.316100 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:10.316291 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.380926 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.390239 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:10.390354 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.1: LTE_HOME_NODEB_NAME ]
+12:06:10.390422 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:10.390640 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.551074 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.569051 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:10.569187 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_TOTCHART_DL_PRB LTE_TOTCHART_UL_PRB LTE_TOTCHART_DL_TPT LTE_TOTCHART_UL_TPT LTE_TOT_UL_TPT LTE_TOT_DL_TPT ]
+12:06:10.569276 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:10.569484 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.737131 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:10.752438 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:10.752568 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.1: LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_TOTCHART_DL_PRB LTE_TOTCHART_UL_PRB LTE_TOTCHART_DL_TPT LTE_TOTCHART_UL_TPT LTE_TOT_UL_TPT LTE_TOT_DL_TPT ]
+12:06:10.752685 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:10.752891 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:11.648535 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:11.648587 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:11.648794 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:11.728102 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:11.729429 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:11.730022 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:11.740239 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:11.740457 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:11.740596 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:11.852170 [INFO](line:19954) init succ 
+12:06:11.852495 [INFO]HandleReadSyncState, sync state = DISP
+12:06:11.852770 [INFO]oam start monitor gps timer
+12:06:11.852861 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:11.853726 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=314
+12:06:11.853901 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:11.857143 [INFO]affectedSubscriptionIds subscriber=45/QC_ADAPTER, subscriptionId=0
+12:06:11.857835 [INFO]checkGpsStatus:731
+12:06:11.857945 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:11.857990 [INFO]updateGpsCoordinate:337
+12:06:11.858037 [INFO]handleGpsPositionUpdate:3717
+12:06:11.858198 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:11.858401 [INFO]checkCellNoTraffic:1487
+12:06:11.858456 [INFO](line:1496) trafficThreshold is 3600
+12:06:11.858499 [INFO](line:1501)add the cell no traffic time (180)
+12:06:11.858663 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:11.858927 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:11.859085 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:11.859324 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:11.860528 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:11.860741 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:11.860880 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:12.471953 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 7m 42s" 
+12:06:12.473155 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:12.482377 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:12.670656 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[10:1324:48:0:0:0:0:0:0:0:0];" LTE_TOT_DL_TPT=10 
+12:06:12.671848 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:12.672111 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[21:58:56:0:0:0:0:0:0:0:0];" LTE_TOT_UL_TPT=21 
+12:06:12.673210 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:12.729237 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=15 CPU1_USAGE=0 
+12:06:12.730719 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:12.731270 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:12.741384 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:12.742653 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:12.742819 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:12.753158 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:12.753230 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:12.753418 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:12.753628 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.070046 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=1 LTE_TOTCHART_UL_PRB="[1:4:11:0:0:0:0:0:0:0:0];" 
+12:06:13.072682 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=460
+12:06:13.073152 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.073440 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:5:3:0:0:0:0:0:0:0:0];" 
+12:06:13.074287 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=460
+12:06:13.074712 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.074944 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,56,2,0,25,16,0" 
+12:06:13.075842 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.076073 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,56,2,0,25,16,0" 
+12:06:13.076979 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.077318 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:27:12:0:11:20:0:-17:0.0:4.4:14.3:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:13.080899 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:13.084782 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:13.096048 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.097453 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:27:12:0:11:20:0:-17:0.0:4.4:14.3:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:13.104015 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.104245 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:13.106038 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.106270 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:13.108116 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.108353 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:13.110105 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.110379 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:13.111505 [INFO]UpdateLedCellStatus:16627, rftxOpState:1, isCaEnable:0, numOfCells:1
+12:06:13.122642 [INFO]cmd ok:  echo timer >/sys/class/leds/active/trigger && echo 1000 >/sys/class/leds/active/delay_on && echo 1000 >/sys/class/leds/active/delay_off && echo 0 >/sys/class/leds/run/brightness 
+12:06:13.122854 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.123156 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:13.123331 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.297818 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:13.298915 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.531996 [INFO]Received MibSetAttributesReq: FAP.0: TR069_SPV_IN_PROGRESS=0 
+12:06:13.532853 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.640352 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:13.640403 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:13.640565 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.851304 [INFO](line:19954) init succ 
+12:06:13.851652 [INFO]HandleReadSyncState, sync state = DISP
+12:06:13.851904 [INFO]oam start monitor gps timer
+12:06:13.851997 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:13.852190 [INFO]checkGpsStatus:731
+12:06:13.852256 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:13.852303 [INFO]updateGpsCoordinate:337
+12:06:13.852349 [INFO]handleGpsPositionUpdate:3717
+12:06:13.852518 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:13.852711 [INFO]checkCellNoTraffic:1487
+12:06:13.852766 [INFO](line:1496) trafficThreshold is 3600
+12:06:13.852808 [INFO](line:1501)add the cell no traffic time (210)
+12:06:13.852951 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.853212 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:13.854378 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.854570 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:13.854727 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:13.887529 [INFO][SAS] not enable 0
+12:06:14.035605 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:14.036697 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:15.038064 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:15.150236 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:06:15.643216 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:15.643276 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:15.643448 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:15.854076 [INFO](line:19954) init succ 
+12:06:15.854405 [INFO]HandleReadSyncState, sync state = DISP
+12:06:15.854681 [INFO]oam start monitor gps timer
+12:06:15.854773 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:15.854966 [INFO]checkGpsStatus:731
+12:06:15.855031 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:15.855077 [INFO]updateGpsCoordinate:337
+12:06:15.855122 [INFO]handleGpsPositionUpdate:3717
+12:06:15.855288 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:15.855458 [INFO]checkCellNoTraffic:1487
+12:06:15.855514 [INFO](line:1496) trafficThreshold is 3600
+12:06:15.855558 [INFO](line:1501)add the cell no traffic time (240)
+12:06:15.855720 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:15.855985 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:15.857152 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:15.857339 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:15.857477 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:16.722382 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:16.723216 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:16.723416 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:16.723556 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:17.646088 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:17.646141 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:17.646318 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:17.723488 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=21 CPU1_USAGE=0 
+12:06:17.724928 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:17.725478 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:17.735266 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:17.735482 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:17.736649 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:17.756976 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:17.757043 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:17.757231 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:17.757408 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:17.857911 [INFO](line:19954) init succ 
+12:06:17.858210 [INFO]HandleReadSyncState, sync state = DISP
+12:06:17.858480 [INFO]oam start monitor gps timer
+12:06:17.858575 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:17.858796 [INFO]checkGpsStatus:731
+12:06:17.858860 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:17.858906 [INFO]updateGpsCoordinate:337
+12:06:17.858953 [INFO]handleGpsPositionUpdate:3717
+12:06:17.859118 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:17.859286 [INFO]checkCellNoTraffic:1487
+12:06:17.859344 [INFO](line:1496) trafficThreshold is 3600
+12:06:17.859385 [INFO](line:1501)add the cell no traffic time (270)
+12:06:17.859526 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:17.859826 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:17.860996 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:17.861187 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:17.861328 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:18.670644 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[3:10:1324:48:0:0:0:0:0:0:0];" LTE_TOT_DL_TPT=3 
+12:06:18.671853 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:18.672107 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[3:21:58:56:0:0:0:0:0:0:0];" LTE_TOT_UL_TPT=3 
+12:06:18.673224 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:18.903744 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:06:18.903819 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:06:18.904009 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:06:18.904189 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.070383 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:1:4:11:0:0:0:0:0:0:0];" 
+12:06:19.071306 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=460
+12:06:19.073425 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.073698 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:5:3:0:0:0:0:0:0:0];" 
+12:06:19.074881 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.075117 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,18,0,0,2,18,0" 
+12:06:19.076018 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.076245 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,18,0,0,2,18,0" 
+12:06:19.077144 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.077508 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:28:12:0:13:17:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:19.081094 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:19.085176 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:19.097403 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.097775 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:28:12:0:13:17:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:19.105819 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.106057 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:19.107823 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.108061 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:19.109070 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.109295 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:19.112437 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.112719 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:19.112895 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.648968 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:19.649022 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:19.649195 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.849946 [INFO](line:19954) init succ 
+12:06:19.850272 [INFO]HandleReadSyncState, sync state = DISP
+12:06:19.850525 [INFO]oam start monitor gps timer
+12:06:19.850639 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:19.850835 [INFO]checkGpsStatus:731
+12:06:19.850902 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:19.850948 [INFO]updateGpsCoordinate:337
+12:06:19.850994 [INFO]handleGpsPositionUpdate:3717
+12:06:19.851161 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:19.851331 [INFO]checkCellNoTraffic:1487
+12:06:19.851387 [INFO](line:1496) trafficThreshold is 3600
+12:06:19.851428 [INFO](line:1501)add the cell no traffic time (300)
+12:06:19.851572 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.851854 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:19.853029 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:19.853228 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:19.853366 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:20.854727 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:21.651822 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:21.651875 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:21.652045 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:21.723684 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:21.724483 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:21.724714 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:21.724851 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:21.855388 [INFO](line:19954) init succ 
+12:06:21.855687 [INFO]HandleReadSyncState, sync state = DISP
+12:06:21.855927 [INFO]oam start monitor gps timer
+12:06:21.856021 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:21.856891 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=314
+12:06:21.857060 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:21.867818 [INFO]affectedSubscriptionIds subscriber=45/QC_ADAPTER, subscriptionId=0
+12:06:21.868654 [INFO]checkGpsStatus:731
+12:06:21.868766 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:21.868811 [INFO]updateGpsCoordinate:337
+12:06:21.868858 [INFO]handleGpsPositionUpdate:3717
+12:06:21.869023 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:21.869178 [INFO]checkCellNoTraffic:1487
+12:06:21.869232 [INFO](line:1496) trafficThreshold is 3600
+12:06:21.869272 [INFO](line:1501)add the cell no traffic time (330)
+12:06:21.870434 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:21.870706 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:21.870868 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:21.871111 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:21.874303 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:21.874518 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:21.874660 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:22.471158 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 7m 52s" 
+12:06:22.472341 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:22.481910 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:22.724809 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=16 CPU1_USAGE=0 
+12:06:22.726205 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:22.727790 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:22.739658 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:22.739947 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:22.740095 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:22.750395 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:22.750467 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:22.750679 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:22.750869 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:23.302704 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:23.303924 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:23.535896 [INFO]Received MibSetAttributesReq: FAP.0: TR069_SPV_IN_PROGRESS=0 
+12:06:23.536740 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:23.539431 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:23.540468 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:23.651117 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:23.651168 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:23.651319 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:23.852036 [INFO](line:19954) init succ 
+12:06:23.852366 [INFO]HandleReadSyncState, sync state = DISP
+12:06:23.852636 [INFO]oam start monitor gps timer
+12:06:23.852737 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:23.852932 [INFO]checkGpsStatus:731
+12:06:23.852997 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:23.853043 [INFO]updateGpsCoordinate:337
+12:06:23.853090 [INFO]handleGpsPositionUpdate:3717
+12:06:23.853251 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:23.853437 [INFO]checkCellNoTraffic:1487
+12:06:23.853494 [INFO](line:1496) trafficThreshold is 3600
+12:06:23.853536 [INFO](line:1501)add the cell no traffic time (360)
+12:06:23.853679 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:23.853940 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:23.855104 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:23.855292 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:23.855450 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:24.670637 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[3:3:10:1324:48:0:0:0:0:0:0];" LTE_TOT_DL_TPT=3 
+12:06:24.671841 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:24.672095 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[3:3:21:58:56:0:0:0:0:0:0];" LTE_TOT_UL_TPT=3 
+12:06:24.673212 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.070236 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:1:4:11:0:0:0:0:0:0];" 
+12:06:25.071561 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.073513 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:5:3:0:0:0:0:0:0];" 
+12:06:25.074699 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.074934 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,17,0,0,18,0,0" 
+12:06:25.075830 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.076057 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,17,0,0,18,0,0" 
+12:06:25.076950 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.077285 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:27:14:0:13:24:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:25.080912 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:25.084861 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:25.097211 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.098527 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.01:0.01:0:0:27:14:0:13:24:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:25.105044 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.105274 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:25.107066 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.107297 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:25.109037 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.109257 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:25.110988 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.150415 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:06:25.653999 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:25.654052 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:25.654225 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.854850 [INFO](line:19954) init succ 
+12:06:25.855181 [INFO]HandleReadSyncState, sync state = DISP
+12:06:25.855450 [INFO]oam start monitor gps timer
+12:06:25.855545 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:25.855739 [INFO]checkGpsStatus:731
+12:06:25.855804 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:25.855849 [INFO]updateGpsCoordinate:337
+12:06:25.855895 [INFO]handleGpsPositionUpdate:3717
+12:06:25.856057 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:25.856225 [INFO]checkCellNoTraffic:1487
+12:06:25.856281 [INFO](line:1496) trafficThreshold is 3600
+12:06:25.856322 [INFO](line:1501)add the cell no traffic time (390)
+12:06:25.856483 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.856745 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:25.857910 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:25.858096 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:25.858272 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.248911 [INFO]Timer 7 Expired! (EnbIpAddrTimer)
+12:06:26.248964 [INFO]Stopping Timer 7 (EnbIpAddrTimer)
+12:06:26.249149 [INFO]Starting Timer 7 (EnbIpAddrTimer) expires in 30000 ms
+12:06:26.249722 [INFO]FindChildObject(MULTI_CFG.0) - failed to find.
+12:06:26.249800 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.0
+12:06:26.249859 [INFO]FindChildObject(MULTI_CFG.0) - failed to find.
+12:06:26.249925 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.0
+12:06:26.249996 [INFO]FindChildObject(MULTI_CFG.1) - failed to find.
+12:06:26.250062 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.1
+12:06:26.250119 [INFO]FindChildObject(MULTI_CFG.1) - failed to find.
+12:06:26.250186 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.1
+12:06:26.250255 [INFO]FindChildObject(MULTI_CFG.2) - failed to find.
+12:06:26.250321 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.2
+12:06:26.250378 [INFO]FindChildObject(MULTI_CFG.2) - failed to find.
+12:06:26.250444 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.2
+12:06:26.250493 [INFO]SetEnbIpv4Addr:29862 ipsec_enable=0,ipAddress=172.24.0.111
+12:06:26.250566 [INFO]FindChildObject(MOCN_CFG.0) - failed to find.
+12:06:26.250644 [INFO]FindChildObject(MOCN_CFG.1) - failed to find.
+12:06:26.250704 [INFO]FindChildObject(MOCN_CFG.2) - failed to find.
+12:06:26.250762 [INFO]FindChildObject(MOCN_CFG.3) - failed to find.
+12:06:26.250820 [INFO]FindChildObject(MOCN_CFG.4) - failed to find.
+12:06:26.250878 [INFO]FindChildObject(MOCN_CFG.5) - failed to find.
+12:06:26.250936 [INFO]FindChildObject(MOCN_CFG.6) - failed to find.
+12:06:26.250993 [INFO]FindChildObject(MOCN_CFG.7) - failed to find.
+12:06:26.251051 [INFO]FindChildObject(MOCN_CFG.8) - failed to find.
+12:06:26.251109 [INFO]FindChildObject(MOCN_CFG.9) - failed to find.
+12:06:26.251168 [INFO]FindChildObject(MOCN_CFG.10) - failed to find.
+12:06:26.251225 [INFO]FindChildObject(MOCN_CFG.11) - failed to find.
+12:06:26.251283 [INFO]FindChildObject(MOCN_CFG.12) - failed to find.
+12:06:26.251341 [INFO]FindChildObject(MOCN_CFG.13) - failed to find.
+12:06:26.251398 [INFO]FindChildObject(MOCN_CFG.14) - failed to find.
+12:06:26.251456 [INFO]FindChildObject(MOCN_CFG.15) - failed to find.
+12:06:26.251742 [INFO]GetValue:28578 find wan1_interface= "eth1"
+12:06:26.401007 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.401311 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.402136 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.402362 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.403131 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.403353 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.404116 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.404333 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.405092 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.405317 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.406084 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.406304 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.407080 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.407299 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.408060 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.408338 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.409108 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.409330 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.410121 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.410346 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.411118 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.411338 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:26.412100 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.412287 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.412421 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.412595 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.412746 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.412917 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.413047 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.413217 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.413347 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.413519 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.413674 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.413848 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.413979 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.414150 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.414280 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.414449 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.414579 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.414770 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.414901 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.415070 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.415200 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.415369 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.415499 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.722649 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:26.723458 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:26.723691 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:26.723829 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:27.656861 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:27.656915 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:27.657087 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:27.723706 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=10 CPU1_USAGE=0 
+12:06:27.725142 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:27.725801 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:27.736253 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:27.736473 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:27.737632 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:27.757950 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:27.758016 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:27.758206 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:27.758410 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:27.848908 [INFO](line:19954) init succ 
+12:06:27.849215 [INFO]HandleReadSyncState, sync state = DISP
+12:06:27.849498 [INFO]oam start monitor gps timer
+12:06:27.849593 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:27.849805 [INFO]checkGpsStatus:731
+12:06:27.849871 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:27.849917 [INFO]updateGpsCoordinate:337
+12:06:27.849963 [INFO]handleGpsPositionUpdate:3717
+12:06:27.850128 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:27.850305 [INFO]checkCellNoTraffic:1487
+12:06:27.850364 [INFO](line:1496) trafficThreshold is 3600
+12:06:27.850405 [INFO](line:1501)add the cell no traffic time (420)
+12:06:27.850565 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:27.850831 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:27.852025 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:27.852211 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:27.852347 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:28.853709 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:28.887768 [INFO][SAS] not enable 0
+12:06:28.904036 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:06:28.904086 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:06:28.904274 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:06:28.904451 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:29.659725 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:29.659779 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:29.659955 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:29.850673 [INFO](line:19954) init succ 
+12:06:29.850996 [INFO]HandleReadSyncState, sync state = DISP
+12:06:29.851247 [INFO]oam start monitor gps timer
+12:06:29.851338 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:29.851555 [INFO]checkGpsStatus:731
+12:06:29.851620 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:29.851665 [INFO]updateGpsCoordinate:337
+12:06:29.851710 [INFO]handleGpsPositionUpdate:3717
+12:06:29.851876 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:29.852047 [INFO]checkCellNoTraffic:1487
+12:06:29.852102 [INFO](line:1496) trafficThreshold is 3600
+12:06:29.852143 [INFO](line:1501)add the cell no traffic time (450)
+12:06:29.852284 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:29.852568 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:29.853724 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:29.853914 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:29.854051 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:30.670707 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[3:3:3:10:1324:48:0:0:0:0:0];" LTE_TOT_DL_TPT=3 
+12:06:30.671934 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:30.672185 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[3:3:3:21:58:56:0:0:0:0:0];" LTE_TOT_UL_TPT=3 
+12:06:30.673312 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.070218 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:1:4:11:0:0:0:0:0];" 
+12:06:31.073118 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.073390 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:5:3:0:0:0:0:0];" 
+12:06:31.074555 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.074807 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,18,0,0,16,3,0" 
+12:06:31.075708 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.075936 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,18,0,0,16,3,0" 
+12:06:31.076828 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.077165 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:26:14:0:13:22:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:31.080832 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:31.084979 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:31.097203 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.097578 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:26:14:0:13:22:0:-17:0.0:0.0:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:31.105894 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.106129 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:31.107929 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.108157 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:31.110115 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.110344 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:31.112092 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.662526 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:31.662578 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:31.663267 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.723237 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:31.724076 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.724273 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:31.724411 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.854978 [INFO](line:19954) init succ 
+12:06:31.855251 [INFO]HandleReadSyncState, sync state = DISP
+12:06:31.855514 [INFO]oam start monitor gps timer
+12:06:31.855610 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:31.856497 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=314
+12:06:31.856661 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:31.868024 [INFO]affectedSubscriptionIds subscriber=45/QC_ADAPTER, subscriptionId=0
+12:06:31.868826 [INFO]checkGpsStatus:731
+12:06:31.868923 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:31.868970 [INFO]updateGpsCoordinate:337
+12:06:31.869018 [INFO]handleGpsPositionUpdate:3717
+12:06:31.869180 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:31.869356 [INFO]checkCellNoTraffic:1487
+12:06:31.869426 [INFO](line:1496) trafficThreshold is 3600
+12:06:31.869469 [INFO](line:1501)add the cell no traffic time (480)
+12:06:31.869635 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.869911 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:31.870064 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.870306 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:31.873116 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:31.873310 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:31.874853 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:32.471968 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 8m 2s" 
+12:06:32.473179 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:32.482344 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:32.724620 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=8 CPU1_USAGE=0 
+12:06:32.727031 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:32.728842 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:32.740773 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:32.741021 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:32.741160 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:32.751501 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:32.751572 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:32.751757 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:32.751945 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:33.320488 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:33.321744 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:33.554282 [INFO]Received MibSetAttributesReq: FAP.0: TR069_SPV_IN_PROGRESS=0 
+12:06:33.555120 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:33.558287 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:33.559315 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:33.661306 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:33.661360 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:33.661520 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:33.852238 [INFO](line:19954) init succ 
+12:06:33.852586 [INFO]HandleReadSyncState, sync state = DISP
+12:06:33.852836 [INFO]oam start monitor gps timer
+12:06:33.852928 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:33.853120 [INFO]checkGpsStatus:731
+12:06:33.853184 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:33.853229 [INFO]updateGpsCoordinate:337
+12:06:33.853275 [INFO]handleGpsPositionUpdate:3717
+12:06:33.853439 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:33.853607 [INFO]checkCellNoTraffic:1487
+12:06:33.853663 [INFO](line:1496) trafficThreshold is 3600
+12:06:33.853704 [INFO](line:1501)add the cell no traffic time (510)
+12:06:33.853867 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:33.854131 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:33.855301 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:33.855509 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:33.855647 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:34.857001 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:35.150628 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:06:35.663853 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:35.663906 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:35.664082 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:35.854704 [INFO](line:19954) init succ 
+12:06:35.855027 [INFO]HandleReadSyncState, sync state = DISP
+12:06:35.855277 [INFO]oam start monitor gps timer
+12:06:35.855370 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:35.855585 [INFO]checkGpsStatus:731
+12:06:35.855650 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:35.855695 [INFO]updateGpsCoordinate:337
+12:06:35.855742 [INFO]handleGpsPositionUpdate:3717
+12:06:35.855904 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:35.856078 [INFO]checkCellNoTraffic:1487
+12:06:35.856133 [INFO](line:1496) trafficThreshold is 3600
+12:06:35.856175 [INFO](line:1501)add the cell no traffic time (540)
+12:06:35.856316 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:35.856577 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:35.857741 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:35.857947 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:35.858083 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:36.670448 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[3:3:3:3:10:1324:48:0:0:0:0];" LTE_TOT_DL_TPT=3 
+12:06:36.671658 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:36.671906 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[3:3:3:3:21:58:56:0:0:0:0];" LTE_TOT_UL_TPT=3 
+12:06:36.673025 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:36.724119 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:36.724942 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:36.725141 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:36.725277 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.070199 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:0:1:4:11:0:0:0:0];" 
+12:06:37.073078 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.073378 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:0:5:3:0:0:0:0];" 
+12:06:37.074508 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.074763 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,16,0,0,11,6,0" 
+12:06:37.075650 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.075876 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,16,0,0,11,6,0" 
+12:06:37.076760 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.077099 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:26:13:0:13:21:0:-17:0.0:5.6:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:37.080693 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:37.084583 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:37.097204 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.098628 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:26:13:0:13:21:0:-17:0.0:5.6:0.0:0.0:0.0:62];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:37.105101 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.105337 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:37.107120 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.107351 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:37.108860 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.109089 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:37.110812 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.666994 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:37.667046 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:37.667224 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.725198 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=17 CPU1_USAGE=0 
+12:06:37.726650 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:37.727204 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:37.737552 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.737768 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:37.737912 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.758259 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:37.758325 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:37.758544 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:37.758723 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.849202 [INFO](line:19954) init succ 
+12:06:37.849535 [INFO]HandleReadSyncState, sync state = DISP
+12:06:37.849783 [INFO]oam start monitor gps timer
+12:06:37.849876 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:37.850069 [INFO]checkGpsStatus:731
+12:06:37.850132 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:37.850177 [INFO]updateGpsCoordinate:337
+12:06:37.850223 [INFO]handleGpsPositionUpdate:3717
+12:06:37.850392 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:37.850559 [INFO]checkCellNoTraffic:1487
+12:06:37.850633 [INFO](line:1496) trafficThreshold is 3600
+12:06:37.850676 [INFO](line:1501)add the cell no traffic time (570)
+12:06:37.850817 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.851077 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:37.852343 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:37.852553 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:37.852692 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:38.854037 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:38.904361 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:06:38.904411 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:06:38.904598 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:06:38.904767 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:39.669085 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:39.669137 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:39.669313 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:39.850032 [INFO](line:19954) init succ 
+12:06:39.850355 [INFO]HandleReadSyncState, sync state = DISP
+12:06:39.850627 [INFO]oam start monitor gps timer
+12:06:39.850720 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:39.850917 [INFO]checkGpsStatus:731
+12:06:39.850983 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:39.851028 [INFO]updateGpsCoordinate:337
+12:06:39.851074 [INFO]handleGpsPositionUpdate:3717
+12:06:39.851238 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:39.851408 [INFO]checkCellNoTraffic:1487
+12:06:39.851462 [INFO](line:1496) trafficThreshold is 3600
+12:06:39.851504 [INFO](line:1501)add the cell no traffic time (600)
+12:06:39.851667 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:39.851932 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:39.853103 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:39.853290 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:39.853532 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:40.564351 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:40.574462 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:40.574670 [INFO]Received MibGetAttributesReq: [FAP.0: TR069_SW_VERSION_STRING LONG_SERIAL_NUMBER MAX_TX_POWER LTE_RFTX_OP_STATE LTE_S1CON_MODE LTE_MOCN_PLMN_PRIMARY LTE_S1SIG_LINK_PORT LTE_MME_IP_PLMN_LIST LTE_MME_PLMN_STATUS LTE_X_RADISYS_CA_ENABLE MME_STATUS GPS_ANT_STATUS REM_STATUS HMS_CONNECTED_STATE SAS_ENABLE_MODE SAS_OPERATION_STATUS SUPPORTED_EXACT_POWER_RANGE SAS_STATUS SAS_STATUS2 IPSEC_ENABLE MME_IP_INTERFACE MODULE_TYPE LTE_GET_IMSI_SWITCH LTE_LBO_SWITCH LTE_LBO_TRANSFER_MODE SFP_STATUS LTE_HALOB_ENABLE_STATE LTE_LICENSE_HALOB_CENTRALIZED_MODE_AVAILABLE LTE_LICENSE_HALOB_SINGLE_MODE_AVAILABLE LTE_LICENSE_CA_AVAILABLE LTE_LICENSE_DC_AVAILABLE TOGGLE_SWITCH LTE_MME_POOL_ENABLE LTE_POOL_MME_LIST1 LTE_POOL_MME_LIST2 LTE_POOL_IPSEC1_ADDRESS LTE_POOL_IPSEC2_ADDRESS LTE_MMELIST_TUNNEL_MAP LTE_MMEPOOL1_STATUS LTE_MMEPOOL2_STATUS TFCS_MANAGER_CONFIG_PRIMSRC WAN_CONFIG1_CONNECT_TYPE UPTIME_STATUS ETH1_STATUS_SPEED ETH1_STATUS_LINK_STATUS TFCS_SYNC_MGR_STATE TUNNEL_CONFIG1_TUNNELENABLE TUNNEL_CONFIG1_LINK_STATUS TUNNEL_CONFIG2_TUNNELENABLE TUNNEL_CONFIG2_LINK_STATUS LTE_MME_SHARED_ENABLE LTE_SIMPLE_LBT_ENABLE LTE_ENB_TYPE ][FAP.0.COMMISSIONING.0: UNIT_MAC_ADDRESS ]
+12:06:40.574875 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:40.575123 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:40.647337 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:40.657344 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:40.657510 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_TAC LTE_EXIST_PLMNID_LIST LTE_CELL_IDENTITY LTE_UL_PRB_RSSI_REPORT_ENABLE LTE_ENB_TYPE LTE_FREQ_BAND_INDICATOR LTE_DL_BANDWIDTH LTE_PHY_CELLID_LIST LTE_EARFCNDL_LIST LTE_EARFCNUL_LIST LTE_CELL_POWER_SET_ENABLE LTE_CELL_POWER_MODIFY LTE_TDD_SUBFRAME_ASSIGNMENT LTE_TDD_SPECIAL_SUB_FRAME_PATTERNS LTE_X_RADISYS_NUM_OF_CELLS LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_UE_SPEED_STATISTICS LTE_TOT_UL_TPT LTE_TOT_DL_TPT LTE_RF_CARRIER_COMMON_ADMIN_STATE ]
+12:06:40.657635 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:40.657856 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:40.788517 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:40.806882 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:40.807024 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.1: LTE_EXIST_PLMNID_LIST LTE_CELL_IDENTITY LTE_FREQ_BAND_INDICATOR LTE_DL_BANDWIDTH LTE_PHY_CELLID_LIST LTE_EARFCNDL_LIST LTE_EARFCNUL_LIST LTE_CELL_POWER_SET_ENABLE LTE_CELL_POWER_MODIFY LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_UE_SPEED_STATISTICS LTE_TOT_UL_TPT LTE_TOT_DL_TPT LTE_RF_CARRIER_COMMON_ADMIN_STATE ]
+12:06:40.807139 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:40.807352 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:40.957113 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:40.959938 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:40.960017 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:40.960211 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.043445 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.045165 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:41.045241 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:41.045425 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.114450 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.116163 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:41.116269 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:41.116456 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.186458 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.188193 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_OBJECT_REQ||||RX
+12:06:41.188375 [INFO]GetMibAttributes: SIMPLE_LBT_STATUS.0: Getting all attributes
+12:06:41.188455 [INFO]GetMibAttributes: SIMPLE_LBT_STATUS.1: Getting all attributes
+12:06:41.188518 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_OBJECT_CNF||||TX
+12:06:41.188737 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.259369 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.261115 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_INSTANCES_REQ||||RX
+12:06:41.261231 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_INSTANCES_CNF||||TX
+12:06:41.261422 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.458157 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.467203 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:41.467318 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_HOME_NODEB_NAME ]
+12:06:41.467388 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:41.467582 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.532929 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.562092 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:41.562221 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.1: LTE_HOME_NODEB_NAME ]
+12:06:41.562294 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:41.562518 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.674286 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:41.674339 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:41.674536 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.700262 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.712744 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:41.712871 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_TOTCHART_DL_PRB LTE_TOTCHART_UL_PRB LTE_TOTCHART_DL_TPT LTE_TOTCHART_UL_TPT LTE_TOT_UL_TPT LTE_TOT_DL_TPT ]
+12:06:41.712965 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:41.713170 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.721725 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:41.722590 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.722792 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:41.722932 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.806930 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.816433 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:06:41.816556 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.1: LTE_UL_PRB_USAGE LTE_DL_PRB_USAGE LTE_TOTCHART_DL_PRB LTE_TOTCHART_UL_PRB LTE_TOTCHART_DL_TPT LTE_TOTCHART_UL_TPT LTE_TOT_UL_TPT LTE_TOT_DL_TPT ]
+12:06:41.816669 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:06:41.816874 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.857362 [INFO](line:19954) init succ 
+12:06:41.857700 [INFO]HandleReadSyncState, sync state = DISP
+12:06:41.857952 [INFO]oam start monitor gps timer
+12:06:41.858047 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:41.858261 [INFO]checkGpsStatus:731
+12:06:41.858326 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:41.858371 [INFO]updateGpsCoordinate:337
+12:06:41.858417 [INFO]handleGpsPositionUpdate:3717
+12:06:41.858580 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:41.858778 [INFO]checkCellNoTraffic:1487
+12:06:41.858834 [INFO](line:1496) trafficThreshold is 3600
+12:06:41.858875 [INFO](line:1501)add the cell no traffic time (630)
+12:06:41.859017 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.859275 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:41.860467 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:41.860676 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:41.860814 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:42.469807 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 8m 12s" 
+12:06:42.471011 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:42.478205 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:42.670462 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[2:3:3:3:3:10:1324:48:0:0:0];" LTE_TOT_DL_TPT=2 
+12:06:42.671666 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:42.671924 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[0:3:3:3:3:21:58:56:0:0:0];" LTE_TOT_UL_TPT=0 
+12:06:42.673025 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:42.722822 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=24 CPU1_USAGE=0 
+12:06:42.724251 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:42.724798 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:42.734575 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:42.734790 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:42.735568 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:42.765901 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:42.765967 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:42.766155 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:42.766337 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:42.835891 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:42.836953 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.067548 [INFO]Received MibSetAttributesReq: FAP.0: TR069_SPV_IN_PROGRESS=0 
+12:06:43.068435 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.070198 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:0:0:1:4:11:0:0:0];" 
+12:06:43.073080 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.073356 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:0:0:5:3:0:0:0];" 
+12:06:43.074534 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.074790 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,1,0,0,0,10,0" 
+12:06:43.075685 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.075913 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,1,0,0,0,10,0" 
+12:06:43.076814 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.077155 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:25:11:0:13:15:0:-17:0.0:33.3:nan:0.0:0.0:63];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:43.081169 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:43.081595 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:43.084708 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.085063 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:25:11:0:13:15:0:-17:0.0:33.3:nan:0.0:0.0:63];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:43.088696 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.088931 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:43.089736 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.089967 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:43.090790 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.091013 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:43.091743 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.598494 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:43.599599 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.670067 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:43.670118 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:43.670286 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.850983 [INFO](line:19954) init succ 
+12:06:43.851306 [INFO]HandleReadSyncState, sync state = DISP
+12:06:43.851561 [INFO]oam start monitor gps timer
+12:06:43.851673 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:43.851869 [INFO]checkGpsStatus:731
+12:06:43.851934 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:43.851980 [INFO]updateGpsCoordinate:337
+12:06:43.852026 [INFO]handleGpsPositionUpdate:3717
+12:06:43.852188 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:43.852358 [INFO]checkCellNoTraffic:1487
+12:06:43.852413 [INFO](line:1496) trafficThreshold is 3600
+12:06:43.852454 [INFO](line:1501)add the cell no traffic time (660)
+12:06:43.852614 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.852877 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:43.854038 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.854227 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:43.854364 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:43.887991 [INFO][SAS] not enable 0
+12:06:44.855719 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:45.150884 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:06:45.672913 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:45.672966 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:45.673142 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:45.853765 [INFO](line:19954) init succ 
+12:06:45.854085 [INFO]HandleReadSyncState, sync state = DISP
+12:06:45.854336 [INFO]oam start monitor gps timer
+12:06:45.854426 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:45.854643 [INFO]checkGpsStatus:731
+12:06:45.854709 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:45.854754 [INFO]updateGpsCoordinate:337
+12:06:45.854799 [INFO]handleGpsPositionUpdate:3717
+12:06:45.854961 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:45.855132 [INFO]checkCellNoTraffic:1487
+12:06:45.855187 [INFO](line:1496) trafficThreshold is 3600
+12:06:45.855228 [INFO](line:1501)add the cell no traffic time (690)
+12:06:45.855369 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:45.855652 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:45.856813 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:45.857003 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:45.857138 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:46.723974 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:46.724809 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:46.725011 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:46.725147 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:47.675711 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:47.675764 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:47.675941 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:47.725025 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=18 CPU1_USAGE=0 
+12:06:47.726451 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:47.727026 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:47.737274 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:47.737492 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:47.738335 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:47.758692 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:47.758759 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:47.758952 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:47.759129 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:47.849626 [INFO](line:19954) init succ 
+12:06:47.849934 [INFO]HandleReadSyncState, sync state = DISP
+12:06:47.850180 [INFO]oam start monitor gps timer
+12:06:47.850272 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:47.850471 [INFO]checkGpsStatus:731
+12:06:47.850536 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:47.850581 [INFO]updateGpsCoordinate:337
+12:06:47.850647 [INFO]handleGpsPositionUpdate:3717
+12:06:47.850807 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:47.850977 [INFO]checkCellNoTraffic:1487
+12:06:47.851033 [INFO](line:1496) trafficThreshold is 3600
+12:06:47.851075 [INFO](line:1501)add the cell no traffic time (720)
+12:06:47.851216 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:47.851479 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:47.852662 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:47.852850 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:47.852988 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:48.670645 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[0:2:3:3:3:3:10:1324:48:0:0];" LTE_TOT_DL_TPT=0 
+12:06:48.671858 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:48.672105 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[0:0:3:3:3:3:21:58:56:0:0];" LTE_TOT_UL_TPT=0 
+12:06:48.673228 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:48.903736 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:06:48.903808 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:06:48.904008 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:06:48.904193 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.070202 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:0:0:0:1:4:11:0:0];" 
+12:06:49.073085 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.073359 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:0:0:0:5:3:0:0];" 
+12:06:49.074500 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.074756 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,0,0,0,0,0,0" 
+12:06:49.075653 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.075884 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,0,0,0,0,0,0" 
+12:06:49.076777 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.077119 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:0:10:0:0:0:0:0:0.0:0.0:0.0:0.0:0.0:0];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:49.080728 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:49.084817 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:49.097201 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.097577 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:0:10:0:0:0:0:0:0.0:0.0:0.0:0.0:0.0:0];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:49.104843 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.105077 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:49.106866 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.107096 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:49.109952 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.110180 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:49.110915 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.679043 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:49.679095 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:49.679273 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.849986 [INFO](line:19954) init succ 
+12:06:49.850301 [INFO]HandleReadSyncState, sync state = DISP
+12:06:49.850559 [INFO]oam start monitor gps timer
+12:06:49.850672 [INFO]HandleReadGpsCounts, gps counts = 15
+12:06:49.850868 [INFO]checkGpsStatus:731
+12:06:49.850933 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:49.850981 [INFO]updateGpsCoordinate:337
+12:06:49.851026 [INFO]handleGpsPositionUpdate:3717
+12:06:49.851189 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:49.851358 [INFO]checkCellNoTraffic:1487
+12:06:49.851413 [INFO](line:1496) trafficThreshold is 3600
+12:06:49.851456 [INFO](line:1501)add the cell no traffic time (750)
+12:06:49.851598 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.851883 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:49.853062 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:49.853247 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:49.853385 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:50.854735 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:51.681893 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:51.681948 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:51.682132 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:51.723253 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:51.724087 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:51.724290 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:51.724428 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:51.854952 [INFO](line:19954) init succ 
+12:06:51.855220 [INFO]HandleReadSyncState, sync state = DISP
+12:06:51.855457 [INFO]oam start monitor gps timer
+12:06:51.855550 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:51.856423 [INFO]affectedSubscriptionIds subscriber=4/OAM, subscriptionId=314
+12:06:51.856589 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:51.866810 [INFO]affectedSubscriptionIds subscriber=45/QC_ADAPTER, subscriptionId=0
+12:06:51.868855 [INFO]checkGpsStatus:731
+12:06:51.868970 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:51.869018 [INFO]updateGpsCoordinate:337
+12:06:51.869066 [INFO]handleGpsPositionUpdate:3717
+12:06:51.869232 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:51.869392 [INFO]checkCellNoTraffic:1487
+12:06:51.869448 [INFO](line:1496) trafficThreshold is 3600
+12:06:51.869488 [INFO](line:1501)add the cell no traffic time (780)
+12:06:51.869751 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:51.870024 [PP]MIB|OAM||SERIALISATION_ID_MIB_SUBSCRIBE_ATTRIBUTES_IND||||RX
+12:06:51.870180 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:51.870427 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:51.874654 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:51.874852 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:51.874991 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:52.471718 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 8m 22s" 
+12:06:52.472913 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:52.482097 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:52.724425 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=20 CPU1_USAGE=0 
+12:06:52.725869 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:52.726421 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:52.736383 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:52.737626 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:52.737775 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:52.768120 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:52.768196 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:52.768450 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:52.768676 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:53.311736 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:53.312985 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:53.576696 [INFO]Received MibSetAttributesReq: FAP.0: TR069_SPV_IN_PROGRESS=0 
+12:06:53.577504 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:53.580552 [INFO]Received MibSetAttributesReq: FAP.0: OMC_CONCT_FLAG=1 INITIALSRV_CONFIGED_FLAG=0 
+12:06:53.581556 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:53.680056 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:53.680108 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:53.680285 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:53.850974 [INFO](line:19954) init succ 
+12:06:53.851296 [INFO]HandleReadSyncState, sync state = DISP
+12:06:53.851550 [INFO]oam start monitor gps timer
+12:06:53.851661 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:53.851857 [INFO]checkGpsStatus:731
+12:06:53.851921 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:53.851968 [INFO]updateGpsCoordinate:337
+12:06:53.852014 [INFO]handleGpsPositionUpdate:3717
+12:06:53.852176 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:53.852352 [INFO]checkCellNoTraffic:1487
+12:06:53.852408 [INFO](line:1496) trafficThreshold is 3600
+12:06:53.852451 [INFO](line:1501)add the cell no traffic time (810)
+12:06:53.852593 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:53.852879 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:53.854049 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:53.854239 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:53.854373 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:54.670636 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[0:0:2:3:3:3:3:10:1324:48:0];" LTE_TOT_DL_TPT=0 
+12:06:54.671853 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:54.672105 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[0:0:0:3:3:3:3:21:58:56:0];" LTE_TOT_UL_TPT=0 
+12:06:54.673235 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.070242 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:0:0:0:0:1:4:11:0];" 
+12:06:55.073149 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.073422 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:0:0:0:0:5:3:0];" 
+12:06:55.074575 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.074830 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,0,0,0,0,0,0" 
+12:06:55.075726 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.075954 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,0,0,0,0,0,0" 
+12:06:55.076849 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.077186 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:0:9:0:0:0:0:0:0.0:0.0:0.0:0.0:0.0:0];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:55.080797 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:06:55.085068 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:06:55.097228 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.098290 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.26:0.01:0:0:0:9:0:0:0:0:0:0.0:0.0:0.0:0.0:0.0:0];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:06:55.104794 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.105028 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:06:55.106815 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.107046 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:06:55.108890 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.109113 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:06:55.110855 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.151072 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:06:55.682909 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:55.682961 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:55.683138 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.853740 [INFO](line:19954) init succ 
+12:06:55.854061 [INFO]HandleReadSyncState, sync state = DISP
+12:06:55.854317 [INFO]oam start monitor gps timer
+12:06:55.854409 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:55.854602 [INFO]checkGpsStatus:731
+12:06:55.854685 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:55.854738 [INFO]updateGpsCoordinate:337
+12:06:55.854784 [INFO]handleGpsPositionUpdate:3717
+12:06:55.854946 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:55.855117 [INFO]checkCellNoTraffic:1487
+12:06:55.855172 [INFO](line:1496) trafficThreshold is 3600
+12:06:55.855214 [INFO](line:1501)add the cell no traffic time (840)
+12:06:55.855357 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.855638 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:55.856812 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:55.857001 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:55.857137 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.257776 [INFO]Timer 8 Expired! (MOCNIpAddrTimer)
+12:06:56.257830 [INFO]Timer 9 Expired! (UptimeGettingTimer)
+12:06:56.257873 [INFO]Timer 7 Expired! (EnbIpAddrTimer)
+12:06:56.257914 [INFO]Stopping Timer 8 (MOCNIpAddrTimer)
+12:06:56.258100 [INFO]Starting Timer 8 (MOCNIpAddrTimer) expires in 60000 ms
+12:06:56.258143 [INFO]Stopping Timer 9 (UptimeGettingTimer)
+12:06:56.258339 [INFO]Starting Timer 9 (UptimeGettingTimer) expires in 60000 ms
+12:06:56.258383 [INFO]Stopping Timer 7 (EnbIpAddrTimer)
+12:06:56.258568 [INFO]Starting Timer 7 (EnbIpAddrTimer) expires in 30000 ms
+12:06:56.258685 [INFO]FindChildObject(MOCN_CFG.0) - failed to find.
+12:06:56.258749 [INFO]FindChildObject(MOCN_CFG.1) - failed to find.
+12:06:56.258809 [INFO]FindChildObject(MOCN_CFG.2) - failed to find.
+12:06:56.258868 [INFO]FindChildObject(MOCN_CFG.3) - failed to find.
+12:06:56.258927 [INFO]FindChildObject(MOCN_CFG.4) - failed to find.
+12:06:56.258986 [INFO]FindChildObject(MOCN_CFG.5) - failed to find.
+12:06:56.259045 [INFO]FindChildObject(MOCN_CFG.6) - failed to find.
+12:06:56.259105 [INFO]FindChildObject(MOCN_CFG.7) - failed to find.
+12:06:56.259163 [INFO]FindChildObject(MOCN_CFG.8) - failed to find.
+12:06:56.259222 [INFO]FindChildObject(MOCN_CFG.9) - failed to find.
+12:06:56.259280 [INFO]FindChildObject(MOCN_CFG.10) - failed to find.
+12:06:56.259339 [INFO]FindChildObject(MOCN_CFG.11) - failed to find.
+12:06:56.259400 [INFO]FindChildObject(MOCN_CFG.12) - failed to find.
+12:06:56.259459 [INFO]FindChildObject(MOCN_CFG.13) - failed to find.
+12:06:56.259517 [INFO]FindChildObject(MOCN_CFG.14) - failed to find.
+12:06:56.259575 [INFO]FindChildObject(MOCN_CFG.15) - failed to find.
+12:06:56.259661 [INFO]GetUptime:21310
+12:06:56.282397 [INFO]Fuc: super_system fgets buf is 8
+
+12:06:56.283812 [INFO]FindChildObject(MULTI_CFG.0) - failed to find.
+12:06:56.283891 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.0
+12:06:56.283951 [INFO]FindChildObject(MULTI_CFG.0) - failed to find.
+12:06:56.284018 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.0
+12:06:56.284093 [INFO]FindChildObject(MULTI_CFG.1) - failed to find.
+12:06:56.284159 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.1
+12:06:56.284217 [INFO]FindChildObject(MULTI_CFG.1) - failed to find.
+12:06:56.284282 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.1
+12:06:56.284357 [INFO]FindChildObject(MULTI_CFG.2) - failed to find.
+12:06:56.284423 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.2
+12:06:56.284479 [INFO]FindChildObject(MULTI_CFG.2) - failed to find.
+12:06:56.284545 [!WARNING!]MO doesn't exist: FAP.0.MULTI_CFG.2
+12:06:56.284594 [INFO]SetEnbIpv4Addr:29862 ipsec_enable=0,ipAddress=172.24.0.111
+12:06:56.284691 [INFO]FindChildObject(MOCN_CFG.0) - failed to find.
+12:06:56.284753 [INFO]FindChildObject(MOCN_CFG.1) - failed to find.
+12:06:56.284812 [INFO]FindChildObject(MOCN_CFG.2) - failed to find.
+12:06:56.284870 [INFO]FindChildObject(MOCN_CFG.3) - failed to find.
+12:06:56.284928 [INFO]FindChildObject(MOCN_CFG.4) - failed to find.
+12:06:56.284985 [INFO]FindChildObject(MOCN_CFG.5) - failed to find.
+12:06:56.285043 [INFO]FindChildObject(MOCN_CFG.6) - failed to find.
+12:06:56.285101 [INFO]FindChildObject(MOCN_CFG.7) - failed to find.
+12:06:56.285159 [INFO]FindChildObject(MOCN_CFG.8) - failed to find.
+12:06:56.285217 [INFO]FindChildObject(MOCN_CFG.9) - failed to find.
+12:06:56.285283 [INFO]FindChildObject(MOCN_CFG.10) - failed to find.
+12:06:56.285342 [INFO]FindChildObject(MOCN_CFG.11) - failed to find.
+12:06:56.285400 [INFO]FindChildObject(MOCN_CFG.12) - failed to find.
+12:06:56.285457 [INFO]FindChildObject(MOCN_CFG.13) - failed to find.
+12:06:56.285515 [INFO]FindChildObject(MOCN_CFG.14) - failed to find.
+12:06:56.285573 [INFO]FindChildObject(MOCN_CFG.15) - failed to find.
+12:06:56.285848 [INFO]GetValue:28578 find wan1_interface= "eth1"
+12:06:56.435965 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.436258 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.437076 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.437301 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.438073 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.438479 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.439239 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.439501 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.440248 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.440490 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.441241 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.441486 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.442232 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.442474 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.443219 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.443458 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.444203 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.444421 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.445184 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.445424 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.446174 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.446393 [INFO]Received MibSetAttributesReq: FAP.0: WAN_DHCP_GATEWAY="172.24.0.1" 
+12:06:56.447159 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.447348 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.447484 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.447657 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.447789 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.447982 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.448113 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.448331 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.448491 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.448665 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.448796 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.448966 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.449097 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.449267 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.449398 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.449612 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.449746 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.449917 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.450048 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.450219 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.450350 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.450544 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.450679 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.722455 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:06:56.723289 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:56.723490 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:56.723660 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:57.685715 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:57.685769 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:57.685945 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:57.723519 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=18 CPU1_USAGE=0 
+12:06:57.724979 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:06:57.728654 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:06:57.736274 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:57.736487 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:57.737655 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:57.777995 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:06:57.778065 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:06:57.778303 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:06:57.778496 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:57.848994 [INFO](line:19954) init succ 
+12:06:57.849290 [INFO]HandleReadSyncState, sync state = DISP
+12:06:57.849545 [INFO]oam start monitor gps timer
+12:06:57.849656 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:57.849875 [INFO]checkGpsStatus:731
+12:06:57.849938 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:57.849984 [INFO]updateGpsCoordinate:337
+12:06:57.850030 [INFO]handleGpsPositionUpdate:3717
+12:06:57.850194 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:57.850376 [INFO]checkCellNoTraffic:1487
+12:06:57.850432 [INFO](line:1496) trafficThreshold is 3600
+12:06:57.850474 [INFO](line:1501)add the cell no traffic time (870)
+12:06:57.850627 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:57.850885 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:57.852065 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:57.852251 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:57.852391 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:58.853747 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:58.888227 [INFO][SAS] not enable 0
+12:06:58.904078 [INFO]Timer 14 Expired! (OAMWatchdogKick)
+12:06:58.904129 [INFO]Stopping Timer 14 (OAMWatchdogKick)
+12:06:58.904315 [INFO]Starting Timer 14 (OAMWatchdogKick) expires in 10000 ms
+12:06:58.904474 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:59.689055 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:06:59.689106 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:06:59.689285 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:59.849888 [INFO](line:19954) init succ 
+12:06:59.850206 [INFO]HandleReadSyncState, sync state = DISP
+12:06:59.850457 [INFO]oam start monitor gps timer
+12:06:59.850548 [INFO]HandleReadGpsCounts, gps counts = 16
+12:06:59.850762 [INFO]checkGpsStatus:731
+12:06:59.850828 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:06:59.850873 [INFO]updateGpsCoordinate:337
+12:06:59.850919 [INFO]handleGpsPositionUpdate:3717
+12:06:59.851080 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:06:59.851250 [INFO]checkCellNoTraffic:1487
+12:06:59.851307 [INFO](line:1496) trafficThreshold is 3600
+12:06:59.851348 [INFO](line:1501)add the cell no traffic time (900)
+12:06:59.851487 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:59.851773 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:06:59.852932 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:59.853117 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:06:59.853252 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:06:59.999684 [INFO]Timer 4 Expired! (FlowStatRepeatTimer)
+12:06:59.999747 [INFO]Stopping Timer 4 (FlowStatRepeatTimer)
+12:06:59.999939 [INFO]Starting Timer 4 (FlowStatRepeatTimer) expires in 60001 ms
+12:06:59.999989 [INFO]FlowStatManager FSM: event (1) in current state (2)
+12:07:00.000099 [PP]OAM|SM||SERIALISATION_ID_FLOW_STAT_READ_REQ||||TX
+12:07:00.000187 [INFO]Notify SM to Disable the file
+12:07:00.000230 [INFO]Stopping Timer 4 (FlowStatRepeatTimer)
+12:07:00.000270 [INFO]FlowStatManager FSM EXIT: end state (2)
+12:07:00.000421 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:00.670715 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_DL_TPT="[0:0:0:2:3:3:3:3:10:1324:48];" LTE_TOT_DL_TPT=0 
+12:07:00.671936 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:00.672183 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_TOTCHART_UL_TPT="[0:0:0:0:3:3:3:3:21:58:56];" LTE_TOT_UL_TPT=0 
+12:07:00.673307 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.070232 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UL_PRB_USAGE=0 LTE_TOTCHART_UL_PRB="[0:0:0:0:0:0:0:0:1:4:11];" 
+12:07:01.073135 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.073408 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_DL_PRB_USAGE=0 LTE_TOTCHART_DL_PRB="[0:0:0:0:0:0:0:0:0:5:3];" 
+12:07:01.074559 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.074812 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_MCS_VAL="0,0,0,0,0,0,0,0" 
+12:07:01.075708 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.075936 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.1: LTE_MCS_VAL="0,0,0,0,0,0,0,0" 
+12:07:01.076921 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.077258 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.00:0.00:0:0:0:8:0:0:0:0:0:0.0:0.0:0.0:0.0:0.0:0];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:07:01.080895 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=14
+12:07:01.085112 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=157
+12:07:01.097194 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.097568 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_SPEED_STATISTICS="62[Null:000000000000:0.00:0.00:0:0:0:8:0:0:0:0:0:0.0:0.0:0.0:0.0:0.0:0];" LTE_UECHART_DLTPT="NULL" LTE_UECHART_ULTPT="NULL" LTE_UECHART_ULSINR="NULL" LTE_UECHART_ULMCS="NULL" LTE_UECHART_DLPMCS="NULL" LTE_UECHART_DLSMCS="NULL" LTE_UECHART_ULBLR="NULL" LTE_UECHART_DLPBLR1="NULL" LTE_UECHART_DLPBLR2="NULL" LTE_UECHART_DLSBLR1="NULL" LTE_UECHART_DLSBLR2="NULL" 
+12:07:01.105871 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.106111 [INFO]Received MibSetAttributesReq: FAP.0: UE_DETAIL_INFO="NULL" 
+12:07:01.107908 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.108142 [INFO]Received MibSetAttributesReq: FAP.0.FAP_LTE.0: LTE_UE_COUNT=1 
+12:07:01.110078 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.110303 [INFO]Received MibSetAttributesReq: FAP.0: UE_COUNT=1 
+12:07:01.112050 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.691902 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:07:01.691956 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:07:01.692133 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.723159 [INFO]Received MibSetAttributesReq: FAP.0: MEM_USAGE=66 
+12:07:01.723977 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.724178 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:07:01.724317 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.854866 [INFO](line:19954) init succ 
+12:07:01.855132 [INFO]HandleReadSyncState, sync state = DISP
+12:07:01.855365 [INFO]oam start monitor gps timer
+12:07:01.855461 [INFO]HandleReadGpsCounts, gps counts = 16
+12:07:01.855677 [INFO]checkGpsStatus:731
+12:07:01.855743 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:07:01.855790 [INFO]updateGpsCoordinate:337
+12:07:01.855836 [INFO]handleGpsPositionUpdate:3717
+12:07:01.856004 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:07:01.856169 [INFO]checkCellNoTraffic:1487
+12:07:01.856224 [INFO](line:1496) trafficThreshold is 3600
+12:07:01.856265 [INFO](line:1501)add the cell no traffic time (930)
+12:07:01.856402 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.856679 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:07:01.857835 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:01.858020 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:07:01.858156 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:02.478574 [INFO]Received MibSetAttributesReq: FAP.0: STATION_RUN_TIME="0d 0h 8m 32s" 
+12:07:02.479849 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:07:02.493118 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:02.724269 [INFO]Received MibSetAttributesReq: FAP.0: CPU0_USAGE=21 CPU1_USAGE=0 
+12:07:02.726729 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=16
+12:07:02.727306 [INFO]affectedSubscriptionIds subscriber=12/TR069, subscriptionId=70
+12:07:02.741900 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:02.742148 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:07:02.742368 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:02.782700 [INFO]Timer 12 Expired! (AlarmCycleDetectionTimer)
+12:07:02.782760 [INFO]Stopping Timer 12 (AlarmCycleDetectionTimer)
+12:07:02.782950 [INFO]Starting Timer 12 (AlarmCycleDetectionTimer) expires in 5000 ms
+12:07:02.783135 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:02.865194 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:02.874770 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:07:02.874939 [INFO]Received MibGetAttributesReq: [FAP.0: TR069_SW_VERSION_STRING MANUFACTURER LONG_SERIAL_NUMBER DUPLEX_MODE LTE_X_RADISYS_CA_ENABLE SAS_ENABLE_MODE MODULE_TYPE EX_MODULE_TYPE LMT_PRIMARY_STATUS LTE_LBO_SWITCH LTE_HALOB_ENABLE_STATE LTE_LICENSE_HALOB_CENTRALIZED_MODE_AVAILABLE LTE_LICENSE_HALOB_SINGLE_MODE_AVAILABLE UPTIME_STATUS LANGUAGE_CHOOSE HALOD_MODE HIDE_SENSITIVE_ENABLE LTE_ENB_NAME_ENABLE ][FAP.0.COMMISSIONING.0: UNIT_MAC_ADDRESS ]
+12:07:02.875075 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:07:02.875287 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:02.948320 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:02.957355 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:07:02.957471 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_ENB_TYPE LTE_X_RADISYS_NUM_OF_CELLS ]
+12:07:02.957544 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:07:02.957759 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:03.058118 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:03.066785 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:07:03.066897 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.0: LTE_HOME_NODEB_NAME ]
+12:07:03.066968 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:07:03.067157 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:03.132395 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:03.141479 [PP]MIBCLI|MIB||SERIALISATION_ID_MIB_GET_ATTRIBUTES_REQ||||RX
+12:07:03.141593 [INFO]Received MibGetAttributesReq: [FAP.0.FAP_LTE.1: LTE_HOME_NODEB_NAME ]
+12:07:03.141681 [PP]MIB|MIBCLI||SERIALISATION_ID_MIB_GET_ATTRIBUTES_CNF||||TX
+12:07:03.141874 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:03.694300 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:07:03.694352 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:07:03.694528 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:03.855207 [INFO](line:19954) init succ 
+12:07:03.855513 [INFO]HandleReadSyncState, sync state = DISP
+12:07:03.855787 [INFO]oam start monitor gps timer
+12:07:03.855878 [INFO]HandleReadGpsCounts, gps counts = 16
+12:07:03.856072 [INFO]checkGpsStatus:731
+12:07:03.856134 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:07:03.856189 [INFO]updateGpsCoordinate:337
+12:07:03.856235 [INFO]handleGpsPositionUpdate:3717
+12:07:03.856397 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:07:03.856566 [INFO]checkCellNoTraffic:1487
+12:07:03.856640 [INFO](line:1496) trafficThreshold is 3600
+12:07:03.856682 [INFO](line:1501)add the cell no traffic time (960)
+12:07:03.856821 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:03.857085 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:07:03.858346 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:03.858537 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:07:03.858695 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:04.829928 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:04.839571 [INFO]Received MibSetAttributesReq: FAP.0: LTE_LOG_FLUSH_ENABLE=1 
+12:07:04.844592 [INFO]Flushing NV store /mnt/flash/etc/config/fap/config/mib-home-fap.nv
+12:07:04.965519 [INFO]affectedSubscriptionIds subscriber=41/SM, subscriptionId=114
+12:07:04.977296 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:04.977573 [INFO]Received MibSetAttributesReq: FAP.0: LTE_LOG_FLUSH_ENABLE=0 
+12:07:04.982162 [INFO]Flushing NV store /mnt/flash/etc/config/fap/config/mib-home-fap.nv
+12:07:05.063095 [INFO]affectedSubscriptionIds subscriber=41/SM, subscriptionId=114
+12:07:05.063525 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:05.063749 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:07:05.063890 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:05.151280 [PP]<out-of-bounds-low>|WATCHDOG||SERIALISATION_ID_WATCHDOG_KICK_REQ||||TX
+12:07:05.692026 [PP]QC_ADAPTER|OAM||SERIALISATION_ID_REQUEST_START_IND||||RX
+12:07:05.692079 [INFO]Entity QC_ADAPTER notified as ready - queueing
+12:07:05.692258 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:05.852862 [INFO](line:19954) init succ 
+12:07:05.853183 [INFO]HandleReadSyncState, sync state = DISP
+12:07:05.853431 [INFO]oam start monitor gps timer
+12:07:05.853520 [INFO]HandleReadGpsCounts, gps counts = 16
+12:07:05.853736 [INFO]checkGpsStatus:731
+12:07:05.853803 [INFO]syncMgrState=DISP, GpsAlarmFlag=0, reportGpsAlarmSwitch=1, initcomplete=0
+12:07:05.853849 [INFO]updateGpsCoordinate:337
+12:07:05.853895 [INFO]handleGpsPositionUpdate:3717
+12:07:05.854056 [INFO]handleGpsPositionUpdate| autoLatitude=35388500 autoLongitude=139425000 OamUserApplication.cpp:3903
+12:07:05.854226 [INFO]checkCellNoTraffic:1487
+12:07:05.854281 [INFO](line:1496) trafficThreshold is 3600
+12:07:05.854321 [INFO](line:1501)add the cell no traffic time (990)
+12:07:05.854465 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:05.854745 [INFO]Received MibSetAttributesReq: FAP.0: GPS_LATITUDE=35388500 GPS_LONGITUDE=139425000 GPS_ALTIDUTE="82" 
+12:07:05.855903 [INFO]FindChildObject(FAP_LTE.2) - failed to find.
+12:07:05.856091 [INFO]OamUserApplication: MibSetAttributesCnf received: 
+12:07:05.856227 [INFO]FindChildObject(FAP_LTE.2) - failed to find.

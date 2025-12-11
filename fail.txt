@@ -1,0 +1,17 @@
+UplinkNASTransport, Security mode complete, Registration request
+UEContextReleaseCommand [Cause: Nas=normal-release]
+DownlinkNASTransport
+InitialContextSetupRequest
+UECapabilityInfoIndication, UECapabilityInformation
+InitialContextSetupResponse
+UplinkNASTransport
+UplinkNASTransport, Registration complete
+DownlinkNASTransport
+UplinkNASTransport, UL NAS transport, PDU session establishment request
+DownlinkNASTransport
+PDU session establishment accept, PDUSessionResourceSetupRequestTransfer
+PDU session establishment accept, PDUSessionResourceSetupRequestTransfer
+InitialContextSetupRequest
+InitialContextSetupResponse
+PDUSessionResourceSetupResponseTransfer
+PDUSessionResourceSetupResponseTransfer

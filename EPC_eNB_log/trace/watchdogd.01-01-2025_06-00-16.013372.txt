@@ -1,0 +1,925 @@
+Log File Started At 2025-01-01T06:00:16
+15:00:16.015185 [INFO]Adding CLI handler for entity: WATCHDOG
+15:00:16.015493 [INFO]Created thread with stack size 64512 bytes
+15:00:16.015651 [INFO]Starting application messenger on port 6019, post-office at 127.0.0.1:6000
+15:00:16.015881 [INFO]UDP socket opened: Tx=127.0.0.1:6000, RxPort=6019
+15:00:16.015996 [!WARNING!]Failed to unlink in InitialiseTransmit, file path is /run/unixfd/udp_socket_unix_6019, errno=2, strerror=No such file or directory.
+15:00:16.016062 [INFO]Successful UDP unix Tx bind(/run/unixfd/udp_socket_unix_6019)
+15:00:16.016199 [INFO]  Local port: 6019
+15:00:16.016274 [INFO]Created thread with stack size 131072 bytes
+15:00:16.016306 [INFO]Waiting for UDP receive thread to be ready
+15:00:16.021375 [INFO]Timer engine thread started
+15:00:16.021532 [INFO]Running Udp Receive Thread: pid=2911
+15:00:16.021746 [INFO]No Ip Address found via ioctl
+15:00:16.021801 [INFO]Get fm1-mac2 ip :  
+
+15:00:16.021847 [INFO]Registering entity: WATCHDOG
+15:00:16.022125 [INFO]  Waiting for confirm: WATCHDOG
+15:00:16.023299 [INFO]  Entity registration confirm received: WATCHDOG
+15:00:16.023489 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:00:16.023604 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:16.023732 [INFO]Failed to open /dev/watchdog
+15:00:18.024090 [INFO]Timer 2 Expired! (CheckStk)
+15:00:18.024145 [INFO]Stopping Timer 2 (CheckStk)
+15:00:18.024243 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:20.024582 [INFO]Timer 2 Expired! (CheckStk)
+15:00:20.024633 [INFO]Stopping Timer 2 (CheckStk)
+15:00:20.024715 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:21.001348 [INFO]Received: SERIALISATION_ID_WATCHDOG_ADD_PID_REQ(id=18177), dataLength=9, Connectionless, OAM -> WATCHDOG
+15:00:21.001590 [INFO]Guardian added: ProcessGuardian { pid=2955, descriptor=oam, exe=/opt/qcom/bin/oam }
+15:00:22.025001 [INFO]Timer 2 Expired! (CheckStk)
+15:00:22.025044 [INFO]Stopping Timer 2 (CheckStk)
+15:00:22.025129 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+06:00:24.025415 [INFO]Timer 2 Expired! (CheckStk)
+06:00:24.025498 [INFO]Stopping Timer 2 (CheckStk)
+06:00:24.025591 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:26.025887 [INFO]Timer 2 Expired! (CheckStk)
+15:00:26.025989 [INFO]Stopping Timer 2 (CheckStk)
+15:00:26.026081 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:28.026388 [INFO]Timer 2 Expired! (CheckStk)
+15:00:28.026447 [INFO]Stopping Timer 2 (CheckStk)
+15:00:28.026540 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:30.026840 [INFO]Timer 2 Expired! (CheckStk)
+15:00:30.026900 [INFO]Stopping Timer 2 (CheckStk)
+15:00:30.026993 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:31.003448 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:00:32.027296 [INFO]Timer 2 Expired! (CheckStk)
+15:00:32.027355 [INFO]Stopping Timer 2 (CheckStk)
+15:00:32.027448 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:34.027741 [INFO]Timer 2 Expired! (CheckStk)
+15:00:34.027801 [INFO]Stopping Timer 2 (CheckStk)
+15:00:34.027897 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:34.971522 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:00:36.019039 [INFO]Timer 1 Expired! (Tick)
+15:00:36.019098 [INFO]Timer 2 Expired! (CheckStk)
+15:00:36.019144 [INFO]Stopping Timer 1 (Tick)
+15:00:36.019236 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:00:36.019282 [INFO]Stopping Timer 2 (CheckStk)
+15:00:36.019367 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:38.019719 [INFO]Timer 2 Expired! (CheckStk)
+15:00:38.019789 [INFO]Stopping Timer 2 (CheckStk)
+15:00:38.019883 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:40.020207 [INFO]Timer 2 Expired! (CheckStk)
+15:00:40.020283 [INFO]Stopping Timer 2 (CheckStk)
+15:00:40.020377 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:41.003775 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:00:41.191947 [INFO]Received: SERIALISATION_ID_WATCHDOG_ADD_PID_REQ(id=18177), dataLength=14, Connectionless, FTP -> WATCHDOG
+15:00:41.192080 [INFO]Guardian added: ProcessGuardian { pid=3605, descriptor=ftp-func, exe=/opt/qcom/bin/fileTransMgr }
+15:00:41.229353 [INFO]Received: SERIALISATION_ID_WATCHDOG_ADD_PID_REQ(id=18177), dataLength=11, Connectionless, TR069 -> WATCHDOG
+15:00:41.229476 [INFO]Guardian added: ProcessGuardian { pid=3606, descriptor=tr069, exe=/opt/qcom/bin/tr069-v2 }
+15:00:42.020691 [INFO]Timer 2 Expired! (CheckStk)
+15:00:42.020763 [INFO]Stopping Timer 2 (CheckStk)
+15:00:42.020860 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:44.021173 [INFO]Timer 2 Expired! (CheckStk)
+15:00:44.021251 [INFO]Stopping Timer 2 (CheckStk)
+15:00:44.021349 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:46.021666 [INFO]Timer 2 Expired! (CheckStk)
+15:00:46.021732 [INFO]Stopping Timer 2 (CheckStk)
+15:00:46.021829 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:48.022152 [INFO]Timer 2 Expired! (CheckStk)
+15:00:48.022226 [INFO]Stopping Timer 2 (CheckStk)
+15:00:48.022321 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:49.003826 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:00:49.238334 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:00:50.022633 [INFO]Timer 2 Expired! (CheckStk)
+15:00:50.022710 [INFO]Stopping Timer 2 (CheckStk)
+15:00:50.022805 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:52.023108 [INFO]Timer 2 Expired! (CheckStk)
+15:00:52.023186 [INFO]Stopping Timer 2 (CheckStk)
+15:00:52.023277 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:54.023587 [INFO]Timer 1 Expired! (Tick)
+15:00:54.023660 [INFO]Timer 2 Expired! (CheckStk)
+15:00:54.023704 [INFO]Stopping Timer 1 (Tick)
+15:00:54.023796 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:00:54.023840 [INFO]Stopping Timer 2 (CheckStk)
+15:00:54.023926 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:56.024307 [INFO]Timer 2 Expired! (CheckStk)
+15:00:56.024384 [INFO]Stopping Timer 2 (CheckStk)
+15:00:56.024478 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:58.024777 [INFO]Timer 2 Expired! (CheckStk)
+15:00:58.024835 [INFO]Stopping Timer 2 (CheckStk)
+15:00:58.024925 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:00:59.004311 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:00:59.238484 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:01:00.025229 [INFO]Timer 2 Expired! (CheckStk)
+15:01:00.025305 [INFO]Stopping Timer 2 (CheckStk)
+15:01:00.025398 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:02.025730 [INFO]Timer 2 Expired! (CheckStk)
+15:01:02.025807 [INFO]Stopping Timer 2 (CheckStk)
+15:01:02.025899 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:04.026201 [INFO]Timer 2 Expired! (CheckStk)
+15:01:04.026278 [INFO]Stopping Timer 2 (CheckStk)
+15:01:04.026373 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:06.026715 [INFO]Timer 2 Expired! (CheckStk)
+15:01:06.026804 [INFO]Stopping Timer 2 (CheckStk)
+15:01:06.026907 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:08.027234 [INFO]Timer 2 Expired! (CheckStk)
+15:01:08.027307 [INFO]Stopping Timer 2 (CheckStk)
+15:01:08.027402 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:09.004534 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:01:09.243923 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:01:10.027698 [INFO]Timer 2 Expired! (CheckStk)
+15:01:10.027769 [INFO]Stopping Timer 2 (CheckStk)
+15:01:10.027863 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:12.028161 [INFO]Timer 2 Expired! (CheckStk)
+15:01:12.028224 [INFO]Stopping Timer 2 (CheckStk)
+15:01:12.028319 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:13.718302 [INFO]Received: SERIALISATION_ID_WATCHDOG_ADD_PID_REQ(id=18177), dataLength=12, Connectionless, SM -> WATCHDOG
+15:01:13.718416 [INFO]Guardian added: ProcessGuardian { pid=4417, descriptor=enodeb, exe=/opt/qcom/bin/enodeb_tdd }
+15:01:14.018647 [INFO]Timer 1 Expired! (Tick)
+15:01:14.018712 [INFO]Stopping Timer 1 (Tick)
+15:01:14.018813 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:01:14.029114 [INFO]Timer 2 Expired! (CheckStk)
+15:01:14.029165 [INFO]Stopping Timer 2 (CheckStk)
+15:01:14.029256 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:16.029645 [INFO]Timer 2 Expired! (CheckStk)
+15:01:16.029706 [INFO]Stopping Timer 2 (CheckStk)
+15:01:16.029799 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:18.030128 [INFO]Timer 2 Expired! (CheckStk)
+15:01:18.030196 [INFO]Stopping Timer 2 (CheckStk)
+15:01:18.030291 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:18.718751 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:19.004723 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:01:19.244095 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:01:20.030648 [INFO]Timer 2 Expired! (CheckStk)
+15:01:20.030728 [INFO]Stopping Timer 2 (CheckStk)
+15:01:20.030821 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:22.031184 [INFO]Timer 2 Expired! (CheckStk)
+15:01:22.031258 [INFO]Stopping Timer 2 (CheckStk)
+15:01:22.031353 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:23.718938 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:24.031692 [INFO]Timer 2 Expired! (CheckStk)
+15:01:24.031758 [INFO]Stopping Timer 2 (CheckStk)
+15:01:24.031858 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:26.032207 [INFO]Timer 2 Expired! (CheckStk)
+15:01:26.032277 [INFO]Stopping Timer 2 (CheckStk)
+15:01:26.032399 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:28.032742 [INFO]Timer 2 Expired! (CheckStk)
+15:01:28.032799 [INFO]Stopping Timer 2 (CheckStk)
+15:01:28.032892 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:28.719242 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:29.004986 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:01:29.244172 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:01:30.033224 [INFO]Timer 2 Expired! (CheckStk)
+15:01:30.033281 [INFO]Stopping Timer 2 (CheckStk)
+15:01:30.033402 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:32.033911 [INFO]Timer 2 Expired! (CheckStk)
+15:01:32.033964 [INFO]Stopping Timer 2 (CheckStk)
+15:01:32.034057 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:33.719460 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:34.024393 [INFO]Timer 1 Expired! (Tick)
+15:01:34.024446 [INFO]Stopping Timer 1 (Tick)
+15:01:34.024538 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:01:34.034832 [INFO]Timer 2 Expired! (CheckStk)
+15:01:34.034884 [INFO]Stopping Timer 2 (CheckStk)
+15:01:34.034974 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:36.035306 [INFO]Timer 2 Expired! (CheckStk)
+15:01:36.035377 [INFO]Stopping Timer 2 (CheckStk)
+15:01:36.035470 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:38.035808 [INFO]Timer 2 Expired! (CheckStk)
+15:01:38.035864 [INFO]Stopping Timer 2 (CheckStk)
+15:01:38.035956 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:38.719691 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:39.005168 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:01:39.244287 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:01:40.036277 [INFO]Timer 2 Expired! (CheckStk)
+15:01:40.036333 [INFO]Stopping Timer 2 (CheckStk)
+15:01:40.036425 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:42.036763 [INFO]Timer 2 Expired! (CheckStk)
+15:01:42.036818 [INFO]Stopping Timer 2 (CheckStk)
+15:01:42.036912 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:43.719951 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:44.037236 [INFO]Timer 2 Expired! (CheckStk)
+15:01:44.037290 [INFO]Stopping Timer 2 (CheckStk)
+15:01:44.037380 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:46.037770 [INFO]Timer 2 Expired! (CheckStk)
+15:01:46.037837 [INFO]Stopping Timer 2 (CheckStk)
+15:01:46.037935 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:48.038282 [INFO]Timer 2 Expired! (CheckStk)
+15:01:48.038344 [INFO]Stopping Timer 2 (CheckStk)
+15:01:48.038437 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:48.720175 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:49.005352 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:01:49.244502 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:01:50.038805 [INFO]Timer 2 Expired! (CheckStk)
+15:01:50.038884 [INFO]Stopping Timer 2 (CheckStk)
+15:01:50.038976 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:52.039325 [INFO]Timer 2 Expired! (CheckStk)
+15:01:52.039398 [INFO]Stopping Timer 2 (CheckStk)
+15:01:52.039490 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:53.720484 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:54.019863 [INFO]Timer 1 Expired! (Tick)
+15:01:54.019941 [INFO]Stopping Timer 1 (Tick)
+15:01:54.020034 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:01:54.040374 [INFO]Timer 2 Expired! (CheckStk)
+15:01:54.040452 [INFO]Stopping Timer 2 (CheckStk)
+15:01:54.040543 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:56.040890 [INFO]Timer 2 Expired! (CheckStk)
+15:01:56.040951 [INFO]Stopping Timer 2 (CheckStk)
+15:01:56.041046 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:58.041392 [INFO]Timer 2 Expired! (CheckStk)
+15:01:58.041466 [INFO]Stopping Timer 2 (CheckStk)
+15:01:58.041580 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:01:58.720789 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:01:59.005660 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:01:59.244693 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:02:00.041906 [INFO]Timer 2 Expired! (CheckStk)
+15:02:00.041962 [INFO]Stopping Timer 2 (CheckStk)
+15:02:00.042054 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:02.042381 [INFO]Timer 2 Expired! (CheckStk)
+15:02:02.042445 [INFO]Stopping Timer 2 (CheckStk)
+15:02:02.042540 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:03.721023 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:04.042904 [INFO]Timer 2 Expired! (CheckStk)
+15:02:04.042978 [INFO]Stopping Timer 2 (CheckStk)
+15:02:04.043073 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:06.043425 [INFO]Timer 2 Expired! (CheckStk)
+15:02:06.043498 [INFO]Stopping Timer 2 (CheckStk)
+15:02:06.043612 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:08.043944 [INFO]Timer 2 Expired! (CheckStk)
+15:02:08.044003 [INFO]Stopping Timer 2 (CheckStk)
+15:02:08.044097 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:08.721267 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:09.005881 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:02:09.244862 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:02:10.044440 [INFO]Timer 2 Expired! (CheckStk)
+15:02:10.044513 [INFO]Stopping Timer 2 (CheckStk)
+15:02:10.044627 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:12.044971 [INFO]Timer 2 Expired! (CheckStk)
+15:02:12.045043 [INFO]Stopping Timer 2 (CheckStk)
+15:02:12.045135 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:13.721510 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:14.025463 [INFO]Timer 1 Expired! (Tick)
+15:02:14.025524 [INFO]Stopping Timer 1 (Tick)
+15:02:14.025653 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:02:14.045951 [INFO]Timer 2 Expired! (CheckStk)
+15:02:14.045999 [INFO]Stopping Timer 2 (CheckStk)
+15:02:14.046087 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:16.046419 [INFO]Timer 2 Expired! (CheckStk)
+15:02:16.046475 [INFO]Stopping Timer 2 (CheckStk)
+15:02:16.046585 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:18.046925 [INFO]Timer 2 Expired! (CheckStk)
+15:02:18.046999 [INFO]Stopping Timer 2 (CheckStk)
+15:02:18.047093 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:18.721756 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:19.006094 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:02:19.244959 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:02:20.047422 [INFO]Timer 2 Expired! (CheckStk)
+15:02:20.047484 [INFO]Stopping Timer 2 (CheckStk)
+15:02:20.047598 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:22.037995 [INFO]Timer 2 Expired! (CheckStk)
+15:02:22.038069 [INFO]Stopping Timer 2 (CheckStk)
+15:02:22.038165 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:23.722027 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:24.038503 [INFO]Timer 2 Expired! (CheckStk)
+15:02:24.038577 [INFO]Stopping Timer 2 (CheckStk)
+15:02:24.038672 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:26.039006 [INFO]Timer 2 Expired! (CheckStk)
+15:02:26.039066 [INFO]Stopping Timer 2 (CheckStk)
+15:02:26.039159 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:28.039501 [INFO]Timer 2 Expired! (CheckStk)
+15:02:28.039572 [INFO]Stopping Timer 2 (CheckStk)
+15:02:28.039666 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:28.722284 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:29.006382 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:02:29.245164 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:02:30.040009 [INFO]Timer 2 Expired! (CheckStk)
+15:02:30.040083 [INFO]Stopping Timer 2 (CheckStk)
+15:02:30.040177 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:32.040531 [INFO]Timer 2 Expired! (CheckStk)
+15:02:32.040594 [INFO]Stopping Timer 2 (CheckStk)
+15:02:32.040686 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:33.722542 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:34.021028 [INFO]Timer 1 Expired! (Tick)
+15:02:34.021101 [INFO]Stopping Timer 1 (Tick)
+15:02:34.021193 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:02:34.041502 [INFO]Timer 2 Expired! (CheckStk)
+15:02:34.041550 [INFO]Stopping Timer 2 (CheckStk)
+15:02:34.041637 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:36.041958 [INFO]Timer 2 Expired! (CheckStk)
+15:02:36.042029 [INFO]Stopping Timer 2 (CheckStk)
+15:02:36.042123 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:38.042449 [INFO]Timer 2 Expired! (CheckStk)
+15:02:38.042507 [INFO]Stopping Timer 2 (CheckStk)
+15:02:38.042619 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:38.722758 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:39.006595 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:02:39.245459 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:02:40.042973 [INFO]Timer 2 Expired! (CheckStk)
+15:02:40.043046 [INFO]Stopping Timer 2 (CheckStk)
+15:02:40.043139 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:42.043483 [INFO]Timer 2 Expired! (CheckStk)
+15:02:42.043577 [INFO]Stopping Timer 2 (CheckStk)
+15:02:42.043674 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:43.723010 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:44.043999 [INFO]Timer 2 Expired! (CheckStk)
+15:02:44.044058 [INFO]Stopping Timer 2 (CheckStk)
+15:02:44.044149 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:46.044491 [INFO]Timer 2 Expired! (CheckStk)
+15:02:46.044578 [INFO]Stopping Timer 2 (CheckStk)
+15:02:46.044672 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:48.045019 [INFO]Timer 2 Expired! (CheckStk)
+15:02:48.045092 [INFO]Stopping Timer 2 (CheckStk)
+15:02:48.045185 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:48.723234 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:49.006827 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:02:49.245418 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:02:50.045512 [INFO]Timer 2 Expired! (CheckStk)
+15:02:50.045591 [INFO]Stopping Timer 2 (CheckStk)
+15:02:50.045704 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:52.046051 [INFO]Timer 2 Expired! (CheckStk)
+15:02:52.046126 [INFO]Stopping Timer 2 (CheckStk)
+15:02:52.046219 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:53.723602 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:54.026573 [INFO]Timer 1 Expired! (Tick)
+15:02:54.026630 [INFO]Stopping Timer 1 (Tick)
+15:02:54.026721 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:02:54.047059 [INFO]Timer 2 Expired! (CheckStk)
+15:02:54.047140 [INFO]Stopping Timer 2 (CheckStk)
+15:02:54.047233 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:56.047589 [INFO]Timer 2 Expired! (CheckStk)
+15:02:56.047657 [INFO]Stopping Timer 2 (CheckStk)
+15:02:56.047791 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:58.048147 [INFO]Timer 2 Expired! (CheckStk)
+15:02:58.048220 [INFO]Stopping Timer 2 (CheckStk)
+15:02:58.048313 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:02:58.723760 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:02:59.007111 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:02:59.245542 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:03:00.048645 [INFO]Timer 2 Expired! (CheckStk)
+15:03:00.048702 [INFO]Stopping Timer 2 (CheckStk)
+15:03:00.048792 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:02.049127 [INFO]Timer 2 Expired! (CheckStk)
+15:03:02.049192 [INFO]Stopping Timer 2 (CheckStk)
+15:03:02.049286 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:03.724033 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:04.049645 [INFO]Timer 2 Expired! (CheckStk)
+15:03:04.049719 [INFO]Stopping Timer 2 (CheckStk)
+15:03:04.049814 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:06.050162 [INFO]Timer 2 Expired! (CheckStk)
+15:03:06.050238 [INFO]Stopping Timer 2 (CheckStk)
+15:03:06.050332 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:08.050670 [INFO]Timer 2 Expired! (CheckStk)
+15:03:08.050726 [INFO]Stopping Timer 2 (CheckStk)
+15:03:08.050828 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:08.724279 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:09.007328 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:03:09.245745 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:03:10.051172 [INFO]Timer 2 Expired! (CheckStk)
+15:03:10.051247 [INFO]Stopping Timer 2 (CheckStk)
+15:03:10.051342 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:12.051685 [INFO]Timer 2 Expired! (CheckStk)
+15:03:12.051757 [INFO]Stopping Timer 2 (CheckStk)
+15:03:12.051850 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:13.724520 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:14.022182 [INFO]Timer 1 Expired! (Tick)
+15:03:14.022244 [INFO]Stopping Timer 1 (Tick)
+15:03:14.022341 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:03:14.052635 [INFO]Timer 2 Expired! (CheckStk)
+15:03:14.052683 [INFO]Stopping Timer 2 (CheckStk)
+15:03:14.052771 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:16.053098 [INFO]Timer 2 Expired! (CheckStk)
+15:03:16.053169 [INFO]Stopping Timer 2 (CheckStk)
+15:03:16.053262 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:18.053630 [INFO]Timer 2 Expired! (CheckStk)
+15:03:18.053704 [INFO]Stopping Timer 2 (CheckStk)
+15:03:18.053798 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:18.724771 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:19.007549 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:03:19.245842 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:03:20.054131 [INFO]Timer 2 Expired! (CheckStk)
+15:03:20.054192 [INFO]Stopping Timer 2 (CheckStk)
+15:03:20.054283 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:22.054645 [INFO]Timer 2 Expired! (CheckStk)
+15:03:22.054720 [INFO]Stopping Timer 2 (CheckStk)
+15:03:22.054814 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:23.724996 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:24.055158 [INFO]Timer 2 Expired! (CheckStk)
+15:03:24.055232 [INFO]Stopping Timer 2 (CheckStk)
+15:03:24.055325 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:26.055701 [INFO]Timer 2 Expired! (CheckStk)
+15:03:26.055769 [INFO]Stopping Timer 2 (CheckStk)
+15:03:26.055864 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:28.056209 [INFO]Timer 2 Expired! (CheckStk)
+15:03:28.056284 [INFO]Stopping Timer 2 (CheckStk)
+15:03:28.056397 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:28.725226 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:29.007870 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:03:29.245967 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:03:30.056745 [INFO]Timer 2 Expired! (CheckStk)
+15:03:30.056821 [INFO]Stopping Timer 2 (CheckStk)
+15:03:30.056915 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:32.057245 [INFO]Timer 2 Expired! (CheckStk)
+15:03:32.057311 [INFO]Stopping Timer 2 (CheckStk)
+15:03:32.057402 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:33.725466 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:34.027793 [INFO]Timer 1 Expired! (Tick)
+15:03:34.027869 [INFO]Stopping Timer 1 (Tick)
+15:03:34.027963 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:03:34.048265 [INFO]Timer 2 Expired! (CheckStk)
+15:03:34.048312 [INFO]Stopping Timer 2 (CheckStk)
+15:03:34.048417 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:36.048750 [INFO]Timer 2 Expired! (CheckStk)
+15:03:36.048818 [INFO]Stopping Timer 2 (CheckStk)
+15:03:36.048913 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:38.049243 [INFO]Timer 2 Expired! (CheckStk)
+15:03:38.049302 [INFO]Stopping Timer 2 (CheckStk)
+15:03:38.049396 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:38.725714 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:39.008051 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:03:39.246095 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:03:40.049756 [INFO]Timer 2 Expired! (CheckStk)
+15:03:40.049828 [INFO]Stopping Timer 2 (CheckStk)
+15:03:40.049921 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:42.050266 [INFO]Timer 2 Expired! (CheckStk)
+15:03:42.050340 [INFO]Stopping Timer 2 (CheckStk)
+15:03:42.050432 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:43.725935 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:44.050776 [INFO]Timer 2 Expired! (CheckStk)
+15:03:44.050840 [INFO]Stopping Timer 2 (CheckStk)
+15:03:44.050932 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:46.051270 [INFO]Timer 2 Expired! (CheckStk)
+15:03:46.051338 [INFO]Stopping Timer 2 (CheckStk)
+15:03:46.051431 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:48.051787 [INFO]Timer 2 Expired! (CheckStk)
+15:03:48.051861 [INFO]Stopping Timer 2 (CheckStk)
+15:03:48.051957 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:48.726214 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:49.008262 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:03:49.246255 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:03:50.052295 [INFO]Timer 2 Expired! (CheckStk)
+15:03:50.052365 [INFO]Stopping Timer 2 (CheckStk)
+15:03:50.052458 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:52.052818 [INFO]Timer 2 Expired! (CheckStk)
+15:03:52.052892 [INFO]Stopping Timer 2 (CheckStk)
+15:03:52.052986 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:53.726440 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:54.033330 [INFO]Timer 1 Expired! (Tick)
+15:03:54.033414 [INFO]Stopping Timer 1 (Tick)
+15:03:54.033507 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:03:54.053820 [INFO]Timer 2 Expired! (CheckStk)
+15:03:54.053868 [INFO]Stopping Timer 2 (CheckStk)
+15:03:54.053958 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:56.054264 [INFO]Timer 2 Expired! (CheckStk)
+15:03:56.054318 [INFO]Stopping Timer 2 (CheckStk)
+15:03:56.054411 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:58.054780 [INFO]Timer 2 Expired! (CheckStk)
+15:03:58.054852 [INFO]Stopping Timer 2 (CheckStk)
+15:03:58.054950 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:03:58.726681 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:03:59.008549 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:03:59.246357 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:04:00.055278 [INFO]Timer 2 Expired! (CheckStk)
+15:04:00.055335 [INFO]Stopping Timer 2 (CheckStk)
+15:04:00.055426 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:02.055787 [INFO]Timer 2 Expired! (CheckStk)
+15:04:02.055850 [INFO]Stopping Timer 2 (CheckStk)
+15:04:02.055946 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:03.726936 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:04.056292 [INFO]Timer 2 Expired! (CheckStk)
+15:04:04.056367 [INFO]Stopping Timer 2 (CheckStk)
+15:04:04.056470 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:06.056806 [INFO]Timer 2 Expired! (CheckStk)
+15:04:06.056861 [INFO]Stopping Timer 2 (CheckStk)
+15:04:06.056957 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:08.057318 [INFO]Timer 2 Expired! (CheckStk)
+15:04:08.057398 [INFO]Stopping Timer 2 (CheckStk)
+15:04:08.057491 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:08.727186 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:09.008783 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:04:09.246492 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:04:10.057855 [INFO]Timer 2 Expired! (CheckStk)
+15:04:10.057931 [INFO]Stopping Timer 2 (CheckStk)
+15:04:10.058022 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:12.058381 [INFO]Timer 2 Expired! (CheckStk)
+15:04:12.058456 [INFO]Stopping Timer 2 (CheckStk)
+15:04:12.058550 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:13.727426 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:14.028900 [INFO]Timer 1 Expired! (Tick)
+15:04:14.028962 [INFO]Stopping Timer 1 (Tick)
+15:04:14.029054 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:04:14.059347 [INFO]Timer 2 Expired! (CheckStk)
+15:04:14.059395 [INFO]Stopping Timer 2 (CheckStk)
+15:04:14.059484 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:16.059825 [INFO]Timer 2 Expired! (CheckStk)
+15:04:16.059897 [INFO]Stopping Timer 2 (CheckStk)
+15:04:16.059990 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:18.060335 [INFO]Timer 2 Expired! (CheckStk)
+15:04:18.060410 [INFO]Stopping Timer 2 (CheckStk)
+15:04:18.060503 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:18.727678 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:19.008996 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:04:19.246630 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:04:20.060852 [INFO]Timer 2 Expired! (CheckStk)
+15:04:20.060914 [INFO]Stopping Timer 2 (CheckStk)
+15:04:20.061007 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:22.061367 [INFO]Timer 2 Expired! (CheckStk)
+15:04:22.061443 [INFO]Stopping Timer 2 (CheckStk)
+15:04:22.061537 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:23.727940 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:24.061877 [INFO]Timer 2 Expired! (CheckStk)
+15:04:24.061953 [INFO]Stopping Timer 2 (CheckStk)
+15:04:24.062045 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:26.062391 [INFO]Timer 2 Expired! (CheckStk)
+15:04:26.062458 [INFO]Stopping Timer 2 (CheckStk)
+15:04:26.062550 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:28.062892 [INFO]Timer 2 Expired! (CheckStk)
+15:04:28.062966 [INFO]Stopping Timer 2 (CheckStk)
+15:04:28.063060 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:28.728161 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:29.009282 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:04:29.246757 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:04:30.063433 [INFO]Timer 2 Expired! (CheckStk)
+15:04:30.063507 [INFO]Stopping Timer 2 (CheckStk)
+15:04:30.063598 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:32.063935 [INFO]Timer 2 Expired! (CheckStk)
+15:04:32.063998 [INFO]Stopping Timer 2 (CheckStk)
+15:04:32.064091 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:33.728390 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:34.034450 [INFO]Timer 1 Expired! (Tick)
+15:04:34.034525 [INFO]Stopping Timer 1 (Tick)
+15:04:34.034619 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:04:34.064919 [INFO]Timer 2 Expired! (CheckStk)
+15:04:34.064968 [INFO]Stopping Timer 2 (CheckStk)
+15:04:34.065055 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:36.065382 [INFO]Timer 2 Expired! (CheckStk)
+15:04:36.065453 [INFO]Stopping Timer 2 (CheckStk)
+15:04:36.065546 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:38.065941 [INFO]Timer 2 Expired! (CheckStk)
+15:04:38.066009 [INFO]Stopping Timer 2 (CheckStk)
+15:04:38.066102 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:38.728667 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:39.009529 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:04:39.246928 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:04:40.066482 [INFO]Timer 2 Expired! (CheckStk)
+15:04:40.066561 [INFO]Stopping Timer 2 (CheckStk)
+15:04:40.066654 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:42.066997 [INFO]Timer 2 Expired! (CheckStk)
+15:04:42.067073 [INFO]Stopping Timer 2 (CheckStk)
+15:04:42.067166 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:43.728929 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:44.067497 [INFO]Timer 2 Expired! (CheckStk)
+15:04:44.067579 [INFO]Stopping Timer 2 (CheckStk)
+15:04:44.067675 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:46.058075 [INFO]Timer 2 Expired! (CheckStk)
+15:04:46.058146 [INFO]Stopping Timer 2 (CheckStk)
+15:04:46.058239 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:48.058658 [INFO]Timer 2 Expired! (CheckStk)
+15:04:48.058733 [INFO]Stopping Timer 2 (CheckStk)
+15:04:48.058827 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:48.729149 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:49.009736 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:04:49.247020 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:04:50.059171 [INFO]Timer 2 Expired! (CheckStk)
+15:04:50.059232 [INFO]Stopping Timer 2 (CheckStk)
+15:04:50.059326 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:52.059670 [INFO]Timer 2 Expired! (CheckStk)
+15:04:52.059745 [INFO]Stopping Timer 2 (CheckStk)
+15:04:52.059839 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:53.729394 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:54.030181 [INFO]Timer 1 Expired! (Tick)
+15:04:54.030237 [INFO]Stopping Timer 1 (Tick)
+15:04:54.030328 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:04:54.060662 [INFO]Timer 2 Expired! (CheckStk)
+15:04:54.060720 [INFO]Stopping Timer 2 (CheckStk)
+15:04:54.060815 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:56.061167 [INFO]Timer 2 Expired! (CheckStk)
+15:04:56.061231 [INFO]Stopping Timer 2 (CheckStk)
+15:04:56.061323 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:58.061647 [INFO]Timer 2 Expired! (CheckStk)
+15:04:58.061720 [INFO]Stopping Timer 2 (CheckStk)
+15:04:58.061814 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:04:58.729654 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:04:59.010021 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:04:59.247224 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:05:00.062141 [INFO]Timer 2 Expired! (CheckStk)
+15:05:00.062197 [INFO]Stopping Timer 2 (CheckStk)
+15:05:00.062289 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:02.062629 [INFO]Timer 2 Expired! (CheckStk)
+15:05:02.062698 [INFO]Stopping Timer 2 (CheckStk)
+15:05:02.062793 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:03.729920 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:04.063131 [INFO]Timer 2 Expired! (CheckStk)
+15:05:04.063205 [INFO]Stopping Timer 2 (CheckStk)
+15:05:04.063298 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:06.063656 [INFO]Timer 2 Expired! (CheckStk)
+15:05:06.063724 [INFO]Stopping Timer 2 (CheckStk)
+15:05:06.063816 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:08.064145 [INFO]Timer 2 Expired! (CheckStk)
+15:05:08.064204 [INFO]Stopping Timer 2 (CheckStk)
+15:05:08.064297 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:08.730154 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:09.010401 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:05:09.247397 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:05:10.064632 [INFO]Timer 2 Expired! (CheckStk)
+15:05:10.064708 [INFO]Stopping Timer 2 (CheckStk)
+15:05:10.064801 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:12.065130 [INFO]Timer 2 Expired! (CheckStk)
+15:05:12.065204 [INFO]Stopping Timer 2 (CheckStk)
+15:05:12.065296 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:13.730425 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:14.035651 [INFO]Timer 1 Expired! (Tick)
+15:05:14.035711 [INFO]Stopping Timer 1 (Tick)
+15:05:14.035803 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:05:14.066094 [INFO]Timer 2 Expired! (CheckStk)
+15:05:14.066141 [INFO]Stopping Timer 2 (CheckStk)
+15:05:14.066227 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:16.066537 [INFO]Timer 2 Expired! (CheckStk)
+15:05:16.066611 [INFO]Stopping Timer 2 (CheckStk)
+15:05:16.066701 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:18.067022 [INFO]Timer 2 Expired! (CheckStk)
+15:05:18.067096 [INFO]Stopping Timer 2 (CheckStk)
+15:05:18.067191 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:18.730652 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:19.010458 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:05:19.247506 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:05:20.067521 [INFO]Timer 2 Expired! (CheckStk)
+15:05:20.067599 [INFO]Stopping Timer 2 (CheckStk)
+15:05:20.067691 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:22.058081 [INFO]Timer 2 Expired! (CheckStk)
+15:05:22.058156 [INFO]Stopping Timer 2 (CheckStk)
+15:05:22.058248 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:23.730869 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:24.058571 [INFO]Timer 2 Expired! (CheckStk)
+15:05:24.058642 [INFO]Stopping Timer 2 (CheckStk)
+15:05:24.058737 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:26.059065 [INFO]Timer 2 Expired! (CheckStk)
+15:05:26.059123 [INFO]Stopping Timer 2 (CheckStk)
+15:05:26.059215 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:28.059575 [INFO]Timer 2 Expired! (CheckStk)
+15:05:28.059647 [INFO]Stopping Timer 2 (CheckStk)
+15:05:28.059742 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:28.731091 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:29.010751 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:05:29.247661 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:05:30.060091 [INFO]Timer 2 Expired! (CheckStk)
+15:05:30.060166 [INFO]Stopping Timer 2 (CheckStk)
+15:05:30.060259 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:32.060616 [INFO]Timer 2 Expired! (CheckStk)
+15:05:32.060680 [INFO]Stopping Timer 2 (CheckStk)
+15:05:32.060792 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:33.731343 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:34.031156 [INFO]Timer 1 Expired! (Tick)
+15:05:34.031235 [INFO]Stopping Timer 1 (Tick)
+15:05:34.031327 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:05:34.061650 [INFO]Timer 2 Expired! (CheckStk)
+15:05:34.061719 [INFO]Stopping Timer 2 (CheckStk)
+15:05:34.061829 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:36.062172 [INFO]Timer 2 Expired! (CheckStk)
+15:05:36.062243 [INFO]Stopping Timer 2 (CheckStk)
+15:05:36.062336 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:38.062683 [INFO]Timer 2 Expired! (CheckStk)
+15:05:38.062742 [INFO]Stopping Timer 2 (CheckStk)
+15:05:38.062833 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:38.731591 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:39.010968 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:05:39.247891 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:05:40.063178 [INFO]Timer 2 Expired! (CheckStk)
+15:05:40.063252 [INFO]Stopping Timer 2 (CheckStk)
+15:05:40.063346 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:42.063692 [INFO]Timer 2 Expired! (CheckStk)
+15:05:42.063765 [INFO]Stopping Timer 2 (CheckStk)
+15:05:42.063858 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:43.731830 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:44.064213 [INFO]Timer 2 Expired! (CheckStk)
+15:05:44.064277 [INFO]Stopping Timer 2 (CheckStk)
+15:05:44.064369 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:46.064714 [INFO]Timer 2 Expired! (CheckStk)
+15:05:46.064784 [INFO]Stopping Timer 2 (CheckStk)
+15:05:46.064877 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:48.065222 [INFO]Timer 2 Expired! (CheckStk)
+15:05:48.065295 [INFO]Stopping Timer 2 (CheckStk)
+15:05:48.065387 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:48.732059 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:49.011181 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:05:49.247999 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:05:50.065741 [INFO]Timer 2 Expired! (CheckStk)
+15:05:50.065803 [INFO]Stopping Timer 2 (CheckStk)
+15:05:50.065895 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:52.066243 [INFO]Timer 2 Expired! (CheckStk)
+15:05:52.066317 [INFO]Stopping Timer 2 (CheckStk)
+15:05:52.066411 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:53.732309 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:54.036786 [INFO]Timer 1 Expired! (Tick)
+15:05:54.036860 [INFO]Stopping Timer 1 (Tick)
+15:05:54.036967 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:05:54.067311 [INFO]Timer 2 Expired! (CheckStk)
+15:05:54.067372 [INFO]Stopping Timer 2 (CheckStk)
+15:05:54.067462 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:56.067817 [INFO]Timer 2 Expired! (CheckStk)
+15:05:56.067884 [INFO]Stopping Timer 2 (CheckStk)
+15:05:56.067976 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:58.068320 [INFO]Timer 2 Expired! (CheckStk)
+15:05:58.068392 [INFO]Stopping Timer 2 (CheckStk)
+15:05:58.068489 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:05:58.732577 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:05:59.011460 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:05:59.248139 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:06:00.068833 [INFO]Timer 2 Expired! (CheckStk)
+15:06:00.068893 [INFO]Stopping Timer 2 (CheckStk)
+15:06:00.068984 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:02.069324 [INFO]Timer 2 Expired! (CheckStk)
+15:06:02.069390 [INFO]Stopping Timer 2 (CheckStk)
+15:06:02.069487 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:03.732842 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:04.069849 [INFO]Timer 2 Expired! (CheckStk)
+15:06:04.069921 [INFO]Stopping Timer 2 (CheckStk)
+15:06:04.070014 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:06.070362 [INFO]Timer 2 Expired! (CheckStk)
+15:06:06.070433 [INFO]Stopping Timer 2 (CheckStk)
+15:06:06.070526 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:08.070888 [INFO]Timer 2 Expired! (CheckStk)
+15:06:08.070946 [INFO]Stopping Timer 2 (CheckStk)
+15:06:08.071037 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:08.733073 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:09.011698 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:06:09.248261 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:06:10.071377 [INFO]Timer 2 Expired! (CheckStk)
+15:06:10.071447 [INFO]Stopping Timer 2 (CheckStk)
+15:06:10.071541 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:12.071909 [INFO]Timer 2 Expired! (CheckStk)
+15:06:12.071977 [INFO]Stopping Timer 2 (CheckStk)
+15:06:12.072072 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:13.733311 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:14.032407 [INFO]Timer 1 Expired! (Tick)
+15:06:14.032471 [INFO]Stopping Timer 1 (Tick)
+15:06:14.032581 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:06:14.072883 [INFO]Timer 2 Expired! (CheckStk)
+15:06:14.072933 [INFO]Stopping Timer 2 (CheckStk)
+15:06:14.073021 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:16.073343 [INFO]Timer 2 Expired! (CheckStk)
+15:06:16.073404 [INFO]Stopping Timer 2 (CheckStk)
+15:06:16.073498 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:18.073857 [INFO]Timer 2 Expired! (CheckStk)
+15:06:18.073924 [INFO]Stopping Timer 2 (CheckStk)
+15:06:18.074017 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:18.733556 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:19.011914 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:06:19.248391 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:06:20.074360 [INFO]Timer 2 Expired! (CheckStk)
+15:06:20.074425 [INFO]Stopping Timer 2 (CheckStk)
+15:06:20.074520 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:22.074883 [INFO]Timer 2 Expired! (CheckStk)
+15:06:22.074953 [INFO]Stopping Timer 2 (CheckStk)
+15:06:22.075046 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:23.733833 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:24.075417 [INFO]Timer 2 Expired! (CheckStk)
+15:06:24.075477 [INFO]Stopping Timer 2 (CheckStk)
+15:06:24.075569 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:26.075901 [INFO]Timer 2 Expired! (CheckStk)
+15:06:26.075969 [INFO]Stopping Timer 2 (CheckStk)
+15:06:26.076062 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:28.076413 [INFO]Timer 2 Expired! (CheckStk)
+15:06:28.076473 [INFO]Stopping Timer 2 (CheckStk)
+15:06:28.076567 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:28.734073 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:29.012141 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:06:29.248519 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:06:30.076899 [INFO]Timer 2 Expired! (CheckStk)
+15:06:30.076960 [INFO]Stopping Timer 2 (CheckStk)
+15:06:30.077052 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:32.077406 [INFO]Timer 2 Expired! (CheckStk)
+15:06:32.077474 [INFO]Stopping Timer 2 (CheckStk)
+15:06:32.077569 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:33.734309 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:34.027930 [INFO]Timer 1 Expired! (Tick)
+15:06:34.027989 [INFO]Stopping Timer 1 (Tick)
+15:06:34.028082 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:06:34.068395 [INFO]Timer 2 Expired! (CheckStk)
+15:06:34.068446 [INFO]Stopping Timer 2 (CheckStk)
+15:06:34.068535 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:36.068852 [INFO]Timer 2 Expired! (CheckStk)
+15:06:36.068913 [INFO]Stopping Timer 2 (CheckStk)
+15:06:36.069006 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:38.069366 [INFO]Timer 2 Expired! (CheckStk)
+15:06:38.069447 [INFO]Stopping Timer 2 (CheckStk)
+15:06:38.069540 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:38.734581 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:39.012367 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:06:39.248673 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:06:40.069892 [INFO]Timer 2 Expired! (CheckStk)
+15:06:40.069953 [INFO]Stopping Timer 2 (CheckStk)
+15:06:40.070044 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:42.070375 [INFO]Timer 2 Expired! (CheckStk)
+15:06:42.070436 [INFO]Stopping Timer 2 (CheckStk)
+15:06:42.070530 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:43.734836 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:44.070883 [INFO]Timer 2 Expired! (CheckStk)
+15:06:44.070947 [INFO]Stopping Timer 2 (CheckStk)
+15:06:44.071041 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:46.071384 [INFO]Timer 2 Expired! (CheckStk)
+15:06:46.071458 [INFO]Stopping Timer 2 (CheckStk)
+15:06:46.071552 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:48.071908 [INFO]Timer 2 Expired! (CheckStk)
+15:06:48.071969 [INFO]Stopping Timer 2 (CheckStk)
+15:06:48.072062 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:48.735088 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:49.012604 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:06:49.248849 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:06:50.072428 [INFO]Timer 2 Expired! (CheckStk)
+15:06:50.072509 [INFO]Stopping Timer 2 (CheckStk)
+15:06:50.072625 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:52.072965 [INFO]Timer 2 Expired! (CheckStk)
+15:06:52.073027 [INFO]Stopping Timer 2 (CheckStk)
+15:06:52.073122 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:53.735365 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:54.033456 [INFO]Timer 1 Expired! (Tick)
+15:06:54.033517 [INFO]Stopping Timer 1 (Tick)
+15:06:54.033630 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:06:54.073928 [INFO]Timer 2 Expired! (CheckStk)
+15:06:54.073978 [INFO]Stopping Timer 2 (CheckStk)
+15:06:54.074068 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:56.074375 [INFO]Timer 2 Expired! (CheckStk)
+15:06:56.074439 [INFO]Stopping Timer 2 (CheckStk)
+15:06:56.074534 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:58.074883 [INFO]Timer 2 Expired! (CheckStk)
+15:06:58.074945 [INFO]Stopping Timer 2 (CheckStk)
+15:06:58.075048 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:06:58.735638 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:06:59.012859 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:06:59.248951 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:07:00.075381 [INFO]Timer 2 Expired! (CheckStk)
+15:07:00.075444 [INFO]Stopping Timer 2 (CheckStk)
+15:07:00.075539 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:02.075944 [INFO]Timer 2 Expired! (CheckStk)
+15:07:02.076007 [INFO]Stopping Timer 2 (CheckStk)
+15:07:02.076099 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:03.735908 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:07:04.076429 [INFO]Timer 2 Expired! (CheckStk)
+15:07:04.076489 [INFO]Stopping Timer 2 (CheckStk)
+15:07:04.076601 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:06.076935 [INFO]Timer 2 Expired! (CheckStk)
+15:07:06.076994 [INFO]Stopping Timer 2 (CheckStk)
+15:07:06.077089 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:08.077419 [INFO]Timer 2 Expired! (CheckStk)
+15:07:08.077478 [INFO]Stopping Timer 2 (CheckStk)
+15:07:08.077590 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:08.736219 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:07:09.013080 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:07:09.249079 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:07:10.067953 [INFO]Timer 2 Expired! (CheckStk)
+15:07:10.068010 [INFO]Stopping Timer 2 (CheckStk)
+15:07:10.068103 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:12.068440 [INFO]Timer 2 Expired! (CheckStk)
+15:07:12.068501 [INFO]Stopping Timer 2 (CheckStk)
+15:07:12.068613 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:13.736445 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:07:14.028940 [INFO]Timer 1 Expired! (Tick)
+15:07:14.029000 [INFO]Stopping Timer 1 (Tick)
+15:07:14.029092 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:07:14.069383 [INFO]Timer 2 Expired! (CheckStk)
+15:07:14.069432 [INFO]Stopping Timer 2 (CheckStk)
+15:07:14.069520 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:16.069857 [INFO]Timer 2 Expired! (CheckStk)
+15:07:16.069917 [INFO]Stopping Timer 2 (CheckStk)
+15:07:16.070010 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:18.070341 [INFO]Timer 2 Expired! (CheckStk)
+15:07:18.070401 [INFO]Stopping Timer 2 (CheckStk)
+15:07:18.070497 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:18.736697 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:07:19.013322 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:07:19.249204 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:07:20.070848 [INFO]Timer 2 Expired! (CheckStk)
+15:07:20.070909 [INFO]Stopping Timer 2 (CheckStk)
+15:07:20.071001 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:22.071332 [INFO]Timer 2 Expired! (CheckStk)
+15:07:22.071394 [INFO]Stopping Timer 2 (CheckStk)
+15:07:22.071485 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:23.736942 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:07:24.071826 [INFO]Timer 2 Expired! (CheckStk)
+15:07:24.071885 [INFO]Stopping Timer 2 (CheckStk)
+15:07:24.071978 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:26.072311 [INFO]Timer 2 Expired! (CheckStk)
+15:07:26.072394 [INFO]Stopping Timer 2 (CheckStk)
+15:07:26.072488 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:28.072828 [INFO]Timer 2 Expired! (CheckStk)
+15:07:28.072889 [INFO]Stopping Timer 2 (CheckStk)
+15:07:28.072981 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:28.737201 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:07:29.013593 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:07:29.249335 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:07:30.073310 [INFO]Timer 2 Expired! (CheckStk)
+15:07:30.073391 [INFO]Stopping Timer 2 (CheckStk)
+15:07:30.073483 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:32.073843 [INFO]Timer 2 Expired! (CheckStk)
+15:07:32.073916 [INFO]Stopping Timer 2 (CheckStk)
+15:07:32.074011 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:33.737442 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:07:34.034342 [INFO]Timer 1 Expired! (Tick)
+15:07:34.034398 [INFO]Stopping Timer 1 (Tick)
+15:07:34.034489 [INFO]Starting Timer 1 (Tick) expires in 20000 ms
+15:07:34.074788 [INFO]Timer 2 Expired! (CheckStk)
+15:07:34.074836 [INFO]Stopping Timer 2 (CheckStk)
+15:07:34.074926 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:36.075240 [INFO]Timer 2 Expired! (CheckStk)
+15:07:36.075301 [INFO]Stopping Timer 2 (CheckStk)
+15:07:36.075395 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:38.075747 [INFO]Timer 2 Expired! (CheckStk)
+15:07:38.075807 [INFO]Stopping Timer 2 (CheckStk)
+15:07:38.075904 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms
+15:07:38.737712 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SM -> WATCHDOG
+15:07:39.013825 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, SIBS -> WATCHDOG
+15:07:39.249502 [INFO]Received: SERIALISATION_ID_WATCHDOG_KICK_REQ(id=18179), dataLength=8, Connectionless, TR069 -> WATCHDOG
+15:07:40.076244 [INFO]Timer 2 Expired! (CheckStk)
+15:07:40.076314 [INFO]Stopping Timer 2 (CheckStk)
+15:07:40.076407 [INFO]Starting Timer 2 (CheckStk) expires in 2000 ms

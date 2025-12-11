@@ -1,0 +1,100 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "sXGP-5G"
+		},
+		{
+			"path": "sources/open5gs"
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "Visual Studio Dark - C++",
+		"explorer.confirmDelete": false,
+		"explorer.confirmDragAndDrop": false,
+		"window.zoomLevel": 1,
+		"workbench.editorAssociations": {
+			"*.pyxapp": "default"
+		},
+		"files.associations": {
+			"*.tex": "latex",
+			"array": "cpp",
+			"chrono": "cpp",
+			"compare": "cpp",
+			"functional": "cpp",
+			"ratio": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"utility": "cpp",
+			"variant": "cpp",
+			"system_error": "cpp",
+			"s1ap_protocolie-singlecontainer.h": "c",
+			"any": "cpp"
+		},
+		"github.copilot.enable": {
+			"*": true,
+			"plaintext": true,
+			"markdown": true,
+			"scminput": true
+		},
+		"github.copilot.advanced": {},
+		"github.copilot.chat.agent.thinkingTool": true,
+		"github.copilot.chat.codesearch.enabled": true,
+		"chat.agent.maxRequests": 5000,
+		"remote.extensionKind": {
+			"GitHub.copilot": [
+				"ui"
+			]
+		},
+		"chat.tools.terminal.autoApprove": {
+			"ps": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"ps aux": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"/^ps.*/": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"/.*/": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"/.*ps.*/": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"/.*top.*/": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"/.*netstat.*/": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"/.*lsof.*/": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"/.*systemctl.*/": {
+				"approve": true,
+				"matchCommandLine": true
+			},
+			"/.*journalctl.*/": {
+				"approve": true,
+				"matchCommandLine": true
+			}
+		},
+		"chat.tools.file.autoApprove": {
+			"/dev/null": {
+				"approve": true
+			}
+		},
+		"workbench.commandPalette.preserveInput": true
+	}
+}

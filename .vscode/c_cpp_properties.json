@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "Open5GS",
+            "includePath": [
+                "${workspaceFolder}/sources/open5gs/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compileCommands": "${workspaceFolder}/sources/open5gs/build/compile_commands.json"
+        },
+        {
+            "name": "sXGP-5G",
+            "includePath": [
+                "${workspaceFolder}/sXGP-5G/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compileCommands": "${workspaceFolder}/sXGP-5G/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

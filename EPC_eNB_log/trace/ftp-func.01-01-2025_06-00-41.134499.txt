@@ -1,0 +1,143 @@
+Log File Started At 2025-01-01T06:00:41
+15:00:41.134676 [INFO]ExternalQueue()
+15:00:41.134913 [INFO]Starting application messenger with local port 6023. Post office port 6000.
+15:00:41.135211 [INFO]UDP socket opened: Tx=127.0.0.1:6000, RxPort=6023
+15:00:41.135346 [!WARNING!]Failed to unlink in InitialiseTransmit, file path is /run/unixfd/udp_socket_unix_6023, errno=2, strerror=No such file or directory.
+15:00:41.135419 [INFO]Successful Unix Tx bind(/run/unixfd/udp_socket_unix_6023)
+15:00:41.135487 [INFO]  Local port: 6023
+15:00:41.137195 [INFO]Adding CLI handler for entity: FTP
+15:00:41.198147 [INFO]AppWithAttrCacheFsm.1: Idle <--(Start)-- 
+15:00:41.198250 [INFO]AppWithAttrCacheFsm.1: Idle (exit) 
+15:00:41.198294 [INFO]AppWithAttrCacheFsm.1: Action SendEntityRegisterReqs
+15:00:41.198390 [INFO]Entities left to register: 2
+15:00:41.198435 [INFO]Registering entity: SW_UPDATE
+15:00:41.199023 [INFO]Registering entity: FTP
+15:00:41.199359 [INFO]AppWithAttrCacheFsm.1: Registering (entry) 
+15:00:41.199501 [INFO]Starting Timer 1 (Register Guard Timer) expires in 2000 ms
+15:00:41.200023 [INFO]RegisterEntityCnf received: RegisterEntityCnf: SW_UPDATE,
+15:00:41.200078 [INFO]AppWithAttrCacheFsm.2: Registering <--(RegisterEntityCnf)-- 
+15:00:41.200139 [INFO]Received: RegisterEntityCnf: SW_UPDATE,
+15:00:41.200180 [INFO]Entity registered successfully: SW_UPDATE
+15:00:41.200218 [INFO]AppWithAttrCacheFsm.2: Registering consumed RegisterEntityCnf
+15:00:41.200587 [INFO]RegisterEntityCnf received: RegisterEntityCnf: FTP,
+15:00:41.200635 [INFO]AppWithAttrCacheFsm.3: Registering <--(RegisterEntityCnf)-- 
+15:00:41.200684 [INFO]Received: RegisterEntityCnf: FTP,
+15:00:41.200724 [INFO]Entity registered successfully: FTP
+15:00:41.200761 [INFO]AppWithAttrCacheFsm.3: AllEntitiesRegistered? (true)
+15:00:41.200799 [INFO]AppWithAttrCacheFsm.3: Registering (exit) 
+15:00:41.200845 [INFO]Stopping Timer 1 (Register Guard Timer)
+15:00:41.200901 [INFO]AppWithAttrCacheFsm.3: NotRegistered (exit) 
+15:00:41.200941 [INFO]AppWithAttrCacheFsm.3: Registered (entry) 
+15:00:41.200979 [INFO]AppWithAttrCacheFsm.3: NotSubscribed (entry) 
+15:00:41.201018 [INFO]AppWithAttrCacheFsm.3: CheckSubscriptions (entry) 
+15:00:41.201274 [INFO]AppWithAttrCacheFsm.3: HaveSubscriptions? (true)
+15:00:41.201317 [INFO]AppWithAttrCacheFsm.3: CheckSubscriptions (exit) 
+15:00:41.201354 [INFO]AppWithAttrCacheFsm.3: Action SendSubscribeAttributesReqs
+15:00:41.201393 [INFO]Subscriptions left to request: 7
+15:00:41.201806 [INFO]AppWithAttrCacheFsm.3: Subscribing (entry) 
+15:00:41.201905 [INFO]Starting Timer 2 (Subscribe Guard Timer) expires in 180000 ms
+15:00:41.206946 [INFO]MessageHandler subcrib not complete. SingleThreadedAppWithAttrCache.cpp:99
+15:00:41.207053 [INFO]AppWithAttrCacheFsm.4: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.207133 [INFO]AppWithAttrCacheFsm.4: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.207256 [INFO]LOG UPLOAD FUNCTIONALITY IS DISABLED
+15:00:41.207468 [INFO]MibSubscribeAttributesCnf received: subscriptionId=8
+15:00:41.207513 [INFO]AppWithAttrCacheFsm.5: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.207553 [INFO]AppWithAttrCacheFsm.5: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.207825 [INFO]MessageHandler subcrib not complete. SingleThreadedAppWithAttrCache.cpp:99
+15:00:41.207889 [INFO]AppWithAttrCacheFsm.6: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.207975 [INFO]AppWithAttrCacheFsm.6: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.208044 [INFO]HandleAdminDownAck do nothing now. SwUpdateApplication.cpp:679
+15:00:41.208227 [INFO]MibSubscribeAttributesCnf received: subscriptionId=3
+15:00:41.208272 [INFO]AppWithAttrCacheFsm.7: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.208311 [INFO]AppWithAttrCacheFsm.7: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.208558 [INFO]MessageHandler subcrib not complete. SingleThreadedAppWithAttrCache.cpp:99
+15:00:41.208627 [INFO]AppWithAttrCacheFsm.8: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.208687 [INFO]AppWithAttrCacheFsm.8: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.208904 [INFO]MibSubscribeAttributesCnf received: subscriptionId=0
+15:00:41.208951 [INFO]AppWithAttrCacheFsm.9: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.208991 [INFO]AppWithAttrCacheFsm.9: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.209235 [INFO]MessageHandler subcrib not complete. SingleThreadedAppWithAttrCache.cpp:99
+15:00:41.209294 [INFO]AppWithAttrCacheFsm.10: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.209353 [INFO]AppWithAttrCacheFsm.10: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.209546 [INFO]MibSubscribeAttributesCnf received: subscriptionId=4
+15:00:41.209594 [INFO]AppWithAttrCacheFsm.11: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.209635 [INFO]AppWithAttrCacheFsm.11: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.209878 [INFO]MessageHandler subcrib not complete. SingleThreadedAppWithAttrCache.cpp:99
+15:00:41.209940 [INFO]AppWithAttrCacheFsm.12: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.209994 [INFO]AppWithAttrCacheFsm.12: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.210194 [INFO]MibSubscribeAttributesCnf received: subscriptionId=2
+15:00:41.210242 [INFO]AppWithAttrCacheFsm.13: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.210284 [INFO]AppWithAttrCacheFsm.13: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.210530 [INFO]MessageHandler subcrib not complete. SingleThreadedAppWithAttrCache.cpp:99
+15:00:41.210599 [INFO]AppWithAttrCacheFsm.14: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.210648 [INFO]AppWithAttrCacheFsm.14: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.210764 [INFO]NanohttpLogConfig nanohttp debug disable. SwUpdateEngine.cpp:1905
+15:00:41.210945 [INFO]MibSubscribeAttributesCnf received: subscriptionId=5
+15:00:41.210993 [INFO]AppWithAttrCacheFsm.15: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.211034 [INFO]AppWithAttrCacheFsm.15: Subscribing consumed MibSubscribeAttributesCnf
+15:00:41.211259 [INFO]MessageHandler subcrib not complete. SingleThreadedAppWithAttrCache.cpp:99
+15:00:41.211318 [INFO]AppWithAttrCacheFsm.16: Subscribing <--(MibSubscribeAttributesCnf)-- 
+15:00:41.211362 [INFO]AppWithAttrCacheFsm.16: AllSubscriptionsReceived? (true)
+15:00:41.211403 [INFO]AppWithAttrCacheFsm.16: Subscribing (exit) 
+15:00:41.211443 [INFO]Stopping Timer 2 (Subscribe Guard Timer)
+15:00:41.211484 [INFO]AppWithAttrCacheFsm.16: NotSubscribed (exit) 
+15:00:41.211523 [INFO]AppWithAttrCacheFsm.16: Action SendReadyToStart
+15:00:41.211563 [INFO]Notifying managing entity we're ready: OAM
+15:00:41.211652 [INFO]AppWithAttrCacheFsm.16: Subscribed (entry) 
+15:00:41.211696 [INFO]AppWithAttrCacheFsm.16: InformingReady (entry) 
+15:00:41.211784 [INFO]Starting Timer 3 (Ready Guard Timer) expires in 2000 ms
+15:00:41.211948 [INFO]GetLocalIPAddress=0.0.0.0
+
+15:00:41.212124 [INFO]MibSubscribeAttributesCnf received: subscriptionId=9
+15:00:41.212172 [INFO]AppWithAttrCacheFsm.17: InformingReady <--(MibSubscribeAttributesCnf)-- 
+15:00:41.212211 [INFO]AppWithAttrCacheFsm.17: InformingReady consumed MibSubscribeAttributesCnf
+15:00:41.238351 [INFO]AppWithAttrCacheFsm.18: InformingReady <--(RequestStartRsp)-- 
+15:00:41.238403 [INFO]AppWithAttrCacheFsm.18: InformingReady (exit) 
+15:00:41.238447 [INFO]Stopping Timer 3 (Ready Guard Timer)
+15:00:41.238488 [INFO]AppWithAttrCacheFsm.18: Started (entry) 
+15:00:41.238708 [INFO]Created thread with stack size 524288 bytes
+15:01:55.099080 [INFO]GetLocalIPAddress=172.24.0.111
+
+15:04:55.934044 [INFO]HandleAdminDownAck do nothing now. SwUpdateApplication.cpp:679
+15:04:56.996418 [INFO]HandleFtpReq : SwUpdateApplication.cpp:590
+15:04:56.996531 [INFO]HandleFtpReq fileType(18) md5() rawMode(). SwUpdateApplication.cpp:619
+15:04:56.996759 [INFO]New FTP Transfer Request Queued
+15:04:56.996861 [INFO]SwUpdateEngine::Enqueue: Queue length = 1
+15:04:56.997099 [INFO]SwUpdateEngine::Dequeue: Queue length = 0
+15:04:56.997252 [INFO]FTP Transfer starting
+15:04:56.997349 [INFO]DoUpload| remote file is 'https://104.41.150.194:19182/smallcell/FileUploadService?fileType=PM&filename=A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml' local file is '/mnt/tmp/pm/A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml'. SwUpdateEngine.cpp:591
+15:04:56.997753 [INFO]CheckAndCfgHttps| httpc_init [ca:/mnt/flash/certstore/tr069_ca.crt]
+15:04:57.358330 [INFO]DoUpload:650 httpc_post_begin(https://104.41.150.194:19182/smallcell/FileUploadService?fileType=PM&filename=A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml)
+15:04:57.358387 [!WARNING!]DoUpload SwUpdateEngine.cpp:655|httpUpload Can not open connection,httpc_x_begin failed [Socket error (Transport endpoint is not connected)]
+15:04:57.358456 [INFO]DoHttpUpload end failed fileSize=[164043]Byte
+15:04:57.358644 [!WARNING!]FtpCallback| FtpCompleteInd faultCode=[] faultString=[httpUpload Can not open connection] SwUpdateApplication.cpp:838
+15:04:57.360760 [!WARNING!]DoTransfer Do not remove PM or Halt File /mnt/tmp/pm/A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml. SwUpdateEngine.cpp:825
+15:04:57.360806 [!WARNING!]HandleFtpRequest Invoking callback: State = FTP_FAILED when DoTransfer. SwUpdateEngine.cpp:1535
+15:05:57.362073 [INFO]HandleFtpReq : SwUpdateApplication.cpp:590
+15:05:57.362181 [INFO]HandleFtpReq fileType(18) md5() rawMode(). SwUpdateApplication.cpp:619
+15:05:57.362226 [INFO]New FTP Transfer Request Queued
+15:05:57.362312 [INFO]SwUpdateEngine::Enqueue: Queue length = 1
+15:05:57.362477 [INFO]SwUpdateEngine::Dequeue: Queue length = 0
+15:05:57.362551 [INFO]FTP Transfer starting
+15:05:57.362622 [INFO]DoUpload| remote file is 'https://104.41.150.194:19182/smallcell/FileUploadService?fileType=PM&filename=A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml' local file is '/mnt/tmp/pm/A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml'. SwUpdateEngine.cpp:591
+15:05:57.362789 [INFO]CheckAndCfgHttps| httpc_init [ca:/mnt/flash/certstore/tr069_ca.crt]
+15:06:00.358109 [INFO]DoUpload:650 httpc_post_begin(https://104.41.150.194:19182/smallcell/FileUploadService?fileType=PM&filename=A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml)
+15:06:00.358172 [!WARNING!]DoUpload SwUpdateEngine.cpp:655|httpUpload Can not open connection,httpc_x_begin failed [Socket error (Transport endpoint is not connected)]
+15:06:00.358241 [INFO]DoHttpUpload end failed fileSize=[164043]Byte
+15:06:00.358387 [!WARNING!]FtpCallback| FtpCompleteInd faultCode=[] faultString=[httpUpload Can not open connection] SwUpdateApplication.cpp:838
+15:06:00.358493 [!WARNING!]DoTransfer Do not remove PM or Halt File /mnt/tmp/pm/A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml. SwUpdateEngine.cpp:825
+15:06:00.358536 [!WARNING!]HandleFtpRequest Invoking callback: State = FTP_FAILED when DoTransfer. SwUpdateEngine.cpp:1535
+15:07:00.365538 [INFO]HandleFtpReq : SwUpdateApplication.cpp:590
+15:07:00.365723 [INFO]HandleFtpReq fileType(18) md5() rawMode(). SwUpdateApplication.cpp:619
+15:07:00.365767 [INFO]New FTP Transfer Request Queued
+15:07:00.365855 [INFO]SwUpdateEngine::Enqueue: Queue length = 1
+15:07:00.366020 [INFO]SwUpdateEngine::Dequeue: Queue length = 0
+15:07:00.366094 [INFO]FTP Transfer starting
+15:07:00.366143 [INFO]DoUpload| remote file is 'https://104.41.150.194:19182/smallcell/FileUploadService?fileType=PM&filename=A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml' local file is '/mnt/tmp/pm/A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml'. SwUpdateEngine.cpp:591
+15:07:00.366310 [INFO]CheckAndCfgHttps| httpc_init [ca:/mnt/flash/certstore/tr069_ca.crt]
+15:07:02.297992 [INFO]DoUpload:650 httpc_post_begin(https://104.41.150.194:19182/smallcell/FileUploadService?fileType=PM&filename=A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml)
+15:07:02.298057 [!WARNING!]DoUpload SwUpdateEngine.cpp:655|httpUpload Can not open connection,httpc_x_begin failed [Socket error (Transport endpoint is not connected)]
+15:07:02.298129 [INFO]DoHttpUpload end failed fileSize=[164043]Byte
+15:07:02.298277 [!WARNING!]FtpCallback| FtpCompleteInd faultCode=[] faultString=[httpUpload Can not open connection] SwUpdateApplication.cpp:838
+15:07:02.298391 [!WARNING!]DoTransfer Do not remove PM or Halt File /mnt/tmp/pm/A20250101.1445%2B0900-1500%2B0900_48BF74.1202000746251ED0006.xml. SwUpdateEngine.cpp:825
+15:07:02.298434 [!WARNING!]HandleFtpRequest Invoking callback: State = FTP_FAILED when DoTransfer. SwUpdateEngine.cpp:1535

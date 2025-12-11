@@ -11,6 +11,7 @@ global:
     ue: MAX_NUM_UE
 
 logger:
+    level: debug
     file:
       path: /open5gs/install/var/log/open5gs/udr.log
 
