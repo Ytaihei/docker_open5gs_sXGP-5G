@@ -9930,3 +9930,7 @@ Successfully implemented **Option 1** - generating PDU Session Establishment Req
 - ⏳ eNB accepts ICS with InitialContextSetupResponse
 - ⏳ Data bearer established, UE can ping/transfer data
 
+
+
+- メモ
+- コンバータ構成の時は`172.25.0.3`でping・iPerf, 4G構成の時は`10.26.0.3`でできる

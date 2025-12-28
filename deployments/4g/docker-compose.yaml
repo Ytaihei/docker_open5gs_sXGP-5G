@@ -170,6 +170,31 @@ services:
     networks:
       default:
         ipv4_address: ${UPF_IP}
+      n6:
+        ipv4_address: ${UPF_N6_IP}
+
+  # ============ UE -> DN TEST (PING / IPERF) =========
+  # NOTE: This container is ONLY on the N6-side network.
+  # UE traffic reaches it via UPF (ogstun -> eth1 on n6).
+  ue-dn-tools:
+    # Reuse the already-built 4G Open5GS base image (has ip/iptables/ping/iperf3).
+    image: 4g-upf
+    container_name: ue-dn-tools-4g
+    env_file:
+      - .env
+    entrypoint: ["/bin/bash", "-lc"]
+    command:
+      - |
+        set -e
+        ip route del default || true
+        ip route add default via "$UPF_N6_IP"
+        exec iperf3 -s
+    networks:
+      n6:
+        ipv4_address: ${UE_DN_TOOLS_IP}
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
 
   mme:
     build:
@@ -296,6 +321,15 @@ networks:
         - subnet: 172.24.0.0/16
           gateway: 172.24.1.1
           ip_range: 172.24.1.0/24
+
+  # Dedicated N6-side "data network" for UE ping/iperf targets.
+  # Keep it internal so traffic must traverse UPF.
+  n6:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.26.0.0/24
 
 volumes:
   mongodbdata:

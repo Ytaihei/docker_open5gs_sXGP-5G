@@ -438,7 +438,7 @@ UE        eNB                S1N2 Converter                AMF
 | 5G パラメータ (NGAP/NAS) | 4G パラメータ (S1AP/NAS) | 意味・目的 | 変換ロジック |
 |----------------|----------------|-----------|--------------|
 | PDU Session ID | E-RAB ID | **データ経路の ID**。1つの UE が複数の経路を持つ場合に区別。 | PDU Session ID + 4 (例: ID 1 -> E-RAB 5) |
-| 5QI (QoS Flow ID) | QCI (QoS Class Identifier) | **通信品質クラス**。9=インターネット, 5=IMS(音声) 等。 | **QoS マッピング**: <br>5QI 9 (Default Internet) -> QCI 9<br>5QI 5 (IMS) -> QCI 5<br>その他は標準的な対応表に基づき変換。 |
+| QFI / 5QI | QCI (QoS Class Identifier) | **通信品質クラス/フロー識別子**。QCI=4G QoS、5QI=5G QoS、QFI=QoS Flow ID。 | **現状 (MVP)**: <br>- **4G 側 (S1AP/ESM)** はデフォルトで **QCI=9** を固定設定 (動的マッピングは未実装)<br>- **5G 側 (NGAP)** に付与する **QFI/5QI** は、QCI が 1..9 なら同値、それ以外/不明なら **9 にフォールバック**<br>- **AMF から受信した QFI** は UE コンテキストに保存し、InitialContextSetupResponse の `associatedQosFlowList` に反映 |
 | UPF Transport Layer Address | S-GW Transport Layer Address | **データ転送先の IP アドレス**。GTP-U パケットの宛先。 | UPF の IP アドレスをそのまま S-GW アドレスとして通知。 |
 | UPF GTP-TEID | S-GW GTP-TEID | **トンネル識別子**。経路を特定するための 32bit の ID。 | UPF の TEID をそのまま S-GW TEID として通知。 |
 | PDU Session Establishment Accept | Activate Default EPS Bearer Context Request | **セッション確立応答**。IP アドレス等を UE に通知。 | **NAS 変換**: <br>APN -> Access Point Name<br>PDU Address -> PDN Address<br>Protocol Config Options -> Protocol Config Options |
@@ -465,9 +465,12 @@ eNB                    S1N2 Converter                    UPF
 
 ### TEID 管理
 
-- **S1-U TEID**: eNB が生成し、S1AP InitialContextSetupResponse で通知
-- **N3 TEID**: UPF が生成し、NGAP InitialContextSetupRequest の PDU Session Resource で通知
-- **S1N2 Converter**: S1-U TEID ↔ N3 TEID のマッピングテーブルを管理
+- **eNB S1-U TEID/IP**: eNB が生成し、S1AP InitialContextSetupResponse で通知（下り側で使用される TEID として扱う）
+- **S1N2 Proxy (uplink) TEID**: S1N2 が自身用に割り当て、eNB へ通知（上りパケットはこの TEID 宛に到着）
+- **UPF N3 TEID/IP**: UPF が生成し、NGAP InitialContextSetupRequest の PDU Session Resource で通知
+- **転送動作（実装）**:
+   - Uplink (S1-U→N3): GTP-U ヘッダ内 TEID をキーにマッピングを参照し、TEID を UPF 側 N3 TEID に書き換えて UPF へ送出
+   - Downlink (N3→S1-U): Transparent proxy として TEID を書き換えず、UE コンテキストに保持した eNB の S1-U IP 宛に送出
 
 ## 8. UE ID マッピング
 
@@ -581,6 +584,55 @@ UE が切断された場合：
 | 90.592 | S1N2→UPF | GTP-U | Echo Request (TEID変換済み) |
 | 90.597 | UPF→S1N2 | GTP-U | Echo Reply |
 | 90.597 | S1N2→eNB | GTP-U | Echo Reply (TEID変換済み) |
+
+### 成功シーケンス (20251204_5.pcap + dockerログ突合)
+
+対象:
+- pcap: `log/20251204_5.pcap`
+- s1n2ログ: `log/docker/s1n2_follow_20251204_203753.log`
+
+#### Control Plane (MME-UE-S1AP-ID=4 / ENB-UE-S1AP-ID=32, PDU Session ID=5)
+
+| Time (s) | Frame | Direction | Protocol | Message / Key fields |
+|----------|-------|-----------|----------|----------------------|
+| 78.400 | 4029 | S1N2→eNB | S1AP (proc=9) | InitialContextSetupRequest: `gTP-TEID=0x00000001`, `transportLayerAddress=172.24.0.30`, `e-RAB-ID=5`, `QCI=9` |
+| 78.689 | 4059 | eNB→S1N2 | S1AP (proc=9) | InitialContextSetupResponse: `gTP-TEID=0x01000608`, `transportLayerAddress=172.24.0.111` |
+| 78.690 | 4064 | S1N2→AMF | NGAP (proc=46) | UplinkNASTransport: NAS 5GMM `Registration complete (0x43)` |
+| 78.692 | 4066 | S1N2→AMF | NGAP (proc=46) | UplinkNASTransport: NAS 5GSM `PDU Session Establishment Request (0xC1)`, `PDU session identity=5` |
+| 78.719 | 4176 | AMF→S1N2 | NGAP (proc=14) | InitialContextSetupRequest (PDUSessionResourceSetupListCxtReq含む) |
+| 78.720 | 4179 | S1N2→AMF | NGAP (proc=14) | InitialContextSetupResponse |
+
+対応する s1n2 ログ（行番号）:
+- `1529`: `[ICS-TRIGGER]` Attach Accept 検知
+- `1541`: `Bridged 5G Registration Accept -> S1AP InitialContextSetupRequest (MME-UE=4, ENB-UE=32, NAS=48 bytes)`
+- `1594`: `[ICS] Marked ICS completed`
+- `1664`: `[PDU Session] Detected Registration Complete, sending PDU Session Establishment Request`
+- `1719`: `NGAP InitialContextSetupRequest detected (proc=14)`
+
+関連コード（ログ出力・分岐点の代表）:
+- `sXGP-5G/src/s1n2_converter.c:2496` ICS送信ログ
+- `sXGP-5G/src/s1n2_converter.c:4555` Registration Complete 検知→PDU Session送信
+- `sXGP-5G/src/s1n2_converter.c:5324` NGAP ICS(proc=14) 検知
+
+#### User Plane (GTP-U, Hybrid Proxy: ULはTEID変換 / DLは透過)
+
+| Time (s) | Frame | Direction | GTP-U TEID | 観測 |
+|----------|-------|-----------|------------|------|
+| 81.769 | 4250 | eNB→S1N2 | 0x00000001 | UL (S1-U) 到来 |
+| 81.769 | 4251 | S1N2→UPF | 0x0000e2ad | UL (N3) へ転送（TEID変換） |
+| 81.773 | 4254 | UPF→S1N2 | 0x01000608 | DL (N3) 到来 |
+| 81.773 | 4255 | S1N2→eNB | 0x01000608 | DL (S1-U) へ転送（TEID透過） |
+
+対応する s1n2 ログ（代表例）:
+- `1734`: `Added explicit TEID mapping: S1-U 0x00000001 ↔ N3 0x0000e2ad`
+- `1772-1773`: `S1-U→N3 lookup` / `S1-U→N3 GTP-U conversion: TEID 0x00000001 -> 0x0000e2ad`
+- `1779`: `Downlink N3→S1-U: Transparent proxy (no TEID translation), TEID 0x01000608`
+
+関連コード（代表）:
+- `sXGP-5G/src/transport/gtp_tunnel.c:334` `Added explicit TEID mapping`
+- `sXGP-5G/src/transport/gtp_tunnel.c:360` `S1-U→N3 lookup`
+- `sXGP-5G/src/transport/gtp_tunnel.c:578` `S1-U→N3 GTP-U conversion`
+- `sXGP-5G/src/transport/gtp_tunnel.c:630` `Downlink ... Transparent proxy`
 
 ## 11. 関連ソースコード
 
