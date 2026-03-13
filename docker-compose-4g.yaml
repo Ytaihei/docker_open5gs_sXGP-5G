@@ -1,0 +1,342 @@
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongo-4g
+    command: --bind_ip 0.0.0.0
+    env_file:
+      - .env
+    volumes:
+      - mongodbdata:/data/db
+      - mongodbdata:/data/configdb
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "27017/udp"
+      - "27017/tcp"
+    networks:
+      default:
+        ipv4_address: ${MONGO_IP}
+
+  webui:
+    build:
+      context: .
+      dockerfile: base/Dockerfile
+    container_name: webui-4g
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    environment:
+      - COMPONENT_NAME=webui
+    volumes:
+      - ./webui:/mnt/webui
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "9999/tcp"
+    ports:
+      - "9999:9999/tcp"
+    networks:
+      default:
+        ipv4_address: ${WEBUI_IP}
+
+  hss:
+    build:
+      context: .
+      dockerfile: base/Dockerfile
+    container_name: hss-4g
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=hss
+    volumes:
+      - ./config/4g/hss:/mnt/hss
+      - ./log:/open5gs/install/var/log/open5gs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - mongo
+    restart: unless-stopped
+    expose:
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/tcp"
+      - "5868/sctp"
+    networks:
+      default:
+        ipv4_address: ${HSS_IP}
+
+  sgwc:
+    build:
+      context: .
+      dockerfile: base/Dockerfile
+    depends_on:
+      - smf
+      - upf
+    container_name: sgwc-4g
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=sgwc
+    volumes:
+      - ./config/4g/sgwc:/mnt/sgwc
+      - ./log:/open5gs/install/var/log/open5gs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "2123/udp"
+      - "8805/udp"
+    networks:
+      default:
+        ipv4_address: ${SGWC_IP}
+
+  sgwu:
+    build:
+      context: .
+      dockerfile: base/Dockerfile
+    depends_on:
+      - smf
+      - upf
+    container_name: sgwu-4g
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=sgwu
+    volumes:
+      - ./config/4g/sgwu:/mnt/sgwu
+      - ./log:/open5gs/install/var/log/open5gs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "8805/udp"
+      - "2152/udp"
+    networks:
+      default:
+        ipv4_address: ${SGWU_IP}
+
+  smf:
+    build:
+      context: .
+      dockerfile: base/Dockerfile
+    container_name: smf-4g
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=smf
+      - DEPLOY_MODE=4G
+    volumes:
+      - ./config/5g/smf:/mnt/smf
+      - ./log:/open5gs/install/var/log/open5gs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/tcp"
+      - "5868/sctp"
+      - "8805/udp"
+      - "2123/udp"
+      - "7777/tcp"
+      - "9091/tcp"
+    networks:
+      default:
+        ipv4_address: ${SMF_IP}
+
+  upf:
+    build:
+      context: .
+      dockerfile: base/Dockerfile
+    image: 4g-upf
+    depends_on:
+      - smf
+    container_name: upf-4g
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=upf
+    volumes:
+      - ./config/5g/upf:/mnt/upf
+      - ./log:/open5gs/install/var/log/open5gs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "2152/udp"
+      - "8805/udp"
+      - "9091/tcp"
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+    sysctls:
+      - net.ipv4.ip_forward=1
+    networks:
+      default:
+        ipv4_address: ${UPF_IP}
+      n6:
+        ipv4_address: ${UPF_N6_IP}
+
+  # ============ UE -> DN TEST (PING / IPERF) =========
+  # NOTE: This container is ONLY on the N6-side network.
+  # UE traffic reaches it via UPF (ogstun -> eth1 on n6).
+  ue-dn-tools:
+    # Reuse the already-built 4G Open5GS base image (has ip/iptables/ping/iperf3).
+    image: 4g-upf
+    container_name: ue-dn-tools-4g
+    env_file:
+      - .env
+    entrypoint: ["/bin/bash", "-lc"]
+    command:
+      - |
+        set -e
+        ip route del default || true
+        ip route add default via "$UPF_N6_IP"
+        irtt server -b 0.0.0.0 &
+        exec iperf3 -s
+    networks:
+      n6:
+        ipv4_address: ${UE_DN_TOOLS_IP}
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+
+  mme:
+    build:
+      context: .
+      dockerfile: base/Dockerfile
+    depends_on:
+      - hss
+      - sgwc
+      - sgwu
+      - smf
+      - upf
+    container_name: mme-4g
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=mme
+      # - STARTUP_DELAY=45  # EPC層の起動を待つ
+    volumes:
+      - ./config/4g/mme:/mnt/mme
+      - ./log:/open5gs/install/var/log/open5gs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    expose:
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/tcp"
+      - "5868/sctp"
+      - "36412/sctp"
+      - "2123/udp"
+      - "9091/tcp"
+    networks:
+      default:
+        ipv4_address: ${MME_IP}
+
+  pcrf:
+    build:
+      context: .
+      dockerfile: base/Dockerfile
+    container_name: pcrf-4g
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=pcrf
+    depends_on:
+      - mongo
+    volumes:
+      - ./config/4g/pcrf:/mnt/pcrf
+      - ./log:/open5gs/install/var/log/open5gs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - "${PCRF_BIND_PORT}/tcp"
+      - "${PCRF_BIND_PORT}/sctp"
+      - "5868/tcp"
+      - "5868/sctp"
+    networks:
+      default:
+        ipv4_address: ${PCRF_IP}
+
+# ---- RAN -----
+  srsenb_zmq:
+    build:
+      context: .
+      dockerfile: ran/srslte/Dockerfile
+    depends_on:
+      - mme
+    container_name: srsenb_zmq
+    stdin_open: true
+    tty: true
+    privileged: true
+    volumes:
+      - ./ran/srslte:/mnt/srslte
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=enb_zmq
+      - STARTUP_DELAY=60  # MME（EPC）起動を待つ
+    restart: unless-stopped
+    expose:
+      - "36412/sctp"
+      - "2152/udp"
+      - "2000/tcp"
+      - "2001/tcp"
+    networks:
+      default:
+        ipv4_address: ${SRS_ENB_IP}
+
+  srsue_zmq:
+    build:
+      context: .
+      dockerfile: ran/srslte/Dockerfile
+    depends_on:
+      - srsenb_zmq
+    container_name: srsue_zmq
+    stdin_open: true
+    tty: true
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+    volumes:
+      - ./ran/srslte:/mnt/srslte
+      - ./ran/srsue:/mnt/srsue
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - .env
+    environment:
+      - COMPONENT_NAME=ue_zmq
+      - STARTUP_DELAY=75  # eNB起動を待つ
+    restart: unless-stopped
+    expose:
+      - "2000/tcp"
+      - "2001/tcp"
+    networks:
+      default:
+        ipv4_address: ${SRS_UE_IP}
+
+networks:
+  default:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-open5gs_4g
+    ipam:
+      config:
+        - subnet: 172.24.0.0/16
+          gateway: 172.24.1.1
+          ip_range: 172.24.1.0/24
+
+  # Dedicated N6-side "data network" for UE ping/iperf targets.
+  # Keep it internal so traffic must traverse UPF.
+  n6:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.26.0.0/24
+
+volumes:
+  mongodbdata:
+    name: docker_open5gs_mongodbdata

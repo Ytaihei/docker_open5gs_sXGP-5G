@@ -1,0 +1,3 @@
+[submodule "s1n2-gateway"]
+	path = s1n2-gateway
+	url = https://github.com/Ytaihei/s1n2-gateway.git

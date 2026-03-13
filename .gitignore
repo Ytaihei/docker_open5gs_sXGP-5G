@@ -1,0 +1,50 @@
+# === ランタイム・ビルド成果物 ===
+log/
+sources/
+db/
+build/
+
+# === ローカル専用スクリプト（Wiki に手順を記載） ===
+start-4g.sh
+start-5g.sh
+script/
+
+# === バイナリ・ログ ===
+**/*.log
+**/*.ctxt
+**/*.pcap
+**/*.pcap*
+**/*.db
+**/*.db-shm
+**/*.db-wal
+**/*.tar
+
+# === 秘匿情報 ===
+**/.env
+.env-4g
+.env-5g
+config/5g/udm/curve25519-1.key
+config/5g/udm/secp256r1-2.key
+
+# === 環境固有・個人ファイル ===
+docker-backup/
+EPC_eNB_log/
+eNB_config/
+.vscode/
+*.code-workspace
+diary.md
+Dockerfile.limesuite
+backups/
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === s1n2-gateway (submodule で管理) ===
+# s1n2-gateway/ は .gitmodules で管理
+
+# === Wiki (独立した git リポジトリとしてローカル管理) ===
+wiki/
+
+# === ローカル専用ドキュメント ===
+docs/
